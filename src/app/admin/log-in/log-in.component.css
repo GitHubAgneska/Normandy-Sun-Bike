@@ -1,0 +1,11 @@
+.formContainer{
+    margin: 10vh auto;
+}
+
+input[type=text], input[type=password]{
+    display: inline-block;
+}
+
+.text label{
+    display: block;
+}
