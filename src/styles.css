@@ -1,4 +1,4 @@
-body, html {
+body, html, h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
@@ -28,11 +28,24 @@ body, html {
 }
 .text{
     font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 400;
 }
 .legal-text{
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: 300;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: 0.5s;
+}
+a:hover{
+    opacity: 0.7;
+    transition: 0.5s;
 }
