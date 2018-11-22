@@ -1,0 +1,62 @@
+.navbarContainer{
+    height: 5.2em;
+    transition: height 0.5s;
+}
+
+.navbar{
+    margin:0 auto; /* centre la div par rapport à la div dans laquelle est est contenue */
+    width: 90%; /* pour que l'astuce de "margin : 0 auto" fonctionne, il faut lui attribuer une width  */
+
+}
+
+#logo{
+    display: inline-block;
+    padding:1.5rem; 
+    border: 1px solid blue;
+    text-align:center;
+}
+
+.navbar a{
+    font-size: 1.3rem;
+    padding:2rem;
+    text-decoration: none;
+}
+
+
+/* ------------ MEDIA QUERIES ------------ */
+
+@media only screen and (max-width: 720px) {
+    
+    #navbarContainer {
+        height: 100%;
+    }
+
+    .navbar {
+        text-align: center;
+
+    }
+
+    #logo {
+        display: block;
+        font-size: 2rem;
+        padding-top: 1rem;
+    }
+
+    .navbar a{
+
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        font-size: 1.7rem;
+    }
+}
+
+
+@media only screen and (min-width: 720px){
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+}
