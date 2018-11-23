@@ -4,15 +4,16 @@
 }
 
 .navbar{
-    margin:0 auto; /* centre la div par rapport à la div dans laquelle est est contenue */
-    width: 90%; /* pour que l'astuce de "margin : 0 auto" fonctionne, il faut lui attribuer une width  */
+    margin:2rem auto; 
+    width: 90%;
 
 }
 
 #logo{
     display: inline-block;
-    padding:1.5rem; 
-    border: 1px solid blue;
+    padding:1.5rem 2rem 1.5rem; 
+    border: 1px solid grey;
+    color:grey;
     text-align:center;
 }
 
@@ -20,6 +21,13 @@
     font-size: 1.3rem;
     padding:2rem;
     text-decoration: none;
+    color:grey;
+}
+
+.navbar a:hover{
+
+    font-size:1.7rem;
+    
 }
 
 
