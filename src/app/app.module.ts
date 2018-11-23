@@ -12,7 +12,8 @@ import { BlogArticleElementComponent } from './blog/blog-article-element/blog-ar
     AppComponent,
     RacesPresentationComponent,
     BlogPageComponent,
-    BlogArticleElementComponent
+    BlogArticleElementComponent,
+    RacesPresentationComponent
   ],
   imports: [
     BrowserModule,
