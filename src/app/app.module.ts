@@ -6,6 +6,7 @@ import { RacesPresentationComponent } from './races-presentation/races-presentat
 import { AppRoutingModule } from './app-routing.module';
 import { BlogPageComponent } from './blog/blog-page/blog-page.component';
 import { BlogArticleElementComponent } from './blog/blog-article-element/blog-article-element.component';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { BlogArticleElementComponent } from './blog/blog-article-element/blog-ar
     RacesPresentationComponent,
     BlogPageComponent,
     BlogArticleElementComponent,
-    RacesPresentationComponent
+    RacesPresentationComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
