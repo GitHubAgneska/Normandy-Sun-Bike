@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BlogPageComponent } from './blog/blog-page/blog-page.component';
 import { BlogArticleElementComponent } from './blog/blog-article-element/blog-article-element.component';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BlogArticleElementComponent } from './blog/blog-article-element/blog-ar
     LandingPageComponent,
     BlogPageComponent,
     BlogArticleElementComponent,
-    RacesPresentationComponent
+    RacesPresentationComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
