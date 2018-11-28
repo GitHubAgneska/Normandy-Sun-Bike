@@ -23,43 +23,28 @@ export class RacesPresentationComponent implements OnInit {
     let title = document.getElementById("race-title");
     let count = 0;
 
-    window.addEventListener('scroll', () => {
-      this.scrollButtonText();
-      count ++;
-    });
-
-    // window.addEventListener('scroll', () => {
-    //   this.scrollButtonText();
-    //   if(count >40){
-    //   }
-    // });
-
     var lastScrollTop = 0;
     window.addEventListener("scroll", ()=>{
-   var st = window.pageYOffset;
-   if (st > lastScrollTop){
-      console.log("down")
-   } else {
-    console.log("up")
-   }
-   lastScrollTop = st <= 0 ? 0 : st;
-}, false);
+      var st = window.pageYOffset;
+      if (st > lastScrollTop){
+        setTimeout(()=>{
+          this.scrollButton = "Course"
+        },200);      
+      } else {
+        setTimeout(()=>{
+          this.scrollButton = "Blog"
+        },200);
+      }
+      lastScrollTop = st <= 0 ? 0 : st;
+    }, false);
 
-  }
-
-  scrollButtonText(){
-    let button = document.getElementById("race-button");
-    if(window.pageYOffset < (button.offsetTop - 100)){
-      this.scrollButton = "Blog"
-    } else {
-      this.scrollButton = "Course"
-    }
   }
 
 
   scrolling(element,condition:string){
     let target;
-    let tmp = { y: 0 };
+    let from = window.scrollY;
+    let tmp = { y: from };
 
     if (this.scrollButton == condition) {
       target = element.offsetTop;
@@ -70,7 +55,7 @@ export class RacesPresentationComponent implements OnInit {
         { y: target,
           ease: Power4.easeOut,
           onUpdate: function() {
-          window.scrollTo(0, tmp.y);
+          window.scrollTo(from, tmp.y);
           }
         }
       );
@@ -80,12 +65,10 @@ export class RacesPresentationComponent implements OnInit {
 
   scrollToBlog(){
     let raceDescription = document.getElementById("race-description");
-    let blog = document.getElementById("race-blog");
+    let blog = document.getElementById("race-button-container");
     
     this.scrolling(blog,"Blog");
     this.scrolling(raceDescription,"Course");
-
-    this.scrollButtonText();
   }
 
   // Click
