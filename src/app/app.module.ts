@@ -5,14 +5,14 @@ import { AppComponent } from './app.component';
 import { RacesPresentationComponent } from './races-presentation/races-presentation.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LogInComponent } from './admin/log-in/log-in.component';
-import { AdminLogInComponent } from './admin-log-in/admin-log-in.component';
+import { NavPageComponent } from './admin/nav-page/nav-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RacesPresentationComponent,
     LogInComponent,
-    AdminLogInComponent
+    NavPageComponent
   ],
   imports: [
     BrowserModule,
