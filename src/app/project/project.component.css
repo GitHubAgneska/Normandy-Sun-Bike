@@ -1,0 +1,96 @@
+p{
+    color:#555555;
+}
+
+#projet-container{
+    margin-top: 10vh
+}
+
+/* QUI */
+#projet-qui-container{
+    margin-left: 5%;
+    width: 90%;
+}
+#projet-qui-title, #projet-quoi-title{
+    line-height: 1;
+    color: #9AD3C2;
+}
+#projet-qui-img-1{
+    width: 17em;
+    height: 12em;
+    background:#CACACA;
+    margin-top: -0.8em;
+}
+#projet-qui-img-2{
+    width: 9em;
+    height: 12em;
+    background:#CACACA;
+    margin-top: -8em;
+    margin-left: 13em;
+    border: 2px solid #fff;
+    background:url("/assets/benoit.png");
+    background-size: 150%;
+    background-position: right;
+}
+#projet-qui-text-1{
+    width:8.5em;
+    margin-top: -1.5em;
+}
+#projet-qui-subtitle{
+    color:#9AD3C2;
+    margin-top: -2.5em;
+    margin-left: 5.1em;
+}
+#projet-qui-text-2{
+    width:32em;
+    margin-left: 13em;
+    
+}
+
+/* QUOI */
+#projet-quoi-container{
+    margin-top: 40vh;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%;
+    margin-bottom: 20vh;
+}
+#projet-quoi-title{
+    align-self: flex-end;
+    text-align: right;
+    z-index: 100;
+    margin-right: 21%;
+}
+#projet-quoi-img-1{
+    width: 20%;
+    height: 15vw;
+    background:#CACACA;
+    align-self: flex-end;
+    margin-top: -10em;
+    background: url("../../assets/suntrip_logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+}
+#projet-quoi-text-1{
+    width:35%;
+    align-self: flex-end;
+    margin-right: 22%;
+    margin-top: -1.5em;
+}
+#projet-quoi-subtitle{
+    color:#9AD3C2;
+    align-self: flex-end;
+    margin-top: -10vw;
+    margin-right: 3%;
+}
+#projet-quoi-img-2{
+    width:35%;
+    height: 18vw;
+    align-self: flex-end;
+    background:url("https://i1.wp.com/www.thesuntrip.com/wp-content/uploads/2013/03/13708293_387265334730525_2710800920486127847_o.jpg?fit=1024%2C680&ssl=1");
+    background-position: center;
+    background-size: 100%;
+    margin-top: 4vw;
+}
