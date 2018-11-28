@@ -8,13 +8,18 @@ import { RacesPresentationComponent } from './races-presentation/races-presentat
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { BlogPageComponent } from './blog/blog-page/blog-page.component';
+import { BlogArticleElementComponent } from './blog/blog-article-element/blog-article-element.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RacesPresentationComponent,
     NavbarComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    BlogPageComponent,
+    BlogArticleElementComponent,
+    RacesPresentationComponent
   ],
   imports: [
     BrowserModule,

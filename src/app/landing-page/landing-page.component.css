@@ -1,8 +1,20 @@
-#carouselExampleControls{
+.landingPageContainer{
+    margin-bottom:30%;
+}
+
+
+#tryptiqueContainer{
     margin-top:10%;
+    justify-content: center;
+    height:80%;
+    display:flex; 
+    padding:0;
+
+}
+
+#tryptiqueContainer img{
     width:100%;
-    height:100%;
-    display:inline-block;
+
 }
 
 
@@ -11,7 +23,7 @@
 
 @media only screen and (max-width: 720px) {
     
-    #carouselExampleIndicators {
+    #tryptiqueContainer {
         visibility : hidden;
     }
 

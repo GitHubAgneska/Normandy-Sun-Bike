@@ -1,0 +1,48 @@
+/* DESCRIPTION*/
+#race-description-container{
+    width: 100%;
+    height: 100vh;
+    background: rgb(117, 117, 117);
+}
+#race-description{
+    width: 100%;
+    height: 91vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#race-description > h2, #race-description > p, #race-description > a {
+    width: 60%;
+    margin-left: 10%;
+}
+
+/* button transition */
+#race-button-container{
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    justify-content: center;
+}
+#race-button{
+    width: 40%;
+    border-top: solid  2px;
+    transition: 0.3s;
+    transition-timing-function: ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+#race-button:hover{
+    width:70%;
+    border-top: solid  1px;
+    transition:0.3s;
+    transition-timing-function: ease-in;
+    cursor: pointer;
+}
+
+/* BLOG */
+#race-blog{
+    width: 100%;
+    height: 90vh;
+}
