@@ -2,12 +2,13 @@
 
 .navbarContainer{
     height: 5.2em;
-    transition: height 0.5s;
+    /* transition: height 0.5s; */
 }
 
 .navbar{
     margin:2rem auto; 
-    width: 90%;
+
+   
 }
 
 
@@ -19,15 +20,21 @@
     text-align:center;
 }
 
+
 .navbar a{
     font-size: 1.3rem;
     padding:2rem;
     text-decoration: none;
     color:grey;
+    display:inline-block;
+
+ 
 }
+
 
 .navbar a:hover{
     font-size:1.7rem;  
+    transition: 0.5s;
 }
 
 
@@ -40,9 +47,13 @@ label{
     display:none;
 }
 
+
+.checkbox{
+    width:30px;
+}
+
 #toggle{
     display:none;
-
 }
 
 
@@ -55,7 +66,7 @@ label{
     label{
         display:block;
         cursor:pointer;
-        width:50px;
+      /*   width:50px; */
         float:left;
       
     }
@@ -101,9 +112,9 @@ label{
     .navbar{
         display: flex;
         justify-content: space-between;
+        
     }
-
-    
+  
 }
 
 
