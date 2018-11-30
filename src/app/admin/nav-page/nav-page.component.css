@@ -1,0 +1,38 @@
+.adminGroup{
+    margin: 8vh 1vh 0 1vh;
+    color: #6f7c91;
+}
+
+.adminGroup h1{
+    padding-left: 5%;
+    border-bottom: solid 5px #6f7c91;
+}
+
+.adminSection{
+    margin: 2vh auto;
+    padding: 5vh;
+    width: 100%;
+    border: none;
+    text-align: start;
+    font-size: 2.5rem;
+    color: #fff;
+    background-color: #6f7c91;
+    cursor: pointer;
+}
+
+.adminSection:hover{
+    background-color: #8394af;
+}
+
+@media (min-width: 1030px){
+    .adminSection{
+        transition: padding-left 1s;
+        -webkit-transition: padding-left 1s;
+    }
+    
+    .adminSection:hover{
+        transition: padding-left 1s;
+        -webkit-transition: padding-left 1s;
+        padding-left: 20%;
+    }
+}
