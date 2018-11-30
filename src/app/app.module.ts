@@ -9,6 +9,7 @@ import { BlogArticleElementComponent } from './blog/blog-article-element/blog-ar
 import { ProjectComponent } from './project/project.component';
 import { LogInComponent } from './admin/log-in/log-in.component';
 import { NavPageComponent } from './admin/nav-page/nav-page.component';
+import { HeaderComponent } from './admin/header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavPageComponent } from './admin/nav-page/nav-page.component';
     RacesPresentationComponent,
     ProjectComponent,
     LogInComponent,
-    NavPageComponent
+    NavPageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
