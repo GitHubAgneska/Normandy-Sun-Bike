@@ -6,7 +6,7 @@ import { NavPageComponent } from './admin/nav-page/nav-page.component';
 
 const routes: Routes = [
   // Toujours déclaré sur ce model : {path: 'nom_du_chemin', component: nom_du_composant, pathMatch: 'full'}
-  {path: 'admin/log-in', component: LogInComponent, pathMatch: 'full'},
+  {path: 'admin', component: LogInComponent, pathMatch: 'full'},
   {path: 'admin/navigation', component: NavPageComponent, pathMatch: 'full'}
 ];
 
