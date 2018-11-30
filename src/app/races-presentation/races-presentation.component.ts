@@ -21,7 +21,6 @@ export class RacesPresentationComponent implements OnInit {
   ngOnInit() {
 
     let title = document.getElementById("race-title");
-    let count = 0;
 
     var lastScrollTop = 0;
     window.addEventListener("scroll", ()=>{
