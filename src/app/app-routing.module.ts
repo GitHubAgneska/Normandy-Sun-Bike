@@ -16,9 +16,9 @@ const routes: Routes = [
   {path: 'admin', component: LogInComponent, pathMatch: 'full'},
   {path: 'admin/navigation', component: NavPageComponent, pathMatch: 'full'},
   // Provisoire pour test header page admin
-  {path: 'admin/actuality', component: ActualityComponent, pathMatch: 'full', data: {title: 'Actualité'}},
-  {path: 'admin/sponsors', component: HeaderComponent, pathMatch: 'full', data: {title: 'Sponsors'}},
-  {path: 'admin/races', component: HeaderComponent, pathMatch: 'full', data: {title: 'Courses'}}
+  {path: 'admin/actuality', component: ActualityComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Actualité'}},
+  {path: 'admin/sponsors', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Sponsors'}},
+  {path: 'admin/races', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Courses'}}
 ];
 
 @NgModule({
