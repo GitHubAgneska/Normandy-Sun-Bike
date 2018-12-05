@@ -1,0 +1,44 @@
+
+
+.sponsorList img{         /*  block gauche  */
+    display: block;
+    margin:2rem;
+}
+
+                                    /*  block droit  */
+.sponsors-input-container{
+    width:100%;
+    margin:0 auto;
+
+}
+
+.sponsors-input-group {
+    margin-left:15%;
+}
+
+
+.sponsor-logo-input{
+    margin-left: 15%;
+}
+.sponsors-input-container img  {   
+    width:50%;
+    margin:2rem;
+ 
+}
+
+.sponsors-input-container .sponsors-input-fields{
+    width:80%;
+    margin:2rem;
+    
+
+}
+
+.logo-container{
+    position: relative;
+}
+
+
+.img-input-box{
+    transform: translate(-100% , 150%);
+    position: absolute;;
+}

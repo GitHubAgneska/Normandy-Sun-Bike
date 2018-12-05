@@ -10,6 +10,7 @@ import { ProjectComponent } from './project/project.component';
 import { LogInComponent } from './admin/log-in/log-in.component';
 import { NavPageComponent } from './admin/nav-page/nav-page.component';
 import { HeaderComponent } from './admin/header/header.component';
+import { AdminSponsorsComponent } from './admin-sponsors/admin-sponsors.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HeaderComponent } from './admin/header/header.component';
     ProjectComponent,
     LogInComponent,
     NavPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    AdminSponsorsComponent
   ],
   imports: [
     BrowserModule,
