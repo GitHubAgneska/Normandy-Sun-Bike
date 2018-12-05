@@ -9,11 +9,11 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
   // Toujours déclaré sur ce modele : {path: 'nom_du_chemin', component: nom_du_composant, pathMatch: 'full'}
-  {path: 'sunTrip', component: RacesPresentationComponent, pathMatch: 'full'},
+  {path: 'suntrip', component: RacesPresentationComponent, pathMatch: 'full'},
   {path: 'blog', component: BlogArticleElementComponent, pathMatch: 'full'},
   {path: 'admin/log-in', component: LogInComponent, pathMatch: 'full'},
   {path: 'admin/navigation', component: NavPageComponent, pathMatch: 'full'},
-  { path: 'landingPage', component: LandingPageComponent, pathMatch:'full' }
+  {path: 'landingPage', component: LandingPageComponent, pathMatch:'full' }
 ];
 
 @NgModule({
