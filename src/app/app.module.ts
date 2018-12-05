@@ -9,6 +9,11 @@ import { BlogArticleElementComponent } from './blog/blog-article-element/blog-ar
 import { ProjectComponent } from './project/project.component';
 import { LogInComponent } from './admin/log-in/log-in.component';
 import { NavPageComponent } from './admin/nav-page/nav-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavbarColorDirective } from './navbar/navbar-color.directive';
+import { SponsorsLandingComponent } from './landing-page/sponsors-landing/sponsors-landing.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +24,16 @@ import { NavPageComponent } from './admin/nav-page/nav-page.component';
     RacesPresentationComponent,
     ProjectComponent,
     LogInComponent,
-    NavPageComponent
+    NavPageComponent,
+    NavbarComponent,
+    LandingPageComponent,
+    NavbarColorDirective,
+    SponsorsLandingComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
