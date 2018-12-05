@@ -1,0 +1,16 @@
+.sponsors-landing-container{
+    width:10em;
+    height: 100%;
+}
+.sponsors-landing-container-img{
+    width: 100%;
+    height: 80%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.sponsors-landing-container > p{
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+}
