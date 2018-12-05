@@ -1,0 +1,36 @@
+
+.actualityParts {
+    margin: 2vh 2%;
+    cursor: pointer;
+}
+
+#tripPlan{
+    /* background-image: url("/assets/SunTripPrep.jpg"); */
+}
+
+#trip2019{
+    /* background-image: url("/assets/SunTripTour2019.jpg"); */
+}
+
+#trip2020{
+    /* background-image: url("/assets/SunTrip2020.jpg"); */
+}
+
+.validateBtn{
+    margin-top: 5vh;
+    color: #fff;
+    border: none;
+    background-color: #6f7c91;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.validateBtn:hover{
+    background-color: #505566;
+}
+
+@media (min-width: 1024px){
+    .container-fluid{
+        height: 90vh;
+    }
+}
