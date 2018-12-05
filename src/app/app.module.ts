@@ -14,6 +14,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarColorDirective } from './navbar/navbar-color.directive';
 import { SponsorsLandingComponent } from './landing-page/sponsors-landing/sponsors-landing.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SponsorsLandingComponent } from './landing-page/sponsors-landing/sponso
     LandingPageComponent,
     NavbarColorDirective,
     SponsorsLandingComponent,
+    ContactPageComponent,
   ],
   imports: [
     BrowserModule,

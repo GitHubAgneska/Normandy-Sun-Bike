@@ -5,6 +5,7 @@ import { BlogArticleElementComponent } from './blog/blog-article-element/blog-ar
 import { LogInComponent } from './admin/log-in/log-in.component';
 import { NavPageComponent } from './admin/nav-page/nav-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 // importer le composant lier à la route
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'blog', component: BlogArticleElementComponent, pathMatch: 'full'},
   {path: 'admin/log-in', component: LogInComponent, pathMatch: 'full'},
   {path: 'admin/navigation', component: NavPageComponent, pathMatch: 'full'},
-  {path: 'landingPage', component: LandingPageComponent, pathMatch:'full' }
+  {path: 'landingPage', component: LandingPageComponent, pathMatch:'full' },
+  {path: 'contactPage', component: ContactPageComponent, pathMatch:'full'}
 ];
 
 @NgModule({
