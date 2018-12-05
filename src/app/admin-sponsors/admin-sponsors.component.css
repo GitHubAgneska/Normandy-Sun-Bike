@@ -2,7 +2,7 @@
 
 .sponsorList img{         /*  block gauche  */
     display: block;
-    margin:2rem;
+    margin:2.5rem;
 }
 
                                     /*  block droit  */
@@ -29,16 +29,18 @@
 .sponsors-input-container .sponsors-input-fields{
     width:80%;
     margin:2rem;
-    
 
 }
 
 .logo-container{
     position: relative;
+    height:20%;
+    background-color: grey;
 }
 
 
 .img-input-box{
     transform: translate(-100% , 150%);
-    position: absolute;;
+    position: absolute;
+   
 }
