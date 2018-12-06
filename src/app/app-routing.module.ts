@@ -7,19 +7,25 @@ import { NavPageComponent } from './admin/nav-page/nav-page.component';
 // Provisoire pour test header page admin
 import { HeaderComponent } from './admin/header/header.component';
 import { AdminSponsorsComponent } from './admin-sponsors/admin-sponsors.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 // importer le composent lié à la route
 
 const routes: Routes = [
   // Toujours déclaré sur ce model : {path: 'nom_du_chemin', component: nom_du_composant, pathMatch: 'full'}
-  {path: 'SunTrip', component: RacesPresentationComponent, pathMatch: 'full'},
-  {path: 'Blog', component: BlogArticleElementComponent, pathMatch: 'full'},
-  {path: 'admin', component: LogInComponent, pathMatch: 'full'},
+
+  {path: 'suntrip', component: RacesPresentationComponent, pathMatch: 'full'},
+  {path: 'blog', component: BlogArticleElementComponent, pathMatch: 'full'},
+  {path: 'admin/log-in', component: LogInComponent, pathMatch: 'full'},
   {path: 'admin/navigation', component: NavPageComponent, pathMatch: 'full'},
+  {path: 'landingPage', component: LandingPageComponent, pathMatch:'full' },
   {path: 'admin/sponsors', component: AdminSponsorsComponent, pathMatch: 'full'},
+
   // Provisoire pour test header page admin
   {path: 'admin/header1', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Actualité'}},
   {path: 'admin/header2', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Sponsors'}},
   {path: 'admin/header3', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Courses'}}
+
+
 ];
 
 @NgModule({

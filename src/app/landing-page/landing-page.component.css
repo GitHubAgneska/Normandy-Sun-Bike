@@ -1,0 +1,168 @@
+/* 
+#carouselExampleControls{
+    width:50%;
+    margin-left:25%;
+    padding-top:10%;
+}
+
+
+.carousel-inner{
+    overflow: visible !important;
+}
+
+
+.carousel-item img{
+    display:inline-block !important;
+ 
+}
+
+.landingPageContainer{
+    margin-bottom:30%;
+}
+
+
+/* --mock triptique ---
+
+/* #tryptiqueContainer{
+    margin-top:10%;
+    justify-content: center;
+    height:80%;
+    display:flex; 
+    padding:0;
+
+}
+
+#tryptiqueContainer img{
+    width:100%;
+
+}
+ */
+
+
+/* ------------ MEDIA QUERIES ------------ */
+
+@media only screen and (max-width: 720px) {
+    
+    #carouselExampleControls {
+        /* visibility : hidden; */
+        width:100%;
+        margin:5% 0 0 0;
+        z-index:-5;
+        overflow:hidden;   
+    }
+}
+
+
+#landing-page{
+    padding-top: 12vh;
+    overflow: hidden;
+    width: 100%;
+}
+.landing-title{
+    margin-left: 5%;
+    padding-top: 7vh;
+    margin-bottom: 2vh;
+}
+
+/* Carousel */
+#landing-crsl-container{
+    height: 86vh;
+    margin-bottom: 5vh;
+    width: 200%;
+    background: grey;
+}
+.landing-headline{
+    height: 100%;
+    width: 100%;
+}
+
+/* Sponsors */
+
+#landing-sponsors-container{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin:0 auto;
+}
+#landing-sponsors{
+    height: 15vw;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+@media only screen and (max-width: 720px) {
+    #landing-sponsors-container{
+        justify-content: center;
+    }
+    #landing-sponsors{
+        height: 30vw;
+    }
+}
+
+
+/* Blog */
+#landing-blog-container{
+    background: url("/assets/background_races.png");
+    background-size: 100%;
+    background-position: center;
+    padding-bottom:10vh;
+}
+
+#landing-articles-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.landing-article{
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 4%;
+}
+.landing-img-article{
+    width: 100%;
+    height: 17vw;
+    background: grey;
+    background-size: 100%;
+    background-position: center;
+}
+.landing-title-article{
+    width: 100%;
+    padding-top: 3vh;
+    padding-bottom: 1vh;
+}
+#landing-articles-lign-container{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20%;
+    margin-top: -5vh;
+}
+.landing-lign-article{
+    width: 55%;
+}
+.landing-lign-article2{
+    width: 30%;
+}
+@media only screen and (max-width: 940px) {
+    .landing-lign-article{
+        width: 50%;
+    }
+    .landing-lign-article2{
+        width: 25%;
+    }
+}
+@media only screen and (max-width: 720px) {
+    #landing-articles-container{
+        flex-direction: column;
+    }
+    .landing-article{
+        width: 90%;
+    }
+    .landing-img-article{
+        height: 40vw;
+    }
+    #landing-articles-lign-container{
+        display: none;
+    }
+}

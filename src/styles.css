@@ -56,6 +56,13 @@ body, html, h1, h2, h3, h4, h5, h6 {
 
 
 
+.navbar-title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+/* form */
 .circle{
     height: 3em;
     width: 3em;
@@ -75,3 +82,8 @@ body, html, h1, h2, h3, h4, h5, h6 {
     border-left: solid 6px #000;
     height: 0;
     } 
+
+.lign{
+    border-top: solid 6px #000;
+    height: 0;
+}

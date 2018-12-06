@@ -1,0 +1,44 @@
+    <div id="landing-page">
+      <!-- carousel -->
+      <div id="landing-crsl-container">
+        <div class="landing-headline"></div>
+      </div>
+
+
+
+      <!-- sponsors -->
+      <h3 class="subtitle landing-title" >SPONSORS</h3>
+      <div id="landing-sponsors-container">
+      <div id="landing-sponsors" *ngFor="let current_sponsor of sponsor_list">
+        
+          <app-sponsors-landing  [sponsorName]="current_sponsor.name" [sponsorImg]="current_sponsor.img"></app-sponsors-landing>
+        
+      </div>
+    </div>
+
+
+
+      <!-- Blog -->
+      <div id="landing-blog-container">
+        <h3 class="subtitle landing-title" >BLOG</h3>
+        <div id="landing-articles-container">
+          <div class="landing-article">
+            <div class="landing-img-article" [ngStyle]="{'background-image': 'url('+articleImg1+')'}"></div>
+            <h4 class="landing-title-article subsubtitle">{{articleTitle1}}</h4>
+            <p class="landing-date-article legal">{{articleDate1}}</p>
+          </div>
+          <div class="landing-article">
+            <div class="landing-img-article" [ngStyle]="{'background-image': 'url('+articleImg2+')'}"></div>
+            <h4 class="landing-title-article subsubtitle">{{articleTitle2}}</h4>
+            <p class="landing-date-article legal">{{articleDate2}}</p>
+          </div>  
+        </div>
+        <div id="landing-articles-lign-container">
+          <div class="circle"></div>
+          <div class="lign landing-lign-article"></div>
+          <div class="circle"></div>
+          <div class="lign landing-lign-article2"></div>
+        </div>
+      </div>
+    </div>
+    

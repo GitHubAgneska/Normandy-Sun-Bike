@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .sponsorAdmin-main-container{    
     height:100vh;
     margin-top:3rem;
@@ -7,6 +8,16 @@
 
 /*  block droit  */
 
+=======
+
+
+.sponsorList img{         /*  block gauche  */
+    display: block;
+    margin:2.5rem;
+}
+
+                                    /*  block droit  */
+>>>>>>> mydev
 .sponsors-input-container{
     width:100%;
     margin:0;
@@ -14,6 +25,13 @@
 }
 
 
+<<<<<<< HEAD
+=======
+.browseImg{
+    just: center;
+    
+}
+>>>>>>> mydev
 .sponsors-input-group {
     margin-left:15%;
 }
@@ -22,8 +40,11 @@
 .sponsor-logo-input{
     margin-left: 15%;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> mydev
 .sponsors-input-container img  {   
     width:50%;
     margin:2rem;
@@ -36,6 +57,7 @@
 
 }
 
+<<<<<<< HEAD
 
 .sponsor-type-btn{
     align-content: center;
@@ -154,3 +176,17 @@
     }
 }
 
+=======
+.logo-container{
+    position: relative;
+    height:20%;
+    background-color: grey;
+}
+
+
+.img-input-box{
+    transform: translate(-100% , 150%);
+    position: absolute;
+   
+}
+>>>>>>> mydev
