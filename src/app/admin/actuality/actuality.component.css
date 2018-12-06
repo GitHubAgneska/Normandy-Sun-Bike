@@ -11,21 +11,26 @@
     -webkit-filter: none;
 }
 
+.sectionImg{
+    padding: 2vh;
+}
+
 /*********************** Selected section ***********************/
 .selectedSection{
     filter: none;
     -webkit-filter: none;
+    border: dotted 2px #6f7c91;
 }
 
 .checkMark{
-    position: relative;
-    bottom: 10vh;
-    left: 7vh;
+    position: absolute;
+    top: -45px;
+    left: -20px;
 }
 
 /*********************** Validation button ***********************/
 .validateBtn{
-    
+    margin-top: 5vh;
     color: #fff;
     border: none;
     background-color: #6f7c91;
@@ -38,14 +43,17 @@
 }
 
 /*********************** Confirmation Message ***********************/
-.confirmationMessage{
-    /* display: none; */
-    /* margin: 2vh auto; */
+#confirmationMessage{
+    opacity: 0;
+    transition: opacity 1s;
+    margin: 2vh;
+    width: 100%;
     font-size: 1.5rem;
+    text-align: center;
 }
 
 @media (min-width: 1024px){
-    .container-fluid{
-        height: 90vh;
-    }
+    .mainContent{
+        margin-top: 5vh;
+    }    
 }
