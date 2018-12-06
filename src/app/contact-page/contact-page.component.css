@@ -1,3 +1,28 @@
-*{
-    background-color: red;
+
+.contactPage-container{
+    padding-top:5rem;
+    color:#fff;
+    background-color: grey;
+    height:100%;
 }
+
+.contact-fields{
+    width:70%;
+    margin-left:15%;
+    display: block;
+    align-items: center;
+    padding:5rem;
+}
+
+.contact-fields div {
+    padding:0.5rem;
+}
+
+ .contact-fields button{
+     float:right;
+
+     background-color: grey;
+     border:1px solid #fff;
+
+ }
+
