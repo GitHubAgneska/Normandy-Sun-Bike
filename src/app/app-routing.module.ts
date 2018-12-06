@@ -7,6 +7,7 @@ import { NavPageComponent } from './admin/nav-page/nav-page.component';
 // Provisoire pour test header page admin
 import { HeaderComponent } from './admin/header/header.component';
 import { AdminSponsorsComponent } from './admin-sponsors/admin-sponsors.component';
+
 // importer le composent lié à la route
 
 const routes: Routes = [

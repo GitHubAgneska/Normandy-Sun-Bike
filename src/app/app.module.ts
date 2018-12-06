@@ -11,6 +11,7 @@ import { LogInComponent } from './admin/log-in/log-in.component';
 import { NavPageComponent } from './admin/nav-page/nav-page.component';
 import { HeaderComponent } from './admin/header/header.component';
 import { AdminSponsorsComponent } from './admin-sponsors/admin-sponsors.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AdminSponsorsComponent } from './admin-sponsors/admin-sponsors.componen
     LogInComponent,
     NavPageComponent,
     HeaderComponent,
-    AdminSponsorsComponent
+    AdminSponsorsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
