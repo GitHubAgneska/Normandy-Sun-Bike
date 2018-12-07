@@ -33,3 +33,9 @@
     }
 }
 
+@media (min-width: 1024px){
+    .row{
+        height: 10vh;
+    }
+}
+

@@ -6,15 +6,11 @@ import { ProjectComponent } from './project/project.component';
 import { SponsorComponent } from './sponsor/sponsor.component';
 import { LogInComponent } from './admin/log-in/log-in.component';
 import { NavPageComponent } from './admin/nav-page/nav-page.component';
-
-// Provisoire pour test header page admin
 import { HeaderComponent } from './admin/header/header.component';
 import { AdminSponsorsComponent } from './admin-sponsors/admin-sponsors.component';
-
-// importer le composent lié à la route
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
-// importer le composant lier à la route
+import { ActualityComponent } from './admin/actuality/actuality.component';
 
 const routes: Routes = [
   // Toujours déclaré sur ce model : {path: 'nom_du_chemin', component: nom_du_composant, pathMatch: 'full'}
@@ -23,17 +19,14 @@ const routes: Routes = [
   {path: 'Blog', component: BlogArticleElementComponent, pathMatch: 'full'},
   {path: 'Projet', component: ProjectComponent, pathMatch: 'full'},
   {path: 'Sponsors', component: SponsorComponent, pathMatch: 'full'},
-  {path: 'admin/log-in', component: LogInComponent, pathMatch: 'full'},
-  {path: 'admin/navigation', component: NavPageComponent, pathMatch: 'full'},
-  {path: 'landingPage', component: LandingPageComponent, pathMatch:'full' },
-  {path: 'contactPage', component: ContactPageComponent, pathMatch:'full'},
+  {path: 'landingPage', component: LandingPageComponent, pathMatch: 'full' },
+  {path: 'contactPage', component: ContactPageComponent, pathMatch: 'full'},
   {path: 'admin', component: LogInComponent, pathMatch: 'full'},
+  {path: 'admin/navigation', component: NavPageComponent, pathMatch: 'full'},
   {path: 'admin/sponsors', component: AdminSponsorsComponent, pathMatch: 'full'},
-  // Provisoire pour test header page admin
-  {path: 'admin/header1', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Actualité'}},
-  {path: 'admin/header2', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Sponsors'}},
-  {path: 'admin/header3', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Courses'}},
-
+  {path: 'admin/actuality', component: ActualityComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Actualité'}},
+  {path: 'admin/sponsors', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Sponsors'}},
+  {path: 'admin/races', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Courses'}}
 ];
 
 @NgModule({
