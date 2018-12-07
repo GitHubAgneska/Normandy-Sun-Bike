@@ -8,14 +8,17 @@ import { BlogPageComponent } from './blog/blog-page/blog-page.component';
 import { BlogArticleElementComponent } from './blog/blog-article-element/blog-article-element.component';
 import { ProjectComponent } from './project/project.component';
 import { SponsorComponent } from './sponsor/sponsor.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 import { LogInComponent } from './admin/log-in/log-in.component';
 import { NavPageComponent } from './admin/nav-page/nav-page.component';
+import { HeaderComponent } from './admin/header/header.component';
+import { AdminSponsorsComponent } from './admin-sponsors/admin-sponsors.component';
+import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarColorDirective } from './navbar/navbar-color.directive';
 import { SponsorsLandingComponent } from './landing-page/sponsors-landing/sponsors-landing.component';
-import { ContactPageComponent } from './contact-page/contact-page.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
     ProjectComponent,
     LogInComponent,
     NavPageComponent,
+    HeaderComponent,
+    AdminSponsorsComponent,
+    FooterComponent,
     NavbarComponent,
     LandingPageComponent,
     NavbarColorDirective,
