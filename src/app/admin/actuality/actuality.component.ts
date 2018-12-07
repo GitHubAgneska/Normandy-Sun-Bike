@@ -13,15 +13,29 @@ export class ActualityComponent implements OnInit {
 
   public markup: String = '<img class="checkMark" src="assets/checkmark.png"/>';
   public sectionNb: number = 0;
-  public sectionId = 'tripPlan';
+  public sectionId: string;
+  public prevSectionId: string = 'tripPlan';
   public message: String;
 
-  confirmationMsg(p_sectionNb): void {
+  private confirmationMsg(p_sectionNb): void {
     this.message = 'La partie ' + this.sections[p_sectionNb].name + ' va être mise en avant !';
   }
 
-  sectionSelected(p_id): void {
-    let sectionBlock: HTMLElement = document.getElementById(this.sectionId);
+  private addCheckmark(p_id): void {
+    const img: HTMLImageElement = document.createElement('img');
+    img.src = 'assets/checkmark.png';
+    img.id = 'checkmark';
+    img.alt = 'checkmark';
+
+    document.getElementById(p_id).append(img);
+  }
+
+  private removeCheckmark(p_id): void {
+    document.getElementById(p_id).removeChild(document.getElementById('checkmark'));
+  }
+
+  private sectionSelected(p_id): void {
+    let sectionBlock: HTMLElement = document.getElementById(this.prevSectionId);
 
     sectionBlock.classList.remove('selectedSection');
 
@@ -40,6 +54,11 @@ export class ActualityComponent implements OnInit {
 
     sectionBlock = document.getElementById(sectionId);
     sectionBlock.classList.add('selectedSection');
+
+    this.removeCheckmark(this.prevSectionId);
+    this.addCheckmark(sectionId);
+
+    this.prevSectionId = sectionId;
   }
 
   constructor() { }

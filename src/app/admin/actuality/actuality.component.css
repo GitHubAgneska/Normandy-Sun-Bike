@@ -22,11 +22,11 @@
     border: dotted 2px #6f7c91;
 }
 
-.checkMark{
+/* #checkmark{
     position: absolute;
     top: -45px;
     left: -20px;
-}
+} */
 
 /*********************** Validation button ***********************/
 .validateBtn{
