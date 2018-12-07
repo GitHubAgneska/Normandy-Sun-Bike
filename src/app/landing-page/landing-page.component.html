@@ -1,26 +1,40 @@
     <div id="landing-page">
       <!-- carousel -->
       <div id="landing-crsl-container">
-        <div class="landing-headline"></div>
+        <img id="crsl-left-arrow" class="crsl-arrow" src="../../assets/crsl_left_arrow.png" alt="left arrow" (click)="crslToLeft()"/>
+        <img id="crsl-right-arrow" class="crsl-arrow" src="../../assets/crsl_right_arrow.png" alt="right arrow" (click)="crslToRight()"/>
+        <!-- Projet -->
+        <div class="landing-headline" id="landing-projet">
+          <div class="circle landing-circle" id="landing-circle-projet"></div>
+          <div class="title landing-headline-title" id="landing-title-projet">LE PROJET</div>
+        </div>
+        <!-- 2019 -->
+        <div class="landing-headline" id="landing-2019">
+          <div class="circle landing-circle" id="landing-circle-2019"></div>
+          <div class="title landing-headline-title" id="landing-title-2019">THE SUN TRIP TOUR<br/>2019</div>
+        </div>
+        <!-- 2020 -->
+        <div class="landing-headline" id="landing-2020">
+          <div class="circle landing-circle" id="landing-circle-2020"></div>
+          <div class="title landing-headline-title" id="landing-title-2020">THE SUN TRIP<br/>2020</div>
+        </div>
+        <!-- paths -->
+        <div class="landing-headline" id="landing-paths">
+            <div id="landing-path1"></div>
+            <div id="landing-path2"></div>
+        </div>
       </div>
-
-
 
       <!-- sponsors -->
-      <h3 class="subtitle landing-title" >SPONSORS</h3>
+      <h3 class="title landing-title" id="landing-title-sponsor">SPONSORS</h3>
       <div id="landing-sponsors-container">
-      <div id="landing-sponsors" *ngFor="let current_sponsor of sponsor_list">
-        
-          <app-sponsors-landing  [sponsorName]="current_sponsor.name" [sponsorImg]="current_sponsor.img"></app-sponsors-landing>
-        
+        <div id="landing-sponsors" *ngFor="let current_sponsor of sponsor_list">
+            <app-sponsors-landing  [sponsorName]="current_sponsor.name" [sponsorImg]="current_sponsor.img"></app-sponsors-landing>
+        </div>
       </div>
-    </div>
-
-
-
       <!-- Blog -->
       <div id="landing-blog-container">
-        <h3 class="subtitle landing-title" >BLOG</h3>
+        <h3 class="title landing-title">BLOG</h3>
         <div id="landing-articles-container">
           <div class="landing-article">
             <div class="landing-img-article" [ngStyle]="{'background-image': 'url('+articleImg1+')'}"></div>
@@ -35,9 +49,9 @@
         </div>
         <div id="landing-articles-lign-container">
           <div class="circle"></div>
-          <div class="lign landing-lign-article"></div>
+          <div class="lign-horizon landing-lign-article"></div>
           <div class="circle"></div>
-          <div class="lign landing-lign-article2"></div>
+          <div class="lign-horizon landing-lign-article2"></div>
         </div>
       </div>
     </div>

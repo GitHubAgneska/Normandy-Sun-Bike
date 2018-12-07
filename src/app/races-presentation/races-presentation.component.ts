@@ -21,7 +21,6 @@ export class RacesPresentationComponent implements OnInit {
   ngOnInit() {
 
     let title = document.getElementById("race-title");
-    let count = 0;
 
     var lastScrollTop = 0;
     window.addEventListener("scroll", ()=>{
@@ -42,12 +41,13 @@ export class RacesPresentationComponent implements OnInit {
 
 
   scrolling(element,condition:string){
+    let navbar = document.getElementById("race-description").offsetTop;
     let target;
     let from = window.scrollY;
     let tmp = { y: from };
 
     if (this.scrollButton == condition) {
-      target = element.offsetTop;
+      target = element.offsetTop - navbar;
 
       TweenMax.to(
         tmp,
@@ -71,9 +71,12 @@ export class RacesPresentationComponent implements OnInit {
     this.scrolling(raceDescription,"Course");
   }
 
-  // Click
-  scrollClickButton() {
-    this.scrollToBlog();
-  };
+    // Click
+    scrollClickButton() {
+      this.scrollToBlog();
+    };
 
+    ngOnDestroy(){
+      window.scrollTo(0,0);
+    }
   }

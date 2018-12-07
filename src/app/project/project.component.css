@@ -1,0 +1,280 @@
+p{
+    color:#555555;
+}
+
+.title, .subtitle{
+    color:#86C494;
+    line-height: 1;
+}
+
+@media screen and (max-width: 640px) {
+    #projet-container{
+        overflow-x: hidden;   
+    }
+    .subsubtitle{
+        font-size: 1.2em;
+    }
+}
+
+
+/* QUI */
+#projet-qui-container{
+    padding-left: 8%;
+    height: 100vh;
+    padding-top: 14vh;
+}
+#projet-qui-img-1{
+    width: 17em;
+    height: 12em;
+    background:#CACACA;
+    margin-top: -0.8em;
+}
+#projet-qui-img-2{
+    width: 9em;
+    height: 12em;
+    background:#CACACA;
+    margin-top: -10em;
+    margin-left: 13em;
+    border: 2px solid #fff;
+    background:url("/assets/benoit.png");
+    background-size: 150%;
+    background-position: right;
+}
+#projet-qui-text-1{
+    width:8.5em;
+    margin-top: -0.5em;
+}
+#projet-qui-subtitle{
+    margin-top: -3em;
+    margin-left: 5.1em;
+}
+#projet-qui-text-2{
+    width:32em;
+    margin-left: 13em;
+    margin-top: 1em;  
+}
+@media screen and (max-width: 640px) {
+    #projet-qui-img-2{
+        width: 40%;
+        height: 50vw;
+        margin-left: 55%;
+    }
+    #projet-qui-text-1{
+        margin:0;
+        display: none;
+    }
+    #projet-qui-subtitle{
+        margin:0;
+        margin-top: 2vh;
+    }
+    #projet-qui-text-2{
+        width:90%;
+        margin:0;
+        margin-top: 2vh;
+    }
+}
+
+
+
+/* QUOI */
+#projet-quoi-container{
+    height: 100vh;
+    padding-top: 26vh;
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    padding-right: 8%;
+}
+#projet-quoi-title{
+    align-self: flex-end;
+    text-align: right;
+    z-index: 100;
+    margin-right: 8em;
+}
+#projet-quoi-img-1{
+    width: 23em;
+    height: 15em;
+    background:#CACACA;
+    align-self: flex-end;
+    margin-top: -10em;
+    background: url("https://i1.wp.com/www.thesuntrip.com/wp-content/uploads/2013/03/13708293_387265334730525_2710800920486127847_o.jpg?fit=1024%2C680&ssl=1");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+#projet-quoi-img-2{
+    width:10em;
+    height: 10em;
+    align-self: flex-end;
+    background:url("../../assets/suntrip_logo.png");
+    background-position: center;
+    background-size: 100%;
+    margin-top: -4em;
+    margin-right: 22em;
+    border: solid 1px #CACACA;
+}
+
+#projet-quoi-subtitle{
+    align-self: flex-end;
+    margin-right: 3em;
+    margin-top: -0.9em;
+}
+#projet-quoi-text-1{
+    width:32em;
+    align-self: flex-end;
+    margin-top: 0.5em;
+}
+@media screen and (max-width: 640px) {
+    #projet-quoi-title{
+        margin:0;
+    }
+    #projet-quoi-img-1{
+        margin:0;
+        width: 90%;
+        margin-top: -6.5vw;  
+    }
+    #projet-quoi-img-2{
+        margin:0;
+        width: 30%;
+        height: 30vw;
+        align-self: flex-start;
+        margin-top: -15vw;
+        margin-left: 5%;
+    }
+    #projet-quoi-subtitle{
+        margin: 0;
+        margin-top: -12vw;
+        margin-right: 3%;
+    }
+    #projet-quoi-text-1{
+        margin:0;
+        width: 94%;
+        margin-top: 2vh;
+    }
+}
+
+
+/* COMMENT */
+#projet-comment-container{
+    height: 100vh;
+    padding-top: 14vh;
+    padding-left: 8%;
+    margin-top: 20vh;
+}
+#projet-comment-img-1{
+    width: 27em;
+    height: 13em;
+    background:url("/assets/bike1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    margin-top: -0.8em;
+}
+#projet-comment-img-2{
+    width: 12em;
+    height: 11.2em;
+    background:url("/assets/bike2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    border: solid 1px #CACACA;
+    margin-top: -1em;
+    margin-left: 1em;
+}
+#projet-comment-subtitle{
+    margin-top: -3.5em;
+    margin-left: 6em;
+}
+#projet-comment-text-1{
+    width: 28em;
+    margin-top: 0.5em;
+    margin-left: 15em;
+}
+@media screen and (max-width: 640px) {
+    #projet-comment-img-1{
+        width: 94%;
+        height: 42vw;
+    }
+    #projet-comment-img-2{
+        display: none;
+        margin: 0;
+        
+    }
+    #projet-comment-subtitle{
+        margin:0;
+        margin-top:3vh;
+    }
+    #projet-comment-text-1{
+        width: 90%;
+        margin:0;
+        margin-top:3vh;
+    }
+}
+
+
+/* NEXT */
+#projet-next-container{
+    height: 100vh;
+    margin-top: 20vh;
+    padding-top: 14vh;
+    padding-right: 8%;
+    display: flex;
+    flex-direction: column;
+}
+#projet-comment-title{
+    align-self: flex-end;
+}
+
+
+
+
+@media screen and (min-width: 640px) and (max-width: 960px){
+    #projet-qui-container {
+        padding-top:25vh;
+        padding-left: 5%;
+    }
+    #projet-quoi-container{
+        padding-top:35vh;
+        margin-top:0;
+        padding-right: 5%;
+    }
+    #projet-comment-container{
+        padding-top:25vh;
+        margin-top:0;
+        padding-left: 5%;
+    }
+    #projet-next-container{
+        padding-top:25vh;
+        margin-top:0;
+        padding-right: 5%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #projet-container{
+        width: 100%;
+        margin:0;
+        background: #F6F6F6;
+    }
+    #projet-qui-container {
+        width: 100%;
+        height: 100%;
+        padding-left: 5%;
+    }
+    #projet-quoi-container{
+        width: 100%;
+        padding-right: 5%;
+        padding-top: 10vh;
+        margin-top:10vh;
+    }
+    #projet-comment-container{
+        width: 100%;
+        padding-left: 5%;
+        margin-top:10vh;
+    }
+    #projet-next-container{
+        width: 100%;
+        padding-right: 5%;
+        margin-top:10vh;
+    }
+}

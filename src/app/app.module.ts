@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BlogPageComponent } from './blog/blog-page/blog-page.component';
 import { BlogArticleElementComponent } from './blog/blog-article-element/blog-article-element.component';
 import { ProjectComponent } from './project/project.component';
+import { SponsorComponent } from './sponsor/sponsor.component';
 import { LogInComponent } from './admin/log-in/log-in.component';
 import { NavPageComponent } from './admin/nav-page/nav-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -31,6 +32,7 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
     NavbarColorDirective,
     SponsorsLandingComponent,
     ContactPageComponent,
+    SponsorComponent
   ],
   imports: [
     BrowserModule,

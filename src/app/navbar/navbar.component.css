@@ -31,6 +31,12 @@
     width: 100%;
     transition: 1s;
 }
+#logo:hover{
+    cursor: pointer;
+}
+#logo:focus{
+    outline: none;
+}
 .categorie{
     text-decoration: none;
     color:grey;
@@ -47,8 +53,11 @@
 .categorie:hover{
     transition: 0.5s;
     color: #000;
-    /* transform: scale(1.05); */
-    
+    /* transform: scale(1.05); */  
+}
+.categorie:focus{
+    color: #000;
+    font-weight: 500;
 }
 
 
@@ -109,10 +118,3 @@
         width:20%;
     }
 }
-
-
-
-
-
-
-

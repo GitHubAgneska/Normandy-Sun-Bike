@@ -22,6 +22,11 @@ export class LandingPageComponent implements OnInit {
     this.sponsor_list = this.allSponsors ;
   }
 
+  //CAROUSEL
+
+  
+
+  //BLOG
   public articleImg1:string = "";
   public articleTitle1:string = "Title1";
   public articleDate1:string = "00/00/0000";
@@ -30,7 +35,80 @@ export class LandingPageComponent implements OnInit {
   public articleTitle2:string = "Title2";
   public articleDate2:string = "00/00/0000";
 
+  public crslImgs = document.getElementsByClassName("landing-headline");
+
+  public rightPosition;
+  public middlePosition;
+  public leftPosition;
   ngOnInit() {
+
+ 
+
+    if(screen.width > 960){
+      for(let i=0; i<this.crslImgs.length; i++){
+        this.crslImgs[i]['style'].marginLeft = this.crslImgPosition(i) + "%";
+        console.log()
+      }
+    }
   }
 
+  crslToLeft(){
+    let leftArrow = document.getElementById("crsl-left-arrow");
+    let rightArrow = document.getElementById("crsl-right-arrow");
+
+    let position;
+
+    if(this.crslImgs[0]['offsetLeft'] < 0 && this.crslImgs[1]['offsetLeft'] > 0){
+      position = 64;
+      leftArrow.style.opacity = "0";
+      this.crslImgs[0]['style'].opacity = "1";
+      this.crslImgs[1]['style'].opacity = "0.5";
+      this.crslImgs[2]['style'].opacity = "0.5";
+    } else if (this.crslImgs[0]['offsetLeft'] < 0 && this.crslImgs[1]['offsetLeft'] < 0) {
+      position = 0;
+      rightArrow.style.opacity = "1";
+      this.crslImgs[0]['style'].opacity = "0.5";
+      this.crslImgs[1]['style'].opacity = "1";
+      this.crslImgs[2]['style'].opacity = "0.5";
+    }
+
+    for(let i=0; i<this.crslImgs.length; i++){
+      this.crslImgs[i]['style'].marginLeft = this.crslImgPosition(i) + position + "%";
+    }
+  }
+
+  crslToRight(){
+    let leftArrow = document.getElementById("crsl-left-arrow");
+    let rightArrow = document.getElementById("crsl-right-arrow");
+
+    let position;
+
+    if(this.crslImgs[0]['offsetLeft'] < 0 && this.crslImgs[1]['offsetLeft'] > 0){
+      position = -64;
+      rightArrow.style.opacity = "0";
+      this.crslImgs[0]['style'].opacity = "0.5";
+      this.crslImgs[1]['style'].opacity = "0.5";
+      this.crslImgs[2]['style'].opacity = "1";
+    } else if (this.crslImgs[0]['offsetLeft'] > 0 && this.crslImgs[1]['offsetLeft'] > 0) {
+      position = 0;
+      leftArrow.style.opacity = "1";
+      this.crslImgs[0]['style'].opacity = "0.5";
+      this.crslImgs[1]['style'].opacity = "1";
+      this.crslImgs[2]['style'].opacity = "0.5";
+      
+    }
+
+    for(let i=0; i<this.crslImgs.length; i++){
+      this.crslImgs[i]['style'].marginLeft = this.crslImgPosition(i) + position + "%";
+    }
+  }
+
+  crslImgPosition(i){
+    return (i*74) - 60;
+  }
+
+
+  ngOnDestroy(){
+    window.scrollTo(0,0);
+  }
 }

@@ -1,5 +1,7 @@
-
-
+#race-description-page{
+    height: 100vh;
+    width: 100%;
+}
 /* DESCRIPTION*/
 #race-description-container{
     width: 100%;
@@ -27,17 +29,23 @@
     justify-content: center;
 }
 @media screen and (min-width: 960px){
+    #race-description-container{
+        padding-top: 12vh;
+    }
     #race-description,#race-blog {
-        height: 91vh;
+        height: 80vh;
     }
     #race-button-container{
-        height: 9vh;
+        height: 8vh;
     }
     
 }
 @media screen and (min-width: 640px) and (max-width: 960px){
+    #race-description-container{
+        padding-top: 10vh;
+    }
     #race-description,#race-blog {
-        height: 95vh;
+        height: 85vh;
     }
     #race-button-container{
         height: 5vh;
@@ -47,9 +55,11 @@
     }
 }
 @media screen and (max-width: 640px){
+    #race-description-container{
+        padding-top: 10vh;
+    }
     #race-description,#race-blog {
-        height: 89vh;
-        margin-bottom: 4vh;
+        height: 83vh;
     }
     #race-description{
         overflow-y: scroll;
@@ -60,13 +70,13 @@
 
     #race-description > h2 {
         width: 80%;
-        margin-top: 6em;
+        padding-top: 6em;
     }
     #race-description > p {
         width: 80%;
     }
     #race-description > a {
-        margin-bottom: 6em;
+        padding-bottom: 6em;
     }
 }
 #race-button{
@@ -126,5 +136,6 @@
     position: relative;
     z-index: 10;
     width: 100%;
+    height: 100%;
     overflow-y: scroll;
 }
