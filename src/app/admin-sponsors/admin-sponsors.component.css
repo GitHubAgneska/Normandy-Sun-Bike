@@ -141,9 +141,15 @@
     }
 }
 
+
+
 .blog-element-title{
     border-bottom: solid 3px;
     font-size: 1.8em;
+}
+
+@media screen and (max-width: 640px) {
+    font-size:1.8em;
 }
 
 .blog-element-button{
