@@ -13,7 +13,17 @@ export class NavbarComponent implements OnInit {
   public logo = "../../assets/logoNSB_navbar.png";
   public topBarColor = "#06402B"
 
+  // public 
+
   ngOnInit() {
+
+    let navbar = document.getElementById("navbarContainer");
+
+    let url = window.location.toString();
+
+    if(url.includes("admin")){
+      navbar.style.display="none";
+    }
 
     if (screen.width > 960) {
       window.addEventListener("scroll",() => {

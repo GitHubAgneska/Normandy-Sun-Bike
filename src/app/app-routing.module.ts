@@ -14,7 +14,7 @@ import { ActualityComponent } from './admin/actuality/actuality.component';
 
 const routes: Routes = [
   // Toujours déclaré sur ce model : {path: 'nom_du_chemin', component: nom_du_composant, pathMatch: 'full'}
-  {path: 'landingPage', component: LandingPageComponent, pathMatch:'full' },
+  {path: 'Accueil', component: LandingPageComponent, pathMatch:'full' },
   {path: 'SunTrip', component: RacesPresentationComponent, pathMatch: 'full'},
   {path: 'Blog', component: BlogArticleElementComponent, pathMatch: 'full'},
   {path: 'Projet', component: ProjectComponent, pathMatch: 'full'},
@@ -27,6 +27,7 @@ const routes: Routes = [
   {path: 'admin/actuality', component: ActualityComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Actualité'}},
   {path: 'admin/sponsors', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Sponsors'}},
   {path: 'admin/races', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Courses'}}
+
 ];
 
 @NgModule({
