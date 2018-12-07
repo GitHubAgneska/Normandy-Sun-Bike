@@ -1,21 +1,21 @@
 <app-header></app-header>
-<!-- <div class="container-fluid">
-  <div class="row confirmationMessage text bg-danger">
-    <p class="col-md-12 col-lg-12 col-xl-12">Je suis pas content</p>
+<div class="container-fluid">
+  <div class="row">
+      <div id="confirmationMessage">
+          <p class="p-0">{{this.message}}</p>
+      </div>
   </div>
-</div> -->
-<div class="container-fluid d-flex align-items-center">
-  <div class="row justify-content-center">
-    <div id="tripPlan" class="actualityParts selectedSection col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-      <img class="img-fluid" src="assets/SunTripPrep.png"/>
-      <img class="checkMark" src="assets/checkmark.png"/>
+  <div class="row mainContent justify-content-center">
+    <div id="tripPlan" class="actualityParts selectedSection col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3" (click)="sectionSelected('tripPlan')">
+      <img class="img-fluid sectionImg" src="assets/SunTripPrep.png"/>
+      <img id="checkmark" src="assets/checkmark.png"/>
     </div>
-    <div id="trip2019" class="actualityParts col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-      <img class="img-fluid" src="assets/SunTripTour2019.png"/>
+    <div id="trip2019" class="actualityParts col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3" (click)="sectionSelected('trip2019')">
+      <img class="img-fluid sectionImg" src="assets/SunTripTour2019.png"/>
     </div>
-    <div id="trip2020" class="actualityParts col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-      <img class="img-fluid" src="assets/SunTrip2020.png"/>
+    <div id="trip2020" class="actualityParts col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3" (click)="sectionSelected('trip2020')">
+      <img class="img-fluid sectionImg" src="assets/SunTrip2020.png"/>
     </div>
-    <button class="validateBtn text col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5" (click)="confirmationMsg()" routerLink="/admin/navigation">Valider</button>
+    <button class="validateBtn col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5" routerLink="/admin/navigation">Valider</button>
   </div>
 </div>
