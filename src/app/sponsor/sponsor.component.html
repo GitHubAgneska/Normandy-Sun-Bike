@@ -1,3 +1,32 @@
-<p>
-  sponsor works!
-</p>
+<div id="sponsor-page">
+
+  <div id="sponsor-first-second">
+
+    <div id="sponsor-first">
+      <div id="sponsor-first-logo"></div>
+      <div id="sponsor-first-text">
+        <h2 class="subsubtitle sponsor-title">{{Sponsor1Name}}</h2>
+        <p class="text sponsor-txt">{{Sponsor1Text}}</p>
+      </div>
+    </div>
+
+    <div id="sponsor-second-container">
+      <div class="sponsor-second">
+        <div class="sponsor-second-logo"></div>
+        <div class="sponsor-second-text">
+          <h2 class="subsubtitle sponsor-title">{{Sponsor2Name}}</h2>
+        </div>
+      </div>
+      <div class="sponsor-second">
+          <div class="sponsor-second-logo"></div>
+          <div class="sponsor-second-text">
+            <h2 class="subsubtitle sponsor-title">{{Sponsor3Name}}</h2>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div id="sponsor-third-container">
+    <div id="sponsors-third" *ngFor="let current_sponsor of sponsor_list">
+        <app-sponsors-landing  [sponsorName]="current_sponsor.name" [sponsorImg]="current_sponsor.img"></app-sponsors-landing>
+    </div>
+</div>

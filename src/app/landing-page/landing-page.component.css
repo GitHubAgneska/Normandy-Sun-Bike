@@ -1,30 +1,203 @@
-.landingPageContainer{
-    margin-bottom:30%;
+#landing-page{
+    padding-top: 12vh;
+    overflow: hidden;
+    width: 100%;
+}
+.landing-title{
+    padding-left: 5%;
+    padding-top: 7vh;
+    margin-bottom: 2vh;
 }
 
+/* Carousel */
 
-#tryptiqueContainer{
-    margin-top:10%;
-    justify-content: center;
-    height:80%;
-    display:flex; 
-    padding:0;
-
+.crsl-arrow{
+    margin-top: 40vh;
+    z-index: 500;
+    position: absolute;
+    transition: 0.5s;
+}
+.crsl-arrow:hover{
+    cursor: pointer;
+}
+.crsl-arrow:active{
+    transform: scale(0.98);
+    opacity: 0.9;
+}
+#crsl-left-arrow{
+      margin-left: 4%;
+}
+#crsl-right-arrow{
+    margin-left: 91%;
 }
 
-#tryptiqueContainer img{
-    width:100%;
-
-}
-
-
-
-/* ------------ MEDIA QUERIES ------------ */
-
-@media only screen and (max-width: 720px) {
+#landing-crsl-container{
+    height: 84vh;
+    margin-bottom: 5vh;
+    width: 100%;
+    overflow: hidden;
     
-    #tryptiqueContainer {
-        visibility : hidden;
-    }
+}
+.landing-headline{
+    height: 84vh;
+    width: 70%;
+    position:absolute;
+    transition: 1.5s;
+}
 
+.landing-headline-title{
+    line-height: 1;
+}
+/* projet */
+#landing-projet{
+    background: #2D73A9;
+}
+#landing-title-projet{
+    margin-top: 20%;
+    margin-left: 10%;
+}
+#landing-circle-projet{
+    margin-top: 30%;
+    margin-left: 20%;
+}
+/* 2019 */
+#landing-2019{
+    background: #478952;
+}
+#landing-title-2019{
+    margin-top: 7%;
+    margin-left: 10%;
+}
+#landing-circle-2019{
+    margin-top: 20%;
+    margin-left: 30%;
+
+}
+/* 2020 */
+#landing-2020{
+    background: #D3BB58;
+}
+#landing-title-2020{
+    margin-top: 30%;
+    margin-left: 10%;
+}
+#landing-circle-2020{
+    margin-top: 40%;
+    margin-left: 28%;
+}
+.landing-circle{
+    position: absolute;
+}
+
+/* path */
+#landing-path1{
+    position: absolute;
+    z-index: 400;
+    margin-left: -291%;
+    margin-top: 22%;
+    width: 108%;
+    height: 23vw;
+    background-image: url("../../assets/path_landing_1.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#landing-path2{
+    position: absolute;
+    z-index: 400;
+    width: 94%;
+    height: 23vw;
+    margin-left: -174%;
+    margin-top: 23%;
+    background-image: url("../../assets/path_landing_2.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
+/* Sponsors */
+
+#landing-sponsors-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 2vh;
+    padding-bottom: 3vh;
+}
+#landing-sponsors{
+    margin-left: 1%;
+    margin-right: 1%;
+}
+@media only screen and (max-width: 720px) {
+    #landing-sponsors-container{
+        justify-content: center;
+    }
+}
+
+
+/* Blog */
+#landing-blog-container{
+    background: url("/assets/background_races.png");
+    background-size: 100%;
+    background-position: center;
+    padding-bottom:10vh;
+}
+
+#landing-articles-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.landing-article{
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 4%;
+}
+.landing-img-article{
+    width: 100%;
+    height: 17vw;
+    background: grey;
+    background-size: 100%;
+    background-position: center;
+}
+.landing-title-article{
+    width: 100%;
+    padding-top: 3vh;
+    padding-bottom: 1vh;
+}
+#landing-articles-lign-container{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20%;
+    margin-top: -5vh;
+}
+.landing-lign-article{
+    width: 55%;
+}
+.landing-lign-article2{
+    width: 30%;
+}
+@media only screen and (max-width: 940px) {
+    .landing-lign-article{
+        width: 50%;
+    }
+    .landing-lign-article2{
+        width: 25%;
+    }
+}
+@media only screen and (max-width: 720px) {
+    #landing-articles-container{
+        flex-direction: column;
+    }
+    .landing-article{
+        width: 90%;
+    }
+    .landing-img-article{
+        height: 40vw;
+    }
+    #landing-articles-lign-container{
+        display: none;
+    }
 }

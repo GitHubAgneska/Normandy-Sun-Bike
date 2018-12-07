@@ -21,7 +21,7 @@ p{
 #projet-qui-container{
     padding-left: 8%;
     height: 100vh;
-    padding-top: 10vh;
+    padding-top: 14vh;
 }
 #projet-qui-img-1{
     width: 17em;
@@ -79,7 +79,7 @@ p{
 /* QUOI */
 #projet-quoi-container{
     height: 100vh;
-    padding-top: 20vh;
+    padding-top: 26vh;
     margin-top: 20vh;
     display: flex;
     flex-direction: column;
@@ -157,7 +157,7 @@ p{
 /* COMMENT */
 #projet-comment-container{
     height: 100vh;
-    padding-top: 9vh;
+    padding-top: 14vh;
     padding-left: 8%;
     margin-top: 20vh;
 }
@@ -216,7 +216,7 @@ p{
 #projet-next-container{
     height: 100vh;
     margin-top: 20vh;
-    padding-top: 10vh;
+    padding-top: 14vh;
     padding-right: 8%;
     display: flex;
     flex-direction: column;

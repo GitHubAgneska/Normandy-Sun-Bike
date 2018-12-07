@@ -83,4 +83,7 @@ export class ProjectComponent implements OnInit {
       );
     }
 
+    ngOnDestroy(){
+      window.scrollTo(0,0);
+    }
 }

@@ -1,21 +1,31 @@
-
-
-
-  <div id class="container-fluid navbarContainer">
-    <label for="toggle">&#9776;</label>
-    <input type="checkbox" id="toggle"/>
-    <nav class="navbar row">
-      <div id="logo" class="col">
-      <h1 class="navbar-brand" href="#">NORMANDY<br>SUN BIKE TOUR</h1>
+ <div id="navbarContainer">
+  
+    <!-- toggle -->
+    
+    <div id="toggle-container">
+        <div id=toggle (click)="toggle()">
+            <!-- <label for="toggle">&#9776;</label> -->
+            <svg version="1.1" id="toggleSVG"  x="0px" y="0px" width="50px" height="28px" viewBox="0 0 50 28" enable-background="new 0 0 50 28" xml:space="preserve">
+              <rect y="26" width="50" height="2"/>
+              <rect y="13" width="50" height="2"/>
+              <rect width="50" height="2"/>
+            </svg>
+        </div>
       </div>
-      <a routerLink="leProjet" class="col">LE PROJET</a>
-      <a routerLink="sunTripTour2019" class="col">SUN TRIP TOUR 2019</a>
-      <a routerLink="sunTripTour2020" class="col">SUN TRIP 2020</a>
-      <a routerLink="sponsors" class="col">SPONSORS</a>
-      <a routerLink="blog" class="col">BLOG</a>
-      <a routerLink="contact" class="col">CONTACT</a>
+
+    <nav id="navbar">
+      <div id="logo" routerLink="/landingPage" >
+          <img [src]="logo" alt="logo" />
+      </div>
+      <div id="navLinks" class="row text">
+        <a routerLink="/Projet" (click)="toggle()" class="categorie col-sm">LE PROJET</a>
+        <a routerLink="/SunTrip" (click)="toggle()" class="categorie col-sm">THE SUN TRIP</a>
+        <a routerLink="/Sponsors" (click)="toggle()" class="categorie col-sm">SPONSORS</a>
+        <a routerLink="/Blog" (click)="toggle()" class="categorie col-sm">BLOG</a>
+        <a routerLink="/contact" (click)="toggle()" class="categorie categorie-end col-sm">CONTACT</a>
+      </div>
     </nav>
-  </div>
+ </div>
 
 
  
