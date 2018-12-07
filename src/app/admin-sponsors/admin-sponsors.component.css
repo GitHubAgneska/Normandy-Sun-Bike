@@ -125,6 +125,7 @@
     margin-left: 2%;
     margin-right: 2%;
 }
+
 @media screen and (min-width: 640px) and (max-width: 960px){
     .blog-element-infos{
         width:50%; 
@@ -165,7 +166,7 @@
         font-size: 1rem;
     }
     .blog-element-button{
-        display: none;
+      
     }
 }
 
