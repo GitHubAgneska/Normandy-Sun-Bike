@@ -27,7 +27,7 @@ export class ActualityComponent implements OnInit {
     img.id = 'checkmark';
     img.alt = 'checkmark';
 
-    document.getElementById(p_id).append(img);
+    document.getElementById(p_id).appendChild(img);
   }
 
   private removeCheckmark(p_id): void {
