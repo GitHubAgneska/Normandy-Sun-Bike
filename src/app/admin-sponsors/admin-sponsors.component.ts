@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Sponsor } from './sponsorClass';
+import { SPONSORS } from './mock-sponsors';
 
 @Component({
   selector: 'app-admin-sponsors',
@@ -6,6 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-sponsors.component.css']
 })
 export class AdminSponsorsComponent implements OnInit {
+
+
+  sponsors = SPONSORS;
+
+
+
+  public diplayNewSponsorFields:boolean = true;
+
+ 
+
+
 
   constructor() { }
 
@@ -31,5 +44,12 @@ export class AdminSponsorsComponent implements OnInit {
   
       fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files)); */
   }
+
+
+
+
+  
+      
+  
 
 }
