@@ -12,11 +12,11 @@ export class AdminSponsorsComponent implements OnInit {
 
   sponsors = SPONSORS;
 
-
-
+  // create new sponsor field - directive 
   public diplayNewSponsorFields:boolean = true;
 
- 
+  // delete sponsor button
+  
 
 
 

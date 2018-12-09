@@ -8,9 +8,24 @@ export class DisplayNewSponsorFieldDirective {
 
 
   constructor(private tplRef : TemplateRef <any>, private vwRef:ViewContainerRef) { }
- 
+  
+  @HostListener('click') onclick() {
+    this.appDisplayNewSponsorField = true;
+  }
 
-  @Input() set appDisplayNewSponsorField(el : HTMLBaseElement) {
+
+  @Input() set appDisplayNewSponsorField(condition:boolean) {
+    if (this.appDisplayNewSponsorField == true){
+      this.vwRef.createEmbeddedView(this.tplRef);
+    }else{
+      this.vwRef.clear();
+
+    }
+  }
+
+
+
+ /*  @Input() set appDisplayNewSponsorField(el : HTMLBaseElement) {
 
     el.addEventListener('click', () => { 
 
@@ -19,7 +34,7 @@ export class DisplayNewSponsorFieldDirective {
 
     })
     
-  }
+  } */
  
 
 }

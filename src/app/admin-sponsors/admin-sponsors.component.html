@@ -18,12 +18,12 @@
           <div class="sponsor-element-container" >
             <div>
               <div class="vertical-line"></div>
-              <div class="vertical-line"></div> 
+              <div class="horizontal-line"></div> 
             </div>
             <div class="sponsor-element-infos">
               <h4 class="sponsor-element-title text">Ajouter</h4>
               <div class="sponsor-element-button text">
-                <button type="button" class="btn btn-lg" id="addSponsorBtn" (click)="displayNewsponsorFields = true"> + </button></div>
+                <button type="button" class="btn btn-lg" id="addSponsorBtn" (onclick)="displayNewsponsorFields = true"> + </button></div>
             </div>
           </div>
 
@@ -33,15 +33,18 @@
 
           <div *ngFor = "let sponsor of sponsors" class="sponsor-element-container">
             <div>
-              <div class="circle"></div>
+              <div class="circle" ></div>
               <div class="vertical-line"></div> 
             </div>
-            <img src="{{sponsor.img}}" />           
+            <div class="logo-container img-fluid">
+              <img src="{{sponsor.img}}" /> 
+            </div>          
             <div class="sponsor-element-infos">
-              <h4 class="sponsor-element-level text">Level {{sponsor.level}}</h4>
-              <div class="sponsor-element-button text">
-                <button class="btn btn-lg" id ="editSponsorBtn">editer</button>
-                <button class="btn btn-lg" id ="deleteSponsorBtn">supprimer</button>                
+              <h4 class="sponsor-element-level subsubtitle">Nom: {{sponsor.name}} <br/>Level: {{sponsor.level}}</h4>
+              <div class="sponsor-element-button">
+              <div class="sponsor-element-button ">
+                  <button class="btn btn-lg d-block mb-3" id ="editSponsorBtn" (click)="displayEditSponsorField = true">editer</button>
+                <button class="btn btn-lg d-block" id ="deleteSponsorBtn" (click) = "areYouSure">supprimer</button>                
               </div>  
             </div>
           </div>
@@ -51,7 +54,8 @@
 
 <!------  INPUT FIELDS - CREATE or EDIT  SPONSOR - ( STRUCTURAL DIRECTIVE ) ------->
 
-          <div *appDisplayNewSponsorField ="displayNewSponsorFields" class="sponsors-input-container col-lg-8 col-sm-9 col-xs-12">
+          <div class="sponsors-input-container col-lg-8 col-sm-9 col-xs-12">
+              <!-- *appDisplayNewSponsorField ="displayNewSponsorFields" -->
 
             <div class="sponsor-logo-input">
             
