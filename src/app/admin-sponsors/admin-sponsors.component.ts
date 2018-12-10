@@ -11,10 +11,9 @@ export class AdminSponsorsComponent implements OnInit {
 
 
   sponsors = SPONSORS;
+  sponsorVisible:boolean = false;
 
-  // create new sponsor field - directive 
-  public diplayNewSponsorFields:boolean = true;
-
+  
   // delete sponsor button
   
 
@@ -44,6 +43,13 @@ export class AdminSponsorsComponent implements OnInit {
   
       fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files)); */
   }
+
+  // create new sponsor field - directive 
+  public displayNewSponsorFields(){
+    this.sponsorVisible = true;
+  }
+
+  
 
 
 

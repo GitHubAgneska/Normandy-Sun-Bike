@@ -18,11 +18,10 @@ const routes: Routes = [
   {path: 'admin/log-in', component: LogInComponent, pathMatch: 'full'},
   {path: 'admin/navigation', component: NavPageComponent, pathMatch: 'full'},
   {path: 'landingPage', component: LandingPageComponent, pathMatch:'full' },
-  {path: 'admin/sponsors', component: AdminSponsorsComponent, pathMatch: 'full'},
 
   // Provisoire pour test header page admin
   {path: 'admin/header1', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Actualité'}},
-  {path: 'admin/header2', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Sponsors'}},
+  {path: 'admin/sponsors', component: AdminSponsorsComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Sponsors'}},
   {path: 'admin/header3', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Courses'}}
 
 
