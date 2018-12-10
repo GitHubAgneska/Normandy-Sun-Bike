@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   public logo = "../../assets/logoNSB_navbar.png";
-  public topBarColor = "#06402B"
+  public topBarColor = "#173132"
 
   // public 
 

@@ -19,14 +19,15 @@ const routes: Routes = [
   {path: 'Blog', component: BlogArticleElementComponent, pathMatch: 'full'},
   {path: 'Projet', component: ProjectComponent, pathMatch: 'full'},
   {path: 'Sponsors', component: SponsorComponent, pathMatch: 'full'},
-  {path: 'landingPage', component: LandingPageComponent, pathMatch: 'full' },
-  {path: 'contactPage', component: ContactPageComponent, pathMatch: 'full'},
+  {path: 'Contact', component: ContactPageComponent, pathMatch: 'full'},
   {path: 'admin', component: LogInComponent, pathMatch: 'full'},
   {path: 'admin/navigation', component: NavPageComponent, pathMatch: 'full'},
   {path: 'admin/sponsors', component: AdminSponsorsComponent, pathMatch: 'full'},
   {path: 'admin/actuality', component: ActualityComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Actualité'}},
   {path: 'admin/sponsors', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Sponsors'}},
-  {path: 'admin/races', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Courses'}}
+  {path: 'admin/races', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Courses'}},
+  { path: "", redirectTo:'Accueil', pathMatch:"full"}
+
 
 ];
 

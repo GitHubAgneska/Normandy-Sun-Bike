@@ -69,20 +69,20 @@ body, html, h1, h2, h3, h4, h5, h6 {
 .circle{
     height: 3em;
     width: 3em;
-    border: solid 6px #000;
+    border: solid 8px #000;
     border-radius: 50%;
     margin: 1em;
     }
 
 
 .lign-horizon{
-    border-top: solid 6px #000; 
+    border-top: solid 8px #000; 
     height: 0;
     }
 
 
 .ling-vertical{
-    border-left: solid 6px #000;
+    border-left: solid 8px #000;
     height: 0;
     } 
 
