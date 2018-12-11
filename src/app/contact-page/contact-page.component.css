@@ -1,9 +1,12 @@
 
 .contactPage-container{
-    padding-top:20%;
+    padding-top:12vh;
     color:#fff;
     background-color: grey;
     height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -15,11 +18,9 @@
 
 
 .contact-fields{
-    width:70%;
-    margin-left:15%;
+    width:60%;
     display: block;
     align-items: center;
-    padding:5rem;
 }
 
 @media only screen and (max-width: 640px){

@@ -1,27 +1,14 @@
-
 .footer-container{
     background-color: grey;
     opacity:0.5;
     transition: 1s;
+    padding-bottom: 5vh;
 
 }
-
-
 .legal-container p{
-    padding-bottom:5%;
-    color:#fff;
-    font-size: 2vw;
-    
+    color:#fff;   
 }
-
-.copyright{
-    padding:2%;
-
-    font-size: 2vw;
-
-}
-
 .logo-footer{
-    width:20%;
-    padding-top:2%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }

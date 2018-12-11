@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActualityComponent implements OnInit {
 
-  public sections: any[] = [{ id: 'tripPlan', name: '\"plannification\"' },
+  public sections: any[] = [{ id: 'tripPlan', name: '\"planification\"' },
                             { id: 'trip2019', name: '\"Sun Trip Tour 2019\"' },
                             { id: 'trip2020', name: '\"Sun Trip 2020\"' }];
 
