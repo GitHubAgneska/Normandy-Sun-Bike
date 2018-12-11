@@ -3,6 +3,10 @@
 <!------  INPUT FIELDS - CREATE NEW SPONSOR  ------->
 
 <div class="add-sponsors-container">
+
+  <!------ image upload  ------->
+
+
   <div class="uploading-area">          
     <angular-file-uploader [config]="afuConfig"></angular-file-uploader>
     <div *ngFor="let file of fileUploads">
@@ -10,25 +14,33 @@
         <img src="{{file.url}}"/>
     </div>
   </div>  
+
+  <!------ form fields for adding sponsor ------->
+
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+      Value : {{ registerForm.value | json }} 
+
     <div class="form-group">
 
-    </div>
+      <mat-form-field appearance="outline">
+         <input matInput placeholder="sponsorName" formControlName="sponsorName" aria-label="sponsor-name">
+      </mat-form-field>
 
+      <mat-form-field appearance="fill">
+          <textarea rows="10" matInput placeholder="sponsorDescription" formControlName="sponsorDescription" aria-label="sponsor-description"></textarea>
+       </mat-form-field>
+
+       <mat-form-field>
+         <mat-select formControlName="sponsorLevel" placeholder="Type de sponsor">
+           <mat-option value="option">Level 1</mat-option>
+           <mat-option value="option">Level 2</mat-option>
+           <mat-option value="option">Level 3</mat-option>
+         </mat-select>
+       </mat-form-field>
+
+    </div>
   </form>
-  <input type="text" class="sponsors-input-fields form-control" aria-label="sponsor-name" aria-describedby="basic-addon1" placeholder="Nom">
-  <textarea rows="8" class="form-control sponsors-input-fields"  placeholder="Description"></textarea>
-
-  <!-- dropdown menu sponsor level selection -->
-
-  <div class="input-group-prepend">
-    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type de sponsor</button>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Principal</a>
-      <a class="dropdown-item" href="#">Secondaire</a>
-      <a class="dropdown-item" href="#">Tertiaire</a>
-    </div>
-  </div>
-
+ 
   <button class="btn btn-lg sponsors-input-fields" id="validate-btn" click="onSubmit()">Valider</button>
 </div>

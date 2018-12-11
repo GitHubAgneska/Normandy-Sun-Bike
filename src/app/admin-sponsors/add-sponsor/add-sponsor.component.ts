@@ -18,17 +18,26 @@ export class AddSponsorComponent implements OnInit {
 
   registerForm : FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) { }  // add formbuilder service
 
   ngOnInit() {
-    this.registerForm = this.formBuilder.group( {
+    this.registerForm = this.formBuilder.group( {  // create data model for this form
 
-      name:[ '', Validators.required],
-      description: [ '', Validators.required]
+
+      sponsorImg:[''],
+      sponsorName:[ '', Validators.required],
+      sponsorDescription: [ '', Validators.required],
+      sponsorLevel:['']
+
     })
+
+    // EXTRACT DATA FROM FORM
+    this.registerForm.valueChanges.subscribe(console.log )  
   }
 
   
+
+  // 
   handleFileInput(files: FileList) {
     this.fileToUpload = files.item(0);
   }

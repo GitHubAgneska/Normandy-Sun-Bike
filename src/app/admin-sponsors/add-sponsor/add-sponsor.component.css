@@ -17,6 +17,13 @@
     justify-content: space-around !important;
 }
 
+
+.form-group{
+    display:flex !important;
+    flex-direction: column;
+}
+
+
 .sponsors-input-group {
     margin-left:15%;
     
@@ -33,21 +40,3 @@
     margin: auto;
 }
 
-.sponsor-type-btn{
-}
-
-.input-group-prepend{
-    margin-left:30% !important;
-}
-
-.form-group-upload-img{
-    background-color: rgb(154, 153, 153);
-    width:50%;
-    padding:0.2rem;
-    border-radius:5px;
-    margin:auto; 
-}
-
-.form-group-upload-img input, label{
-    color:#fff;
-}
