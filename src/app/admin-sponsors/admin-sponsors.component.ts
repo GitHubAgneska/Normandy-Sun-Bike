@@ -14,48 +14,17 @@ export class AdminSponsorsComponent implements OnInit {
   sponsorVisible:boolean = false;
 
   
-  // delete sponsor button
-  
-
-
-
   constructor() { }
 
   ngOnInit() {
 
-   /*  const fileInput = document.getElementById('file-input');
-    const output = document.getElementById('output');
-
-    function doSomethingWithFiles(fileList) {
-      let file = null;
-  
-      for (let i = 0; i < fileList.length; i++) {
-        if (fileList[i].type.match(/^image\//)) {
-          file = fileList[i];
-          break;
-        }
-      }
-  
-        if (file !== null) {
-          output.src = URL.createObjectURL(file);
-      }
     }
-  
-      fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files)); */
-  }
 
-  // create new sponsor field - directive 
+  // create new sponsor field - directive *ngIf
   public displayNewSponsorFields(){
     this.sponsorVisible = true;
   }
 
-  
 
-
-
-
-  
-      
-  
 
 }

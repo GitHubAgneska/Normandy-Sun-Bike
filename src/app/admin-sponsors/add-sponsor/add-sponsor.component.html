@@ -19,7 +19,7 @@
 
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
-      Value : {{ registerForm.value | json }} 
+      <!-- Value : {{ registerForm.value | json }} // display input infos --> 
 
     <div class="form-group">
 
@@ -39,8 +39,12 @@
          </mat-select>
        </mat-form-field>
 
+       <!-- <mat-checkbox formControlName="confirmer" color="primary">Confirmer</mat-checkbox> -->
+
     </div>
   </form>
- 
+  
+
   <button class="btn btn-lg sponsors-input-fields" id="validate-btn" click="onSubmit()">Valider</button>
+  <button class="btn btn-lg sponsors-input-fields" id="cancel-btn" click="cancel()">Annuler</button>
 </div>

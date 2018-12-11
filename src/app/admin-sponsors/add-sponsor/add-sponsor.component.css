@@ -15,13 +15,18 @@
 
 .uploading-area{
     justify-content: space-around !important;
+    border:1px solid grey;
+    padding:1%;
+    border-radius:5px;
 }
 
 
 .form-group{
     display:flex !important;
-    flex-direction: column;
+    flex-direction: column !important;
 }
+
+
 
 
 .sponsors-input-group {
@@ -39,4 +44,5 @@
     margin:2rem;
     margin: auto;
 }
+
 

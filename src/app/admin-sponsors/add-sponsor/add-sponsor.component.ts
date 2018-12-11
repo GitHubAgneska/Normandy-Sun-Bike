@@ -27,9 +27,17 @@ export class AddSponsorComponent implements OnInit {
       sponsorImg:[''],
       sponsorName:[ '', Validators.required],
       sponsorDescription: [ '', Validators.required],
-      sponsorLevel:['']
+      sponsorLevel:[''],
+      agree: [false, [
+        Validators.requiredTrue
+      ]]
 
-    })
+    });
+
+    /* get sponsorName() {
+      return this.sponsorName.get('sponsorName');
+    } */
+
 
     // EXTRACT DATA FROM FORM
     this.registerForm.valueChanges.subscribe(console.log )  
@@ -41,6 +49,7 @@ export class AddSponsorComponent implements OnInit {
   handleFileInput(files: FileList) {
     this.fileToUpload = files.item(0);
   }
+
 
 
 // ANGULAR FILE UPLOADER MODULE CONFIG
@@ -65,6 +74,8 @@ onSelectFile(event) {
     }
   }
 } */
+
+
 
 // VALIDATE BUTTON
 
