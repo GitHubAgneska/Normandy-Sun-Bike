@@ -1,0 +1,34 @@
+
+
+<!------  INPUT FIELDS - CREATE NEW SPONSOR  ------->
+
+<div class="add-sponsors-container">
+  <div class="uploading-area">          
+    <angular-file-uploader [config]="afuConfig"></angular-file-uploader>
+    <div *ngFor="let file of fileUploads">
+        {{file.name}}
+        <img src="{{file.url}}"/>
+    </div>
+  </div>  
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+
+    </div>
+
+  </form>
+  <input type="text" class="sponsors-input-fields form-control" aria-label="sponsor-name" aria-describedby="basic-addon1" placeholder="Nom">
+  <textarea rows="8" class="form-control sponsors-input-fields"  placeholder="Description"></textarea>
+
+  <!-- dropdown menu sponsor level selection -->
+
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type de sponsor</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Principal</a>
+      <a class="dropdown-item" href="#">Secondaire</a>
+      <a class="dropdown-item" href="#">Tertiaire</a>
+    </div>
+  </div>
+
+  <button class="btn btn-lg sponsors-input-fields" id="validate-btn" click="onSubmit()">Valider</button>
+</div>

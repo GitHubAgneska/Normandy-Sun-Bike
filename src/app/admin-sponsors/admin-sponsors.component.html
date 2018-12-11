@@ -8,12 +8,12 @@
 
  <!------   STATIC BLOCK : SPONSORS LIST  ------->
       
-        <div  class="sponsorList col-lg-4 col-sm-3 col-xs-12">
+        <div  class="sponsorList col-lg-4 col-md-3 col-sm-3 col-xs-12">
 
 
       <!------  First Block : ajouter sponsor  ------->
 
-          <div class="sponsor-element-container" >
+          <div class="sponsor-element-container pb-3" >
             <div>
               <div class="vertical-line"></div>
               <div class="horizontal-line"></div> 
@@ -29,16 +29,16 @@
        <!------   Sponsor Blocks   --------->
 
 
-          <div *ngFor = "let sponsor of sponsors" class="sponsor-element-container">
+          <div *ngFor = "let sponsor of sponsors" class="sponsor-element-container sponsors pb-3 pt-3">
             <div>
               <div class="circle" ></div>
               <div class="vertical-line"></div> 
             </div>
-            <div class="logo-container img-fluid">
+            <div class="logo-container img-fluid m-auto">
               <img src="{{sponsor.img}}" /> 
             </div>          
             <div class="sponsor-element-infos">
-              <h4 class="sponsor-element-level subsubtitle">Nom: {{sponsor.name}} <br/>Level: {{sponsor.level}}</h4>
+              <h4 class="sponsor-element-level ">Nom: {{sponsor.name}} <br/>Level: {{sponsor.level}}</h4>
               <div class="sponsor-element-button">
               <div class="sponsor-element-button ">
                   <button class="btn btn-lg d-block mb-3" id ="editSponsorBtn" (click)="displayEditSponsorField = true">editer</button>
@@ -50,48 +50,14 @@
 
         </div>
       </div>
-<!------  INPUT FIELDS - CREATE or EDIT  SPONSOR  ------->
 
-      <div  *ngIf="sponsorVisible == true" class="sponsors-input-container col-lg-8 col-sm-9 col-xs-12">
-      
 
-        <div class="sponsor-logo-input">
-        
-          <img class="logo-container" id="output" src="output.src"/>
+<!------  INPUT FIELDS - CREATE NEW SPONSOR  ------->
 
-  <!-------  browse & upload img menu ------->
-          <div class="browse-upload-btns">
-            <div class=" browseImg input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-              </div>
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-              </div>
-            </div>
-          </div>
+      <div *ngIf="sponsorVisible == true" class="sponsors-input-container col-lg-8  col-md-9 col-ms-9 col-xs-12">    
+        <app-add-sponsor></app-add-sponsor>
+      </div>
 
-        </div>  
-        <input type="text" class="sponsors-input-fields form-control" aria-label="sponsor-name" aria-describedby="basic-addon1" placeholder="Nom">
-        <textarea rows="8" class="form-control sponsors-input-fields"  placeholder="Description"></textarea>
-
-<!-- dropdown menu sponsor level selection -->
-
-        <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type de sponsor</button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Principal</a>
-            <a class="dropdown-item" href="#">Secondaire</a>
-            <a class="dropdown-item" href="#">Tertiaire</a>
-          </div>
-        </div>
-      
-      <button class="btn btn-lg sponsors-input-fields">Valider</button>
-
-    </div>
-
-    
 
   </div>
 

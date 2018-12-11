@@ -1,0 +1,53 @@
+
+
+
+
+.add-sponsors-container{
+    height:100%;
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin:0 auto;
+    text-align: center; 
+} 
+
+
+.uploading-area{
+    justify-content: space-around !important;
+}
+
+.sponsors-input-group {
+    margin-left:15%;
+    
+}
+
+.sponsors-input-container img  {   
+    width:40%;
+    margin:2rem; 
+}
+
+.sponsors-input-container .sponsors-input-fields{
+    width:100%;
+    margin:2rem;
+    margin: auto;
+}
+
+.sponsor-type-btn{
+}
+
+.input-group-prepend{
+    margin-left:30% !important;
+}
+
+.form-group-upload-img{
+    background-color: rgb(154, 153, 153);
+    width:50%;
+    padding:0.2rem;
+    border-radius:5px;
+    margin:auto; 
+}
+
+.form-group-upload-img input, label{
+    color:#fff;
+}
