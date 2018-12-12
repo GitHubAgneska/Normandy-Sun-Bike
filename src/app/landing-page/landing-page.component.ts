@@ -52,21 +52,34 @@ export class LandingPageComponent implements OnInit {
     }
   }
 
+
   crslToLeft(){
     let leftArrow = document.getElementById("crsl-left-arrow");
     let rightArrow = document.getElementById("crsl-right-arrow");
+    const arrow1 = document.getElementById("carousel-nav-circle1")
+    const arrow2 = document.getElementById("carousel-nav-circle2")
+    const arrow3 = document.getElementById("carousel-nav-circle3")
+    const arrow4 = document.getElementById("carousel-nav-circle4")
 
     let position;
 
     if(this.crslImgs[0]['offsetLeft'] < 0 && this.crslImgs[1]['offsetLeft'] > 0){
       position = 64;
-      leftArrow.style.opacity = "0";
+      // leftArrow.style.opacity = "0";
+      arrow1.style.opacity = "0.8";
+      arrow2.style.opacity = "0";
+      arrow3.style.opacity = "0";
+
       this.crslImgs[0]['style'].opacity = "1";
       this.crslImgs[1]['style'].opacity = "0.5";
       this.crslImgs[2]['style'].opacity = "0.5";
     } else if (this.crslImgs[0]['offsetLeft'] < 0 && this.crslImgs[1]['offsetLeft'] < 0) {
       position = 0;
-      rightArrow.style.opacity = "1";
+      // rightArrow.style.opacity = "1";
+      arrow2.style.opacity = "0.8";
+      arrow3.style.opacity = "0.8";
+      arrow4.style.opacity = "0";
+
       this.crslImgs[0]['style'].opacity = "0.5";
       this.crslImgs[1]['style'].opacity = "1";
       this.crslImgs[2]['style'].opacity = "0.5";
@@ -80,18 +93,30 @@ export class LandingPageComponent implements OnInit {
   crslToRight(){
     let leftArrow = document.getElementById("crsl-left-arrow");
     let rightArrow = document.getElementById("crsl-right-arrow");
+    const arrow1 = document.getElementById("carousel-nav-circle1")
+    const arrow2 = document.getElementById("carousel-nav-circle2")
+    const arrow3 = document.getElementById("carousel-nav-circle3")
+    const arrow4 = document.getElementById("carousel-nav-circle4")
 
     let position;
 
     if(this.crslImgs[0]['offsetLeft'] < 0 && this.crslImgs[1]['offsetLeft'] > 0){
       position = -64;
-      rightArrow.style.opacity = "0";
+      // rightArrow.style.opacity = "0";
+      arrow2.style.opacity = "0";
+      arrow3.style.opacity = "0";
+      arrow4.style.opacity = "0.8";
+
       this.crslImgs[0]['style'].opacity = "0.5";
       this.crslImgs[1]['style'].opacity = "0.5";
       this.crslImgs[2]['style'].opacity = "1";
     } else if (this.crslImgs[0]['offsetLeft'] > 0 && this.crslImgs[1]['offsetLeft'] > 0) {
       position = 0;
-      leftArrow.style.opacity = "1";
+      // leftArrow.style.opacity = "1";
+      arrow1.style.opacity = "0";
+      arrow2.style.opacity = "0.8";
+      arrow3.style.opacity = "0.8";
+
       this.crslImgs[0]['style'].opacity = "0.5";
       this.crslImgs[1]['style'].opacity = "1";
       this.crslImgs[2]['style'].opacity = "0.5";
