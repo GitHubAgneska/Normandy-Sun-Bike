@@ -22,22 +22,16 @@ import { LogInComponent } from './admin/log-in/log-in.component';
 import { NavPageComponent } from './admin/nav-page/nav-page.component';
 import { HeaderComponent } from './admin/header/header.component';
 import { AdminSponsorsComponent } from './admin-sponsors/admin-sponsors.component';
-<<<<<<< HEAD
 import { FooterComponent } from './footer/footer.component';
-=======
->>>>>>> adminSponsors
 import { NavbarComponent } from './navbar/navbar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarColorDirective } from './navbar/navbar-color.directive';
 import { SponsorsLandingComponent } from './landing-page/sponsors-landing/sponsors-landing.component';
-<<<<<<< HEAD
 import { ActualityComponent } from './admin/actuality/actuality.component';
-=======
 import { AddSponsorComponent } from './admin-sponsors/add-sponsor/add-sponsor.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
->>>>>>> adminSponsors
 
 @NgModule({
   declarations: [
@@ -51,21 +45,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavPageComponent,
     HeaderComponent,
     AdminSponsorsComponent,
-<<<<<<< HEAD
     FooterComponent,
-=======
->>>>>>> adminSponsors
     NavbarComponent,
     LandingPageComponent,
     NavbarColorDirective,
     SponsorsLandingComponent,
-<<<<<<< HEAD
     ContactPageComponent,
     SponsorComponent,
-    ActualityComponent
-=======
+    ActualityComponent,
     AddSponsorComponent
->>>>>>> adminSponsors
   ],
   imports: [
     BrowserModule,
