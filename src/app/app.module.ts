@@ -11,6 +11,7 @@ import { LogInComponent } from './admin/log-in/log-in.component';
 import { NavPageComponent } from './admin/nav-page/nav-page.component';
 import { HeaderComponent } from './admin/header/header.component';
 import { ActualityComponent } from './admin/actuality/actuality.component';
+import { RaceComponent } from './admin/race/race.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ActualityComponent } from './admin/actuality/actuality.component';
     LogInComponent,
     NavPageComponent,
     HeaderComponent,
-    ActualityComponent
+    ActualityComponent,
+    RaceComponent
   ],
   imports: [
     BrowserModule,
