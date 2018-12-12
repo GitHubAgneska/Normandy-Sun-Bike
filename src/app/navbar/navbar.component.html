@@ -19,7 +19,14 @@
       </div>
       <div id="navLinks" class="row text">
         <a routerLink="/Projet" (click)="toggle()" class="categorie col-sm">LE PROJET</a>
-        <a routerLink="/SunTrip" (click)="toggle()" class="categorie col-sm">THE SUN TRIP</a>
+        <div class="col-sm" id ="suntrip-select">
+          <a id="suntrip-select-title" class="categorie">THE SUN TRIP</a>
+          <div id="suntrip-select-container">
+            <a routerLink="/SunTripTour2019" (click)="toggle()">THE SUN TRIP TOUR 2019</a>
+            <div></div>
+            <a routerLink="/SunTrip2020" (click)="toggle()">THE SUN TRIP 2020</a>
+          </div>
+        </div>
         <a routerLink="/Sponsors" (click)="toggle()" class="categorie col-sm">SPONSORS</a>
         <a routerLink="/Blog" (click)="toggle()" class="categorie col-sm">BLOG</a>
         <a routerLink="/Contact" (click)="toggle()" class="categorie categorie-end col-sm">CONTACT</a>

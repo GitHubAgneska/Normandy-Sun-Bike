@@ -1,5 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { AngularFileUploaderModule } from 'angular-file-uploader';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule} from '@angular/material/checkbox';
+import { MatChipsModule } from '@angular/material/chips';
+
 
 import { AppComponent } from './app.component';
 import { RacesPresentationComponent } from './races-presentation/races-presentation.component';
@@ -21,6 +30,9 @@ import { NavbarColorDirective } from './navbar/navbar-color.directive';
 import { SponsorsLandingComponent } from './landing-page/sponsors-landing/sponsors-landing.component';
 import { ActualityComponent } from './admin/actuality/actuality.component';
 import { RaceComponent } from './admin/race/race.component';
+import { AddSponsorComponent } from './admin-sponsors/add-sponsor/add-sponsor.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -42,12 +54,23 @@ import { RaceComponent } from './admin/race/race.component';
     ContactPageComponent,
     SponsorComponent,
     ActualityComponent,
-    RaceComponent
+    RaceComponent,
+    AddSponsorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AngularFileUploaderModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
