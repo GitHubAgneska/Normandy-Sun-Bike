@@ -22,16 +22,20 @@
 
 
 .sponsor-element-container{
-    width: 100%;
-    height: auto;
+/*     width: 100%;
+    height: auto; */
     display: flex;
     margin-bottom: 3vw;
     border-bottom: grey solid 1px;
+    
 
 }
+
 .sponsorList{
-    margin:auto;
+    height:100vh;
     padding-right:2% !important;
+    width:auto;
+    
 }
 
 .logo-container img{        
@@ -53,10 +57,11 @@
 
 
     .sponsor-element-container{
-        width: 60%;
-        height: auto;
+        width: 60%;   
         display: flex;
         margin-bottom: 3vw;
+        transition: 1s; 
+        
     }
 
     .circle, .vertical-line{
@@ -65,8 +70,8 @@
     
     .sponsorList{
         padding-right:0;
-
-        
+        height:100vh;
+        overflow:scroll;   
     }
 
     .logo-container img{        
@@ -76,6 +81,7 @@
 }
 
 @media only screen and (max-width : 640px){
+
     .circle, .vertical-line{
         display:none;
     }
@@ -83,12 +89,22 @@
     .sponsors{
         width:30%;
         display:inline-block;
-        
+        transition: 1s;  
     }
 
 
     .sponsor-element-infos{
         width:20%;
+        justify-content: center;
+    }
+
+    .sponsor-element-infos h4{
+        font-size:1rem;
+
+    }
+    .sponsor-element-infos button{
+        font-size:1rem;
+
     }
 }
 
@@ -117,7 +133,7 @@
 /*  EDIT SPONSORS SECTION   */
 
  .sponsors-input-container{
-    margin-top:5%;
+    margin-top:2%;
     border-left: grey solid 1px;
 
 }

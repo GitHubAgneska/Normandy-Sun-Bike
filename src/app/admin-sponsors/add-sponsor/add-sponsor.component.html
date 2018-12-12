@@ -9,6 +9,7 @@
 
   <div class="uploading-area">          
     <angular-file-uploader [config]="afuConfig"></angular-file-uploader>
+   <!--  <input style="display: none" type="file" (change)="onFileChanged($event)"  #fileInput> -->
     <div *ngFor="let file of fileUploads">
         {{file.name}}
         <img src="{{file.url}}"/>
@@ -24,20 +25,26 @@
     <div class="form-group">
 
       <mat-form-field appearance="outline">
-         <input matInput placeholder="sponsorName" formControlName="sponsorName" aria-label="sponsor-name">
+         <input matInput placeholder="Nom du sponsor" formControlName="sponsorName" aria-label="sponsor-name">
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
-          <textarea rows="10" matInput placeholder="sponsorDescription" formControlName="sponsorDescription" aria-label="sponsor-description"></textarea>
-       </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Lien du sponsor" formControlName="sponsorLink" aria-label="sponsor-link">
+      </mat-form-field>
 
-       <mat-form-field>
-         <mat-select formControlName="sponsorLevel" placeholder="Type de sponsor">
-           <mat-option value="option">Level 1</mat-option>
-           <mat-option value="option">Level 2</mat-option>
-           <mat-option value="option">Level 3</mat-option>
-         </mat-select>
-       </mat-form-field>
+      <mat-form-field> 
+        <mat-select formControlName="sponsorLevel" placeholder="Type de sponsor">
+          <mat-option value="option" (click)="displayDescriptionField()">Level 1</mat-option>
+          <mat-option value="option" (click)="hideDescriptionField()">Level 2</mat-option>
+          <mat-option value="option" (click)="hideDescriptionField()">Level 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="selectLevel1 == true" appearance="fill">
+          <textarea rows="10" matInput placeholder="Description" formControlName="sponsorDescription" aria-label="sponsor-description"></textarea>
+      </mat-form-field>
+
+
 
        <!-- <mat-checkbox formControlName="confirmer" color="primary">Confirmer</mat-checkbox> -->
 

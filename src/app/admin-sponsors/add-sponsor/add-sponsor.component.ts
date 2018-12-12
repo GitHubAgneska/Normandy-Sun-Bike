@@ -18,6 +18,13 @@ export class AddSponsorComponent implements OnInit {
 
   registerForm : FormGroup;
 
+  selectLevel1:boolean = false;
+  selectLevel2:boolean = false;
+  selectLevel3:boolean = false;
+
+
+
+
   constructor(private formBuilder: FormBuilder) { }  // add formbuilder service
 
   ngOnInit() {
@@ -26,6 +33,7 @@ export class AddSponsorComponent implements OnInit {
 
       sponsorImg:[''],
       sponsorName:[ '', Validators.required],
+      sponsorLink:[''],
       sponsorDescription: [ '', Validators.required],
       sponsorLevel:[''],
       agree: [false, [
@@ -34,7 +42,7 @@ export class AddSponsorComponent implements OnInit {
 
     });
 
-    /* get sponsorName() {
+    /* get sponsorName() {                       // getters & setters ?
       return this.sponsorName.get('sponsorName');
     } */
 
@@ -62,19 +70,56 @@ export class AddSponsorComponent implements OnInit {
 
 
 // DISPLAY IMAGE TO UPLOAD
-/* 
-onSelectFile(event) {
+
+/* onSelectFile(event) {
   if (event.target.files && event.target.files[0]) {
     let reader = new FileReader();
 
     reader.readAsDataURL(event.target.files[0]); // read file as data url
 
     reader.onload = (event) => { // called once readAsDataURL is completed
-      this.url = event.target.result;
+      this.url = event.target.;
     }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+}  */
+
+
+
+  //display img before upload
+
+/*   uploadData: any;
+  selectedFile: File;
+
+
+onFileChanged(event) {
+  this.selectedFile = <File>event.target.files[0];
+  if (event.target.files && event.target.files[0])
+  {
+      var reader = new FileReader();
+      reader.onload = (event: ProgressEvent) => {
+          this.url = (<FileReader>event.target).result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
   }
 } */
 
+
+
+
+// DISPLAY SPONSOR DESCRIPTION FIELD IF LEVEL 1 SELECTED
+public displayDescriptionField() {
+  this.selectLevel1 = true;
+}
+
+// HIDE PONSOR DESCRIPTION FIELD IF LEVEL 1 SELECTED THEN LEVEL 2 or 3 SELECTED
+public hideDescriptionField() {
+  if (this.selectLevel2 || this.selectLevel3 ){
+    return true;
+  }else{
+    return false;
+  }
+}
 
 
 // VALIDATE BUTTON

@@ -3,11 +3,11 @@
 
 
 .add-sponsors-container{
-    height:100%;
+    height:100vh;
     width:80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
     margin:0 auto;
     text-align: center; 
 } 
@@ -18,15 +18,17 @@
     border:1px solid grey;
     padding:1%;
     border-radius:5px;
+    margin-bottom:2%;
 }
+
 
 
 .form-group{
     display:flex !important;
     flex-direction: column !important;
+    margin-bottom:2%;
+
 }
-
-
 
 
 .sponsors-input-group {
@@ -34,15 +36,27 @@
     
 }
 
-.sponsors-input-container img  {   
-    width:40%;
-    margin:2rem; 
-}
+
 
 .sponsors-input-container .sponsors-input-fields{
     width:100%;
     margin:2rem;
-    margin: auto;
+   
 }
 
 
+
+/* input fields */
+
+mat-form-field.mat-form-field{
+    font-size: 1.3rem;
+    
+}
+
+.ng-star-inserted label.btn{
+    font-size: 1.5rem;
+}
+
+#validate-btn, #cancel-btn{
+    margin-bottom:2%;
+}
