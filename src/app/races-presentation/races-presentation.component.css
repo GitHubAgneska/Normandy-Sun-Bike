@@ -1,45 +1,105 @@
 #race-description-page{
     height: 100vh;
-    width: 100%;
+    overflow: hidden;
 }
 /* DESCRIPTION*/
 #race-description-container{
     width: 100%;
     height: 100vh;
-    background: #EEF6A3;
-    background-size: 100%;
+    padding-top: 12vh;
+    background: #000;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color : #fff;
+    transition: 1.5s
 }
 #race-description{
-    width: 100%;
+    width: 95%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    opacity: 0.9;
+    position: relative;
+    overflow: hidden;
 }
 #race-description > h2, #race-description > p, #race-description > a {
     width: 60%;
     margin-left: 10%;
 }
+#race-title{
+    margin-bottom: 2%;
+}
+#race-description > a{
+    color : #fff;
+}
 
-/* button transition */
-#race-button-container{
+.circle{
+    position: absolute;
+    z-index: 700;
+}
+.circle-race{
+    margin-left: 75%;
+    margin-top: 5%;
+    transition: 0.5s;
+}
+.circle-race-blog{
+    margin-left: 25%;
+    margin-top: 8%;
+    transition: 0.5s;
+}
+.circle-race:hover, .circle-race-blog:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.circle-race-blog > div, .circle-race > div {
+    border-top: 1px solid #000;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    margin-left: 50%;
+    transform: rotate(-45deg);
 }
-@media screen and (min-width: 960px){
-    #race-description-container{
-        padding-top: 12vh;
-    }
-    #race-description,#race-blog {
-        height: 80vh;
-    }
-    #race-button-container{
-        height: 8vh;
-    }
-    
+.circle-race-blog > p, .circle-race > p {
+    color:#000;
+    width: 500%;
+    margin-left: 160%;
+    margin-top: -100%;
 }
+.circle-race-blog > div {
+    border-top: 1px solid #000;
+    width: 100%;
+    margin-left: -50%;
+    transform: rotate(45deg);
+}
+.circle-race-blog > p {
+    color:#000;
+    width: 500%;
+    margin-left: -470%;
+    margin-top: -100%;
+}
+
+#path-race{
+    position: absolute;
+    overflow: hidden;
+}
+#path-race > img {
+    width: 100%;
+}
+.path-race-1{
+    width: 65%;
+    margin-top: 23%;
+    margin-left: 13%;
+}
+.path-race-2{
+    width: 63%;
+    margin-top: -13%;
+    margin-left: 14.3%;
+}
+
 @media screen and (min-width: 640px) and (max-width: 960px){
     #race-description-container{
         padding-top: 10vh;
@@ -64,9 +124,6 @@
     #race-description{
         overflow-y: scroll;
     }
-    #race-button-container{
-        height: 7vh;
-    }
 
     #race-description > h2 {
         width: 80%;
@@ -79,27 +136,9 @@
         padding-bottom: 6em;
     }
 }
-#race-button{
-    width: 40%;
-    border-top: solid  2px;
-    transition: 0.3s;
-    transition-timing-function: ease-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-#race-button:hover{
-    width:70%;
-    border-top: solid  1px;
-    transition:0.3s;
-    transition-timing-function: ease-in;
-    cursor: pointer;
-}
+
 
 /* BLOG */
-
 
 /* Background */
 #race-background{
@@ -109,19 +148,20 @@
     position: absolute;
     margin-left: 2%;
     margin-top: 5vh;
-    z-index: 0;
     line-height: 1;
-    color: #EEF6A3;
-    opacity: 0.3;
+    opacity: 0.1;
     /* #f9fde4 */
+    z-index: 0;
 }
 
 
 #race-blog-container{
-    height: 90vh;
+    height: 88vh;
     background:url("../../assets/background_races.png");
     background-position: center;
     background-size: 100%;
+    position: relative;
+    z-index: 10;
 }
 @media screen and (min-width: 640px) and (max-width: 960px){
     #race-blog-container{background-size:140%}
@@ -134,9 +174,12 @@
 }
 
 #race-blog{
-    position: relative;
-    z-index: 10;
+    z-index: 1000;
     width: 100%;
     height: 100%;
     overflow-y: scroll;
+    position: absolute;
+}
+.a{
+    background: url(../../assets/2019-landing.jpg)
 }

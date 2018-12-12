@@ -25,26 +25,26 @@ export class NavbarComponent implements OnInit {
       navbar.style.display="none";
     }
 
-    if (screen.width > 960) {
-      window.addEventListener("scroll",() => {
-        let navbar = document.getElementById("navbarContainer");
-        let categories = document.getElementsByClassName("categorie");
+    // if (screen.width > 960) {
+    //   window.addEventListener("scroll",() => {
+    //     let navbar = document.getElementById("navbarContainer");
+    //     let categories = document.getElementsByClassName("categorie");
 
-        if (window.scrollY > 20){
-          this.logo = "../../assets/logoNSB_blanc.png";
-          navbar.style.background = this.topBarColor;
-          for(let i = 0; i < categories.length; i++){
-            categories[i].classList.add("categorie-color")
-          }
-        } else {
-          this.logo = "../../assets/logoNSB_navbar.png";
-          navbar.style.background = "#fff";
-          for(let i = 0; i < categories.length; i++){
-            categories[i].classList.remove("categorie-color")
-          }
-        }
-      })
-    }
+    //     if (window.scrollY > 20){
+    //       this.logo = "../../assets/logoNSB_blanc.png";
+    //       navbar.style.background = this.topBarColor;
+    //       for(let i = 0; i < categories.length; i++){
+    //         categories[i].classList.add("categorie-color")
+    //       }
+    //     } else {
+    //       this.logo = "../../assets/logoNSB_navbar.png";
+    //       navbar.style.background = "#fff";
+    //       for(let i = 0; i < categories.length; i++){
+    //         categories[i].classList.remove("categorie-color")
+    //       }
+    //     }
+    //   })
+    // }
   }
 
   public togglePosition:boolean= false;
