@@ -57,8 +57,10 @@
 }
 
 .raceDescription{
+    height: 70vh;
     width: 100%;
     border: solid 1px #6f7c91;
+    font-size: 1.5rem;
 }
 
 .raceDescription:focus{
@@ -72,7 +74,7 @@
 
 /*********************** Validation button ***********************/
 .validateBtn{
-    margin-top: 5vh;
+    margin-top: 2vh;
     width: 100%;
     color: #fff;
     border: none;

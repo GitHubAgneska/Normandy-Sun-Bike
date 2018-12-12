@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RaceComponent implements OnInit {
 
-  public raceDescription: any = {r2019: 'Description du Sun Trip Tour 2019', r2020: 'Description du Sun Trip 2020'};
+  public raceDescription: any = {r2019: 'Description du Sun Trip Tour 2019.', r2020: 'Description du Sun Trip 2020.'};
   public textArea: String;
 
   private selectedRace(p_id): void {
