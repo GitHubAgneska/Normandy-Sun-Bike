@@ -5,6 +5,7 @@ import { BlogArticleElementComponent } from './blog/blog-article-element/blog-ar
 import { LogInComponent } from './admin/log-in/log-in.component';
 import { NavPageComponent } from './admin/nav-page/nav-page.component';
 import { ActualityComponent } from './admin/actuality/actuality.component';
+import { ArticleComponent } from './admin/article/article.component';
 // Provisoire pour test header page admin
 import { HeaderComponent } from './admin/header/header.component';
 // importer le composent lier à la route
@@ -18,7 +19,8 @@ const routes: Routes = [
   // Provisoire pour test header page admin
   {path: 'admin/actuality', component: ActualityComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Actualité'}},
   {path: 'admin/sponsors', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Sponsors'}},
-  {path: 'admin/races', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Courses'}}
+  {path: 'admin/races', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Courses'}},
+  {path: 'admin/article', component: ArticleComponent, pathMatch: 'full', data: {title: 'Blog > Articles'}}
 ];
 
 @NgModule({
