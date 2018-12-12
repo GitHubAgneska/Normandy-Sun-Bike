@@ -6,6 +6,8 @@
     margin: auto 0;
 }
 
+/*************************** Selection side **************************/
+
 .raceBox{
     height: 40%;
     display: flex;
@@ -44,4 +46,45 @@
     width: 75%;
     background-color: #6f7c91;
     border-radius: 50%;
+}
+
+/***************************** Description side ****************************/
+
+.descriptionSide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.raceDescription{
+    width: 100%;
+    border: solid 1px #6f7c91;
+}
+
+.raceDescription:focus{
+    outline: none !important;
+    border: solid 2px #6f7c91;
+}
+
+#raceDescForm{
+    width: 75%;
+}
+
+/*********************** Validation button ***********************/
+.validateBtn{
+    margin-top: 5vh;
+    width: 100%;
+    color: #fff;
+    border: none;
+    background-color: #6f7c91;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.validateBtn:hover{
+    background-color: #505566;
+}
+
+.validateBtn:focus{
+    outline: none !important;
 }

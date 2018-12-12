@@ -21,8 +21,12 @@
         </div>
       </div>
     </div>
-    <div class="right col-xl-7">
-
+    <div class="descriptionSide col-xl-8">
+      <form id="raceDescForm" action="#">
+        <textarea class="raceDescription" maxlength="700" rows="18" form="raceDescForm" required>{{textArea}}</textarea>
+        <button class="validateBtn" routerLink="/admin/navigation" type="submit">Valider</button>
+      </form>
+      <p></p>
     </div>
   </div>
 </div>
