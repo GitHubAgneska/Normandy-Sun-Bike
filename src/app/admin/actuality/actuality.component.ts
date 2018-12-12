@@ -11,7 +11,6 @@ export class ActualityComponent implements OnInit {
                             { id: 'trip2019', name: '\"Sun Trip Tour 2019\"' },
                             { id: 'trip2020', name: '\"Sun Trip 2020\"' }];
 
-  public markup: String = '<img class="checkMark" src="assets/checkmark.png"/>';
   public sectionNb: number = 0;
   public sectionId: string;
   public prevSectionId: string = 'tripPlan';
@@ -23,9 +22,10 @@ export class ActualityComponent implements OnInit {
 
   private addCheckmark(p_id): void {
     const img: HTMLImageElement = document.createElement('img');
-    img.src = 'assets/checkmark.png';
     img.id = 'checkmark';
+    img.src = 'assets/checkmark.png';
     img.alt = 'checkmark';
+    img.style.cssText = 'position: absolute; top: -45px; left: -20px;';
 
     document.getElementById(p_id).appendChild(img);
   }
@@ -65,6 +65,7 @@ export class ActualityComponent implements OnInit {
 
   ngOnInit() {
     this.confirmationMsg(this.sectionNb);
+    this.addCheckmark(this.prevSectionId);
   }
 
 }
