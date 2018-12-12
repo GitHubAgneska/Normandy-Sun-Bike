@@ -1,27 +1,32 @@
     <div id="landing-page">
       <!-- carousel -->
       <div id="landing-crsl-container">
-        <img id="crsl-left-arrow" class="crsl-arrow" src="../../assets/crsl_left_arrow.png" alt="left arrow" (click)="crslToLeft()"/>
-        <img id="crsl-right-arrow" class="crsl-arrow" src="../../assets/crsl_right_arrow.png" alt="right arrow" (click)="crslToRight()"/>
+        <!-- <img id="crsl-left-arrow" class="crsl-arrow" src="../../assets/crsl_left_arrow.png" alt="left arrow" (click)="crslToLeft()"/>
+        <img id="crsl-right-arrow" class="crsl-arrow" src="../../assets/crsl_right_arrow.png" alt="right arrow" (click)="crslToRight()"/> -->
         <!-- Projet -->
         <div class="landing-headline" id="landing-projet">
-          <div class="circle landing-circle" id="landing-circle-projet"></div>
+          <div routerLink="/Projet" class="circle landing-circle" id="landing-circle-projet"><div></div><p>En savoir plus</p></div>
           <div class="title landing-headline-title" id="landing-title-projet">LE PROJET</div>
         </div>
         <!-- 2019 -->
-        <div class="landing-headline" id="landing-2019">
-          <div class="circle landing-circle" id="landing-circle-2019"></div>
+        <div routerLink="/SunTripTour2019" class="landing-headline" id="landing-2019">
+          <div class="circle landing-circle" id="landing-circle-2019"><div></div><p>En savoir plus</p></div>
           <div class="title landing-headline-title" id="landing-title-2019">THE SUN TRIP TOUR<br/>2019</div>
         </div>
         <!-- 2020 -->
         <div class="landing-headline" id="landing-2020">
-          <div class="circle landing-circle" id="landing-circle-2020"></div>
+          <div></div>
+          <div routerLink="/SunTrip2020" class="circle landing-circle" id="landing-circle-2020"><div></div><p>En savoir plus</p></div>
           <div class="title landing-headline-title" id="landing-title-2020">THE SUN TRIP<br/>2020</div>
         </div>
         <!-- paths -->
         <div class="landing-headline" id="landing-paths">
             <div id="landing-path1"></div>
             <div id="landing-path2"></div>
+            <div class="circle carousel-nav-circle" id="carousel-nav-circle1" (click)="crslToRight()"><img src="../../assets/arrow_crsl_right.png"/></div>
+            <div class="circle carousel-nav-circle" id="carousel-nav-circle2" (click)="crslToLeft()"><img src="../../assets/arrow_crsl_left.png"/></div>
+            <div class="circle carousel-nav-circle" id="carousel-nav-circle3" (click)="crslToRight()"><img src="../../assets/arrow_crsl_right.png"/></div>
+            <div class="circle carousel-nav-circle" id="carousel-nav-circle4" (click)="crslToLeft()"><img src="../../assets/arrow_crsl_left.png"/></div>
         </div>
       </div>
 

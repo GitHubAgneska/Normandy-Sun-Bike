@@ -31,6 +31,7 @@ export class ProjectComponent implements OnInit {
 
       // Scroll length controller
       count++
+      console.log(count)
       if (count > 20) {
 
         let pagePosition = window.scrollY;
