@@ -1,5 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { AngularFileUploaderModule } from 'angular-file-uploader';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule} from '@angular/material/checkbox';
+import { MatChipsModule } from '@angular/material/chips';
+
 
 import { AppComponent } from './app.component';
 import { RacesPresentationComponent } from './races-presentation/races-presentation.component';
@@ -13,13 +22,22 @@ import { LogInComponent } from './admin/log-in/log-in.component';
 import { NavPageComponent } from './admin/nav-page/nav-page.component';
 import { HeaderComponent } from './admin/header/header.component';
 import { AdminSponsorsComponent } from './admin-sponsors/admin-sponsors.component';
+<<<<<<< HEAD
 import { FooterComponent } from './footer/footer.component';
+=======
+>>>>>>> adminSponsors
 import { NavbarComponent } from './navbar/navbar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarColorDirective } from './navbar/navbar-color.directive';
 import { SponsorsLandingComponent } from './landing-page/sponsors-landing/sponsors-landing.component';
+<<<<<<< HEAD
 import { ActualityComponent } from './admin/actuality/actuality.component';
+=======
+import { AddSponsorComponent } from './admin-sponsors/add-sponsor/add-sponsor.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+>>>>>>> adminSponsors
 
 @NgModule({
   declarations: [
@@ -33,19 +51,36 @@ import { ActualityComponent } from './admin/actuality/actuality.component';
     NavPageComponent,
     HeaderComponent,
     AdminSponsorsComponent,
+<<<<<<< HEAD
     FooterComponent,
+=======
+>>>>>>> adminSponsors
     NavbarComponent,
     LandingPageComponent,
     NavbarColorDirective,
     SponsorsLandingComponent,
+<<<<<<< HEAD
     ContactPageComponent,
     SponsorComponent,
     ActualityComponent
+=======
+    AddSponsorComponent
+>>>>>>> adminSponsors
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AngularFileUploaderModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule, 
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatChipsModule, 
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

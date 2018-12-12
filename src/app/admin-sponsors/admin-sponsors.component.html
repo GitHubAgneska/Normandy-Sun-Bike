@@ -2,95 +2,62 @@
 <app-header></app-header>
  
   <div class="sponsorAdmin-main-container container-fluid">
-
-   <div class="subtitle" style="text-align:left;margin-bottom:20px">Éditer les sponsors</div>
-
+  
     <div class="row ">
+
+
+ <!------   STATIC BLOCK : SPONSORS LIST  ------->
       
-        <div class="sponsorList col-lg-4 col-sm-3 col-xs-1">
+        <div  class="sponsorList col-lg-4 col-md-3 col-sm-3 col-xs-12">
 
-            <div class="blog-element-container blog-element-impaire" >
-              <div class="circle"></div>
-              <div class="ling-vertical"></div>
-              <div class="blog-element-img" [ngStyle]="{'background-image': 'url('+sponsorLogo+')'}"></div>
-              <div class="blog-element-infos">
-                <h4 class="blog-element-title subsubtitle">{{articleTitle}}</h4>
-                <div class="blog-element-button text">NOM</div>
-              </div>
+
+      <!------  First Block : ajouter sponsor  ------->
+
+          <div class="sponsor-element-container pb-3" >
+            <div>
+              <div class="vertical-line"></div>
+              <div class="horizontal-line"></div> 
             </div>
-
-            <div class="blog-element-container blog-element-impaire" >
-                <div class="circle"></div>
-                <div class="ling-vertical"></div>
-                <div class="blog-element-img" [ngStyle]="{'background-image': 'url('+sponsorLogo+')'}"></div>
-                <div class="blog-element-infos">
-                  <h4 class="blog-element-title subsubtitle">{{articleTitle}}</h4>
-                  <div class="blog-element-button text">NOM</div>
-                </div>
-              </div>
-
-              <div class="blog-element-container blog-element-impaire" >
-                  <div class="circle"></div>
-                  <div class="ling-vertical"></div>
-                  <div class="blog-element-img" [ngStyle]="{'background-image': 'url('+sponsorLogo+')'}"></div>
-                  <div class="blog-element-infos">
-                    <h4 class="blog-element-title subsubtitle">{{articleTitle}}</h4>
-                    <div class="blog-element-button text">NOM</div>
-                  </div>
-                </div>
-
-                <div class="blog-element-container blog-element-impaire" >
-                    <div class="circle"></div>
-                    <div class="ling-vertical"></div>
-                    <div class="blog-element-img" [ngStyle]="{'background-image': 'url('+sponsorLogo+')'}"></div>
-                    <div class="blog-element-infos">
-                      <h4 class="blog-element-title subsubtitle">{{articleTitle}}</h4>
-                      <div class="blog-element-button text">NOM</div>
-                    </div>
-                  </div>
+            <div class="sponsor-element-infos">
+              <h4 class="sponsor-element-title text">Ajouter</h4>
+              <div class="sponsor-element-button text">
+                <button type="button" class="btn btn-lg" id="addSponsorBtn" (click)="displayNewSponsorFields()"> + </button></div>
+            </div>
           </div>
 
+ 
+       <!------   Sponsor Blocks   --------->
 
 
-          <div class="sponsors-input-container col-lg-8 col-sm-9 col-xs-12">
-
-            <div class="sponsor-logo-input">
-            
-              <img class="logo-container" id="output" src="output.src"/>
-
-      <!-------  browse & upload img menu ------->
-              <div class="browse-upload-btns">
-                <div class=" browseImg input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                  </div>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                  </div>
-                </div>
-              </div>
-
-            </div>  
-            <input type="text" class="sponsors-input-fields form-control" aria-label="sponsor-name" aria-describedby="basic-addon1" placeholder="Nom">
-            <textarea rows="8" class="form-control sponsors-input-fields"  placeholder="Description"></textarea>
-
-    <!-- dropdown menu sponsor level selection -->
-
-            <div class="input-group-prepend">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type de sponsor</button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Principal</a>
-                <a class="dropdown-item" href="#">Secondaire</a>
-                <a class="dropdown-item" href="#">Tertiaire</a>
-              </div>
+          <div *ngFor = "let sponsor of sponsors" class="sponsor-element-container sponsors pb-3 pt-3">
+            <div>
+              <div class="circle" ></div>
+              <div class="vertical-line"></div> 
             </div>
-          
-          <button class="btn btn-lg sponsors-input-fields">Valider</button>
+            <div class="logo-container img-fluid m-auto">
+              <img src="{{sponsor.img}}" /> 
+            </div>          
+            <div class="sponsor-element-infos">
+              <h4 class="sponsor-element-level ">Nom: {{sponsor.name}} <br/>Level: {{sponsor.level}}</h4>
+              <div class="sponsor-element-button">
+              <div class="sponsor-element-button ">
+                  <button class="btn btn-lg d-block mb-3" id ="editSponsorBtn" (click)="displayEditSponsorField = true">editer</button>
+                <button class="btn btn-lg d-block" id ="deleteSponsorBtn" (click) = "areYouSure">supprimer</button>                
+              </div>  
+            </div>
+          </div>
+         
 
         </div>
+      </div>
 
-    </div>
+
+<!------  INPUT FIELDS - CREATE NEW SPONSOR  ------->
+
+      <div *ngIf="sponsorVisible == true" class="sponsors-input-container col-lg-8  col-md-9 col-ms-9 col-xs-12">    
+        <app-add-sponsor></app-add-sponsor>
+      </div>
+
 
   </div>
 
