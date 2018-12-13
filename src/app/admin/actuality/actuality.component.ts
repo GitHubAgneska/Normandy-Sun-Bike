@@ -25,7 +25,7 @@ export class ActualityComponent implements OnInit {
     img.id = 'checkmark';
     img.src = 'assets/checkmark.png';
     img.alt = 'checkmark';
-    img.style.cssText = 'position: absolute; top: -45px; left: -20px;';
+    img.style.cssText = 'position: absolute; top: 70%; left: 78%;';
 
     document.getElementById(p_id).appendChild(img);
   }
