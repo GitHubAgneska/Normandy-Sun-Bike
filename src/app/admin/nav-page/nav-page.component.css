@@ -1,5 +1,6 @@
 .adminGroup{
     margin: 8vh 1vh 0 1vh;
+    height: 75vh;
     color: #6f7c91;
 }
 
@@ -12,6 +13,7 @@
     margin: 2vh auto;
     padding: 5vh;
     width: 100%;
+    height: 18vh;
     border: none;
     text-align: start;
     font-size: 2.5rem;
@@ -22,6 +24,18 @@
 
 .adminSection:hover{
     background-color: #8394af;
+}
+
+#logo{
+    margin: 2vh 0;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo img{
+    width: 50%;
 }
 
 @media (min-width: 1030px){
