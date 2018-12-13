@@ -1,10 +1,16 @@
 .actualityParts {
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
+    position: relative;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
     margin: 2vh 2%;
     padding: 0;
-    
+    height: 35vh;
+    background-position: center;
+    background-size: cover;
+    color: #d4d4d4;
   }
 
 .actualityParts:hover {
@@ -12,15 +18,28 @@
     -webkit-filter: none;
 }
 
-.sectionImg{
-    padding: 2vh;
+.actualityParts h2{
+    font-size: 2.5rem;
+    margin: 5%;
+}
+
+#tripPlan{
+    background-image: url("/assets/project_admin.png")
+}
+
+#trip2019{
+    background-image: url("/assets/race2019_admin.png")
+}
+
+#trip2020{
+    background-image: url("/assets/race2020_admin.png")
 }
 
 /*********************** Selected section ***********************/
 .selectedSection{
     filter: none;
     -webkit-filter: none;
-    border: solid 2px #6f7c91;
+    color: #fff;
 }
 
 /*********************** Validation button ***********************/
