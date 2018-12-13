@@ -15,7 +15,7 @@ import { BlogPageComponent } from './blog/blog-page/blog-page.component';
 
 const routes: Routes = [
   // Toujours déclaré sur ce model : {path: 'nom_du_chemin', component: nom_du_composant, pathMatch: 'full'}
-  {path: 'Accueil', component: LandingPageComponent, pathMatch:'full' },
+  {path: 'Accueil', component: LandingPageComponent, pathMatch: 'full' },
   {path: 'SunTripTour2019', component: RacesPresentationComponent, pathMatch: 'full', data: {title: 'The Sun Trip 2019'}},
   {path: 'SunTrip2020', component: RacesPresentationComponent, pathMatch: 'full', data: {title: 'The Sun Trip 2020'}},
   {path: 'Blog', component: BlogPageComponent, pathMatch: 'full', data: {title: 'Blog'}},
@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: 'admin/actuality', component: ActualityComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Actualité'}},
   {path: 'admin/sponsors', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Sponsors'}},
   {path: 'admin/races', component: HeaderComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Courses'}},
-  { path: "", redirectTo:'Accueil', pathMatch:"full"}
+  { path: '', redirectTo: 'Accueil', pathMatch: 'full'}
 
 
 ];
