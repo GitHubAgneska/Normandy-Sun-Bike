@@ -18,9 +18,7 @@ export class AddSponsorComponent implements OnInit {
 
   registerForm : FormGroup;
 
-  selectLevel1:boolean = false;
-  selectLevel2:boolean = false;
-  selectLevel3:boolean = false;
+  selectedLevel:number = 0;
 
 
 
@@ -88,11 +86,11 @@ export class AddSponsorComponent implements OnInit {
 
   //display img before upload
 
-/*   uploadData: any;
+  uploadData: any;
   selectedFile: File;
 
 
-onFileChanged(event) {
+/* onFileChanged(event) {
   this.selectedFile = <File>event.target.files[0];
   if (event.target.files && event.target.files[0])
   {
@@ -106,7 +104,7 @@ onFileChanged(event) {
 
 
 
-
+/*
 // DISPLAY SPONSOR DESCRIPTION FIELD IF LEVEL 1 SELECTED
 public displayDescriptionField() {
   this.selectLevel1 = true;
@@ -120,6 +118,7 @@ public hideDescriptionField() {
     return false;
   }
 }
+*/
 
 
 // VALIDATE BUTTON

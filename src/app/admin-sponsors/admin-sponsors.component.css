@@ -94,7 +94,7 @@
 
 
     .sponsor-element-infos{
-        width:20%;
+    
         justify-content: center;
     }
 
@@ -105,6 +105,9 @@
     .sponsor-element-infos button{
         font-size:1rem;
 
+    }
+    .sponsorList{
+        align-content: center;
     }
 }
 

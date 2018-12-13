@@ -53,10 +53,29 @@ mat-form-field.mat-form-field{
     
 }
 
-.ng-star-inserted label.btn{
-    font-size: 1.5rem;
-}
 
 #validate-btn, #cancel-btn{
     margin-bottom:2%;
 }
+
+
+/* upload block (angular-file-uploader component) */
+
+.ng-star-inserted label.btn{
+    font-size: 1.5rem;
+}
+
+
+.afu-valid-file.ng-star-inserted{
+    text-align: center;
+}
+
+
+/* @media only screen and (max-width : 640px) {
+
+    .ng-star-inserted.afu-upload-btn{
+        font-size: 3rem;
+    }
+
+} */
+
