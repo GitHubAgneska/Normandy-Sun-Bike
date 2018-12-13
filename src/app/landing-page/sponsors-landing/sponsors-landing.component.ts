@@ -15,7 +15,6 @@ export class SponsorsLandingComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log(this.sponsorsImg)
   }
 
 }

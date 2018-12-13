@@ -1,6 +1,9 @@
 <div id="blog-background">
-  <app-blog-article-element></app-blog-article-element>
-  <div id="blog-more-button-container">
 
-</div>
+ 
+      <div id="blog-container" *ngFor="let current_article of articleList">
+          <app-blog-article-element  [articleId]="current_article.id" [articleTitle]="current_article.title" [articleImg]="current_article.img"></app-blog-article-element>
+      </div>
+  <div id="blog-more-button-container">
+  </div>
 </div>
