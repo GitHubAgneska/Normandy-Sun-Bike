@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,14 +8,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BlogArticleElementComponent implements OnInit {
 
+  @Input('articleTitle') articleTitle:string;
+  @Input('articleImg') articleImg:string;
+  @Input('articleId') articleId:number;
+
   public raceTitle: string;
   public articleBackground: string;
 
-  private articleImg:string = "";
-  private articleTitle:string = "Article title";
   private articleDate:string = "00/00/0000";
 
   constructor(route: ActivatedRoute) { 
+
     this.raceTitle = route.snapshot.data.title;
     if (this.raceTitle == "The Sun Trip 2019"){
       this.articleBackground = "#478952";
@@ -29,11 +32,20 @@ export class BlogArticleElementComponent implements OnInit {
   ngOnInit() {
     const background = document.getElementsByClassName("blog-element-infos");
 
-    console.log(this.articleBackground)
+    console.log(this.articleTitle)
 
     for (let i = 0; i < background.length; i++) {
       background[i]["style"].background = this.articleBackground;
     }
+
+    const position = document.getElementsByClassName("blog-element-container");
+
+      if (this.articleId % 2 == 0) {
+        position[this.articleId-1].classList.add("blog-element-paire");
+      } else {
+        position[this.articleId-1].classList.add("blog-element-impaire");
+      }
+    
     
   }
 
