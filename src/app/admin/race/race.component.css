@@ -15,14 +15,29 @@
     text-align: end;
     justify-content: center;
     margin: 10% 0;
-    color: #6f7c91;
 }
 
 .race{
     margin: 0;
-    width: 50%;
+    width: 60%;
+    height: 30vh;
     cursor: pointer;
     opacity: 0.5;
+    background-position: center;
+    background-size: cover;
+}
+
+.race h2{
+    padding: 5% 10%;
+    color: #bdbdbd;
+}
+
+.race2019{
+    background-image: url("/assets/race2019_admin.png");
+}
+
+.race2020{
+    background-image: url("/assets/race2020_admin.png");
 }
 
 .checkbox{
@@ -39,6 +54,10 @@
 
 .selected .race{
     opacity: 1;
+}
+
+.selected h2{
+    color: #fff;
 }
 
 .selected .button{
@@ -60,7 +79,8 @@
     height: 70vh;
     width: 100%;
     border: solid 1px #6f7c91;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    padding: 4%;
 }
 
 .raceDescription:focus{
@@ -69,12 +89,12 @@
 }
 
 #raceDescForm{
-    width: 75%;
+    width: 80%;
 }
 
 /*********************** Validation button ***********************/
 .validateBtn{
-    margin-top: 2vh;
+    margin: 2vh 0;
     width: 100%;
     color: #fff;
     border: none;
@@ -89,4 +109,29 @@
 
 .validateBtn:focus{
     outline: none !important;
+}
+
+@media (min-width:760px) and (max-width: 1024px){
+    .selectionSide{
+        display: inline-flex;
+        justify-content: center;
+    }
+
+    .raceBox{
+        display: block;
+        width: 40%;
+        margin: 10% auto;
+    }
+
+    .race{
+        width: 100%;
+    }
+
+    .checkbox{
+        margin: 5% 40%;
+    }
+
+    .raceDescription{
+        height: 50vh;
+    }
 }
