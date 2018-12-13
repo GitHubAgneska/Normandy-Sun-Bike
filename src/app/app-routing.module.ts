@@ -15,16 +15,17 @@ import { RaceComponent } from './admin/race/race.component';
 const routes: Routes = [
   // Toujours déclaré sur ce model : {path: 'nom_du_chemin', component: nom_du_composant, pathMatch: 'full'}
 
-  {path: 'suntrip', component: RacesPresentationComponent, pathMatch: 'full'},
-  {path: 'blog', component: BlogArticleElementComponent, pathMatch: 'full'},
-  {path: 'contact', component: ContactPageComponent, pathMatch: 'full'},
-  {path: 'project', component: ProjectComponent, pathMatch: 'full'},
-  {path: 'admin/log-in', component: LogInComponent, pathMatch: 'full'},
+  {path: 'SunTripTour2019', component: RacesPresentationComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Actualité'}},
+  {path: 'SunTrip2020', component: RacesPresentationComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Actualité'}},
+  {path: 'Blog', component: BlogArticleElementComponent, pathMatch: 'full'},
+  {path: 'Contact', component: ContactPageComponent, pathMatch: 'full'},
+  {path: 'Project', component: ProjectComponent, pathMatch: 'full'},
+  {path: 'Admin', component: LogInComponent, pathMatch: 'full'},
   {path: 'admin/navigation', component: NavPageComponent, pathMatch: 'full'},
   {path: 'admin/actuality', component: ActualityComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Actualité'}},
   {path: 'admin/sponsors', component: AdminSponsorsComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Sponsors'}},
   {path: 'admin/races', component: RaceComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Courses'}},
-  {path: 'landingPage', component: LandingPageComponent, pathMatch: 'full' },
+  {path: 'Accueil', component: LandingPageComponent, pathMatch: 'full' },
   { path: '', redirectTo: 'Accueil', pathMatch: 'full'},
 
 
