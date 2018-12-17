@@ -1,0 +1,22 @@
+
+.blogArticle-Admin-main-container{
+    height:100vh;
+    margin-top:3rem;
+
+}
+
+/* ---BLOCKS ARTICLES : IMAGE + INFO ----*/
+
+
+#addblogArticleBtn, #editBlogArticleBtn, #deleteBlogArticleBtn{
+    color: #fff;
+    border: none;
+    background-color: #6f7c91;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+#addblogArticleBtn:hover, #editBlogArticleBtn:hover, #deleteBlogArticleBtn:hover{
+    background-color: #505566;
+}
