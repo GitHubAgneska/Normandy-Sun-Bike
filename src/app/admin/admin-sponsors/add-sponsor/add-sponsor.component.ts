@@ -40,7 +40,7 @@ export class AddSponsorComponent implements OnInit {
 
     });
 
-    /* get sponsorName() {                       // getters & setters ?
+    /* get sponsorName() {                              // getters & setters ?
       return this.sponsorName.get('sponsorName');
     } */
 
@@ -49,7 +49,6 @@ export class AddSponsorComponent implements OnInit {
     this.registerForm.valueChanges.subscribe(console.log )  
   }
 
-  
 
   // 
   handleFileInput(files: FileList) {
@@ -65,6 +64,7 @@ export class AddSponsorComponent implements OnInit {
       url:"https://example-file-upload-api"
     }
 };
+
 
 
 // DISPLAY IMAGE TO UPLOAD
@@ -83,13 +83,10 @@ export class AddSponsorComponent implements OnInit {
 }  */
 
 
-
   //display img before upload
 
   uploadData: any;
   selectedFile: File;
-
-
 /* onFileChanged(event) {
   this.selectedFile = <File>event.target.files[0];
   if (event.target.files && event.target.files[0])
@@ -104,24 +101,7 @@ export class AddSponsorComponent implements OnInit {
 
 
 
-/*
-// DISPLAY SPONSOR DESCRIPTION FIELD IF LEVEL 1 SELECTED
-public displayDescriptionField() {
-  this.selectLevel1 = true;
-}
-
-// HIDE PONSOR DESCRIPTION FIELD IF LEVEL 1 SELECTED THEN LEVEL 2 or 3 SELECTED
-public hideDescriptionField() {
-  if (this.selectLevel2 || this.selectLevel3 ){
-    return true;
-  }else{
-    return false;
-  }
-}
-*/
-
-
-// VALIDATE BUTTON
+// FINAL VALIDATE BUTTON
 
 onSubmit() {
   this.submitted = true;

@@ -1,7 +1,4 @@
 
-
-
-
 .add-sponsors-container{
     height:100vh;
     width:80%;
@@ -22,7 +19,6 @@
 }
 
 
-
 .form-group{
     display:flex !important;
     flex-direction: column !important;
@@ -37,16 +33,13 @@
 }
 
 
-
 .sponsors-input-container .sponsors-input-fields{
     width:100%;
     margin:2rem;
    
 }
 
-
-
-/* input fields */
+/* ----input fields---- */
 
 mat-form-field.mat-form-field{
     font-size: 1.3rem;
@@ -56,19 +49,34 @@ mat-form-field.mat-form-field{
 
 #validate-btn, #cancel-btn{
     margin-bottom:2%;
+    color: #fff;
+    border: none;
+    background-color: #6f7c91;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+}
+
+#validate-btn:hover, #cancel-btn:hover{
+    background-color: #505566;
 }
 
 
-/* upload block (angular-file-uploader component) */
+/********WONT WORK!!!!*********/
+/*----- upload block (angular-file-uploader component)-----*/
+
 
 .ng-star-inserted label.btn{
     font-size: 1.5rem;
+    
 }
 
 
 .afu-valid-file.ng-star-inserted{
     text-align: center;
+  
 }
+
 
 
 /* @media only screen and (max-width : 640px) {

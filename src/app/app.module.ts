@@ -21,7 +21,7 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 import { LogInComponent } from './admin/log-in/log-in.component';
 import { NavPageComponent } from './admin/nav-page/nav-page.component';
 import { HeaderComponent } from './admin/header/header.component';
-import { AdminSponsorsComponent } from './admin-sponsors/admin-sponsors.component';
+import { AdminSponsorsComponent } from './admin/admin-sponsors/admin-sponsors.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -30,8 +30,10 @@ import { NavbarColorDirective } from './navbar/navbar-color.directive';
 import { SponsorsLandingComponent } from './landing-page/sponsors-landing/sponsors-landing.component';
 import { ActualityComponent } from './admin/actuality/actuality.component';
 import { RaceComponent } from './admin/race/race.component';
-import { AddSponsorComponent } from './admin-sponsors/add-sponsor/add-sponsor.component';
+import { AddSponsorComponent } from './admin/admin-sponsors/add-sponsor/add-sponsor.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminBlogArticlesComponent } from './admin/admin-blog-articles/admin-blog-articles.component';
+import { AddBlogArticleComponent } from './admin/admin-blog-articles/add-blog-article/add-blog-article.component';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SponsorComponent,
     ActualityComponent,
     RaceComponent,
-    AddSponsorComponent
+    AddSponsorComponent,
+    AdminBlogArticlesComponent,
+    AddBlogArticleComponent
   ],
   imports: [
     BrowserModule,

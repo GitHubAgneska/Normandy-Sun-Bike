@@ -1,14 +1,16 @@
 
 
-
-
 .sponsorAdmin-main-container{    
     height:100vh;
     margin-top:3rem;
 
 }
 
+
+
+
 /* ---BLOCKS SPONSORS : LOGO + INFO ----*/
+
 
  .circle{
     margin-top:90%;
@@ -20,6 +22,20 @@
     margin-left:2rem; 
     } 
 
+/*----ADD SPONSOR BUTTON----*/
+
+#addSponsorBtn, #editSponsorBtn, #deleteSponsorBtn{
+    color: #fff;
+    border: none;
+    background-color: #6f7c91;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#addSponsorBtn:hover, #editSponsorBtn:hover, #deleteSponsorBtn:hover{
+    background-color: #505566;
+}
+
 
 .sponsor-element-container{
 /*     width: 100%;
@@ -27,24 +43,20 @@
     display: flex;
     margin-bottom: 3vw;
     border-bottom: grey solid 1px;
-    
-
 }
+
 
 .sponsorList{
     height:100vh;
     padding-right:2% !important;
-    width:auto;
-    
+    width:auto;   
 }
 
 .logo-container img{        
     width:80%;
     flex-shrink: 0;
     display: block;
-
 }
-
 
 .sponsor-element-level{
     display: inline-block;
@@ -61,7 +73,6 @@
         display: flex;
         margin-bottom: 3vw;
         transition: 1s; 
-        
     }
 
     .circle, .vertical-line{
@@ -80,6 +91,7 @@
     }
 }
 
+
 @media only screen and (max-width : 640px){
 
     .circle, .vertical-line{
@@ -94,7 +106,6 @@
 
 
     .sponsor-element-infos{
-    
         justify-content: center;
     }
 
@@ -123,13 +134,14 @@
 
 
 .sponsor-element-title{
-    border-bottom: solid 3px;
+    border-bottom: solid 3px #6f7c91;
     font-size: 1.8em;
 }
 
 
 .sponsor-element-button{
     margin-top: 0.5em;
+    
 }
 
 
