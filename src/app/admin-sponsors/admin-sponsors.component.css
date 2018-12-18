@@ -1,0 +1,140 @@
+
+
+
+
+.sponsorAdmin-main-container{    
+    height:100vh;
+    margin-top:3rem;
+
+}
+
+/* ---BLOCKS SPONSORS : LOGO + INFO ----*/
+
+ .circle{
+    margin-top:90%;
+}
+
+.vertical-line{
+    border-left: solid 6px #000;
+    height: 10vw;
+    margin-left:2rem; 
+    } 
+
+
+.sponsor-element-container{
+/*     width: 100%;
+    height: auto; */
+    display: flex;
+    margin-bottom: 3vw;
+    border-bottom: grey solid 1px;
+    
+
+}
+
+.sponsorList{
+    height:100vh;
+    padding-right:2% !important;
+    width:auto;
+    
+}
+
+.logo-container img{        
+    width:80%;
+    flex-shrink: 0;
+    display: block;
+
+}
+
+
+.sponsor-element-level{
+    display: inline-block;
+}
+
+
+
+
+@media only screen and (min-width : 640px){
+
+
+    .sponsor-element-container{
+        width: 60%;   
+        display: flex;
+        margin-bottom: 3vw;
+        transition: 1s; 
+        
+    }
+
+    .circle, .vertical-line{
+        display:none;
+    }
+    
+    .sponsorList{
+        padding-right:0;
+        height:100vh;
+        overflow:scroll;   
+    }
+
+    .logo-container img{        
+        width:15vw;
+        display:inline-block; 
+    }
+}
+
+@media only screen and (max-width : 640px){
+
+    .circle, .vertical-line{
+        display:none;
+    }
+
+    .sponsors{
+        width:30%;
+        display:inline-block;
+        transition: 1s;  
+    }
+
+
+    .sponsor-element-infos{
+        width:20%;
+        justify-content: center;
+    }
+
+    .sponsor-element-infos h4{
+        font-size:1rem;
+
+    }
+    .sponsor-element-infos button{
+        font-size:1rem;
+
+    }
+}
+
+
+
+
+.sponsor-element-infos{
+
+    justify-content: center;
+    margin-left:1vw;
+    margin-right:1vw;
+}
+
+
+.sponsor-element-title{
+    border-bottom: solid 3px;
+    font-size: 1.8em;
+}
+
+
+.sponsor-element-button{
+    margin-top: 0.5em;
+}
+
+
+/*  EDIT SPONSORS SECTION   */
+
+ .sponsors-input-container{
+    margin-top:2%;
+    border-left: grey solid 1px;
+
+}
+
