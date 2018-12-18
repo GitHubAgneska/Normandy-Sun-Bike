@@ -1,11 +1,13 @@
 .adminGroup{
-    margin: 8vh 1vh 0 1vh;
-    height: 75vh;
+    margin: 8vh 2% 0 2%;
+    width: 100%;
     color: #6f7c91;
 }
 
 .adminGroup h1{
+    padding-top: 2vh;
     padding-left: 5%;
+    width: 100%;
     border-bottom: solid 5px #6f7c91;
 }
 
@@ -23,19 +25,12 @@
 }
 
 .adminSection:hover{
-    background-color: #8394af;
+    background-color: #505566;
 }
 
-#logo{
-    margin: 2vh 0;
-    height: 40vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#logo img{
-    width: 50%;
+.logo{
+    height: 31vh;
+    margin-bottom: 13vh;
 }
 
 @media (min-width: 1030px){
@@ -48,5 +43,21 @@
         transition: padding-left 1s;
         -webkit-transition: padding-left 1s;
         padding-left: 20%;
+    }
+}
+
+@media (max-width: 770px){
+    .adminGroup{
+        margin-top: 2vh;
+    }
+
+    .logo{
+        display: block;
+        height: auto;
+        margin: 0 auto 8vh auto;
+    }
+
+    .adminGroup h1{
+        padding: 0;
     }
 }
