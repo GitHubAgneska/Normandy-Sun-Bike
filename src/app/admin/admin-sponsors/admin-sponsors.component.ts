@@ -11,7 +11,10 @@ export class AdminSponsorsComponent implements OnInit {
 
 
   sponsors = SPONSORS;
+
   sponsorVisible:boolean = false;
+  editSponsorVisible:boolean = false;
+  deleteSponsor:boolean = false;
 
   
   constructor() { }
@@ -25,6 +28,18 @@ export class AdminSponsorsComponent implements OnInit {
     this.sponsorVisible = true;
   }
 
+  public displayEditSponsorField() {
+    this.sponsorVisible = true;
+  }
+
+/*   public selectSponsorToDelete() {
+    alert ("Confirmer la suppression de l'élément");
+    if (alert) {
+      for (let i = 0; i < SPONSORS.length ; i++){
+        if (SPONSORS[i] ==  )
+      }
+    }
+  } */
 
 
 }
