@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddBlogArticleComponent implements OnInit {
 
+
+
+  newBlogArticleVisible:boolean = false;
+
+
   constructor() { }
 
   ngOnInit() {
   }
 
+    // create new blogArticle field - directive *ngIf
+    public displayNewBlogArticleFields(){
+      this.newBlogArticleVisible = true;
+    }
 }

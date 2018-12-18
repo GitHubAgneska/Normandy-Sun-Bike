@@ -8,6 +8,7 @@
 
 
 <!------   STATIC BLOCK : blogArticles LIST  ------->
+  
     
       <div  class="blogArticleList col-lg-3 col-md-3 col-sm-3 col-xs-12">
 
@@ -15,14 +16,14 @@
     <!------  First Block : ajouter blogArticle  ------->
 
         <div class="blogArticle-element-container pb-3" >
-          <div>
+<!--       <div>
             <div class="vertical-line"></div>
             <div class="horizontal-line"></div> 
-          </div>
+          </div> -->
           <div class="blogArticle-element-infos">
             <h4 class="blogArticle-element-title text">Ajouter</h4>
             <div class="blogArticle-element-button text">
-              <button type="button" class="btn btn-lg" id="addblogArticleBtn" (click)="displayNewblogArticleFields()"> + </button></div>
+              <button type="button" class="btn btn-lg" id="addBlogArticleBtn" (click)="displayNewblogArticleFields()"> + </button></div>
           </div>
         </div>
 
@@ -30,24 +31,18 @@
      <!------   blogArticle Blocks   --------->
 
 
-        <div *ngFor = "let blogArticle of blogArticles" class="blogArticle-article-element-container blogArticle-articles pb-3 pt-3">
-          <div>
-            <div class="circle" ></div>
-            <div class="vertical-line"></div> 
-          </div>
-          <div class="logo-container img-fluid m-auto">
+        <div *ngFor = "let blogArticle of blogArticles" class="blogArticle-element-container articles pb-3 pt-3">
+        
+          <div class="img-container img-fluid m-auto">
             <img src="{{blogArticle.img}}" /> 
           </div>          
           <div class="blogArticle-element-infos">
-            <h4 class="blogArticle-element-level ">Nom: {{blogArticle-article.name}} <br/>Level: {{blogArticle-article.level}}</h4>
+            <h4 class="blogArticle-element-date ">Nom: {{blogArticle.title}} <br/>date: {{blogArticle.date}}</h4>
             <div class="blogArticle-element-button">
-<<<<<<< Updated upstream
-            <div class="blogArticle-element-button ">
-                <button class="btn btn-lg d-block mb-3" id ="editBlogArtcleBtn" (click)="displayEditBlogArticleField()">editer</button>
-=======
+
            <!--  <div class="blogArticle-element-button ">
-                <button class="btn btn-lg d-block mb-3" id ="editBlogArticleBtn" (click)="displayEditBlogArticle()">editer</button>
->>>>>>> Stashed changes
+              
+              <button class="btn btn-lg d-block mb-3" id ="editBlogArticleBtn" (click)="displayEditBlogArticle()">editer</button>
               <button class="btn btn-lg d-block" id ="deleteBlogArticleBtn" (click) = "areYouSure()">supprimer</button>                
             </div>   -->
           </div>
