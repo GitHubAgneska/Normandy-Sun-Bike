@@ -3,7 +3,7 @@
 export class BlogArticle {
     id:number;
     title:string;
-    name:string;
+
 
     year?:number;
     month?:number;

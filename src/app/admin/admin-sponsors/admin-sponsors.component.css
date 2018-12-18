@@ -6,11 +6,7 @@
 
 }
 
-
-
-
-/* ---BLOCKS SPONSORS : LOGO + INFO ----*/
-
+/* ------- BLOCKS SPONSORS : LOGO + INFO ------*/
 
  .circle{
     margin-top:90%;
@@ -22,7 +18,7 @@
     margin-left:2rem; 
     } 
 
-/*----ADD SPONSOR BUTTON----*/
+    /*----ADD SPONSOR BUTTON----*/
 
 #addSponsorBtn, #editSponsorBtn, #deleteSponsorBtn{
     color: #fff;
@@ -90,7 +86,7 @@
     .sponsorList{
         padding-right:0;
         height:100vh;
-        overflow:scroll;   
+        overflow-y:scroll;   
     }
 
     .logo-container img{        
@@ -127,6 +123,7 @@
     }
     .sponsorList{
         align-content: center;
+        height:auto;
     }
 }
 
