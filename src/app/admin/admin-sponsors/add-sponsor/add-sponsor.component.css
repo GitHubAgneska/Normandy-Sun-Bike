@@ -47,6 +47,7 @@ mat-form-field.mat-form-field{
 }
 
 
+
 #validate-btn, #cancel-btn{
     margin-bottom:2%;
     color: #fff;
@@ -54,13 +55,23 @@ mat-form-field.mat-form-field{
     background-color: #6f7c91;
     font-size: 1.5rem;
     cursor: pointer;
-
 }
 
-#validate-btn:hover, #cancel-btn:hover{
-    background-color: #505566;
+
+#validate-btn{
+    background-color: #6f7c91;
 }
 
+#cancel-btn{
+    background-color:red;
+}
+
+#cancel-btn:hover{
+    background-color: rgb(193, 6, 6);
+}
+#validate-btn:hover{
+    background-color:#505566;
+}
 
 /********WONT WORK!!!!*********/
 /*----- upload block (angular-file-uploader component)-----*/
