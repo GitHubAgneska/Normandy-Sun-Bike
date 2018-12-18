@@ -8,6 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
+import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import { ActualityComponent } from './admin/actuality/actuality.component';
 import { RaceComponent } from './admin/race/race.component';
 import { AddSponsorComponent } from './admin-sponsors/add-sponsor/add-sponsor.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ArticleComponent } from './blog/article/article.component';
 
 
 @NgModule({
@@ -55,7 +57,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SponsorComponent,
     ActualityComponent,
     RaceComponent,
-    AddSponsorComponent
+    AddSponsorComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +72,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     MatCheckboxModule,
     MatChipsModule,
-    FormsModule
+    FormsModule,
+    HttpModule
 
   ],
   providers: [],

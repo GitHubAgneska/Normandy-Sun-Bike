@@ -11,6 +11,8 @@ export class BlogArticleElementComponent implements OnInit {
   @Input('articleTitle') articleTitle:string;
   @Input('articleImg') articleImg:string;
   @Input('articleId') articleId:number;
+  @Input('articleCategorie') articleCategorie:string;
+  @Input('i') index:number;
 
   public raceTitle: string;
   public articleBackground: string;
@@ -18,25 +20,24 @@ export class BlogArticleElementComponent implements OnInit {
   private articleDate:string = "00/00/0000";
 
   constructor(route: ActivatedRoute) { 
-
     this.raceTitle = route.snapshot.data.title;
-    if (this.raceTitle == "The Sun Trip 2019"){
+  }
+
+  ngOnInit() {
+
+    if (this.articleCategorie == "Sun Trip Tour 2019"){
       this.articleBackground = "#478952";
-    } else if (this.raceTitle == "The Sun Trip 2020" ) {
+    } else if (this.articleCategorie == "Sun Trip 2020") {
       this.articleBackground = "#D3BB58";
     } else {
       this.articleBackground = "#2D73A9";
     }
-  }
 
-  ngOnInit() {
+    console.log(this.articleCategorie)
+
     const background = document.getElementsByClassName("blog-element-infos");
 
-    console.log(this.articleTitle)
-
-    for (let i = 0; i < background.length; i++) {
-      background[i]["style"].background = this.articleBackground;
-    }
+      background[this.index]["style"].background = this.articleBackground;
 
     const position = document.getElementsByClassName("blog-element-container");
 

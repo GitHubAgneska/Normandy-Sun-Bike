@@ -76,13 +76,11 @@ body, html, h1, h2, h3, h4, h5, h6 {
 
 
 .lign-horizon{
-    border-top: solid 8px #000; 
-    height: 0;
+    border-top: solid 8px #000;
     }
 
 
 .lign-vertical{
     border-left: solid 8px #000;
-    height: 0;
     } 
 

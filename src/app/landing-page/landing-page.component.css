@@ -3,6 +3,10 @@
     overflow: hidden;
     width: 100%;
 }
+.landing-title-container{
+    display: flex;
+    flex-direction: row;
+}
 .landing-title{
     padding-left: 5%;
     padding-top: 7vh;
@@ -278,6 +282,20 @@
 }
 
 
+
+/* Test intro */
+
+#landing-text-intro-container{
+    width: 100%;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    background: #194B3E;
+}
+#landing-text-intro{
+    margin: auto;
+    width:80%;
+    color: #fff;
+}
 /* Sponsors */
 
 #landing-sponsors-container{

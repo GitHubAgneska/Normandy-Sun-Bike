@@ -1,0 +1,53 @@
+#article-container{
+    width: 100%;
+    padding-top: 22vh;
+    padding-bottom: 20vh;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#article-categorie{
+    color: #fff;
+    margin-left: 10%;
+    margin-bottom: 3vh;
+}
+#article-background{
+    width: 90%;
+    margin: auto;
+    background: #fff;
+    padding-top: 6vh;
+}
+#article-content-container{
+    margin: auto;
+    width: 90%;
+}
+#article-title{
+    color: #000;
+    margin-top: 2vh;
+    margin-bottom: 4vh;
+    line-height: 1.2;
+}
+#article-date{
+    margin-bottom: 4vh;
+}
+#article-img{
+    background: grey;
+    overflow: hidden;
+}
+#article-img > img {
+    width: 100%;
+}
+#article-img-description{
+    margin-top: 2vh;
+    margin-bottom: 8vh;
+}
+#article-text{
+    margin-bottom: 5vh;
+}
+@media screen and (max-width: 640px) {
+    #article-categorie{
+        font-size: 1.3rem;
+    }
+    #article-title{
+        font-size: 2rem;
+    }
+}
