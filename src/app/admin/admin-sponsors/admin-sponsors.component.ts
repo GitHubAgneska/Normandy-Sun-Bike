@@ -32,14 +32,14 @@ export class AdminSponsorsComponent implements OnInit {
     this.sponsorVisible = true;
   }
 
-/*   public selectSponsorToDelete() {
+  public selectSponsorToDelete() {
     alert ("Confirmer la suppression de l'élément");
-    if (alert) {
+   /*  if (alert) {
       for (let i = 0; i < SPONSORS.length ; i++){
-        if (SPONSORS[i] ==  )
-      }
+        if (SPONSORS[i] ==  ) 
+      }*/
     }
-  } */
+  
 
 
 }
