@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BlogPageComponent } from './blog/blog-page/blog-page.component';
 import { BlogArticleElementComponent } from './blog/blog-article-element/blog-article-element.component';
 import { ProjectComponent } from './project/project.component';
+import { ScrollDirective } from './project/scroll.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProjectComponent } from './project/project.component';
     BlogPageComponent,
     BlogArticleElementComponent,
     RacesPresentationComponent,
-    ProjectComponent
+    ProjectComponent,
+    ScrollDirective
   ],
   imports: [
     BrowserModule,
