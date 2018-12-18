@@ -8,6 +8,7 @@
 
 
 <!------   STATIC BLOCK : blogArticles LIST  ------->
+  
     
       <div  class="blogArticleList col-lg-3 col-md-3 col-sm-3 col-xs-12">
 
@@ -30,16 +31,16 @@
      <!------   blogArticle Blocks   --------->
 
 
-        <div *ngFor = "let blogArticleElement of blogArticleELements" class="blogArticle-element-container articles pb-3 pt-3">
+        <div *ngFor = "let blogArticle of blogArticles" class="blogArticle-element-container articles pb-3 pt-3">
         
           <div class="img-container img-fluid m-auto">
-            <img src="{{blogArticleELement.img}}" /> 
+            <img src="{{blogArticle.img}}" /> 
           </div>          
           <div class="blogArticle-element-infos">
-            <h4 class="blogArticle-element-date ">Nom: {{blogArticleElement.title}} <br/>date: {{blogArticleElement.date}}</h4>
+            <h4 class="blogArticle-element-date ">Nom: {{blogArticle.title}} <br/>date: {{blogArticle.date}}</h4>
             <div class="blogArticle-element-button">
             <div class="blogArticle-element-button ">
-                <button class="btn btn-lg d-block mb-3" id ="editBlogArticleBtn" (click)="displayEditBlogArticleField()">editer</button>
+                <button class="btn btn-lg d-block mb-3" id ="editBlogArticleBtn" (click)="displayEditBlogArticle()">editer</button>
               <button class="btn btn-lg d-block" id ="deleteBlogArticleBtn" (click) = "areYouSure()">supprimer</button>                
             </div>  
           </div>
