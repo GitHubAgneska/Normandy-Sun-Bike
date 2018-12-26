@@ -1,6 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Sponsor } from '../sponsorClass';
+import { SPONSORS } from '../mock-sponsors';
+
 
 @Component({
   selector: 'app-add-sponsor',
@@ -40,9 +43,9 @@ export class AddSponsorComponent implements OnInit {
 
     });
 
-    /* get sponsorName() {                              // getters & setters ?
+/*      get sponsorName() {                              // getters & setters 
       return this.sponsorName.get('sponsorName');
-    } */
+    }  */
 
 
     // EXTRACT DATA FROM FORM

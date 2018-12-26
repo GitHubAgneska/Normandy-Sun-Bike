@@ -1,22 +1,24 @@
 
 
-<!------  INPUT FIELDS - CREATE NEW SPONSOR  ------->
 
-<div class="add-sponsors-container">
+<!------  INPUT FIELDS - EDIT SELECTED SPONSOR  ------->
+
+<div class="edit-sponsors-container">
 
   <!------ image upload  ------->
 
-
+  <h4>EDITER SPONSOR</h4>
   <div class="uploading-area">          
     <angular-file-uploader [config]="afuConfig" id="uploadingArea"></angular-file-uploader>
-    <input style="display: none" type="file" (change)="onFileChanged($event)" >
-    <!-- <div *ngFor="let file of fileUploads">
+    <input style="display: none" type="file" (change)="onFileChanged($event)">
+   <!-- show img to upload -->
+    <div *ngFor="let file of fileUploads">   
         {{file.name}}
         <img src="{{file.url}}"/>
-    </div> -->
+    </div>
   </div>  
 
-  <!------ form fields for adding sponsor ------->
+  <!------ form fields for editing sponsor ------->
 
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
@@ -25,7 +27,7 @@
     <div class="form-group">
 
       <mat-form-field appearance="outline">
-         <input matInput placeholder="Nom du sponsor" formControlName="sponsorName" aria-label="sponsor-name">
+         <input matInput placeholder="{{this.sponsor.name}}" formControlName="sponsorName" aria-label="sponsor-name">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
@@ -56,4 +58,3 @@
   </form>
   
  
-</div>

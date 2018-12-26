@@ -16,7 +16,13 @@ export class AdminSponsorsComponent implements OnInit {
   editSponsorVisible:boolean = false;
   deleteSponsor:boolean = false;
 
-  
+
+  selectedSponsor:Sponsor = {
+    name:"no_sponsor_defined",
+    img:"",
+    level:0
+  };
+
   constructor() { }
 
   ngOnInit() {
@@ -38,6 +44,10 @@ export class AdminSponsorsComponent implements OnInit {
       for (let i = 0; i < SPONSORS.length ; i++){
         if (SPONSORS[i] ==  ) 
       }*/
+    }
+    
+    public onSelect(sponsor:Sponsor):void{
+      this.selectedSponsor = sponsor;
     }
   
 

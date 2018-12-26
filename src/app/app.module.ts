@@ -34,6 +34,7 @@ import { AddSponsorComponent } from './admin/admin-sponsors/add-sponsor/add-spon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminBlogArticlesComponent } from './admin/admin-blog-articles/admin-blog-articles.component';
 import { AddBlogArticleComponent } from './admin/admin-blog-articles/add-blog-article/add-blog-article.component';
+import { EditSponsorComponent } from './admin/admin-sponsors/edit-sponsor/edit-sponsor.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { AddBlogArticleComponent } from './admin/admin-blog-articles/add-blog-ar
     RaceComponent,
     AddSponsorComponent,
     AdminBlogArticlesComponent,
-    AddBlogArticleComponent
+    AddBlogArticleComponent,
+    EditSponsorComponent
   ],
   imports: [
     BrowserModule,

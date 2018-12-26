@@ -43,7 +43,7 @@
 .sponsor-element-container{
 /*     width: 100%;
     height: auto; */
-    display: flex;
+    display: column;
     margin-bottom: 3vw;
     border-bottom: grey solid 1px;
 }
@@ -52,12 +52,12 @@
 
 .sponsorList{
     height:100vh;
-    padding-right:2% !important;
     width:auto;   
+   text-align: center;
 }
 
 .logo-container img{        
-    width:80%;
+    width:80%   ;
     flex-shrink: 0;
     display: block;
 }
@@ -66,6 +66,14 @@
     display: inline-block;
 }
 
+.sponsors{
+    opacity:0.6;
+}
+
+.sponsors:hover{
+    opacity:1;
+    border:1px solid  #6f7c91;
+}
 
 
 
@@ -73,15 +81,15 @@
 
 
     .sponsor-element-container{
-        width: 60%;   
-        display: flex;
-        margin-bottom: 3vw;
+        width: 100%;   
+        display: column;
+        margin:0 auto 3vw auto;
         transition: 1s; 
     }
 
-    .circle, .vertical-line{
+/*     .circle, .vertical-line{
         display:none;
-    }
+    } */
     
     .sponsorList{
         padding-right:0;
