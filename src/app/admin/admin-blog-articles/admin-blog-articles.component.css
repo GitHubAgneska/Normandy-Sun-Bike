@@ -1,0 +1,106 @@
+
+/* ---------------WHOLE PAGE' S STYLE ------------*/
+
+.blogArticle-Admin-main-container{
+    height:100vh;
+    margin-top:3rem;
+
+}
+
+
+/* ---BLOCKS ARTICLES : IMAGE + INFO ----*/
+
+
+#addblogArticleBtn, #editBlogArticleBtn, #deleteBlogArticleBtn{
+    color: #fff;
+    border: none;
+    background-color: #6f7c91;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+#addblogArticleBtn:hover, #editBlogArticleBtn:hover, #deleteBlogArticleBtn:hover{
+    background-color: #505566;
+}
+
+
+
+
+.blogArticle-element-container{
+/*  width: 100%;
+    height: auto; */
+    display: flex;
+    margin-bottom: 3vw;
+    border-bottom: grey solid 1px;
+}
+
+.blogArticleList{
+    height:100vh;
+    padding-right:2% !important;
+    width:auto;   
+}
+
+.img-container img{        
+    width:80%;
+    flex-shrink: 0;
+    display: block;
+}
+
+
+@media only screen and (max-width : 640px){
+
+    .articles{
+        width:30%;
+        display:inline-block;
+        transition: 1s;  
+    }
+
+    .blogArticle-element-infos{
+        justify-content: center;
+    }
+
+    .blogArticle-element-infos h4{
+        font-size:1rem;
+    }
+
+    .blogArticle-element-infos button{
+        font-size:1rem;
+
+    }
+
+    .blogArticleList{
+        align-content: center;
+    }
+
+}
+
+
+.blogArticle-element-infos{
+
+    justify-content: center;
+    margin-left:1vw;
+    margin-right:1vw;
+}
+
+
+.blogArticle-element-title{
+    border-bottom: solid 3px #6f7c91;
+    font-size: 1.8em;
+}
+
+
+.blogArticle-element-button{
+    margin-top: 0.5em;
+    
+}
+
+
+
+/*** -- EDIT ARTICLES SECTION -- ***/
+
+.blogArticle-input-container{
+    margin-top:2%;
+    border-left: grey solid 1px;
+
+}

@@ -1,6 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Sponsor } from '../sponsorClass';
+import { SPONSORS } from '../mock-sponsors';
+
 
 @Component({
   selector: 'app-add-sponsor',
@@ -18,9 +21,7 @@ export class AddSponsorComponent implements OnInit {
 
   registerForm : FormGroup;
 
-  selectLevel1:boolean = false;
-  selectLevel2:boolean = false;
-  selectLevel3:boolean = false;
+  selectedLevel:number = 0;
 
 
 
@@ -42,16 +43,15 @@ export class AddSponsorComponent implements OnInit {
 
     });
 
-    /* get sponsorName() {                       // getters & setters ?
+/*      get sponsorName() {                              // getters & setters 
       return this.sponsorName.get('sponsorName');
-    } */
+    }  */
 
 
     // EXTRACT DATA FROM FORM
     this.registerForm.valueChanges.subscribe(console.log )  
   }
 
-  
 
   // 
   handleFileInput(files: FileList) {
@@ -67,6 +67,7 @@ export class AddSponsorComponent implements OnInit {
       url:"https://example-file-upload-api"
     }
 };
+
 
 
 // DISPLAY IMAGE TO UPLOAD
@@ -85,14 +86,11 @@ export class AddSponsorComponent implements OnInit {
 }  */
 
 
-
   //display img before upload
 
-/*   uploadData: any;
+  uploadData: any;
   selectedFile: File;
-
-
-onFileChanged(event) {
+/* onFileChanged(event) {
   this.selectedFile = <File>event.target.files[0];
   if (event.target.files && event.target.files[0])
   {
@@ -106,23 +104,7 @@ onFileChanged(event) {
 
 
 
-
-// DISPLAY SPONSOR DESCRIPTION FIELD IF LEVEL 1 SELECTED
-public displayDescriptionField() {
-  this.selectLevel1 = true;
-}
-
-// HIDE PONSOR DESCRIPTION FIELD IF LEVEL 1 SELECTED THEN LEVEL 2 or 3 SELECTED
-public hideDescriptionField() {
-  if (this.selectLevel2 || this.selectLevel3 ){
-    return true;
-  }else{
-    return false;
-  }
-}
-
-
-// VALIDATE BUTTON
+// FINAL VALIDATE BUTTON
 
 onSubmit() {
   this.submitted = true;

@@ -1,4 +1,4 @@
-import { Sponsor } from './sponsorClass';
+import { Sponsor } from '../admin-sponsors/sponsorClass';
 
 export const SPONSORS:Sponsor[] =[
     { name : 'Wild Code School', img : "/assets/logo_WCS.png", level : 1 },

@@ -11,9 +11,18 @@ export class AdminSponsorsComponent implements OnInit {
 
 
   sponsors = SPONSORS;
-  sponsorVisible:boolean = false;
 
-  
+  sponsorVisible:boolean = false;
+  editSponsorVisible:boolean = false;
+  deleteSponsor:boolean = false;
+
+
+  selectedSponsor:Sponsor = {
+    name:"no_sponsor_defined",
+    img:"",
+    level:0
+  };
+
   constructor() { }
 
   ngOnInit() {
@@ -25,6 +34,22 @@ export class AdminSponsorsComponent implements OnInit {
     this.sponsorVisible = true;
   }
 
+  public displayEditSponsorField() {
+    this.sponsorVisible = true;
+  }
+
+  public selectSponsorToDelete() {
+    alert ("Confirmer la suppression de l'élément");
+   /*  if (alert) {
+      for (let i = 0; i < SPONSORS.length ; i++){
+        if (SPONSORS[i] ==  ) 
+      }*/
+    }
+    
+    public onSelect(sponsor:Sponsor):void{
+      this.selectedSponsor = sponsor;
+    }
+  
 
 
 }
