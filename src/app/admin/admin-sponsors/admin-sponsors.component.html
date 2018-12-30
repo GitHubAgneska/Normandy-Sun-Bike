@@ -38,8 +38,8 @@
 
 <!------  INPUT FIELDS - EDIT SELECTED SPONSOR  ------->
 
-      <div *ngIf="selectedSponsor" class="sponsors-input-container col-lg-8 col-md-8 col-ms-9 col-xs-12">
-        <app-edit-sponsor></app-edit-sponsor>
+      <div *ngIf="selectedSponsor" class="sponsors-input-container col-lg-8 col-md-7 col-ms-9 col-xs-12">
+        <app-edit-sponsor [sponsor]="chosenSponsor"></app-edit-sponsor>
       </div>
 
     </div>

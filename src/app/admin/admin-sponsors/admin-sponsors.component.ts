@@ -17,14 +17,11 @@ export class AdminSponsorsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-
-    }
+  ngOnInit() {}
 
   // create new sponsor field - (directive *ngIf)
   public displayNewSponsorFields(){
     this.sponsorVisible = true;
-
   }
 
   // edit selected sponsor fields - (directive *ngIf)   
@@ -34,9 +31,10 @@ export class AdminSponsorsComponent implements OnInit {
     this.chosenSponsor = sponsor;
     if (this.sponsorVisible == true){
       this.selectedSponsor = false;
+      }
+    if (this.selectedSponsor = true){
+      this.sponsorVisible = false;   
     }
   }
   
-
-
 }

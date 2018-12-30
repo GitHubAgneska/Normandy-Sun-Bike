@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Sponsor } from '../sponsorClass';
 import { SPONSORS } from '../mock-sponsors';
@@ -11,17 +11,15 @@ import { SPONSORS } from '../mock-sponsors';
 
 export class EditSponsorComponent implements OnInit {
 
-  fileToUpload:File = null;
 
-  url = '';
-
-  submitted = false;
-
-  registerForm : FormGroup;
-
+  @Input() sponsor:Sponsor;
+  sponsors = SPONSORS;
   selectedLevel:number = 0;
 
-  sponsors = SPONSORS;
+  fileToUpload:File = null;
+  url = '';
+  submitted = false;
+  registerForm : FormGroup;
 
   uploadData: any;
   selectedFile: File;
@@ -31,13 +29,6 @@ export class EditSponsorComponent implements OnInit {
     img:"",
     level:0
   };
-
-  public onSelect(sponsor:Sponsor):void{
-    this.selectedSponsor = sponsor;
-    console.log(`selectedSponsor = ${JSON.stringify(this.selectedSponsor)}`);
-  }
-
-
 
   constructor(private formBuilder: FormBuilder) { }   // add formbuilder service
 
@@ -55,25 +46,20 @@ export class EditSponsorComponent implements OnInit {
 
     });
 
-        // EXTRACT DATA FROM FORM
-        this.registerForm.valueChanges.subscribe(console.log )  
-      }
+      // EXTRACT DATA FROM FORM
+    this.registerForm.valueChanges.subscribe(console.log )  
+    }
 
-      handleFileInput(files: FileList) {
-        this.fileToUpload = files.item(0);
-      }
+    handleFileInput(files: FileList) {
+      this.fileToUpload = files.item(0);
+    }
       
-
-
-
-
 
   // FINAL VALIDATE BUTTON
 
   onSubmit() {
     this.submitted = true;
   };
-
 
 
 }

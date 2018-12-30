@@ -3,37 +3,35 @@
 .sponsorAdmin-main-container{    
     height:100vh;
     margin-top:3rem;
-
 }
 
 /* ------- BLOCKS SPONSORS : LOGO + INFO ------*/
 
 
-    /*----ADD SPONSOR BUTTON----*/
+    /*----ADD SPONSOR BUTTON----
 
-/* #addSponsorBtn, #editSponsorBtn, #deleteSponsorBtn{
+ #addSponsorBtn, #editSponsorBtn, #deleteSponsorBtn{
     color: #fff;
     border: none;
     background-color: #6f7c91;
     font-size: 1.5rem;
     cursor: pointer;
-} */
+}
 
-
-/* @media only screen and (max-width :640px){
+ @media only screen and (max-width :640px){
     .sponsor-element-container #addSponsorBtn{
         width:100%;
     }
-} */
-/* 
+} 
+
 #addSponsorBtn:hover, #editSponsorBtn:hover, #deleteSponsorBtn:hover{
     background-color: #505566;
 } */
 
 
 .sponsor-element-container{
-/*     width: 100%;
-    height: auto; */
+/*     width: 100%; */  
+
     display: column;
     margin-bottom: 3vw;
     border-bottom: grey solid 1px;
@@ -49,7 +47,6 @@
 .logo-container img{        
     width:80%   ;
     flex-shrink: 0;
-    display: block;
 }
 
 .sponsor-element-level{
@@ -58,24 +55,43 @@
 
 .sponsors{
     opacity:0.6;
+    vertical-align: top;
+    word-wrap: normal;
 }
 
 .sponsors:hover{
     opacity:1;
     border:1px solid  #6f7c91;
 }
+
 .sponsors.selected{
     opacity:1;
     border:1px solid  #6f7c91;
-    background-color:red;
 }
 
 
+.sponsor-element-infos{
+    justify-content: center;
+    margin-left:1vw;
+    margin-right:1vw;
+}
+
+
+.sponsor-element-title{
+    border-bottom: solid 3px #6f7c91;
+    font-size: 1.8em;
+}
+
+
+.sponsor-element-button{
+    margin-top: 0.5em;
+    
+}
 
 @media only screen and (min-width : 640px){
 
     .sponsor-element-container{
-        width: 100%;   
+        width: 80%;   
         display: column;
         margin:0 auto 3vw auto;
         transition: 1s; 
@@ -95,15 +111,21 @@
 }
 
 
+
+/*------ MOBILE ----*/
+
 @media only screen and (max-width : 640px){
 
 
+    .sponsors {
+        height: 35vw;
+    }
+
     .sponsors{
-        width:30%;
+        width:25%;
         display:inline-block;
         transition: 1s;  
     }
-
 
     .sponsor-element-infos{
         justify-content: center;
@@ -121,29 +143,16 @@
         align-content: center;
         height:auto;
     }
+
+    .sponsorList img{
+        margin-top:0 !important;
+    }
 }
 
 
 
 
-.sponsor-element-infos{
 
-    justify-content: center;
-    margin-left:1vw;
-    margin-right:1vw;
-}
-
-
-.sponsor-element-title{
-    border-bottom: solid 3px #6f7c91;
-    font-size: 1.8em;
-}
-
-
-.sponsor-element-button{
-    margin-top: 0.5em;
-    
-}
 
 
 /*  EDIT SPONSORS SECTION   */
