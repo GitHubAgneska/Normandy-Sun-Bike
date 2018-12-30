@@ -14,16 +14,13 @@ import { SPONSORS } from '../mock-sponsors';
 export class AddSponsorComponent implements OnInit {
 
   fileToUpload:File = null;
-
   url = '';
-
   submitted = false;
-
   registerForm : FormGroup;
-
   selectedLevel:number = 0;
 
-
+  sponsors = SPONSORS;
+  sponsorVisible:boolean = true;
 
 
   constructor(private formBuilder: FormBuilder) { }  // add formbuilder service
@@ -51,7 +48,6 @@ export class AddSponsorComponent implements OnInit {
     // EXTRACT DATA FROM FORM
     this.registerForm.valueChanges.subscribe(console.log )  
   }
-
 
   // 
   handleFileInput(files: FileList) {

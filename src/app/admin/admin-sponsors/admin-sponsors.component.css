@@ -8,25 +8,16 @@
 
 /* ------- BLOCKS SPONSORS : LOGO + INFO ------*/
 
- .circle{
-    margin-top:90%;
-}
-
-.vertical-line{
-    border-left: solid 6px #000;
-    height: 10vw;
-    margin-left:2rem; 
-    } 
 
     /*----ADD SPONSOR BUTTON----*/
 
-#addSponsorBtn, #editSponsorBtn, #deleteSponsorBtn{
+/* #addSponsorBtn, #editSponsorBtn, #deleteSponsorBtn{
     color: #fff;
     border: none;
     background-color: #6f7c91;
     font-size: 1.5rem;
     cursor: pointer;
-}
+} */
 
 
 /* @media only screen and (max-width :640px){
@@ -34,10 +25,10 @@
         width:100%;
     }
 } */
-
+/* 
 #addSponsorBtn:hover, #editSponsorBtn:hover, #deleteSponsorBtn:hover{
     background-color: #505566;
-}
+} */
 
 
 .sponsor-element-container{
@@ -49,11 +40,10 @@
 }
 
 
-
 .sponsorList{
     height:100vh;
     width:auto;   
-   text-align: center;
+    text-align: center;
 }
 
 .logo-container img{        
@@ -74,11 +64,15 @@
     opacity:1;
     border:1px solid  #6f7c91;
 }
+.sponsors.selected{
+    opacity:1;
+    border:1px solid  #6f7c91;
+    background-color:red;
+}
 
 
 
 @media only screen and (min-width : 640px){
-
 
     .sponsor-element-container{
         width: 100%;   
@@ -87,9 +81,6 @@
         transition: 1s; 
     }
 
-/*     .circle, .vertical-line{
-        display:none;
-    } */
     
     .sponsorList{
         padding-right:0;
@@ -98,7 +89,7 @@
     }
 
     .logo-container img{        
-        width:15vw;
+        width:12vw;
         display:inline-block; 
     }
 }
@@ -106,9 +97,6 @@
 
 @media only screen and (max-width : 640px){
 
-    .circle, .vertical-line{
-        display:none;
-    }
 
     .sponsors{
         width:30%;
@@ -162,7 +150,7 @@
 
  .sponsors-input-container{
     margin-top:2%;
-    border-left: grey solid 1px;
+    /* border-left: grey solid 1px; */
 
 }
 

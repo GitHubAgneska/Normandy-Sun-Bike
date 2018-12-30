@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { Sponsor } from './sponsorClass';
 import { SPONSORS } from './mock-sponsors';
 
@@ -11,17 +11,9 @@ export class AdminSponsorsComponent implements OnInit {
 
 
   sponsors = SPONSORS;
-
   sponsorVisible:boolean = false;
-  editSponsorVisible:boolean = false;
-  deleteSponsor:boolean = false;
-
-
-  selectedSponsor:Sponsor = {
-    name:"no_sponsor_defined",
-    img:"",
-    level:0
-  };
+  selectedSponsor:boolean = false;
+  chosenSponsor:Sponsor;
 
   constructor() { }
 
@@ -29,26 +21,21 @@ export class AdminSponsorsComponent implements OnInit {
 
     }
 
-  // create new sponsor field - directive *ngIf
+  // create new sponsor field - (directive *ngIf)
   public displayNewSponsorFields(){
     this.sponsorVisible = true;
+
   }
 
-  public displayEditSponsorField() {
-    this.sponsorVisible = true;
+  // edit selected sponsor fields - (directive *ngIf)   
+  public onSelect(sponsor:Sponsor):void{
+    this.selectedSponsor = true;
+    console.log(`selectedSponsor = ${JSON.stringify(this.selectedSponsor)}`);
+    this.chosenSponsor = sponsor;
+    if (this.sponsorVisible == true){
+      this.selectedSponsor = false;
+    }
   }
-
-  public selectSponsorToDelete() {
-    alert ("Confirmer la suppression de l'élément");
-   /*  if (alert) {
-      for (let i = 0; i < SPONSORS.length ; i++){
-        if (SPONSORS[i] ==  ) 
-      }*/
-    }
-    
-    public onSelect(sponsor:Sponsor):void{
-      this.selectedSponsor = sponsor;
-    }
   
 
 

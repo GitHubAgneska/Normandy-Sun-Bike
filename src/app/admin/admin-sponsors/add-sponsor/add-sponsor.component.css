@@ -4,11 +4,9 @@
     width:80%;
     display: flex;
     flex-direction: column;
-
     margin:1rem auto 2rem auto;
     text-align: center; 
 } 
-
 
 
 .uploading-area{
@@ -24,20 +22,15 @@
     display:flex !important;
     flex-direction: column !important;
     margin-bottom:2%;
-
 }
-
 
 .sponsors-input-group {
-    margin-left:15%;
-    
+    margin-left:15%;  
 }
-
 
 .sponsors-input-container .sponsors-input-fields{
     width:100%;
     margin:2rem;
-   
 }
 
 /* ----input fields---- */
@@ -47,11 +40,9 @@ mat-form-field.mat-form-field{
     
 }
 
-
 .validate&cancel-btn{
     justify-content:space-between;
 }
-
 
 
 #validate-btn, #cancel-btn{
@@ -63,7 +54,6 @@ mat-form-field.mat-form-field{
     cursor: pointer;
     margin :0 auto;
 }
-
 
 #validate-btn{
     background-color: #6f7c91;
@@ -80,7 +70,6 @@ mat-form-field.mat-form-field{
     background-color:#505566;
 }
 
-/********WONT WORK!!!!*********/
 /*----- upload block (angular-file-uploader component)-----*/
 
 
@@ -94,19 +83,15 @@ mat-form-field.mat-form-field{
     
 }
 
-
 ::ng-deep .afu-valid-file.ng-star-inserted{
     text-align: center;
   
 }
 
+ @media only screen and (max-width : 640px) {
 
-
-/* @media only screen and (max-width : 640px) {
-
-    .ng-star-inserted.afu-upload-btn{
+    ::ng-deep .ng-star-inserted.afu-upload-btn{
         font-size: 3rem;
     }
 
-} */
-
+}

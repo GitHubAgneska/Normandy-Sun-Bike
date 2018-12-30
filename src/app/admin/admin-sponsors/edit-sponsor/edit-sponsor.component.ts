@@ -8,6 +8,7 @@ import { SPONSORS } from '../mock-sponsors';
   templateUrl: './edit-sponsor.component.html',
   styleUrls: ['./edit-sponsor.component.css']
 })
+
 export class EditSponsorComponent implements OnInit {
 
   fileToUpload:File = null;
@@ -22,6 +23,20 @@ export class EditSponsorComponent implements OnInit {
 
   sponsors = SPONSORS;
 
+  uploadData: any;
+  selectedFile: File;
+
+  selectedSponsor:Sponsor = {
+    name:"no_sponsor_defined",
+    img:"",
+    level:0
+  };
+
+  public onSelect(sponsor:Sponsor):void{
+    this.selectedSponsor = sponsor;
+    console.log(`selectedSponsor = ${JSON.stringify(this.selectedSponsor)}`);
+  }
+
 
 
   constructor(private formBuilder: FormBuilder) { }   // add formbuilder service
@@ -29,9 +44,8 @@ export class EditSponsorComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.formBuilder.group( {  // create data model for this form
 
-
-      sponsorImg:['{{this.sponsor.img}}'],
-      sponsorName:[ '{{this.sponsor.name}}', Validators.required],
+      sponsorImg:['{{selectedSponsor.img}}'],
+      sponsorName:['', Validators.required],
       sponsorLink:[''],
       sponsorDescription: [ '', Validators.required],
       sponsorLevel:[''],
@@ -41,22 +55,26 @@ export class EditSponsorComponent implements OnInit {
 
     });
 
+        // EXTRACT DATA FROM FORM
+        this.registerForm.valueChanges.subscribe(console.log )  
+      }
+
+      handleFileInput(files: FileList) {
+        this.fileToUpload = files.item(0);
+      }
+      
 
 
-    get sponsorName() {                              // getters & setters 
-      return this.sponsorName.get('sponsorName');
-    }  
-
-
-  }
 
 
 
   // FINAL VALIDATE BUTTON
 
-onSubmit() {
-  this.submitted = true;
-}
+  onSubmit() {
+    this.submitted = true;
+  };
+
+
 
 }
 

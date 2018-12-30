@@ -1,13 +1,8 @@
 
-
 <!------  INPUT FIELDS - CREATE NEW SPONSOR  ------->
-
 <div class="add-sponsors-container">
-
   <!------ image upload  ------->
-
-
-  <div class="uploading-area">          
+  <div class="uploading-area">         
     <angular-file-uploader [config]="afuConfig" id="uploadingArea"></angular-file-uploader>
     <input style="display: none" type="file" (change)="onFileChanged($event)" >
     <!-- <div *ngFor="let file of fileUploads">
@@ -16,14 +11,10 @@
     </div> -->
   </div>  
 
-  <!------ form fields for adding sponsor ------->
-
+  <!------ form fields for  sponsor adding ------->
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-
       <!-- Value : {{ registerForm.value | json }} // display input infos --> 
-
     <div class="form-group">
-
       <mat-form-field appearance="outline">
          <input matInput placeholder="Nom du sponsor" formControlName="sponsorName" aria-label="sponsor-name">
       </mat-form-field>
@@ -43,17 +34,11 @@
       <mat-form-field *ngIf="selectedLevel == 1" appearance="fill">
           <textarea rows="10" matInput placeholder="Description" formControlName="sponsorDescription" aria-label="sponsor-description"></textarea>
       </mat-form-field>
-
-
-
        <!-- <mat-checkbox formControlName="confirmer" color="primary">Confirmer</mat-checkbox> -->
-
     </div>
     <div class="validate&cancel-btn row">
-      <button class="btn btn-lg sponsors-input-fields col-5" id="cancel-btn" click="cancel()">Annuler</button>
+      <button class="btn btn-lg sponsors-input-fields col-5" id="cancel-btn" click="sponsorVisible == false">Annuler</button>
       <button class="btn btn-lg sponsors-input-fields col-5" id="validate-btn" click="onSubmit()">Valider</button> 
     </div>
-  </form>
-  
- 
+  </form> 
 </div>

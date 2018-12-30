@@ -1,68 +1,48 @@
 
 <app-header></app-header>
- 
   <div class="sponsorAdmin-main-container container-fluid">
-  
     <div class="row ">
+ <!------   STATIC BLOCK LEFT : SPONSORS LIST  ------->      
+      <div  class="sponsorList col-lg-2 col-md-4 col-sm-3 col-xs-12">
 
-
- <!------   STATIC BLOCK : SPONSORS LIST  ------->
-      
-        <div  class="sponsorList col-lg-3 col-md-4 col-sm-3 col-xs-12">
-
-
-      <!------  First Block : ajouter sponsor  ------->
-
-          <div class="sponsor-element-container pb-3" >
-<!--             <div>
-              <div class="vertical-line"></div>
-              <div class="horizontal-line"></div> 
-            </div> -->
-            <div class="sponsor-element-infos">
-              <h4 class="sponsor-element-title text">Ajouter un sponsor</h4>
-              <div class="sponsor-element-button text">
-                <button type="button" class="btn btn-lg" id="addSponsorBtn" (click)="displayNewSponsorFields()"> + </button></div>
-            </div>
+    <!------  Top Block : "ajouter sponsor"  ------->
+        <div class="sponsor-element-container pb-3" >
+          <div class="sponsor-element-infos">
+            <h4 class="sponsor-element-title text">Ajouter un sponsor</h4>
+            <div class="sponsor-element-button text">
+              <button type="button" class="btn btn-lg" id="addSponsorBtn" (click)="displayNewSponsorFields()"> + </button></div>
           </div>
+        </div>
 
- 
-       <!------   Sponsor Blocks   --------->
-
-
-          <div *ngFor = "let sponsor of sponsors" [class.selected]="sponsor === selectedSponsor" (click)="onSelect(sponsor)" class="sponsor-element-container sponsors pb-3 pt-3">
-<!--             <div>
-              <div class="circle" ></div>
-              <div class="vertical-line"></div> 
+      <!------   Sponsors List  --------->
+        <div *ngFor = "let sponsor of sponsors" [class.selected]="sponsor === chosenSponsor" (click)="onSelect(sponsor)" class="sponsor-element-container sponsors pb-3 pt-3">
+          <div class="logo-container img-fluid m-auto">
+            <img src="{{sponsor.img}}" /> 
+          </div>          
+          <div class="sponsor-element-infos">
+            <h4 class="sponsor-element-level ">Nom: {{sponsor.name}} <br/>Level: {{sponsor.level}}</h4>       
+       <!-- <div class="sponsor-element-button ">
+              <button class="btn btn-lg d-block mb-3" id ="editSponsorBtn" (click)="displayEditSponsorField()">editer</button>
+              <button class="btn btn-lg d-block" id ="deleteSponsorBtn" (click)="selectSponsorToDelete()">supprimer</button>                
             </div> -->
-            <div class="logo-container img-fluid m-auto">
-              <img src="{{sponsor.img}}" /> 
-            </div>          
-            <div class="sponsor-element-infos">
-              <h4 class="sponsor-element-level ">Nom: {{sponsor.name}} <br/>Level: {{sponsor.level}}</h4>
-              <div class="sponsor-element-button">
-<!--               <div class="sponsor-element-button ">
-                  <button class="btn btn-lg d-block mb-3" id ="editSponsorBtn" (click)="displayEditSponsorField()">editer</button>
-                <button class="btn btn-lg d-block" id ="deleteSponsorBtn" (click)="selectSponsorToDelete()">supprimer</button>                
-              </div>   -->
-            </div>
           </div>
-         
-
         </div>
       </div>
-
+      
 
 <!------  INPUT FIELDS - CREATE NEW SPONSOR  ------->
 
-      <div *ngIf="sponsorVisible == true" class="sponsors-input-container col-lg-8 col-md-8 col-ms-9 col-xs-12">    
+      <div *ngIf="sponsorVisible" class="sponsors-input-container col-lg-8 col-md-8 col-ms-9 col-xs-12">    
         <app-add-sponsor></app-add-sponsor>
       </div>
 
-      <div *ngIf="selectedSponsor.name!='no_sponsor_defined'" class="sponsors-input-container col-lg-8 col-md-8 col-ms-9 col-xs-12">
+<!------  INPUT FIELDS - EDIT SELECTED SPONSOR  ------->
+
+      <div *ngIf="selectedSponsor" class="sponsors-input-container col-lg-8 col-md-8 col-ms-9 col-xs-12">
         <app-edit-sponsor></app-edit-sponsor>
       </div>
 
-
+    </div>
   </div>
 
 

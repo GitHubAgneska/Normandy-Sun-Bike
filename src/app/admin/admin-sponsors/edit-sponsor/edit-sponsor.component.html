@@ -1,33 +1,28 @@
 
-
-
 <!------  INPUT FIELDS - EDIT SELECTED SPONSOR  ------->
 
 <div class="edit-sponsors-container">
 
-  <!------ image upload  ------->
+  <h4 class="sponsor-element-title text">Modifier ce sponsor</h4>
+  <img id="sponsorImg" src="{{sponsor.img}}" alt="sponsor logo" />  
 
-  <h4>EDITER SPONSOR</h4>
-  <div class="uploading-area">          
+   <!------ image upload  ------->  
+  <div class="uploading-area">     
     <angular-file-uploader [config]="afuConfig" id="uploadingArea"></angular-file-uploader>
     <input style="display: none" type="file" (change)="onFileChanged($event)">
-   <!-- show img to upload -->
+    <!-- show img to upload -->
     <div *ngFor="let file of fileUploads">   
         {{file.name}}
         <img src="{{file.url}}"/>
     </div>
   </div>  
 
-  <!------ form fields for editing sponsor ------->
-
+  <!------ form fields for sponsor editing ------->
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-
       <!-- Value : {{ registerForm.value | json }} // display input infos --> 
-
     <div class="form-group">
-
       <mat-form-field appearance="outline">
-         <input matInput placeholder="{{this.sponsor.name}}" formControlName="sponsorName" aria-label="sponsor-name">
+         <input matInput placeholder="sponsorName" formControlName="sponsorName" aria-label="sponsor-name">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
@@ -45,14 +40,10 @@
       <mat-form-field *ngIf="selectedLevel == 1" appearance="fill">
           <textarea rows="10" matInput placeholder="Description" formControlName="sponsorDescription" aria-label="sponsor-description"></textarea>
       </mat-form-field>
-
-
-
        <!-- <mat-checkbox formControlName="confirmer" color="primary">Confirmer</mat-checkbox> -->
-
     </div>
     <div class="validate&cancel-btn row">
-      <button class="btn btn-lg sponsors-input-fields col-5" id="cancel-btn" click="cancel()">Annuler</button>
+      <button class="btn btn-lg sponsors-input-fields col-5" id="cancel-btn" click="selectedSponsor == false">Annuler</button>
       <button class="btn btn-lg sponsors-input-fields col-5" id="validate-btn" click="onSubmit()">Valider</button> 
     </div>
   </form>
