@@ -9,14 +9,24 @@
 } 
 
 
-.uploading-area{
+.uploading-area-addSponsor{
     justify-content: space-around !important;
-    border:1px solid grey;
     padding:1%;
     border-radius:5px;
     margin-bottom:2%;
 }
 
+.sponsorNewLogoAdd{
+    width:100%;
+  
+}
+
+.filePlaceholder{
+    
+    outline: 1px dashed grey !important;
+    display:block;
+    height:80%;
+}
 
 .form-group{
     display:flex !important;
@@ -90,9 +100,21 @@ mat-form-field.mat-form-field{
 }
 
 ::ng-deep .afu-valid-file.ng-star-inserted{
-    text-align: center;
-  
+    text-align: center !important;
+    background-color:none !important;
+    border:1px solid gray !important;
+    border-radius:5px;
+    color:#fff !important;
+    width:100% !important;
+ 
 }
+
+::ng-deep .afu-valid-file.ng-star-inserted .text-primary{  
+    color:#fff !important;
+    text-align: center !important;
+}
+
+
 
  @media only screen and (max-width : 640px) {
 

@@ -4,14 +4,22 @@
 <div class="add-sponsors-container">
   
   <h4 class="sponsor-element-title text">Ajouter un sponsor</h4>
-  <!------ image upload  ------->
-  <div class="uploading-area">         
-    <angular-file-uploader [config]="afuConfig" id="uploadingArea"></angular-file-uploader>
-    <input style="display: none" type="file" (change)="onFileChanged($event)" >
-    <!-- <div *ngFor="let file of fileUploads">
-        {{file.name}}
-        <img src="{{file.url}}"/>
-    </div> -->
+
+  <div class="uploading-area-addSponsor row">
+   <!----new logo area ----> 
+    <div class="newLogoAdd col-5">
+      <span>Nouveau logo</span>
+      <div class="filePlaceholder">
+        <div *ngFor="let file of fileUploads" class="filePlaceholder"> 
+          <input type="image" class="sponsorNewLogoAdd"  src="{{file.url}}" alt="new logo"/>
+        </div>
+      </div>
+    </div>
+    <div class="addSponsorLogobtns col-5">   
+      <angular-file-uploader #fileUploadAdd [config]="afuConfig2" id="uploadingArea" class="col-6"></angular-file-uploader>
+      <input style="display: none" type="file" (change)="onFileChanged($event)" >
+    </div>   
+
   </div>  
 
   <!------ form fields for  sponsor adding ------->

@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import {FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Sponsor } from '../sponsorClass';
 import { SPONSORS } from '../mock-sponsors';
+import { AngularFileUploaderModule } from 'angular-file-uploader';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-edit-sponsor',
@@ -10,7 +12,6 @@ import { SPONSORS } from '../mock-sponsors';
 })
 
 export class EditSponsorComponent implements OnInit {
-
 
   @Input() sponsor:Sponsor;
   sponsors = SPONSORS;
@@ -29,6 +30,28 @@ export class EditSponsorComponent implements OnInit {
     img:"",
     level:0
   };
+
+
+/*   @ViewChild('fileUploadEdit')
+  private fileUpload1:  AngularFileUploaderModule; */
+
+  // angular file-upload comp conf 
+    afuConfig = {
+      multiple: false,
+      formatsAllowed: ".jpg,.jpeg,.png",
+      maxSize: "1",
+      uploadAPI:  {
+        url:"https://example-file-upload-api",
+        headers: {
+          "Content-Type" : "text/plain;charset=UTF-8",
+      /* "Authorization" : `Bearer ${token}` */
+        }
+      },
+      /* theme: "dragNDrop", */
+      hideProgressBar: true,
+      hideResetBtn: false,
+      hideSelectBtn: false
+};
 
   constructor(private formBuilder: FormBuilder) { }   // add formbuilder service
 

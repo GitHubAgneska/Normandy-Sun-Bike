@@ -5,17 +5,22 @@
 
   <h4 class="sponsor-element-title text">Modifier ce sponsor</h4>
  
-   <!------ image upload  ------->  
-  <div class="uploading-area">  
-    <div> 
-      <img class="sponsorLogo" src="{{sponsor.img}}" alt="sponsor logo" />  
-    </div>   
-    <angular-file-uploader [config]="afuConfig" id="uploadingArea"></angular-file-uploader>
-    <input style="display: none" type="file" (change)="onFileChanged($event)">
-    <!-- show img to upload -->
-    <div *ngFor="let file of fileUploads">   
-        {{file.name}}
-        <img src="{{file.url}}"/>
+   <!------ change logo area  ------->  
+  <div class="uploading-area-editSponsor row">  
+    <div class="logoActuel col-4"> 
+      <span>Logo actuel</span>
+      <input type="image" class="sponsorLogoActuel" src="{{sponsor.img}}" alt="sponsor logo" />  
+    </div>  
+    <div class="changeLogoBtns col-4">
+      <angular-file-uploader  #fileUploadEdit [config]="afuConfig" id="uploadingArea"></angular-file-uploader>
+      <input style="display:none" type="file" (change)="onFileChanged($event)">
+    </div> 
+    <!-- new logo display-->
+    <div class="newLogo col-4">
+      <span>Nouveau logo</span>
+      <div *ngFor="let file of fileUploads"> 
+      <input type="image" class="sponsorNewLogo" src="{{file.url}}" alt="new logo" border="1"/>
+     </div>
     </div>
   </div>  
 
@@ -31,7 +36,7 @@
         <input matInput placeholder="{{sponsor.link}}" formControlName="sponsorLink" aria-label="sponsor-link">
       </mat-form-field>
 
-      <textarea appearance="outline" rows="10" matInput placeholder="Description du sponsor : {{sponsor.description}}" formControlName="sponsorDescription" aria-label="sponsor-description"></textarea>
+     <!--  <textarea appearance="outline" rows="10" matInput placeholder="Description du sponsor : {{sponsor.description}}" formControlName="sponsorDescription" aria-label="sponsor-description"></textarea> -->
 
       <mat-form-field> 
         <mat-select [(ngModel)]="selectedLevel" formControlName="sponsorLevel" placeholder="level:{{sponsor.level}}">
@@ -41,10 +46,10 @@
         </mat-select>
       </mat-form-field>
 
-      <mat-form-field *ngIf="selectedLevel == 1" appearance="fill" placeholder="select level">
+      <mat-form-field *ngIf="sponsor.level == 1" appearance="fill" placeholder="select level">
           <textarea rows="10" matInput placeholder="{{sponsor.description}}" formControlName="sponsorDescription" aria-label="sponsor-description"></textarea>
       </mat-form-field>
-      <mat-checkbox formControlName="confirmer" color="primary">Confirmer</mat-checkbox>
+      <!-- <mat-checkbox formControlName="confirmer" color="primary">Confirmer</mat-checkbox> -->
     </div>
     <div class="validate&cancel-btn row">
       <button class="btn btn-lg sponsors-input-fields col-5" id="cancel-btn" click="selectedSponsor == false">Annuler</button>

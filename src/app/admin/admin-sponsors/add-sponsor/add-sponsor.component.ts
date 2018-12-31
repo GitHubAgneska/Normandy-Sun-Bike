@@ -17,10 +17,29 @@ export class AddSponsorComponent implements OnInit {
   url = '';
   submitted = false;
   registerForm : FormGroup;
+
   selectedLevel:number = 0;
 
   sponsors = SPONSORS;
   sponsorVisible:boolean = true;
+
+    // angular file-upload comp conf 
+    afuConfig2 = {
+      multiple: false,
+      formatsAllowed: ".jpg,.jpeg,.png",
+      maxSize: "1",
+      uploadAPI:  {
+        url:"https://example-file-upload-api",
+        headers: {
+          "Content-Type" : "text/plain;charset=UTF-8",
+      /* "Authorization" : `Bearer ${token}` */
+        }
+      },
+      /* theme: "dragNDrop", */
+      hideProgressBar: true,
+      hideResetBtn: false,
+      hideSelectBtn: false
+};
 
 
   constructor(private formBuilder: FormBuilder) { }  // add formbuilder service
@@ -54,15 +73,6 @@ export class AddSponsorComponent implements OnInit {
     this.fileToUpload = files.item(0);
   }
 
-
-
-// ANGULAR FILE UPLOADER MODULE CONFIG
-
-  afuConfig = {
-    uploadAPI: {
-      url:"https://example-file-upload-api"
-    }
-};
 
 
 
