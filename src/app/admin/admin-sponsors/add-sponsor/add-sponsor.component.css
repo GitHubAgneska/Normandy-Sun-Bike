@@ -1,7 +1,7 @@
 
 .add-sponsors-container{
     height:auto;
-    width:80%;
+    width:100%;
     display: flex;
     flex-direction: column;
     margin:0.5rem auto 2rem auto;
@@ -18,15 +18,22 @@
 
 .sponsorNewLogoAdd{
     width:100%;
-  
 }
 
-.filePlaceholder{
-    
+.filePlaceholder{ 
     outline: 1px dashed grey !important;
     display:block;
     height:80%;
 }
+
+
+.addSponsorLogobtns{
+    width:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+
+}
+
 
 .form-group{
     display:flex !important;
@@ -34,9 +41,6 @@
     margin-bottom:2%;
 }
 
-.sponsors-input-group {
-    margin-left:15%;  
-}
 
 .sponsors-input-container .sponsors-input-fields{
     width:100%;
@@ -52,8 +56,7 @@
 /* ----input fields---- */
 
 mat-form-field.mat-form-field{
-    font-size: 1.3rem;
-    
+    font-size: 1.3rem;  
 }
 
 .validate&cancel-btn{
@@ -95,7 +98,8 @@ mat-form-field.mat-form-field{
     font-size: 1rem;
     color:#fff;
     vertical-align: top;
-    margin:0 1rem 0 1rem;
+    margin:0.1rem 1rem 0 1rem;
+    
     
 }
 
@@ -106,6 +110,7 @@ mat-form-field.mat-form-field{
     border-radius:5px;
     color:#fff !important;
     width:100% !important;
+
  
 }
 

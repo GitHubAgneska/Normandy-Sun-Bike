@@ -15,6 +15,7 @@ export class EditSponsorComponent implements OnInit {
 
   @Input() sponsor:Sponsor;
   sponsors = SPONSORS;
+
   selectedLevel:number = 0;
 
   fileToUpload:File = null;
@@ -26,7 +27,7 @@ export class EditSponsorComponent implements OnInit {
   selectedFile: File;
 
   selectedSponsor:Sponsor = {
-    name:"no_sponsor_defined",
+    name: "no_sponsor_defined",
     img:"",
     level:0
   };
@@ -51,7 +52,7 @@ export class EditSponsorComponent implements OnInit {
       hideProgressBar: true,
       hideResetBtn: false,
       hideSelectBtn: false
-};
+    };
 
   constructor(private formBuilder: FormBuilder) { }   // add formbuilder service
 

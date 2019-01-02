@@ -1,0 +1,46 @@
+<!------  INPUT FIELDS - EDIT SELECTED SPONSOR  ------->
+
+<div class="edit-blogArticle-container">
+  <h4 class="blogArticle-title text">Modifier cet article</h4>
+
+  <!------ change blogArticle image area  ------->  
+  <div class="uploading-area-editBlogArticle row">  
+    <div class="currentArticleImg col-5"> 
+      <span>Image actuelle</span>
+      <input type="image" class="image-article-current" src="{{blogArticle.img}}" alt="image article" />  
+    </div>  
+    <div class="changeImgBtns col-2">
+      <angular-file-uploader  #fileUploadEdit [config]="afuConfig" id="uploadingArea"></angular-file-uploader>
+      <input style="display:none" type="file" (change)="onFileChanged($event)">
+    </div> 
+    <!-- new logo area -->
+    <div class="newArticleImg col-5">
+      <span>Nouvelle image</span>
+      <div class="filePlaceholder">
+        <div *ngFor="let file of fileUploads"> 
+          <input type="image" class="new-article-image" src="{{file.url}}" alt="new-article-image"  id="uploadingArea"/>
+        </div> 
+      </div>
+    </div>
+  </div>  
+
+  <!------ form fields for blogArticle editing ------->
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <!-- Value : {{ registerForm.value | json }} // display input infos --> 
+    <div class="form-group">
+      <mat-form-field appearance="outline">
+         <input matInput placeholder="{{blogArticle.title}}" formControlName="blogArticleName" aria-label="blogArticle-name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="{{blogArticle.date}}" formControlName="blogArticleDate" aria-label="blogArticle-date">
+      </mat-form-field>
+
+      <textarea appearance="outline" rows="7" matInput placeholder="Texte : {{blogArticle.text}}" formControlName="blogArticleText" aria-label="blogArticle-name"></textarea>
+
+      <div class="validate&cancel-btn row">
+        <button class="btn btn-lg blogArticle-input-fields col-5" id="cancel-btn" click="selectedBlogArticle == false">Annuler</button>
+        <button class="btn btn-lg blogArticle-input-fields col-5" id="validate-btn" click="onSubmit()">Valider</button> 
+      </div>
+    </div>
+  </form>

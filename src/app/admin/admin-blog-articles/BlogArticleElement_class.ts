@@ -1,9 +1,9 @@
 
 
 export class BlogArticle {
-    id:number;
+    id?:number;
     title:string;
-
+    text:string;
 
     year?:number;
     month?:number;

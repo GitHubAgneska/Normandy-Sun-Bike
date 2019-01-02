@@ -11,20 +11,32 @@ import { BLOGARTICLES } from './mock-blogArticleElement';
 export class AdminBlogArticlesComponent implements OnInit {
 
 blogArticles = BLOGARTICLES;
+blogArticleVisible:boolean = false;
+selectedBlogArticle:boolean = false;
+chosenBlogArticle:BlogArticle;
 
-  /* blogArticles = [
-    
-    { title : 'Article 1', img : "/assets/mountain.jpg", date : "11/06/21019" },
-    { title : 'Article 2', img : "/assets/mountain.jpg", date : "12/06/21019" },
-    { title : 'Article 3', img : "/assets/mountain.jpg", date : "13/06/21019" },
-    { title : 'Article 4', img : "/assets/mountain.jpg", date : "14/06/21019" }
-
-  ]; */
-
-  
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+    // create new blog-article field - (directive *ngIf)
+    public displayNewblogArticleFields(){
+      this.blogArticleVisible = true;
+    }
+
+
+
+    // edit selected blog-article fields - (directive *ngIf)   
+  public onSelect(blogArticle:BlogArticle):void{
+    this.selectedBlogArticle = true;
+    console.log(`selectedBlogArticle = ${JSON.stringify(this.selectedBlogArticle)}`);
+    this.chosenBlogArticle = blogArticle;
+    if (this.blogArticleVisible == true){
+      this.selectedBlogArticle = false;
+      }
+    if (this.selectedBlogArticle = true){
+      this.blogArticleVisible = false;   
+    }
+
+  }
 }

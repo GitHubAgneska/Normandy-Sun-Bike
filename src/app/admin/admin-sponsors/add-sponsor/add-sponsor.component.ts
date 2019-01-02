@@ -47,7 +47,6 @@ export class AddSponsorComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.formBuilder.group( {  // create data model for this form
 
-
       sponsorImg:[''],
       sponsorName:[ '', Validators.required],
       sponsorLink:[''],
@@ -59,7 +58,7 @@ export class AddSponsorComponent implements OnInit {
 
     });
 
-/*      get sponsorName() {                              // getters & setters 
+/*  get sponsorName() {                              // getters & setters 
       return this.sponsorName.get('sponsorName');
     }  */
 
@@ -96,6 +95,7 @@ export class AddSponsorComponent implements OnInit {
 
   uploadData: any;
   selectedFile: File;
+  
 /* onFileChanged(event) {
   this.selectedFile = <File>event.target.files[0];
   if (event.target.files && event.target.files[0])

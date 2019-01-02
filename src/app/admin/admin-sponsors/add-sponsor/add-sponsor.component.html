@@ -10,7 +10,7 @@
     <div class="newLogoAdd col-5">
       <span>Nouveau logo</span>
       <div class="filePlaceholder">
-        <div *ngFor="let file of fileUploads" class="filePlaceholder"> 
+        <div *ngFor="let file of fileUploads"> 
           <input type="image" class="sponsorNewLogoAdd"  src="{{file.url}}" alt="new logo"/>
         </div>
       </div>
@@ -43,7 +43,7 @@
       </mat-form-field>
 
       <mat-form-field *ngIf="selectedLevel == 1" appearance="fill">
-          <textarea rows="10" matInput placeholder="Description" formControlName="sponsorDescription" aria-label="sponsor-description"></textarea>
+          <textarea rows="7" maxlength="" matInput placeholder="Description" formControlName="sponsorDescription" aria-label="sponsor-description"></textarea>
       </mat-form-field>
        <!-- <mat-checkbox formControlName="confirmer" color="primary">Confirmer</mat-checkbox> -->
     </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵConsole } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Sponsor } from './sponsorClass';
 import { SPONSORS } from './mock-sponsors';
 

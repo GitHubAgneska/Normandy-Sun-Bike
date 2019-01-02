@@ -15,11 +15,13 @@
       <angular-file-uploader  #fileUploadEdit [config]="afuConfig" id="uploadingArea"></angular-file-uploader>
       <input style="display:none" type="file" (change)="onFileChanged($event)">
     </div> 
-    <!-- new logo display-->
-    <div class="newLogo col-4">
+    <!-- new logo area -->
+    <div class="newLogoEdit col-4">
       <span>Nouveau logo</span>
-      <div *ngFor="let file of fileUploads"> 
-      <input type="image" class="sponsorNewLogo" src="{{file.url}}" alt="new logo" border="1"/>
+      <div class="filePlaceholder">
+        <div *ngFor="let file of fileUploads"> 
+         <input type="image" class="sponsorNewLogo" src="{{file.url}}" alt="new logo"  id="uploadingArea"/>
+       </div> 
      </div>
     </div>
   </div>  
@@ -45,11 +47,11 @@
           <mat-option value="3">Level 3</mat-option>
         </mat-select>
       </mat-form-field>
-
+      
       <mat-form-field *ngIf="sponsor.level == 1" appearance="fill" placeholder="select level">
-          <textarea rows="10" matInput placeholder="{{sponsor.description}}" formControlName="sponsorDescription" aria-label="sponsor-description"></textarea>
+          <textarea rows="7" maxlength=""  matInput placeholder="{{sponsor.description}}" formControlName="sponsorDescription" aria-label="sponsor-description"></textarea>
       </mat-form-field>
-      <!-- <mat-checkbox formControlName="confirmer" color="primary">Confirmer</mat-checkbox> -->
+
     </div>
     <div class="validate&cancel-btn row">
       <button class="btn btn-lg sponsors-input-fields col-5" id="cancel-btn" click="selectedSponsor == false">Annuler</button>
