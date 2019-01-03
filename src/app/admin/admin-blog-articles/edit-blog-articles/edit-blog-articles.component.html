@@ -10,7 +10,7 @@
       <input type="image" class="image-article-current" src="{{blogArticle.img}}" alt="image article" />  
     </div>  
     <div class="changeImgBtns col-2">
-      <angular-file-uploader  #fileUploadEdit [config]="afuConfig" id="uploadingArea"></angular-file-uploader>
+      <angular-file-uploader  #fileUploadEdit [config]="afuConfig4" id="uploadingArea"></angular-file-uploader>
       <input style="display:none" type="file" (change)="onFileChanged($event)">
     </div> 
     <!-- new logo area -->
@@ -28,19 +28,43 @@
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <!-- Value : {{ registerForm.value | json }} // display input infos --> 
     <div class="form-group">
+
+      <div class="changeDate&selectRace row">
+
+        <div class="BlogArticle-date col-5 row">
+          <span class="editDate col-2">Date</span>
+          <mat-form-field class=" blogArticleDay col-3" appearance="outline">
+            <input matInput placeholder="jour:{{blogArticle.day}}" formControlName="blogArticleDate" aria-label="blogArticle-date" size="3">
+          </mat-form-field>
+          <mat-form-field class="col-3" appearance="outline">
+            <input matInput placeholder="mois:{{blogArticle.month}}" formControlName="blogArticleDate" aria-label="blogArticle-date">
+          </mat-form-field>
+          <mat-form-field class="col-4" appearance="outline">
+            <input matInput placeholder="année:{{blogArticle.year}}" formControlName="blogArticleDate" aria-label="blogArticle-date">
+          </mat-form-field>
+        </div>
+
+        <div class=" selectRace col-6 offset-1 row">
+          <span class="selectRace col-6"> Sun Trip</span>
+          <mat-checkbox class="select2019 col-3">2019</mat-checkbox>
+          <mat-checkbox class="select2020 col-3">2020</mat-checkbox>
+        </div>
+
+      </div>
+
+
       <mat-form-field appearance="outline">
-         <input matInput placeholder="{{blogArticle.title}}" formControlName="blogArticleName" aria-label="blogArticle-name">
+        <input matInput placeholder="Titre : {{blogArticle.title}}" formControlName="blogArticleName" aria-label="blogArticle-name">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <input matInput placeholder="{{blogArticle.date}}" formControlName="blogArticleDate" aria-label="blogArticle-date">
+        <textarea rows="7" matInput placeholder="Texte : {{blogArticle.text}}" formControlName="blogArticleText" aria-label="blogArticle-text"></textarea>
       </mat-form-field>
-
-      <textarea appearance="outline" rows="7" matInput placeholder="Texte : {{blogArticle.text}}" formControlName="blogArticleText" aria-label="blogArticle-name"></textarea>
 
       <div class="validate&cancel-btn row">
         <button class="btn btn-lg blogArticle-input-fields col-5" id="cancel-btn" click="selectedBlogArticle == false">Annuler</button>
         <button class="btn btn-lg blogArticle-input-fields col-5" id="validate-btn" click="onSubmit()">Valider</button> 
       </div>
+
     </div>
   </form>

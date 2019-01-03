@@ -2,7 +2,7 @@
 /* ---------------WHOLE PAGE' S STYLE ------------*/
 
 .blogArticle-Admin-main-container{
-    height:100vh;
+    height:auto;
     margin-top:3rem;
 
 }
@@ -31,12 +31,11 @@
 /*  width: 100%;
     height: auto; */
     display: flex;
-    margin-bottom: 3vw;
     border-bottom: grey solid 1px;
 }
 
 .blogArticleList{
-    height:100vh;
+    height:auto;
     padding-right:2% !important;
     width:auto;   
 }
@@ -100,7 +99,7 @@
 /*** -- EDIT ARTICLES SECTION -- ***/
 
 .blogArticle-input-container{
-    margin-top:2%;
+
     border-left: grey solid 1px;
 
 }

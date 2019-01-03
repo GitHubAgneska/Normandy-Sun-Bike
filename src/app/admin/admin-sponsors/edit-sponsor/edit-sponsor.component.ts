@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Sponsor } from '../sponsorClass';
 import { SPONSORS } from '../mock-sponsors';
 import { AngularFileUploaderModule } from 'angular-file-uploader';
@@ -11,80 +11,89 @@ import { ViewChild } from '@angular/core';
   styleUrls: ['./edit-sponsor.component.css']
 })
 
-export class EditSponsorComponent implements OnInit {
+export class EditSponsorComponent implements OnInit, OnChanges {
 
-  @Input() sponsor:Sponsor;
-  sponsors = SPONSORS;
+  @Input() public sponsor: Sponsor;
+  public selectedLevel: number = 1;
+  public fileToUpload: File = null;
+  public url = '';
+  public submitted = false;
+  public registerForm: FormGroup;
 
-  selectedLevel:number = 0;
+  public uploadData: any;
+  public selectedFile: File;
 
-  fileToUpload:File = null;
-  url = '';
-  submitted = false;
-  registerForm : FormGroup;
+  /*   @ViewChild('fileUploadEdit')
+    private fileUpload1:  AngularFileUploaderModule; */
 
-  uploadData: any;
-  selectedFile: File;
-
-  selectedSponsor:Sponsor = {
-    name: "no_sponsor_defined",
-    img:"",
-    level:0
+  // angular file-upload comp conf 
+  public afuConfig = {
+    multiple: false,
+    formatsAllowed: ".jpg,.jpeg,.png",
+    maxSize: "1",
+    uploadAPI: {
+      url: "https://example-file-upload-api",
+      headers: {
+        "Content-Type": "text/plain;charset=UTF-8",
+        /* "Authorization" : `Bearer ${token}` */
+      }
+    },
+    /* theme: "dragNDrop", */
+    hideProgressBar: true,
+    hideResetBtn: false,
+    hideSelectBtn: false
   };
 
 
-/*   @ViewChild('fileUploadEdit')
-  private fileUpload1:  AngularFileUploaderModule; */
-
-  // angular file-upload comp conf 
-    afuConfig = {
-      multiple: false,
-      formatsAllowed: ".jpg,.jpeg,.png",
-      maxSize: "1",
-      uploadAPI:  {
-        url:"https://example-file-upload-api",
-        headers: {
-          "Content-Type" : "text/plain;charset=UTF-8",
-      /* "Authorization" : `Bearer ${token}` */
-        }
-      },
-      /* theme: "dragNDrop", */
-      hideProgressBar: true,
-      hideResetBtn: false,
-      hideSelectBtn: false
-    };
-
   constructor(private formBuilder: FormBuilder) { }   // add formbuilder service
 
-  ngOnInit() {
-    this.registerForm = this.formBuilder.group( {  // create data model for this form
 
-      sponsorImg:['{{selectedSponsor.img}}'],
-      sponsorName:['', Validators.required],
-      sponsorLink:[''],
-      sponsorDescription: [ '', Validators.required],
-      sponsorLevel:[''],
+  ngOnChanges( changes:SimpleChanges){
+    if( changes.sponsor != undefined ){
+      this.selectedLevel = this.sponsor.level;
+    }
+  }
+
+  onSubmit() {
+    this.sponsor.level = this.selectedLevel;
+  };
+
+  ngOnInit() {
+
+    const options:any = {  // create data model for this form
+
+      sponsorImg: ['{{selectedSponsor.img}}'],
+      sponsorName: ['', Validators.required],
+      sponsorLink: [''],
+      sponsorDescription: ['', Validators.required],
+      sponsorLevel: [''],
       agree: [false, [
         Validators.requiredTrue
       ]]
 
-    });
+    };
 
-      // EXTRACT DATA FROM FORM
-    this.registerForm.valueChanges.subscribe(console.log )  
-    }
+    this.selectedLevel = this.sponsor.level;
+    this.registerForm = this.formBuilder.group(options);
 
-    handleFileInput(files: FileList) {
-      this.fileToUpload = files.item(0);
-    }
-      
-
-  // FINAL VALIDATE BUTTON
-
-  onSubmit() {
-    this.submitted = true;
-  };
-
-
+  }
 }
+
+
+
+
+// NOTES D'AGNES
+
+    /*    // EXTRACT DATA FROM FORM
+     this.registerForm.valueChanges.subscribe();
+     }
+ 
+     handleFileInput(files: FileList) {
+       this.fileToUpload = files.item(0);
+     }
+       
+ 
+   // FINAL VALIDATE BUTTON
+ 
+    */
 

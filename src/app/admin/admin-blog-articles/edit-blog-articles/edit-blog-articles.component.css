@@ -13,6 +13,14 @@
     font-size: 1.8em;
 }
 
+/*----- date fields ------*/
+
+.form-group .changeDate&selectRace div{
+
+    outline:1px solid grey !important;
+
+}
+
 /*----- change image area  ------*/
 
 .uploading-area-editBlogArticle{
@@ -23,6 +31,7 @@
     width:100%;
     display:flex;
     flex-direction: column !important; 
+    margin:0 !important;
 }
 
 .image-article-current, .new-article-image{
@@ -51,7 +60,16 @@
 .changeImgBtns{
     align-self:center;
     width:100% !important;
+    margin:0 !important;
+    padding:0 !important;
 }
+
+
+::ng-deep .changeImgBtns .container {
+    margin:0 !important;
+
+}
+
 
 
 
