@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleService } from '../article.service';
-import { Article } from '../article';
+import { ArticleService } from '../services/article.service';
+import { Article } from '../classes/article';
+import { AddSponsorService } from '../services/add-sponsor.service';
+import { Sponsor } from '../classes/sponsorClass';
 
 @Component({
   selector: 'app-landing-page',
@@ -31,17 +33,6 @@ export class LandingPageComponent implements OnInit {
   Cette aventure, j’ai envie de la tenter et de vous la faire partager…..
   `
 
-
-  public articles:Article[];
-  private service:ArticleService;
-
-  constructor(service:ArticleService) {
-    // Service
-    this.service = service;
-
-    this.sponsor_list = this.allSponsors ;
-  }
-
   //BLOG
   public articleImg1:string = "";
   public articleTitle1:string = "Title1";
@@ -51,6 +42,20 @@ export class LandingPageComponent implements OnInit {
   public articleTitle2:string = "Title2";
   public articleDate2:string = "00/00/0000";
 
+
+  public sponsors:Sponsor[];  
+  private sponsorService:AddSponsorService;
+  public articles:Article[];
+  private articleService:ArticleService;
+
+  constructor(sponsorService:AddSponsorService, articleService:ArticleService) {
+    // Service
+    this.sponsorService = sponsorService;
+    this.articleService = articleService;
+    
+    this.sponsor_list = this.allSponsors;
+  }
+
   public crslImgs = document.getElementsByClassName("landing-headline");
 
   public rightPosition;
@@ -59,12 +64,21 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit() {
 
-    this.service.getArticle().subscribe(
+    // Infos Articles
+    this.articleService.getArticle().subscribe(
       (param)=>{ 
         this.articles = param; 
       }
     )
     console.log(this.articles)
+
+    // Infos Sponsors
+    this.sponsorService.getSponsor().subscribe(
+      (param)=>{ 
+        this.sponsors = param; 
+      }
+    )
+    
 
     if(screen.width > 960){
       for(let i=0; i<this.crslImgs.length; i++){

@@ -28,6 +28,7 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    margin-bottom: 1em;
 }
 .sponsors-landing-container > p{
     width: 100%;

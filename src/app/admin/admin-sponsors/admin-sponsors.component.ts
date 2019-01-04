@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Sponsor } from './sponsorClass';
+import { Sponsor } from '../../classes/sponsorClass';
 import { SPONSORS } from './mock-sponsors';
 
 @Component({

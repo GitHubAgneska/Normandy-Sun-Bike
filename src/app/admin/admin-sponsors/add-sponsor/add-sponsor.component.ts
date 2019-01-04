@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Sponsor } from '../sponsorClass';
+import { Sponsor } from '../../../classes/sponsorClass';
 import { SPONSORS } from '../mock-sponsors';
 
 

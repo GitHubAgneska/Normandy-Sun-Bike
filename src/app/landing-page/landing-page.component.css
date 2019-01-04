@@ -306,7 +306,8 @@
     flex-direction: row;
     width: 100%;
     padding-top: 2vh;
-    padding-bottom: 3vh;
+    padding-bottom: 10vh;
+    overflow: scroll;
 }
 #landing-sponsors{
     margin-left: 1%;
