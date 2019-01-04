@@ -216,3 +216,7 @@
 .a{
     background: url(../../assets/2019-landing.jpg)
 }
+
+#race-link{
+    z-index: 1000;
+}

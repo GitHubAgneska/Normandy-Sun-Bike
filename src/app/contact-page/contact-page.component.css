@@ -2,7 +2,8 @@
 .contactPage-container{
     padding-top:12vh;
     color:#fff;
-    background-color: grey;
+    background: url('../../assets/fond-landing-text-intro.png');
+    background-size: cover;
     height:100vh;
     display: flex;
     justify-content: center;
@@ -45,15 +46,16 @@
  .contact-fields button{
      float:right;
      width:40%;
-     background-color: grey;
+     background: none;
+     border-radius: none;
      border:1px solid #fff;
+     color: #fff;
 
  }
  @media only screen and (max-width: 640px){
 
     .contact-fields button{ 
         width:100%;
-        background-color: grey;
         border:1px solid #fff;
         float:none;
        

@@ -32,10 +32,14 @@
       <!-- text intro -->
       <div id="landing-text-intro-container">
         <p id="landing-text-intro" class="text">{{intro}}</p>
+        <a routerLink="/Projet" class="link">- - En découvrir plus sur mon projet - -</a>
       </div>
 
       <!-- sponsors -->
       <h3 class="title landing-title" id="landing-title-sponsor">SPONSORS </h3>
+      <div class="title-lign-container">
+          <div class="lign-horizon landing-lign-horizon-sponsor"></div>
+        </div>
       <div id="landing-sponsors-container">
         <div id="landing-sponsors" *ngFor="let current_sponsor of sponsor_list">
             <app-sponsors-landing  [sponsorName]="current_sponsor.name" [sponsorImg]="current_sponsor.img"></app-sponsors-landing>
