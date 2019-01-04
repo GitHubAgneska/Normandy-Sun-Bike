@@ -101,6 +101,25 @@
 }
 
 @media screen and (min-width: 640px) and (max-width: 960px){
+    .circle-race{
+        margin-left: 73%;
+        margin-top: 40%;
+        transition: 0.5s;
+    }
+    .circle-race-blog{
+        margin-left: 12%;
+        margin-top: 8%;
+        transition: 0.5s;
+    }
+    .path-race-1{
+        width: 65%;
+        margin-top: 60%;
+    }
+    .path-race-2{
+        width: 63%;
+        margin-top: -13%;
+        margin-left: 2%;
+    }
     #race-description-container{
         padding-top: 10vh;
     }
@@ -115,6 +134,20 @@
     }
 }
 @media screen and (max-width: 640px){
+    .circle-race{
+        margin-left: 50%;
+        margin-top: 120%;
+        transition: 0.5s;
+    }
+    .circle-race-blog{
+        margin-left: 60%;
+        margin-top: 6%;
+        transition: 0.5s;
+    }
+    .path-race-1, .path-race2, #path-race{
+        display: none;
+    }
+
     #race-description-container{
         padding-top: 10vh;
     }
@@ -182,4 +215,8 @@
 }
 .a{
     background: url(../../assets/2019-landing.jpg)
+}
+
+#race-link{
+    z-index: 1000;
 }

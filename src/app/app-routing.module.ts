@@ -12,6 +12,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { ActualityComponent } from './admin/actuality/actuality.component';
 import { BlogPageComponent } from './blog/blog-page/blog-page.component';
+import { ArticleComponent } from './blog/article/article.component';
 
 import { AdminBlogArticlesComponent } from './admin/admin-blog-articles/admin-blog-articles.component';
 import { RaceComponent } from './admin/race/race.component';
@@ -19,10 +20,12 @@ import { RaceComponent } from './admin/race/race.component';
 
 const routes: Routes = [
   // Toujours déclaré sur ce model : {path: 'nom_du_chemin', component: nom_du_composant, pathMatch: 'full'}
+  {path: '', redirectTo: 'Accueil', pathMatch: 'full'},
   {path: 'Accueil', component: LandingPageComponent, pathMatch: 'full' },
-  {path: 'SunTripTour2019', component: RacesPresentationComponent, pathMatch: 'full', data: {title: 'The Sun Trip 2019'}},
+  {path: 'SunTripTour2019', component: RacesPresentationComponent, pathMatch: 'full', data: {title: 'The Sun Trip Tour 2019'}},
   {path: 'SunTrip2020', component: RacesPresentationComponent, pathMatch: 'full', data: {title: 'The Sun Trip 2020'}},
   {path: 'Blog', component: BlogPageComponent, pathMatch: 'full', data: {title: 'Blog'}},
+  {path: 'Article', component: ArticleComponent, pathMatch: 'full'},
   {path: 'Projet', component: ProjectComponent, pathMatch: 'full'},
   {path: 'Sponsors', component: SponsorComponent, pathMatch: 'full'},
   {path: 'Contact', component: ContactPageComponent, pathMatch: 'full'},

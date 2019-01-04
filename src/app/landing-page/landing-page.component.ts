@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../article.service';
+import { Article } from '../article';
 
 @Component({
   selector: 'app-landing-page',
@@ -18,13 +20,27 @@ export class LandingPageComponent implements OnInit {
     },
   ]
 
-  constructor(){
+  public intro = `Des envies de voyages différents, un corps qui n’est pas celui d’un
+  sportif de haut niveau, la découverte en 2014 de The Sun Trip, une « épopée » avec une idée
+  simple et percutante : un point de départ, un point d’arrivée et un parcours libre pour une
+  aventure en vélos électriques solaires ouverte à tous. En mêlant aventure, liberté de
+  circulation, sportivité, rencontre humaine et les technologies des énergies renouvelables,
+  The Sun Trip ambitionne de faire parler autrement de l’écologie, d’une manière
+  profondément humaniste et pragmatique. Chaque participant devient un porte drapeau de
+  cette ambition en la laissant vivre au gré de son réseau, de sa route et de ses rencontres.
+  Cette aventure, j’ai envie de la tenter et de vous la faire partager…..
+  `
+
+
+  public articles:Article[];
+  private service:ArticleService;
+
+  constructor(service:ArticleService) {
+    // Service
+    this.service = service;
+
     this.sponsor_list = this.allSponsors ;
   }
-
-  //CAROUSEL
-
-  
 
   //BLOG
   public articleImg1:string = "";
@@ -40,9 +56,15 @@ export class LandingPageComponent implements OnInit {
   public rightPosition;
   public middlePosition;
   public leftPosition;
+
   ngOnInit() {
 
- 
+    this.service.getArticle().subscribe(
+      (param)=>{ 
+        this.articles = param; 
+      }
+    )
+    console.log(this.articles)
 
     if(screen.width > 960){
       for(let i=0; i<this.crslImgs.length; i++){

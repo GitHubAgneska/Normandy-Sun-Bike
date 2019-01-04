@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Article } from 'src/app/article';
+import { ArticleService } from 'src/app/article.service';
 
 @Component({
   selector: 'app-blog-page',
@@ -8,50 +10,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BlogPageComponent implements OnInit {
 
-  public articleList;
-
-  public allArticles = [
-    { 
-      "id" : 1,
-      "title" : "Actualité 1",
-      "img":""
-    },
-    { 
-      "id" : 2,
-      "title" : "Actualité 2",
-      "img":""
-    },
-    { 
-      "id" : 3,
-      "title" : "Actualité 1",
-      "img":""
-    },
-    { 
-      "id" : 4,
-      "title" : "Actualité 2",
-      "img":""
-    },
-    { 
-      "id" : 5,
-      "title" : "Actualité 1",
-      "img":""
-    },
-    { 
-      "id" : 6,
-      "title" : "Actualité 2",
-      "img":""
-    }
-  ]
-
   private raceTitle: string;
 
-  constructor(route: ActivatedRoute) { 
-    this.raceTitle = route.snapshot.data.title;
+  public articles:Article[];
+  private service:ArticleService;
 
-    this.articleList = this.allArticles ;
+  constructor(route: ActivatedRoute, service:ArticleService) { 
+    // Data Routing
+    this.raceTitle = route.snapshot.data.title;
+    // Service
+    this.service = service;
   }
 
   ngOnInit() {
+
+    this.service.getArticle().subscribe(
+      (param)=>{ 
+        this.articles = param; 
+      }
+    )
 
     const pageBlog = document.getElementById("blog-background");
     if (this.raceTitle == "Blog") {
