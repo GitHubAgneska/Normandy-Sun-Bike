@@ -14,7 +14,49 @@
 
 /*----- change logo area  ------*/
 
-.uploading-area-editSponsor{
+
+
+
+
+.newLogoUploadArea .logoActuelBackground{
+    opacity:0.6;
+    z-index:-10;
+    border:1px solid grey;
+}
+
+
+.newLogoUploadArea .logoActuelBackground:hover{
+    opacity:0.2;
+}
+
+.newLogoUploadArea .browseBtn{
+    z-index:10;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.newLogoUploadArea .browseBtn input{
+    height:100px !important;
+}
+
+
+.nomSponsor, .lienSponsor{
+    color: rgba(0,0,0,0.60);
+
+}
+
+.edit-sponsors-container .nomSponsor, .lienSponsor{
+    text-align:left;
+}
+
+.validerSponsorBtn btn{
+    width:50% !important;
+
+}
+/* .uploading-area-editSponsor{
     padding:1% 0 1% 0;
 }
 
@@ -22,7 +64,9 @@
     width:100%;
     display:flex;
     flex-direction: column !important; 
-}
+} */
+
+
 
 /* @media only screen and (min-width : 640px){
     .sponsorLogoActuel, .sponsorNewLogo{

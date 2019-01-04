@@ -6,7 +6,7 @@
   <h4 class="sponsor-element-title text">Modifier ce sponsor</h4>
  
    <!------ change logo area  ------->  
-  <div class="uploading-area-editSponsor row">  
+  <!-- <div class="uploading-area-editSponsor row">  
     <div class="logoActuel col-4"> 
       <span>Logo actuel</span>
       <input type="image" class="sponsorLogoActuel" src="{{sponsor.img}}" alt="sponsor logo" />  
@@ -14,9 +14,9 @@
     <div class="changeLogoBtns col-4">
       <angular-file-uploader  #fileUploadEdit [config]="afuConfig" id="uploadingArea"></angular-file-uploader>
       <input style="display:none" type="file" (change)="onFileChanged($event)">
-    </div> 
+    </div>  -->
     <!-- new logo area -->
-    <div class="newLogoEdit col-4">
+    <!-- <div class="newLogoEdit col-4">
       <span>Nouveau logo</span>
       <div class="filePlaceholder">
         <div *ngFor="let file of fileUploads"> 
@@ -24,16 +24,34 @@
        </div> 
      </div>
     </div>
-  </div>  
+  </div> -->  
+
+
+  <!------ NEW change logo area  ------->
+
+  <div class="newLogoUploadArea" >
+    <input class="browseBtn" type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+    <img class="logoActuelBackground" src="{{sponsor.img}}" />
+  </div>      
+
+  <button type="button" class="btn btn-success btn-s validerSponsorBtn" 
+    (click)="uploader.uploadAll()" 
+    [disabled]="!uploader.getNotUploadedItems().length" >
+        Valider le nouveau logo
+  </button>
+
 
   <!------ form fields for sponsor editing ------->
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <!-- Value : {{ registerForm.value | json }} // display input infos --> 
     <div class="form-group">
+
+      <span class="nomSponsor">Nom du sponsor : </span>
       <mat-form-field appearance="outline">
          <input matInput placeholder="{{sponsor.name}}" formControlName="sponsorName" aria-label="sponsor-name">
       </mat-form-field>
 
+      <span class="lienSponsor">Lien du sponsor : </span>
       <mat-form-field appearance="outline">
         <input matInput placeholder="{{sponsor.link}}" formControlName="sponsorLink" aria-label="sponsor-link">
       </mat-form-field>

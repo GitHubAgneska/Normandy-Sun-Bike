@@ -4,6 +4,9 @@ import { Sponsor } from '../sponsorClass';
 import { SPONSORS } from '../mock-sponsors';
 import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { ViewChild } from '@angular/core';
+import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
+
+const URL = 'http://localhost:3600/api/upload';
 
 @Component({
   selector: 'app-edit-sponsor',
@@ -23,26 +26,10 @@ export class EditSponsorComponent implements OnInit, OnChanges {
   public uploadData: any;
   public selectedFile: File;
 
+  public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
+
   /*   @ViewChild('fileUploadEdit')
     private fileUpload1:  AngularFileUploaderModule; */
-
-  // angular file-upload comp conf 
-  public afuConfig = {
-    multiple: false,
-    formatsAllowed: ".jpg,.jpeg,.png",
-    maxSize: "1",
-    uploadAPI: {
-      url: "https://example-file-upload-api",
-      headers: {
-        "Content-Type": "text/plain;charset=UTF-8",
-        /* "Authorization" : `Bearer ${token}` */
-      }
-    },
-    /* theme: "dragNDrop", */
-    hideProgressBar: true,
-    hideResetBtn: false,
-    hideSelectBtn: false
-  };
 
 
   constructor(private formBuilder: FormBuilder) { }   // add formbuilder service
@@ -59,6 +46,11 @@ export class EditSponsorComponent implements OnInit, OnChanges {
   };
 
   ngOnInit() {
+    
+    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+         console.log('ImageUpload:uploaded:', item, status, response);
+         alert('File uploaded successfully');
 
     const options:any = {  // create data model for this form
 
@@ -76,8 +68,9 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     this.selectedLevel = this.sponsor.level;
     this.registerForm = this.formBuilder.group(options);
 
-  }
+  } 
 }
+
 
 
 
@@ -97,3 +90,23 @@ export class EditSponsorComponent implements OnInit, OnChanges {
  
     */
 
+
+  // angular file-upload comp conf 
+ /*  public afuConfig = {
+    multiple: false,
+    formatsAllowed: ".jpg,.jpeg,.png",
+    maxSize: "1",
+    uploadAPI: {
+      url: "https://example-file-upload-api",
+      headers: {
+        "Content-Type": "text/plain;charset=UTF-8", */
+        /* "Authorization" : `Bearer ${token}` */
+/*       }
+    },
+    theme: "dragNDrop",
+    hideProgressBar: true,
+    hideResetBtn: false,
+    hideSelectBtn: true
+  };
+ */
+}
