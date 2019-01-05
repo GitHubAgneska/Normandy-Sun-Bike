@@ -5,7 +5,7 @@
         "img" : "https://wildcodeschool.fr/wp-content/uploads/2017/02/logo_orange_small.jpg",
         "link" : "string",
         "level": 1,
-        "description" : "string"
+        "description" : "Une petite descritpion du sponsor"
     },
     { 
         "id": 2,
@@ -33,7 +33,7 @@
     },
     { 
         "id": 5,
-        "name": "Nicolas",
+        "name": "Elisabeth",
         "img" : "https://image.flaticon.com/icons/png/512/69/69408.png",
         "link" : "string",
         "level": 3,
@@ -41,7 +41,7 @@
     },
     { 
         "id": 6,
-        "name": "Nicolas",
+        "name": "Maxime",
         "img" : "https://image.flaticon.com/icons/png/512/69/69408.png",
         "link" : "string",
         "level": 3,
@@ -49,7 +49,7 @@
     },
     { 
         "id": 7,
-        "name": "Nicolas",
+        "name": "Agnes",
         "img" : "https://image.flaticon.com/icons/png/512/69/69408.png",
         "link" : "string",
         "level": 3,
@@ -57,7 +57,7 @@
     },
     { 
         "id": 8,
-        "name": "Nicolas",
+        "name": "Etienne",
         "img" : "https://image.flaticon.com/icons/png/512/69/69408.png",
         "link" : "string",
         "level": 3,

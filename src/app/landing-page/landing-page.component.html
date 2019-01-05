@@ -36,10 +36,14 @@
       </div>
 
       <!-- sponsors -->
-      <h3 class="title landing-title" id="landing-title-sponsor">SPONSORS </h3>
+      <h3 class="title landing-title" id="landing-title-sponsor" routerLink="/Sponsors">SPONSORS </h3>
       <div class="title-lign-container">
           <div class="lign-horizon landing-lign-horizon-sponsor"></div>
         </div>
+      <div id="landing-sponsor-arrow-container">
+          <div class="circle sponsor-nav-circle" (mousedown)="SponsorStartScrolling('left')" (mouseup)="sponsorStopScroll()"><img src="../../assets/arrow_crsl_left.png"/></div>
+          <div class="circle sponsor-nav-circle" (mousedown)="SponsorStartScrolling('right')" (mouseup)="sponsorStopScroll()"><img src="../../assets/arrow_crsl_right.png"/></div>
+      </div>  
       <div id="landing-sponsors-container">
         <div id="landing-sponsors" *ngFor="let current_sponsor of sponsors">
             <app-sponsors-landing  [sponsorName]="current_sponsor.name" [sponsorImg]="current_sponsor.img"></app-sponsors-landing>

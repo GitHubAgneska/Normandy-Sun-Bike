@@ -70,7 +70,6 @@ export class LandingPageComponent implements OnInit {
         this.articles = param; 
       }
     )
-    console.log(this.articles)
 
     // Infos Sponsors
     this.sponsorService.getSponsor().subscribe(
@@ -167,6 +166,39 @@ export class LandingPageComponent implements OnInit {
   crslImgPosition(i){
     return (i*74) - 60;
   }
+
+
+  // Sponsor Container Scroll Buttons
+  public scrollRight:any;
+
+  sponsorStopScroll(){
+    clearTimeout(this.scrollRight);
+    };
+  // Scrolling
+  sponsorScrolling(param:number, display, direction:string) {
+
+    let sponsorContainer = document.getElementById("landing-sponsors-container");
+
+    if (direction == "left") {
+      sponsorContainer.scrollLeft -=20;
+    } else if (direction == "right") {
+      sponsorContainer.scrollLeft +=20;
+    }
+
+    if( param > 0 ){
+      this.sponsorStopScroll();
+      
+      this.scrollRight = setTimeout( 
+          () => {
+              this.sponsorScrolling(param - 1, display, direction);
+          },20);
+    }
+  }
+  // Start
+  SponsorStartScrolling(direction) {
+    var display = document.querySelector('.time');
+    this.sponsorScrolling(1000, display, direction);
+  };
 
 
   ngOnDestroy(){
