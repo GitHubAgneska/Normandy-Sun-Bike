@@ -1,0 +1,161 @@
+
+
+.sponsorAdmin-main-container{    
+    height:100vh;
+    margin-top:3rem;
+}
+
+/* ------- BLOCKS SPONSORS : LOGO + INFO ------*/
+
+
+    /*----ADD SPONSOR BUTTON----
+
+ #addSponsorBtn, #editSponsorBtn, #deleteSponsorBtn{
+    color: #fff;
+    border: none;
+    background-color: #6f7c91;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+ @media only screen and (max-width :640px){
+    .sponsor-element-container #addSponsorBtn{
+        width:100%;
+    }
+} 
+
+#addSponsorBtn:hover, #editSponsorBtn:hover, #deleteSponsorBtn:hover{
+    background-color: #505566;
+} */
+
+
+.sponsor-element-container{
+/*     width: 100%; */  
+
+    display: column;
+    margin-bottom: 3vw;
+    border-bottom: grey solid 1px;
+}
+
+
+.sponsorList{
+    height:100vh;
+    width:auto;   
+    text-align: center;
+}
+
+.logo-container img{        
+    width:80%   ;
+    flex-shrink: 0;
+}
+
+.sponsor-element-level{
+    display: inline-block;
+}
+
+.sponsors{
+    opacity:0.6;
+    vertical-align: top;
+    word-wrap: normal;
+}
+
+.sponsors:hover{
+    opacity:1;
+    border:1px solid  #6f7c91;
+}
+
+.sponsors.selected{
+    opacity:1;
+    border:1px solid  #6f7c91;
+}
+
+
+.sponsor-element-infos{
+    justify-content: center;
+    margin-left:1vw;
+    margin-right:1vw;
+}
+
+
+.sponsor-element-title{
+    border-bottom: solid 3px #6f7c91;
+    font-size: 1.8em;
+}
+
+
+.sponsor-element-button{
+    margin-top: 0.5em;
+    
+}
+
+@media only screen and (min-width : 640px){
+
+    .sponsor-element-container{
+        width: 80%;   
+        display: column;
+        margin:0 auto 3vw auto;
+        transition: 1s; 
+    }
+
+    
+    .sponsorList{
+        padding-right:0;
+        height:100vh;
+        overflow-y:scroll;   
+    }
+
+    .logo-container img{        
+        width:12vw;
+        display:inline-block; 
+    }
+}
+
+
+
+/*------ MOBILE ----*/
+
+@media only screen and (max-width : 640px){
+
+
+    .sponsors {
+        height: 35vw;
+    }
+
+    .sponsors{
+        width:25%;
+        display:inline-block;
+        transition: 1s;  
+    }
+
+    .sponsor-element-infos{
+        justify-content: center;
+    }
+
+    .sponsor-element-infos h4{
+        font-size:1rem;
+
+    }
+    .sponsor-element-infos button{
+        font-size:1rem;
+
+    }
+    .sponsorList{
+        align-content: center;
+        height:auto;
+    }
+
+    .sponsorList img{
+        margin-top:0 !important;
+    }
+}
+
+
+
+
+/*  EDIT & ADD SPONSORS SECTION  ngIf  */
+
+ .sponsors-input-container{
+    margin:0 auto;
+
+}
+

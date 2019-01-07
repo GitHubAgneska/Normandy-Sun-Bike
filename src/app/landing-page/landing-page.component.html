@@ -1,0 +1,72 @@
+    <div id="landing-page">
+      <!-- carousel -->
+      <div id="landing-crsl-container">
+        <!-- <img id="crsl-left-arrow" class="crsl-arrow" src="../../assets/crsl_left_arrow.png" alt="left arrow" (click)="crslToLeft()"/>
+        <img id="crsl-right-arrow" class="crsl-arrow" src="../../assets/crsl_right_arrow.png" alt="right arrow" (click)="crslToRight()"/> -->
+        <!-- Projet -->
+        <div class="landing-headline" id="landing-projet">
+          <div routerLink="/Projet" class="circle landing-circle" id="landing-circle-projet"><div></div><p>En savoir plus</p></div>
+          <div class="title landing-headline-title" id="landing-title-projet">LE PROJET</div>
+        </div>
+        <!-- 2019 -->
+        <div routerLink="/SunTripTour2019" class="landing-headline" id="landing-2019">
+          <div class="circle landing-circle" id="landing-circle-2019"><div></div><p>En savoir plus</p></div>
+          <div class="title landing-headline-title" id="landing-title-2019">THE SUN TRIP TOUR<br/>2019</div>
+        </div>
+        <!-- 2020 -->
+        <div class="landing-headline" id="landing-2020">
+          <div></div>
+          <div routerLink="/SunTrip2020" class="circle landing-circle" id="landing-circle-2020"><div></div><p>En savoir plus</p></div>
+          <div class="title landing-headline-title" id="landing-title-2020">THE SUN TRIP<br/>2020</div>
+        </div>
+        <!-- paths -->
+        <div class="landing-headline" id="landing-paths">
+            <div id="landing-path1"></div>
+            <div id="landing-path2"></div>
+            <div class="circle carousel-nav-circle" id="carousel-nav-circle1" (click)="crslToRight()"><img src="../../assets/arrow_crsl_right.png"/></div>
+            <div class="circle carousel-nav-circle" id="carousel-nav-circle2" (click)="crslToLeft()"><img src="../../assets/arrow_crsl_left.png"/></div>
+            <div class="circle carousel-nav-circle" id="carousel-nav-circle3" (click)="crslToRight()"><img src="../../assets/arrow_crsl_right.png"/></div>
+            <div class="circle carousel-nav-circle" id="carousel-nav-circle4" (click)="crslToLeft()"><img src="../../assets/arrow_crsl_left.png"/></div>
+        </div>
+      </div>
+      <!-- text intro -->
+      <div id="landing-text-intro-container">
+        <p id="landing-text-intro" class="text">{{intro}}</p>
+        <a routerLink="/Projet" class="link">- - En découvrir plus sur mon projet - -</a>
+      </div>
+
+      <!-- sponsors -->
+      <h3 class="title landing-title" id="landing-title-sponsor">SPONSORS </h3>
+      <div class="title-lign-container">
+          <div class="lign-horizon landing-lign-horizon-sponsor"></div>
+        </div>
+      <div id="landing-sponsors-container">
+        <div id="landing-sponsors" *ngFor="let current_sponsor of sponsor_list">
+            <app-sponsors-landing  [sponsorName]="current_sponsor.name" [sponsorImg]="current_sponsor.img"></app-sponsors-landing>
+        </div>
+      </div>
+      <!-- Blog -->
+      <div id="landing-blog-container">
+        <h3 class="title landing-title">BLOG</h3>
+        <div id="landing-articles-container">
+          <div class="landing-article">
+            <div class="landing-img-article" [ngStyle]="{'background-image': 'url('+articleImg1+')'}"></div>
+            <h4 class="landing-title-article subsubtitle">{{articleTitle1}}</h4>
+            <p class="landing-date-article legal">{{articleDate1}}</p>
+          </div>
+          <div class="landing-article">
+            <div class="landing-img-article" [ngStyle]="{'background-image': 'url('+articleImg2+')'}"></div>
+            <h4 class="landing-title-article subsubtitle">{{articleTitle2}}</h4>
+            <p class="landing-date-article legal">{{articleDate2}}</p>
+          </div>  
+        </div>
+        <div id="landing-articles-lign-container">
+          <div class="circle"></div>
+          <div class="lign-horizon landing-lign-article"></div>
+          <div class="circle"></div>
+          <div class="lign-horizon landing-lign-article2"></div>
+        </div>
+      </div>
+    </div>
+    <app-footer></app-footer>
+    

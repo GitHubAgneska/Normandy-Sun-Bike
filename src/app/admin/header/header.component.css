@@ -1,0 +1,41 @@
+#adminNavBar{
+    background-color: #6f7c91;
+    color: #fff;
+}
+
+.backBtn{
+    margin: 2vh;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 2px #fff;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.backBtn:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#adminNavBar h1{
+    margin: 2vh;
+    padding: 0;
+    font-size: 1.8rem;
+    vertical-align: middle;
+}
+
+@media (max-width: 450px){
+    .row{
+        flex-direction: column-reverse;
+    }
+
+    #adminNavBar h1{
+        margin-top: 4vh;
+    }
+}
+
+@media (min-width: 1024px){
+    .row{
+        height: 10vh;
+    }
+}
+

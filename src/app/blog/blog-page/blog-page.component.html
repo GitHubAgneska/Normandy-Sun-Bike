@@ -1,0 +1,9 @@
+<div id="blog-background">
+
+ 
+      <div id="blog-container" *ngFor="let current_article of articles; index as i">
+          <app-blog-article-element  [articleId]="current_article.id" [articleTitle]="current_article.title" [articleImg]="current_article.img" [articleCategorie]=current_article.categorie [i]=i></app-blog-article-element>
+      </div>
+  <div id="blog-more-button-container">
+  </div>
+</div>

@@ -1,0 +1,187 @@
+#navbarContainer{
+    /* transition: height 0.5s; */
+    position: fixed;
+    z-index: 1000;
+    margin: 0;
+    width: 100%;
+    background:#fff;
+    transition: 1s;
+}
+#navbar{
+    width: 100%;
+    height: 12vh;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+#navLinks{
+    width: 80%;
+    height: 100%;
+}
+#logo{
+    margin-left: 2%;
+    margin-right: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+#logo > img{
+    width: 100%;
+    transition: 1s;
+}
+#logo:hover{
+    cursor: pointer;
+}
+#logo:focus{
+    outline: none;
+}
+.categorie{
+    text-decoration: none;
+    color:grey;
+    display:inline-block; 
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+.categorie-color{
+    color: #fff;
+}
+.categorie:hover{
+    transition: 0.5s;
+    color: #000;
+    /* transform: scale(1.05); */  
+}
+.categorie:focus{
+    color: #000;
+    font-weight: 500;
+}
+
+
+/* -----BURGER MENU------------ */
+#toggle-container {
+    display: none;
+}
+
+/* ------------ SmartPhone ------------ */
+
+@media only screen and (max-width: 940px) {
+
+    #toggle-container {
+        position: absolute;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        margin-left: 5%;
+    }
+
+    #navbar{
+        align-items: center;
+        flex-direction: column;
+        height: 10vh;
+    }
+    label{
+        display:block;
+        cursor:pointer;
+      /*   width:50px; */
+        float:left;
+    }
+    #logo-container{
+        display: none;
+        margin-top: 1vh;
+    }
+
+    #navLinks{
+        display: none;
+        height: 90vh;
+        flex-direction: column;
+        margin:0;
+    }
+    .categorie{
+        height: 15%;
+        width: 100%;
+        border-bottom: grey solid 1px;
+    }
+    .categorie-end{
+        border: none;
+    }
+
+    #toggle:checked + #navbar {
+        height: 100vh;
+    }
+}
+@media only screen and (max-width: 720px){
+    #logo{
+        width:20%;
+    }
+}
+
+/* SunTrip Select */
+#suntrip-select{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+#suntrip-select-title{
+    color: grey;
+}
+#suntrip-select:hover > #suntrip-select-title{
+    opacity: 0;
+}
+#suntrip-select:hover > #suntrip-select-container{
+    opacity: 1;
+}
+#suntrip-select-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 1s;
+}
+#suntrip-select-container > div{
+    width: 100%;
+    border-top: solid 1px #000;
+}
+#suntrip-select-container > a{
+    color:grey;
+    transition: 0.5s;
+    padding: 2%;
+    font-size: 1.2vw;
+}
+#suntrip-select-container > a:hover {
+    cursor: pointer;
+    color:#000;
+    text-decoration: none;
+}
+@media only screen and (max-width: 940px) {
+    #suntrip-select{
+        height: 30%;
+    }
+    #suntrip-select-title{
+        display: none;
+    }
+    #suntrip-select-container{
+        opacity: 1;
+    }
+    #suntrip-select-container > div{
+        display: none;
+    }
+    #suntrip-select-container > a{
+        padding: 0;
+        font-size: 1em;
+        border-bottom: grey solid 1px;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}

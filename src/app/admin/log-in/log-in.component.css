@@ -1,0 +1,43 @@
+.formContainer{
+    width: 100%;
+    margin: 3vh auto;
+}
+
+#logInTitle{
+    text-align: center;
+}
+
+.inputBox{
+    margin: 3vh auto;
+}
+
+.optionBox{
+    margin: 3vh auto;
+    font-size: 0.5rem;
+}
+
+.textField{
+    width: 100%;
+    padding: 0;
+}
+
+.optionBox a{
+    float: right;
+    font-weight: 400;
+}
+
+.formContainer button{
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+::placeholder {
+    padding-left: 2vh;
+    opacity: 1; 
+    transition: opacity 0.5s;
+}
+
+:focus::placeholder { 
+    opacity: 0;
+}

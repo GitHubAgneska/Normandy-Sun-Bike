@@ -1,0 +1,86 @@
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body, html, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.big-title{
+    font-family: 'Arvo', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+.title{
+    font-family: 'Arvo', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+.subtitle{
+    font-family: 'Arvo', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 0.2rem;
+}
+.subsubtitle{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+.text{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.legal-text{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.link{
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: 0.5s;
+    color:#000;
+}
+
+.link:hover{
+    color: #000;
+    opacity: 0.7;
+    transition: 0.5s;
+    color:#000;
+    text-decoration: none;
+}
+
+.navbar-title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+/* form */
+.circle{
+    height: 3em;
+    width: 3em;
+    border: solid 8px #000;
+    border-radius: 50%;
+    margin: 1em;
+    }
+
+
+.lign-horizon{
+    border-top: solid 8px #000;
+    }
+
+
+.lign-vertical{
+    border-left: solid 8px #000;
+    } 
+
