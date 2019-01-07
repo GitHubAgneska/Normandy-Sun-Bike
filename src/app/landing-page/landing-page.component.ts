@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../services/article.service';
 import { Article } from '../classes/article';
 import { AddSponsorService } from '../services/add-sponsor.service';
+import { ActualityService } from '../services/actuality.service';
 import { Sponsor } from '../classes/sponsorClass';
+import { Actuality } from '../classes/actuality';
 
 @Component({
   selector: 'app-landing-page',
@@ -13,14 +15,6 @@ export class LandingPageComponent implements OnInit {
 
   public sponsor_list:any[];
 
-  public allSponsors = [
-    { "name" : "wild code school",
-      "img":"../../assets/logo_WCS.png"
-    },
-    { "name" : "wild code school2",
-      "img":"../../assets/logo_WCS.png"
-    },
-  ]
 
   public intro = `Des envies de voyages différents, un corps qui n’est pas celui d’un
   sportif de haut niveau, la découverte en 2014 de The Sun Trip, une « épopée » avec une idée
@@ -43,17 +37,18 @@ export class LandingPageComponent implements OnInit {
   public articleDate2:string = "00/00/0000";
 
 
+  public actuality:Actuality[];
+  private actualityService:ActualityService;
   public sponsors:Sponsor[];  
   private sponsorService:AddSponsorService;
   public articles:Article[];
   private articleService:ArticleService;
 
-  constructor(sponsorService:AddSponsorService, articleService:ArticleService) {
+  constructor(actualityService:ActualityService, sponsorService:AddSponsorService, articleService:ArticleService) {
     // Service
+    this.actualityService = actualityService;
     this.sponsorService = sponsorService;
     this.articleService = articleService;
-    
-    this.sponsor_list = this.allSponsors;
   }
 
   public crslImgs = document.getElementsByClassName("landing-headline");
@@ -64,33 +59,51 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit() {
 
-    // Infos Articles
-    this.articleService.getArticle().subscribe(
-      (param)=>{ 
-        this.articles = param; 
-      }
-    )
-
-    // Infos Sponsors
-    this.sponsorService.getSponsor().subscribe(
-      (param)=>{ 
-        this.sponsors = param; 
-      }
-    )
-    
-
     if(screen.width > 960){
       for(let i=0; i<this.crslImgs.length; i++){
         this.crslImgs[i]['style'].marginLeft = this.crslImgPosition(i) + "%";
         console.log()
       }
     }
+
+    // Infos Articles
+    this.articleService.getArticle().subscribe(
+      (param)=>{ 
+        this.articles = param; 
+      }
+    )
+    
+    // Infos Actuality
+    this.actualityService.getActuality().subscribe(
+      (param)=>{ 
+        this.actuality = param;
+        if (this.actuality[0].position == 1) {
+          this.crslToLeft();
+          console.log("oui")
+        } else if (this.actuality[0].position == 3) {
+          this.crslToRight();
+        }
+      }
+    )
+    // Infos Sponsors
+    this.sponsorService.getSponsor().subscribe(
+      (param)=>{ 
+        this.sponsors = param; 
+      }
+    )
+
+    setTimeout(()=>{
+      for(let i = 0; i < this.crslImgs.length; i++){
+        this.crslImgs[i]['style'].transition = "1.5s";
+      }
+    },100)
+      
+    
+    
   }
 
 
   crslToLeft(){
-    let leftArrow = document.getElementById("crsl-left-arrow");
-    let rightArrow = document.getElementById("crsl-right-arrow");
     const arrow1 = document.getElementById("carousel-nav-circle1")
     const arrow2 = document.getElementById("carousel-nav-circle2")
     const arrow3 = document.getElementById("carousel-nav-circle3")

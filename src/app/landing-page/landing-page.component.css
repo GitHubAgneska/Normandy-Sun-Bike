@@ -25,7 +25,6 @@
     height: 84vh;
     width: 70%;
     position:absolute;
-    transition: 1.5s;
 }
 @media only screen and (max-width: 940px) {
     .landing-crsl-container{
