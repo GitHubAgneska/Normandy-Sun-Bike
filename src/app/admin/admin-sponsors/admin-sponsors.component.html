@@ -8,7 +8,7 @@
     <!------  Top Block : "ajouter sponsor"  ------->
         <div class="sponsor-element-container pb-3" >
           <div class="sponsor-element-infos">
-            <h4 class="sponsor-element-title text">Ajouter un sponsor</h4>
+            <h4 class="sponsor-element-title subsubtitle">Ajouter un sponsor</h4>
             <div class="sponsor-element-button text">
               <button type="button" class="btn btn-lg" id="addSponsorBtn" (click)="displayNewSponsorFields()"> + </button></div>
           </div>
@@ -16,11 +16,12 @@
 
       <!------   Sponsors List  --------->
         <div *ngFor = "let sponsor of sponsors" [class.selected]="sponsor === chosenSponsor" (click)="onSelect(sponsor)" class="sponsor-element-container sponsors pb-3 pt-3">
-          <div class="logo-container img-fluid m-auto">
-            <img src="{{sponsor.img}}" /> 
+          <div class="logo-container">
+            <img src="{{sponsor.img}}"/> 
           </div>          
           <div class="sponsor-element-infos">
-            <h4 class="sponsor-element-level ">Nom: {{sponsor.name}} <br/>Level: {{sponsor.level}}</h4>       
+            <p class="sponsor-element-level text">{{sponsor.name}}</p>
+            <p class="legal-text">Niveau {{sponsor.level}}</p>       
        <!-- <div class="sponsor-element-button ">
               <button class="btn btn-lg d-block mb-3" id ="editSponsorBtn" (click)="displayEditSponsorField()">editer</button>
               <button class="btn btn-lg d-block" id ="deleteSponsorBtn" (click)="selectSponsorToDelete()">supprimer</button>                
