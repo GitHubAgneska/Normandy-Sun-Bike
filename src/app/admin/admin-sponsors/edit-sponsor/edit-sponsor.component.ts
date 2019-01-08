@@ -46,15 +46,32 @@ export class EditSponsorComponent implements OnInit, OnChanges {
   };
 
   ngOnInit() {
+
+
+    /* --  hovering on plus sign in image upload area ---  */
+
+      document.getElementById("imageInput").addEventListener("mouseenter", plusSignVisible);
+      function plusSignVisible() {
+        document.getElementById("plusSignId").style.opacity = "1";
+      }
+
+      document.getElementById("imageInput").addEventListener("mouseleave", plusSignInvisible);
+      function plusSignInvisible() {
+      document.getElementById("plusSignId").style.opacity = "0.2";
+    } 
+
+
     
     this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
          console.log('ImageUpload:uploaded:', item, status, response);
          alert('File uploaded successfully');
 
-    const options:any = {  // create data model for this form
 
-      sponsorImg: ['{{selectedSponsor.img}}'],
+
+    const options:any = {  // create data model for the form
+
+      sponsorImg: [''],
       sponsorName: ['', Validators.required],
       sponsorLink: [''],
       sponsorDescription: ['', Validators.required],

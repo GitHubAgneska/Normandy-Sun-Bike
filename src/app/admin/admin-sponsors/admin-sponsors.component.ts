@@ -11,7 +11,7 @@ export class AdminSponsorsComponent implements OnInit {
 
 
   sponsors = SPONSORS;
-  sponsorVisible:boolean = false;
+  sponsorVisible:boolean = true;
   selectedSponsor:boolean = false;
   chosenSponsor:Sponsor;
 
