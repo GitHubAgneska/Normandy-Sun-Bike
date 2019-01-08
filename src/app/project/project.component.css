@@ -7,6 +7,39 @@ p{
     line-height: 1;
 }
 
+.circle {
+    position: absolute;
+}
+.circle1{
+    margin-left: 65vh;
+    margin-top: 30vh;
+}
+#path-projet1 {
+    height: 97vh;
+    margin-left: 43vh;
+    margin-top: 36vh;
+}
+.circle2{
+    margin-left: 50vh;
+    margin-top: 2vh;
+}
+#path-projet2 {
+    height: 122vh;
+    margin-left: 45vh;
+    margin-top: 13vh;
+}
+.circle3{
+    margin-left: 118vh;
+    margin-top: 30vh;
+}
+.path-projet {
+    position: absolute;
+}
+.path-projet > img{
+    height: 100%;
+}
+
+
 @media screen and (max-width: 640px) {
     #projet-container{
         overflow-x: hidden;   
@@ -18,6 +51,7 @@ p{
 
 .projet-point-container{
     height: 100vh;
+    position: relative;
 }
 
 /* QUI */
