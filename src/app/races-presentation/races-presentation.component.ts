@@ -14,7 +14,6 @@ export class RacesPresentationComponent implements OnInit {
   private raceLink: string;
   private raceImg: string;
   private raceColor: string;
-  private blogBackTitle: string;
 
   private raceText2019:string = `Après 3 éditions sur les routes du monde, le petit frère (Sun Trip Tour)
   revient pour une 2eme édition qui se déroulera pendant 15 jours sur 1400 kilomètres
@@ -42,7 +41,6 @@ export class RacesPresentationComponent implements OnInit {
   private img2020: string = "../../assets/2020-landing.jpg";
   
   private raceBackgroundImg:string = "https://www.thesuntrip.com/2020-edition/";
-  private scrollButton:string = "Blog";
 
 
   constructor(route: ActivatedRoute) {
@@ -54,15 +52,13 @@ export class RacesPresentationComponent implements OnInit {
       this.raceLink = this.linkRace2019;   
       this.raceImg = this.img2019
       this.raceColor = "#478952";
-      this.blogBackTitle = `RHONES<br/>- ALPES<br/>2019 - `;
       // this.background.style.backgroundColor = "#D3BB58"
     }
     else if (this.raceTitle == "The Sun Trip 2020" ){
       this.raceText = this.raceText2020;
       this.raceLink = this.linkRace2020;   
       this.raceImg = this.img2020;
-      this.raceColor = "#D3BB58"; 
-      this.blogBackTitle = `LYON -<br/>- CANTON<br/>- - 2020`;
+      this.raceColor = "#D3BB58";
       // this.background.style.backgroundColor = "#D3BB58"
     }
    }
@@ -74,30 +70,10 @@ export class RacesPresentationComponent implements OnInit {
   ngOnInit() {
 
     let background = document.getElementById("race-description");
-    let blogBackground = document.getElementById("race-background");
 
     background.style.background = this.raceColor;
-    blogBackground.style.color = this.raceColor;
 
-  }
-
-// SCROLL
-
-  
-    
-    // Click
-    scrollClickButton(element) {
-
-      const page = document.getElementById("race-description-container")
-      
-      if (element == "race") {
-        page.style.marginTop = "0";
-      } else if (element =="blog") {
-        page.style.marginTop = "-88vh";
-      }
-      
-    };
-    
+  }    
     ngOnDestroy(){
       window.scrollTo(0,0);
     }

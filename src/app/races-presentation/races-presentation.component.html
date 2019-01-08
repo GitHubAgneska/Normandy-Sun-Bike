@@ -2,20 +2,10 @@
 <!-- DESCRIPTION -->
   <div id="race-description-container" [ngStyle]="{'background-image': 'url('+raceImg+')'}">
     <div id="race-description">
-      <div class="circle circle-race" (click)="scrollClickButton('blog')"><div></div><p>Voir le blog</p></div>
-      <div id="path-race" class="path-race-1"><img src="../../assets/path_race.png"/></div>
       <h2 class="title" id="race-title">{{raceTitle}}</h2>
       <p class="text">{{raceText}}</p>
       <a id="race-link" class="link" href={{raceLink}} target="_blank">- - En savoir plus - -</a>
     </div>
   </div>
 <!-- BLOG -->
-  <div id="race-blog-container">
-    <div id="race-blog">
-        <div class="circle circle-race-blog" (click)="scrollClickButton('race')"><div></div><p>Retour à la course</p></div>
-        <div id="path-race" class="path-race-2"><img src="../../assets/path_race.png"/></div>
-        <app-blog-page></app-blog-page>
-    </div>
-    <div id="race-background" [innerHTML]="blogBackTitle"></div>
-  </div>
 </div>

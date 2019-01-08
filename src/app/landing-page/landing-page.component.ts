@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleService } from '../services/article.service';
-import { Article } from '../classes/article';
 import { AddSponsorService } from '../services/add-sponsor.service';
 import { ActualityService } from '../services/actuality.service';
 import { Sponsor } from '../classes/sponsorClass';
@@ -41,14 +39,11 @@ export class LandingPageComponent implements OnInit {
   private actualityService:ActualityService;
   public sponsors:Sponsor[];  
   private sponsorService:AddSponsorService;
-  public articles:Article[];
-  private articleService:ArticleService;
 
-  constructor(actualityService:ActualityService, sponsorService:AddSponsorService, articleService:ArticleService) {
+  constructor(actualityService:ActualityService, sponsorService:AddSponsorService) {
     // Service
     this.actualityService = actualityService;
     this.sponsorService = sponsorService;
-    this.articleService = articleService;
   }
 
   public crslImgs = document.getElementsByClassName("landing-headline");
@@ -65,13 +60,6 @@ export class LandingPageComponent implements OnInit {
         console.log()
       }
     }
-
-    // Infos Articles
-    this.articleService.getArticle().subscribe(
-      (param)=>{ 
-        this.articles = param; 
-      }
-    )
     
     // Infos Actuality
     this.actualityService.getActuality().subscribe(

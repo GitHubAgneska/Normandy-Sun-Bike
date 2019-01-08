@@ -24,7 +24,6 @@ const routes: Routes = [
   {path: 'Accueil', component: LandingPageComponent, pathMatch: 'full' },
   {path: 'SunTripTour2019', component: RacesPresentationComponent, pathMatch: 'full', data: {title: 'The Sun Trip Tour 2019'}},
   {path: 'SunTrip2020', component: RacesPresentationComponent, pathMatch: 'full', data: {title: 'The Sun Trip 2020'}},
-  {path: 'Blog', component: BlogPageComponent, pathMatch: 'full', data: {title: 'Blog'}},
   {path: 'Article', component: ArticleComponent, pathMatch: 'full'},
   {path: 'Projet', component: ProjectComponent, pathMatch: 'full'},
   {path: 'Sponsors', component: SponsorComponent, pathMatch: 'full'},
@@ -34,10 +33,7 @@ const routes: Routes = [
   {path: 'admin/actuality', component: ActualityComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Actualité'}},
   {path: 'admin/sponsors', component: AdminSponsorsComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Sponsors'}},
   {path: 'admin/races', component: RaceComponent, pathMatch: 'full', data: {title: 'ÉDITER SITE > Courses'}},
-  {path : 'admin/blog-articles', component: AdminBlogArticlesComponent, pathMatch: 'full', data: {title: 'ÉDITER BLOG > Articles'}},
-  { path: "", redirectTo:'Accueil', pathMatch:"full"}
-
-
+  {path : 'admin/blog-articles', component: AdminBlogArticlesComponent, pathMatch: 'full', data: {title: 'ÉDITER BLOG > Articles'}}
 ];
 
 @NgModule({

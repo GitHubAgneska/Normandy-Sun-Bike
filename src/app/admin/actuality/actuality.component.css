@@ -1,3 +1,10 @@
+.admin-nav-background{
+    width: 100%;
+    height: 100vh;
+    background: url(../../../assets/background_races.png);
+    background-size: cover;
+}
+
 .actualityParts {
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
@@ -28,13 +35,14 @@
     margin-top: 5vh;
     color: #fff;
     border: none;
-    background-color: #6f7c91;
+    background-color: #194B3E;
     font-size: 1.5rem;
     cursor: pointer;
+    opacity: 0.9;
 }
 
 .validateBtn:hover{
-    background-color: #505566;
+    opacity: 1;
 }
 
 /*********************** Confirmation Message ***********************/
@@ -51,4 +59,13 @@
     .mainContent{
         margin-top: 5vh;
     }    
+}
+
+button{
+    transition: 0.3s;
+}
+
+button:focus{
+    outline: none;
+    transform: scale(0.99);
 }

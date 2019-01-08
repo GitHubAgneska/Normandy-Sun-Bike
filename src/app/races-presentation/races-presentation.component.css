@@ -38,87 +38,11 @@
     color : #fff;
 }
 
-.circle{
-    position: absolute;
-    z-index: 700;
-}
-.circle-race{
-    margin-left: 75%;
-    margin-top: 5%;
-    transition: 0.5s;
-}
-.circle-race-blog{
-    margin-left: 25%;
-    margin-top: 8%;
-    transition: 0.5s;
-}
-.circle-race:hover, .circle-race-blog:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-}
-
-.circle-race-blog > div, .circle-race > div {
-    border-top: 1px solid #000;
-    width: 100%;
-    margin-left: 50%;
-    transform: rotate(-45deg);
-}
-.circle-race-blog > p, .circle-race > p {
-    color:#000;
-    width: 500%;
-    margin-left: 160%;
-    margin-top: -100%;
-}
-.circle-race-blog > div {
-    border-top: 1px solid #000;
-    width: 100%;
-    margin-left: -50%;
-    transform: rotate(45deg);
-}
-.circle-race-blog > p {
-    color:#000;
-    width: 500%;
-    margin-left: -470%;
-    margin-top: -100%;
-}
-
-#path-race{
-    position: absolute;
-    overflow: hidden;
-}
-#path-race > img {
-    width: 100%;
-}
-.path-race-1{
-    width: 65%;
-    margin-top: 23%;
-    margin-left: 13%;
-}
-.path-race-2{
-    width: 63%;
-    margin-top: -13%;
-    margin-left: 14.3%;
-}
-
 @media screen and (min-width: 640px) and (max-width: 960px){
     .circle-race{
         margin-left: 73%;
         margin-top: 40%;
         transition: 0.5s;
-    }
-    .circle-race-blog{
-        margin-left: 12%;
-        margin-top: 8%;
-        transition: 0.5s;
-    }
-    .path-race-1{
-        width: 65%;
-        margin-top: 60%;
-    }
-    .path-race-2{
-        width: 63%;
-        margin-top: -13%;
-        margin-left: 2%;
     }
     #race-description-container{
         padding-top: 10vh;
@@ -134,20 +58,6 @@
     }
 }
 @media screen and (max-width: 640px){
-    .circle-race{
-        margin-left: 50%;
-        margin-top: 120%;
-        transition: 0.5s;
-    }
-    .circle-race-blog{
-        margin-left: 60%;
-        margin-top: 6%;
-        transition: 0.5s;
-    }
-    .path-race-1, .path-race2, #path-race{
-        display: none;
-    }
-
     #race-description-container{
         padding-top: 10vh;
     }
@@ -171,48 +81,6 @@
 }
 
 
-/* BLOG */
-
-/* Background */
-#race-background{
-    font-size: 13vw;
-    font-family: 'Arvo', serif;
-    font-weight: 900;
-    position: absolute;
-    margin-left: 2%;
-    margin-top: 5vh;
-    line-height: 1;
-    opacity: 0.1;
-    /* #f9fde4 */
-    z-index: 0;
-}
-
-
-#race-blog-container{
-    height: 88vh;
-    background:url("../../assets/background_races.png");
-    background-position: center;
-    background-size: 100%;
-    position: relative;
-    z-index: 10;
-}
-@media screen and (min-width: 640px) and (max-width: 960px){
-    #race-blog-container{background-size:140%}
-    #race-background{font-size: 17vw;}
-}
-@media screen and (max-width: 640px){
-    #race-blog-container{background-size:200%}
-    #race-blog{height: 95vh;}
-    #race-background{font-size: 18vw;}
-}
-
-#race-blog{
-    z-index: 1000;
-    width: 100%;
-    height: 100%;
-    overflow-y: scroll;
-    position: absolute;
-}
 .a{
     background: url(../../assets/2019-landing.jpg)
 }
