@@ -20,17 +20,17 @@ p{
     margin-top: 36vh;
 }
 .circle2{
-    margin-left: 50vh;
-    margin-top: 2vh;
+    margin-left: 35vh;
+    margin-top: 137vh;
 }
 #path-projet2 {
     height: 122vh;
-    margin-left: 45vh;
-    margin-top: 13vh;
+    margin-left: 30vh;
+    margin-top: 148vh;
 }
 .circle3{
-    margin-left: 118vh;
-    margin-top: 30vh;
+    margin-left: 119vh;
+    margin-top: 273vh;
 }
 .path-projet {
     position: absolute;
@@ -38,7 +38,11 @@ p{
 .path-projet > img{
     height: 100%;
 }
-
+@media screen and (max-width: 960px){
+    #path-projet-container{
+        opacity: 0.5;
+    }
+}
 
 @media screen and (max-width: 640px) {
     #projet-container{
