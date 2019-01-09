@@ -9,11 +9,6 @@
 } 
 
 
-.uploading-area-addSponsor{
-
-
-}
-
 .sponsorNewLogoAdd{
     width:100%;
 }
@@ -26,13 +21,11 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
-    
+    width: 40%;    
 }
 
 .filePlaceholder input[type=file] {   /*  => "browse + no_file selected" portion */
     opacity:0;
-    
 }
 
 
@@ -43,8 +36,6 @@
     cursor: pointer;
     z-index:10;
     position: absolute;
-
-
 }
 
 

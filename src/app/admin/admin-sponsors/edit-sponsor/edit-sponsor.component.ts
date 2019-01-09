@@ -78,34 +78,5 @@ export class EditSponsorComponent implements OnInit, OnChanges {
 
 }
 
-// NOTES AGNES
-
-/*    // EXTRACT DATA FROM FORM
-     this.registerForm.valueChanges.subscribe();
-     }
- 
-     handleFileInput(files: FileList) {
-       this.fileToUpload = files.item(0);
-     }
-       
-
-  // angular file-upload comp conf :
- /*  public afuConfig = {
-    multiple: false,
-    formatsAllowed: ".jpg,.jpeg,.png",
-    maxSize: "1",
-    uploadAPI: {
-      url: "https://example-file-upload-api",
-      headers: {
-        "Content-Type": "text/plain;charset=UTF-8", */
-        /* "Authorization" : `Bearer ${token}` */
-/*       }
-    },
-    theme: "dragNDrop",
-    hideProgressBar: true,
-    hideResetBtn: false,
-    hideSelectBtn: true
-  };
- */
-
   }
+}

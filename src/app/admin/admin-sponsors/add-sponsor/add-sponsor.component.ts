@@ -50,6 +50,7 @@ export class AddSponsorComponent implements OnInit {
 
   onMouseOver():void{
     document.getElementById("plusSignId").style.opacity = "1";
+    document.getElementById("plusSignId").style.textShadow = "rgba(255, 255, 255, 0.6)";
   }
 
   onMouseLeave():void{
@@ -68,53 +69,5 @@ export class AddSponsorComponent implements OnInit {
     this.registerForm.valueChanges.subscribe(console.log )  
   }
 
-  // 
-/*   handleFileInput(files: FileList) {
-    this.fileToUpload = files.item(0);
-  } */
-
-
-
-
-// DISPLAY IMAGE TO UPLOAD
-
-/* onSelectFile(event) {
-  if (event.target.files && event.target.files[0]) {
-    let reader = new FileReader();
-
-    reader.readAsDataURL(event.target.files[0]); // read file as data url
-
-    reader.onload = (event) => { // called once readAsDataURL is completed
-      this.url = event.target.;
-    }
-    reader.readAsDataURL(event.target.files[0]);
   }
-}  */
-
-
-  //display img before upload
-
-  uploadData: any;
-  selectedFile: File;
-  
-/* onFileChanged(event) {
-  this.selectedFile = <File>event.target.files[0];
-  if (event.target.files && event.target.files[0])
-  {
-      var reader = new FileReader();
-      reader.onload = (event: ProgressEvent) => {
-          this.url = (<FileReader>event.target).result;
-      }
-      reader.readAsDataURL(event.target.files[0]);
-  }
-} */
-
-
-
-// FINAL VALIDATE BUTTON
-
-onSubmit() {
-  this.submitted = true;
-}
-
 }
