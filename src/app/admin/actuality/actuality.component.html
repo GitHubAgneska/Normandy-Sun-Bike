@@ -1,22 +1,20 @@
 <app-header></app-header>
-<div class=admin-nav-background>
-  <div class="container-fluid">
-    <div class="row">
-        <div id="confirmationMessage">
-            <p class="p-0">{{this.message}}</p>
-        </div>
+<div class="container-fluid admin-nav-background">
+  <div class="row firstRow">
+      <div id="confirmationMessage">
+          <p class="m-0">{{this.message}}</p>
+      </div>
+  </div>
+  <div class="row mainContent justify-content-center">
+    <div id="tripPlan" class="actualityParts selectedSection col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3" (click)="sectionSelected('tripPlan')">
+      <h2 class="title">LE PROJET</h2>
     </div>
-    <div class="row mainContent justify-content-center">
-      <div id="tripPlan" class="actualityParts selectedSection col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3" (click)="sectionSelected('tripPlan')">
-        <img class="img-fluid sectionImg" src="assets/project_admin.png"/>
-      </div>
-      <div id="trip2019" class="actualityParts col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3" (click)="sectionSelected('trip2019')">
-        <img class="img-fluid sectionImg" src="assets/race2019_admin.png"/>
-      </div>
-      <div id="trip2020" class="actualityParts col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3" (click)="sectionSelected('trip2020')">
-        <img class="img-fluid sectionImg" src="assets/race2020_admin.png"/>
-      </div>
-      <button class="validateBtn col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5" routerLink="/admin/navigation">Valider</button>
+    <div id="trip2019" class="actualityParts col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3" (click)="sectionSelected('trip2019')">
+      <h2 class="title">THE SUN TRIP TOUR 2019</h2>
     </div>
+    <div id="trip2020" class="actualityParts col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3" (click)="sectionSelected('trip2020')">
+      <h2 class="title">THE SUN TRIP 2020</h2>
+    </div>
+    <button class="validateBtn col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5" routerLink="/admin/navigation">Valider</button>
   </div>
 </div>
