@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Sponsor } from '../../classes/sponsorClass';
 import { AddSponsorService } from '../../services/add-sponsor.service';
+import { SPONSORS } from './mock-sponsors';
 
 @Component({
   selector: 'app-admin-sponsors',
@@ -10,11 +11,12 @@ import { AddSponsorService } from '../../services/add-sponsor.service';
 export class AdminSponsorsComponent implements OnInit {
 
 
-  sponsorVisible:boolean = false;
+  sponsors = SPONSORS;
+  sponsorVisible:boolean = true;
   selectedSponsor:boolean = false;
   chosenSponsor:Sponsor;
 
-  public sponsors:Sponsor[];
+  /* public sponsors:Sponsor[]; */
   private sponsorService:AddSponsorService;
 
   constructor(sponsorService:AddSponsorService){

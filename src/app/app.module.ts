@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { HttpModule } from '@angular/http';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 
 
@@ -67,7 +68,8 @@ import { ArticleComponent } from './blog/article/article.component';
     AddBlogArticleComponent,
     EditSponsorComponent,
     EditBlogArticlesComponent,
-    ArticleComponent
+    ArticleComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
