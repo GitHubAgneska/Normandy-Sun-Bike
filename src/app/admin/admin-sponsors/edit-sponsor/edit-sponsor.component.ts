@@ -69,7 +69,7 @@ export class EditSponsorComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    
+
     this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
          console.log('ImageUpload:uploaded:', item, status, response);
@@ -83,11 +83,11 @@ export class EditSponsorComponent implements OnInit, OnChanges {
 /*    // EXTRACT DATA FROM FORM
      this.registerForm.valueChanges.subscribe();
      }
- 
+
      handleFileInput(files: FileList) {
        this.fileToUpload = files.item(0);
      }
-       
+
 
   // angular file-upload comp conf :
  /*  public afuConfig = {
@@ -106,3 +106,5 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     hideResetBtn: false,
     hideSelectBtn: true
   };*/
+  }
+}

@@ -65,9 +65,8 @@ export class AddSponsorComponent implements OnInit {
 
 
     // EXTRACT DATA FROM FORM
-    this.registerForm.valueChanges.subscribe(console.log )  
-    
-  }
+    this.registerForm.valueChanges.subscribe(console.log )
+  };
 
 
 
@@ -121,4 +120,5 @@ export class AddSponsorComponent implements OnInit {
   this.submitted = true;
 } */
 
-
+  }
+}
