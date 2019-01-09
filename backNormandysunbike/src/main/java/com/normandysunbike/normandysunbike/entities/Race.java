@@ -14,43 +14,33 @@ public class Race {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String title;
 	private String name;
-	private String link;
+	private String content;
 	
 	
 	public Race() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Race(String title, String name, String link) {
-		this.title = title;
+	public Race(String name, String content) {
 		this.name = name;
-		this.link = link;
+		this.content = content;
 	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
+	
+	public Long getId() {
+		return id;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getContent() {
+		return content;
 	}
 
-	public String getLink() {
-		return link;
-	}
-
-	public void setLink(String link) {
-		this.link = link;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 }
