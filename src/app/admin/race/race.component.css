@@ -61,6 +61,7 @@
     width: 100%;
     border: solid 1px #194B3E;
     font-size: 1.5rem;
+    padding: 2vh;
 }
 
 .raceDescription:focus{
