@@ -32,6 +32,24 @@ p{
     margin-left: 119vh;
     margin-top: 273vh;
 }
+#path-projet3 {
+    height: 89vh;
+    margin-left: 46vh;
+    margin-top: 283vh;
+}
+.circle4{
+    margin-left: 40vh;
+    margin-top: 373vh;
+}
+#path-projet4 {
+    height: 140vh;
+    margin-left: 28vh;
+    margin-top: 381vh;
+}
+.circle5{
+    margin-left: 150vh;
+    margin-top: 525vh;
+}
 .path-projet {
     position: absolute;
 }
@@ -242,9 +260,15 @@ p{
     }
 }
 
+.projet-img {
+    overflow: hidden;
+}
+.projet-img > img {
+    width: 100%;
+}
 
-/* NEXT */
-#projet-real1-container{
+/* site */
+#projet-site-container{
     height: 100vh;
     margin-top: 20vh;
     padding-top: 14vh;
@@ -252,11 +276,83 @@ p{
     display: flex;
     flex-direction: column;
 }
-#projet-comment-title{
+#projet-site-title{
+    text-align: end;
     align-self: flex-end;
+}
+#projet-site-text{
+    width: 30em;
+    margin-top: 1em;
+    align-self: flex-end;
+}
+#projet-site-img-1{
+    width: 8em;
+    border: solid 1px #CACACA;
+    padding: 1.5em 0 1.5em 0;
+    align-self: flex-end;
+    margin-right: 32em;
+    margin-top: -3em;
+    z-index: 300;
+    background: #fff;
+}
+#projet-site-img-2{
+    width: 20em;
+    align-self: flex-end;
+    margin-right: 13em;
+    margin-top: -7em;
 }
 
 
+/* Realisation */
+#projet-real-container{
+    height: 100vh;
+    margin-top: 20vh;
+    padding-top: 14vh;
+    padding-right: 8%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 8%;
+}
+#projet-real-title{
+    z-index: 400;
+}
+#projet-real-img-1 {
+    width: 17em;
+    height: 12em;
+    background: #555555;
+    z-index: 300;
+    margin-top: 1em;
+    
+}
+#projet-real-text-1{
+    width: 25em;
+    margin-top: -11em;
+    margin-left: 19em;
+    margin-bottom: 2em;
+}
+#projet-real-img-2 {
+    width: 20em;
+    margin-left: 5em;
+}
+#projet-real-text-2{
+    width: 25em;
+    margin-top: -12em;
+    margin-left: 27em;
+}
+
+
+/* Ouverture */
+#projet-open-container{
+    height: 100vh;
+    margin-top: 40vh;
+    padding-top: 14vh;
+    padding-right: 8%;
+    display: flex;
+    flex-direction: column;
+}
+#projet-open-title{
+    align-self: flex-end;
+}
 
 
 @media screen and (min-width: 640px) and (max-width: 960px){
