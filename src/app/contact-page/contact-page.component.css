@@ -1,0 +1,69 @@
+
+.contactPage-container{
+    padding-top:12vh;
+    color:#fff;
+    background: url('../../assets/fond-landing-text-intro.png');
+    background-size: cover;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 640px){
+    .contactPage-container{
+       padding-bottom:20%;
+    }
+}
+
+
+.contact-fields{
+    width:60%;
+    display: block;
+    align-items: center;
+}
+
+@media only screen and (max-width: 640px){
+    .contact-fields{
+        width:95%;
+        margin:auto;
+        padding:2%;
+        margin-top:2rem;
+    }
+
+ }
+
+
+.contact-input textarea{
+    width:100%;
+}
+
+.contact-fields div {
+    padding:0.5rem;
+}
+
+ .contact-fields button{
+     float:right;
+     width:40%;
+     background: none;
+     border-radius: none;
+     border:1px solid #fff;
+     color: #fff;
+
+ }
+ @media only screen and (max-width: 640px){
+
+    .contact-fields button{ 
+        width:100%;
+        border:1px solid #fff;
+        float:none;
+       
+
+        
+   
+    }
+
+ }
+
+

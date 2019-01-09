@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TweenMax, Power4} from 'gsap/TweenMax';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-races-presentation',
@@ -8,72 +9,72 @@ import {TweenMax, Power4} from 'gsap/TweenMax';
 })
 export class RacesPresentationComponent implements OnInit {
 
-  constructor() { }
+  public raceTitle: string;
+  private raceText: string;
+  private raceLink: string;
+  private raceImg: string;
+  private raceColor: string;
+
+  private raceText2019:string = `Après 3 éditions sur les routes du monde, le petit frère (Sun Trip Tour)
+  revient pour une 2eme édition qui se déroulera pendant 15 jours sur 1400 kilomètres
+  environ en région Auvergne –Rhône Alpes et un peu en Italie plus accessible avec moins de
+  contraintes techniques. Un parcours montagneux (Col de L’Iseran et Col de l’Agnel à plus de
+  2700 mètres et mythique Col du Mont Cenis) mais que tous peuvent faire. Tous les
+  participants se retrouvent tous les deux jours en moyenne pour des temps d’échange et de
+  rencontre. Mais aussi un test en conditions réelles pour éprouver le pilote et la machine
+  pour la gestion de l’énergie, des freins…..`;
+  
+  private linkRace2019: string = "https://www.thesuntrip.com/sun-trip-tour-2019/";
+  private img2019: string = "../../assets/2019-landing.jpg";
+
+  private raceText2020:string = `A l’image d’un « Vendée Globe Terrestre », la plus grande aventure terrestre
+  du monde, les règles sont simples: Un point de départ, un point d’arrivée et la grande liberté
+  entre les deux, le Sun Trip c’est avant tout une aventure sans assistance, où chacun prend
+  ses responsabilités. En 2013, c’était direction le Kazakhstan. En 2015, une boucle au départ
+  de Milan direction Antalya et la Turquie. En 2018, Lyon-Canton (Chine) pour plus de 13000
+  kilomètres effectué pour le premier en 45 Jours et pour le dernier en 106 jours…. Chacun a
+  pu aller à son rythme plaçant le curseur où il souhaitait entre performance sportive et
+  chemins de traverse et découvertes…En 2020, êtes-vous prêts à suivre mes pérégrinations
+  que vous pourrez suivre via les réseaux sociaux et ce site ?`;
+  
+  private linkRace2020: string = "https://www.thesuntrip.com/2020-edition/";
+  private img2020: string = "../../assets/2020-landing.jpg";
+  
+  private raceBackgroundImg:string = "https://www.thesuntrip.com/2020-edition/";
 
 
-  private raceTitle:string = "Race Title";
-  private raceText:string = "Et quoniam mirari posse quosdam peregrinos existimo haec lecturos forsitan, si contigerit, quamobrem cum oratio ad ea monstranda deflexerit quae Romae gererentur, nihil praeter seditiones narratur et tabernas et vilitates harum similis alias, summatim causas perstringam nusquam a veritate sponte propria digressurus. Soleo saepe ante oculos ponere, idque libenter crebris usurpare sermonibus, omnis nostrorum imperatorum, omnis exterarum gentium potentissimorumque populorum, omnis clarissimorum regum res gestas, cum tuis nec contentionum magnitudine nec numero proeliorum nec varietate regionum nec celeritate conficiendi nec dissimilitudine bellorum posse conferri; nec vero disiunctissimas terras citius passibus cuiusquam potuisse peragrari, quam tuis non dicam cursibus, sed victoriis lustratae sunt.";
-  private raceBackgroundImg:string = "";
+  constructor(route: ActivatedRoute) {
+    
+    this.raceTitle = route.snapshot.data.title;
 
-  private scrollButton:string = "Blog";
+    if (this.raceTitle == "The Sun Trip Tour 2019") {
+      this.raceText = this.raceText2019 ; 
+      this.raceLink = this.linkRace2019;   
+      this.raceImg = this.img2019
+      this.raceColor = "#478952";
+      // this.background.style.backgroundColor = "#D3BB58"
+    }
+    else if (this.raceTitle == "The Sun Trip 2020" ){
+      this.raceText = this.raceText2020;
+      this.raceLink = this.linkRace2020;   
+      this.raceImg = this.img2020;
+      this.raceColor = "#D3BB58";
+      // this.background.style.backgroundColor = "#D3BB58"
+    }
+   }
+
+
+  
 
 
   ngOnInit() {
 
-    let title = document.getElementById("race-title");
-    let count = 0;
+    let background = document.getElementById("race-description");
 
-    var lastScrollTop = 0;
-    window.addEventListener("scroll", ()=>{
-      var st = window.pageYOffset;
-      if (st > lastScrollTop){
-        setTimeout(()=>{
-          this.scrollButton = "Course"
-        },200);      
-      } else {
-        setTimeout(()=>{
-          this.scrollButton = "Blog"
-        },200);
-      }
-      lastScrollTop = st <= 0 ? 0 : st;
-    }, false);
+    background.style.background = this.raceColor;
 
-  }
-
-
-  scrolling(element,condition:string){
-    let target;
-    let from = window.scrollY;
-    let tmp = { y: from };
-
-    if (this.scrollButton == condition) {
-      target = element.offsetTop;
-
-      TweenMax.to(
-        tmp,
-        1.5,
-        { y: target,
-          ease: Power4.easeOut,
-          onUpdate: function() {
-          window.scrollTo(from, tmp.y);
-          }
-        }
-      );
+  }    
+    ngOnDestroy(){
+      window.scrollTo(0,0);
     }
-    
-  }
-
-  scrollToBlog(){
-    let raceDescription = document.getElementById("race-description");
-    let blog = document.getElementById("race-button-container");
-    
-    this.scrolling(blog,"Blog");
-    this.scrolling(raceDescription,"Course");
-  }
-
-  // Click
-  scrollClickButton() {
-    this.scrollToBlog();
-  };
-
   }

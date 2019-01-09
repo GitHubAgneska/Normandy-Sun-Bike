@@ -57,6 +57,7 @@
     background-color: #194B3E;
     font-size: 1.5rem;
     cursor: pointer;
+    opacity: 0.9;
 }
 
 .validateBtn:hover{

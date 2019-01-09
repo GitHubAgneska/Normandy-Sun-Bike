@@ -1,0 +1,44 @@
+
+<!------  INPUT FIELDS - CREATE NEW BLOG ARTICLE  ------->
+<div class="add-blogArticle-container">
+
+ <h4 class="blogArticle-element-title text">Ajouter un article au blog</h4>
+ <div class="uploading-area-addImageArticle row">
+    <!----new article img area ----> 
+    <div class="newLogoAdd col-5">
+     <span>Nouvelle image</span>
+     <div class="filePlaceholder">
+       <div *ngFor="let file of fileUploads"> 
+        <input type="image" class="blogArticleNewImage"  src="{{file.url}}" alt="new image"/>
+      </div>
+     </div>
+    </div>
+    <div class="addArticleImgBtns col-5">   
+      <angular-file-uploader #fileUploadAdd [config]="afuConfig3" id="uploadingArea" class="col-6"></angular-file-uploader>
+      <input style="display: none" type="file" (change)="onFileChanged($event)" >
+    </div>   
+ </div>  
+
+ <!------ form fields for blog article adding ------->
+ <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <!-- Value : {{ registerForm.value | json }} // display input infos --> 
+    <div class="form-group">
+     <mat-form-field appearance="outline">
+        <input matInput placeholder="Titre de l'article" formControlName="articleTitle" aria-label="article-title">
+     </mat-form-field>
+
+     <mat-form-field appearance="outline">
+        <input matInput placeholder="Date de l'article" formControlName="blogArticleDate" aria-label="article-date">
+     </mat-form-field>
+
+     <mat-form-field  appearance="fill">
+        <textarea rows="7" maxlength="" matInput placeholder="Texte" formControlName="blogArticleText" aria-label="blogArticle-text"></textarea>
+     </mat-form-field>
+    </div>
+
+    <div class="validate&cancel-btn row">
+      <button class="btn btn-lg col-5" id="cancel-btn" click="blogArticleVisible == false">Annuler</button>
+      <button class="btn btn-lg col-5" id="validate-btn" click="onSubmit()">Valider</button> 
+    </div>
+ </form> 
+</div>

@@ -1,3 +1,8 @@
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body, html, h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
@@ -53,3 +58,29 @@ body, html, h1, h2, h3, h4, h5, h6 {
     color:#000;
     text-decoration: none;
 }
+
+.navbar-title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+/* form */
+.circle{
+    height: 3em;
+    width: 3em;
+    border: solid 8px #000;
+    border-radius: 50%;
+    margin: 1em;
+    }
+
+
+.lign-horizon{
+    border-top: solid 8px #000;
+    }
+
+
+.lign-vertical{
+    border-left: solid 8px #000;
+    } 
+

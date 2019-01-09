@@ -1,0 +1,130 @@
+
+.add-sponsors-container{
+    height:auto;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    margin:0.5rem auto 2rem auto;
+    text-align: center; 
+} 
+
+
+.uploading-area-addSponsor{
+    justify-content: space-around !important;
+    padding:1%;
+    border-radius:5px;
+    margin-bottom:2%;
+}
+
+.sponsorNewLogoAdd{
+    width:100%;
+}
+
+.filePlaceholder{ 
+    outline: 1px dashed grey !important;
+    display:block;
+    height:80%;
+}
+
+
+.addSponsorLogobtns{
+    width:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+
+}
+
+
+.form-group{
+    display:flex !important;
+    flex-direction: column !important;
+    margin-bottom:2%;
+}
+
+
+.sponsors-input-container .sponsors-input-fields{
+    width:100%;
+    margin:2rem;
+}
+
+
+.sponsor-element-title{
+    border-bottom: solid 3px #6f7c91;
+    font-size: 1.8em;
+}
+
+/* ----input fields---- */
+
+mat-form-field.mat-form-field{
+    font-size: 1.3rem;  
+}
+
+.validate&cancel-btn{
+    justify-content:space-between;
+}
+
+
+#validate-btn, #cancel-btn{
+    margin-bottom:2%;
+    color: #fff;
+    border: none;
+    background-color: #6f7c91;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin :0 auto;
+}
+
+#validate-btn{
+    background-color: #6f7c91;
+}
+
+#cancel-btn{
+    background-color:red;
+}
+
+#cancel-btn:hover{
+    background-color: rgb(193, 6, 6);
+}
+#validate-btn:hover{
+    background-color:#505566;
+}
+
+/*----- upload block (angular-file-uploader component)-----*/
+
+
+::ng-deep .ng-star-inserted label.btn, ::ng-deep .ng-star-inserted button.btn{
+    background-color: #505566;
+    border:1px solid #505566;
+    font-size: 1rem;
+    color:#fff;
+    vertical-align: top;
+    margin:0.1rem 1rem 0 1rem;
+    
+    
+}
+
+::ng-deep .afu-valid-file.ng-star-inserted{
+    text-align: center !important;
+    background-color:none !important;
+    border:1px solid gray !important;
+    border-radius:5px;
+    color:#fff !important;
+    width:100% !important;
+
+ 
+}
+
+::ng-deep .afu-valid-file.ng-star-inserted .text-primary{  
+    color:#fff !important;
+    text-align: center !important;
+}
+
+
+
+ @media only screen and (max-width : 640px) {
+
+    ::ng-deep .ng-star-inserted.afu-upload-btn{
+        font-size: 3rem;
+    }
+
+}
