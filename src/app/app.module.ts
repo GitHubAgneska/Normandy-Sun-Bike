@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { FileSelectDirective } from 'ng2-file-upload';
+import { HttpModule } from '@angular/http';
 
 
 
@@ -38,6 +39,7 @@ import { AdminBlogArticlesComponent } from './admin/admin-blog-articles/admin-bl
 import { AddBlogArticleComponent } from './admin/admin-blog-articles/add-blog-article/add-blog-article.component';
 import { EditSponsorComponent } from './admin/admin-sponsors/edit-sponsor/edit-sponsor.component';
 import { EditBlogArticlesComponent } from './admin/admin-blog-articles/edit-blog-articles/edit-blog-articles.component';
+import { ArticleComponent } from './blog/article/article.component';
 
 
 @NgModule({
@@ -66,7 +68,8 @@ import { EditBlogArticlesComponent } from './admin/admin-blog-articles/edit-blog
     AddBlogArticleComponent,
     EditSponsorComponent,
     EditBlogArticlesComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +83,8 @@ import { EditBlogArticlesComponent } from './admin/admin-blog-articles/edit-blog
     MatButtonModule,
     MatCheckboxModule,
     MatChipsModule,
-    FormsModule
+    FormsModule,
+    HttpModule
 
   ],
   providers: [],

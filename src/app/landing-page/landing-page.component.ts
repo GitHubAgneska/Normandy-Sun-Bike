@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AddSponsorService } from '../services/add-sponsor.service';
+import { ActualityService } from '../services/actuality.service';
+import { Sponsor } from '../classes/sponsorClass';
+import { Actuality } from '../classes/actuality';
 
 @Component({
   selector: 'app-landing-page',
@@ -9,22 +13,17 @@ export class LandingPageComponent implements OnInit {
 
   public sponsor_list:any[];
 
-  public allSponsors = [
-    { "name" : "wild code school",
-      "img":"../../assets/logo_WCS.png"
-    },
-    { "name" : "wild code school2",
-      "img":"../../assets/logo_WCS.png"
-    },
-  ]
 
-  constructor(){
-    this.sponsor_list = this.allSponsors ;
-  }
-
-  //CAROUSEL
-
-  
+  public intro = `Des envies de voyages différents, un corps qui n’est pas celui d’un
+  sportif de haut niveau, la découverte en 2014 de The Sun Trip, une « épopée » avec une idée
+  simple et percutante : un point de départ, un point d’arrivée et un parcours libre pour une
+  aventure en vélos électriques solaires ouverte à tous. En mêlant aventure, liberté de
+  circulation, sportivité, rencontre humaine et les technologies des énergies renouvelables,
+  The Sun Trip ambitionne de faire parler autrement de l’écologie, d’une manière
+  profondément humaniste et pragmatique. Chaque participant devient un porte drapeau de
+  cette ambition en la laissant vivre au gré de son réseau, de sa route et de ses rencontres.
+  Cette aventure, j’ai envie de la tenter et de vous la faire partager…..
+  `
 
   //BLOG
   public articleImg1:string = "";
@@ -35,14 +34,25 @@ export class LandingPageComponent implements OnInit {
   public articleTitle2:string = "Title2";
   public articleDate2:string = "00/00/0000";
 
+
+  public actuality:Actuality[];
+  private actualityService:ActualityService;
+  public sponsors:Sponsor[];  
+  private sponsorService:AddSponsorService;
+
+  constructor(actualityService:ActualityService, sponsorService:AddSponsorService) {
+    // Service
+    this.actualityService = actualityService;
+    this.sponsorService = sponsorService;
+  }
+
   public crslImgs = document.getElementsByClassName("landing-headline");
 
   public rightPosition;
   public middlePosition;
   public leftPosition;
-  ngOnInit() {
 
- 
+  ngOnInit() {
 
     if(screen.width > 960){
       for(let i=0; i<this.crslImgs.length; i++){
@@ -50,12 +60,38 @@ export class LandingPageComponent implements OnInit {
         console.log()
       }
     }
+    
+    // Infos Actuality
+    this.actualityService.getActuality().subscribe(
+      (param)=>{ 
+        this.actuality = param;
+        if (this.actuality[0].position == 1) {
+          this.crslToLeft();
+          console.log("oui")
+        } else if (this.actuality[0].position == 3) {
+          this.crslToRight();
+        }
+      }
+    )
+    // Infos Sponsors
+    this.sponsorService.getSponsor().subscribe(
+      (param)=>{ 
+        this.sponsors = param; 
+      }
+    )
+
+    setTimeout(()=>{
+      for(let i = 0; i < this.crslImgs.length; i++){
+        this.crslImgs[i]['style'].transition = "1.5s";
+      }
+    },100)
+      
+    
+    
   }
 
 
   crslToLeft(){
-    let leftArrow = document.getElementById("crsl-left-arrow");
-    let rightArrow = document.getElementById("crsl-right-arrow");
     const arrow1 = document.getElementById("carousel-nav-circle1")
     const arrow2 = document.getElementById("carousel-nav-circle2")
     const arrow3 = document.getElementById("carousel-nav-circle3")
@@ -131,6 +167,39 @@ export class LandingPageComponent implements OnInit {
   crslImgPosition(i){
     return (i*74) - 60;
   }
+
+
+  // Sponsor Container Scroll Buttons
+  public scrollRight:any;
+
+  sponsorStopScroll(){
+    clearTimeout(this.scrollRight);
+    };
+  // Scrolling
+  sponsorScrolling(param:number, display, direction:string) {
+
+    let sponsorContainer = document.getElementById("landing-sponsors-container");
+
+    if (direction == "left") {
+      sponsorContainer.scrollLeft -=20;
+    } else if (direction == "right") {
+      sponsorContainer.scrollLeft +=20;
+    }
+
+    if( param > 0 ){
+      this.sponsorStopScroll();
+      
+      this.scrollRight = setTimeout( 
+          () => {
+              this.sponsorScrolling(param - 1, display, direction);
+          },20);
+    }
+  }
+  // Start
+  SponsorStartScrolling(direction) {
+    var display = document.querySelector('.time');
+    this.sponsorScrolling(1000, display, direction);
+  };
 
 
   ngOnDestroy(){

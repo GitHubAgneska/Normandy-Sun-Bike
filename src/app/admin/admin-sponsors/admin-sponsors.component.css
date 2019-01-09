@@ -36,6 +36,9 @@
     margin-bottom: 3vw;
     border-bottom: grey solid 1px;
 }
+.sponsor-element-container:hover{
+    cursor: pointer;
+}
 
 
 .sponsorList{
@@ -43,14 +46,20 @@
     width:auto;   
     text-align: center;
 }
-
-.logo-container img{        
-    width:80%   ;
-    flex-shrink: 0;
+.logo-container {
+    width: 60%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.logo-container > img{        
+    width:100%;
+    /* flex-shrink: 0; */
 }
 
 .sponsor-element-level{
     display: inline-block;
+    margin: 0;
+    margin-top: 0.5em;
 }
 
 .sponsors{
@@ -79,7 +88,6 @@
 
 .sponsor-element-title{
     border-bottom: solid 3px #6f7c91;
-    font-size: 1.8em;
 }
 
 
@@ -104,8 +112,7 @@
         overflow-y:scroll;   
     }
 
-    .logo-container img{        
-        width:12vw;
+    .logo-container img{
         display:inline-block; 
     }
 }

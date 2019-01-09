@@ -1,5 +1,5 @@
 #adminNavBar{
-    background-color: #6f7c91;
+    background-color: #194B3E;
     color: #fff;
 }
 
@@ -37,5 +37,14 @@
     .row{
         height: 10vh;
     }
+}
+
+button{
+    transition: 0.3s;
+}
+
+button:focus{
+    outline: none;
+    transform: scale(0.99);
 }
 

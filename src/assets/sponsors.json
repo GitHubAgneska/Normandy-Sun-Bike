@@ -1,0 +1,66 @@
+[
+    { 
+        "id": 1,
+        "name": "Wild Code School",
+        "img" : "https://wildcodeschool.fr/wp-content/uploads/2017/02/logo_orange_small.jpg",
+        "link" : "string",
+        "level": 1,
+        "description" : "Une petite descritpion du sponsor"
+    },
+    { 
+        "id": 2,
+        "name": "IUT d'Alençon",
+        "img" : "data:image/png;base64,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",
+        "link" : "string",
+        "level": 2,
+        "description" : "string"
+    },
+    { 
+        "id": 3,
+        "name": "Gaetan",
+        "img" : "https://image.flaticon.com/icons/png/512/69/69408.png",
+        "link" : "string",
+        "level": 2,
+        "description" : "string"
+    },
+    { 
+        "id": 4,
+        "name": "Nicolas",
+        "img" : "https://image.flaticon.com/icons/png/512/69/69408.png",
+        "link" : "string",
+        "level": 3,
+        "description" : "string"
+    },
+    { 
+        "id": 5,
+        "name": "Elisabeth",
+        "img" : "https://image.flaticon.com/icons/png/512/69/69408.png",
+        "link" : "string",
+        "level": 3,
+        "description" : "string"
+    },
+    { 
+        "id": 6,
+        "name": "Maxime",
+        "img" : "https://image.flaticon.com/icons/png/512/69/69408.png",
+        "link" : "string",
+        "level": 3,
+        "description" : "string"
+    },
+    { 
+        "id": 7,
+        "name": "Agnes",
+        "img" : "https://image.flaticon.com/icons/png/512/69/69408.png",
+        "link" : "string",
+        "level": 3,
+        "description" : "string"
+    },
+    { 
+        "id": 8,
+        "name": "Etienne",
+        "img" : "https://image.flaticon.com/icons/png/512/69/69408.png",
+        "link" : "string",
+        "level": 3,
+        "description" : "string"
+    }
+]

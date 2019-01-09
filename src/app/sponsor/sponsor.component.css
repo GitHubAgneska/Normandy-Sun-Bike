@@ -1,10 +1,18 @@
+#sponsor-background{
+    background: url("/assets/fond-landing-blog.png");
+    background-size: cover;
+    padding: 20vh 0 9vh 0;
+}
+
 #sponsor-page{
     padding-top: 12vh;
-    width: 80%;
+    width: 90%;
+    padding: 2% 5% 0 5%;
     margin:0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    background: #fff;
 }
 @media only screen and (max-width: 960px){
     #sponsor-page{
@@ -55,7 +63,15 @@
 #sponsor-first-logo{
     width: 47%;
     height: 100%;
-    background: grey
+}
+.sponsor-logo-img {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sponsor-logo-img > img{
+    width: 60%;
 }
 @media only screen and (max-width: 960px) and (min-width: 640px) {
     #sponsor-first{
@@ -72,7 +88,7 @@
     }
     #sponsor-first-text, #sponsor-first-logo{
         width: 100%;
-        height: 45%;
+        height: 50%;
     }
 }
 
@@ -93,7 +109,6 @@
 .sponsor-second-logo{
     width: 80%;
     height: 70%;
-    background: grey;
 }
 
 @media only screen and (max-width: 960px){
@@ -114,6 +129,28 @@
 @media only screen and (max-width: 640px){
     #sponsor-second-container{
         height: 65vw;
+    }
+}
+
+
+.lign-all-sponsor{
+    margin-left: 35em;
+    width: 50%;
+    margin-top: -2em;
+}
+.lign-all-sponsor-2{
+    margin-left: 0;
+    margin-right: 35em;
+}
+.sponsor-title-2{
+    width: 100%;
+    text-align: end;
+    margin-top: 1em;
+}
+@media only screen and (max-width: 640px){
+    .lign-all-sponsor, .lign-all-sponsor-2{
+        width: 100%;
+        margin: 0;
     }
 }
 

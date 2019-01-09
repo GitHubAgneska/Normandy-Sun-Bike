@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Sponsor } from './sponsorClass';
-import { SPONSORS } from './mock-sponsors';
+import { Sponsor } from '../../classes/sponsorClass';
+import { AddSponsorService } from '../../services/add-sponsor.service';
 
 @Component({
   selector: 'app-admin-sponsors',
@@ -15,9 +15,22 @@ export class AdminSponsorsComponent implements OnInit {
   selectedSponsor:boolean = false;
   chosenSponsor:Sponsor;
 
-  constructor() { }
+  
+  private sponsorService:AddSponsorService;
 
-  ngOnInit() {}
+  constructor(sponsorService:AddSponsorService){
+    this.sponsorService = sponsorService;
+  }
+  
+
+  ngOnInit() {
+    // Infos Sponsors
+    this.sponsorService.getSponsor().subscribe(
+      (param)=>{ 
+        this.sponsors = param;
+      }
+    )
+  }
 
   // create new sponsor field - (directive *ngIf)
   public displayNewSponsorFields(){

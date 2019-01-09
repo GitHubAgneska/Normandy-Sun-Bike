@@ -29,34 +29,24 @@
             <div class="circle carousel-nav-circle" id="carousel-nav-circle4" (click)="crslToLeft()"><img src="../../assets/arrow_crsl_left.png"/></div>
         </div>
       </div>
+      <!-- text intro -->
+      <div id="landing-text-intro-container">
+        <p id="landing-text-intro" class="text">{{intro}}</p>
+        <a routerLink="/Projet" class="link">- - >  En découvrir plus sur mon projet  < - -</a>
+      </div>
 
       <!-- sponsors -->
-      <h3 class="title landing-title" id="landing-title-sponsor">SPONSORS</h3>
+      <h3 class="title landing-title" id="landing-title-sponsor" routerLink="/Sponsors">SPONSORS </h3>
+      <div class="title-lign-container">
+          <div class="lign-horizon landing-lign-horizon-sponsor"></div>
+        </div>
+      <div id="landing-sponsor-arrow-container">
+          <div class="circle sponsor-nav-circle" (mousedown)="SponsorStartScrolling('left')" (mouseup)="sponsorStopScroll()"><img src="../../assets/arrow_crsl_left.png"/></div>
+          <div class="circle sponsor-nav-circle" (mousedown)="SponsorStartScrolling('right')" (mouseup)="sponsorStopScroll()"><img src="../../assets/arrow_crsl_right.png"/></div>
+      </div>  
       <div id="landing-sponsors-container">
-        <div id="landing-sponsors" *ngFor="let current_sponsor of sponsor_list">
+        <div id="landing-sponsors" *ngFor="let current_sponsor of sponsors">
             <app-sponsors-landing  [sponsorName]="current_sponsor.name" [sponsorImg]="current_sponsor.img"></app-sponsors-landing>
-        </div>
-      </div>
-      <!-- Blog -->
-      <div id="landing-blog-container">
-        <h3 class="title landing-title">BLOG</h3>
-        <div id="landing-articles-container">
-          <div class="landing-article">
-            <div class="landing-img-article" [ngStyle]="{'background-image': 'url('+articleImg1+')'}"></div>
-            <h4 class="landing-title-article subsubtitle">{{articleTitle1}}</h4>
-            <p class="landing-date-article legal">{{articleDate1}}</p>
-          </div>
-          <div class="landing-article">
-            <div class="landing-img-article" [ngStyle]="{'background-image': 'url('+articleImg2+')'}"></div>
-            <h4 class="landing-title-article subsubtitle">{{articleTitle2}}</h4>
-            <p class="landing-date-article legal">{{articleDate2}}</p>
-          </div>  
-        </div>
-        <div id="landing-articles-lign-container">
-          <div class="circle"></div>
-          <div class="lign-horizon landing-lign-article"></div>
-          <div class="circle"></div>
-          <div class="lign-horizon landing-lign-article2"></div>
         </div>
       </div>
     </div>
