@@ -27,16 +27,15 @@
   </div> -->  
 
   <!------ NEW change logo area   ( only one upload image block )------->
-
   <div class="newLogoUploadArea">
-    <input class="browseBtn" type="file" name="photo" id="imageInput" accept="image/*" (mouseenter)="plusSignVisible()" (mouseLeave)="plusSignInvisible()"/>
+    <input class="browseBtn" type="file" name="photo" id="imageInput" accept="image/*" (mouseover)="onMouseOver()" (mouseleave)="onMouseLeave()"/>
     <button class="plusSign" id="plusSignId" > +  </button>
     <img class="logoActuelBackground" src="{{sponsor.img}}" />
   </div>      
 
 
   <!------ form fields for sponsor editing ------->
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <form *ngIf="registerForm != null" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <!-- Value : {{ registerForm.value | json }} // display input infos --> 
     <div class="form-group">
       <span class="nomSponsor">Nom du sponsor : </span>

@@ -32,7 +32,22 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     private fileUpload1:  AngularFileUploaderModule; */
 
 
-  constructor(private formBuilder: FormBuilder) { }   // add formbuilder service
+  constructor(private formBuilder: FormBuilder) { 
+    const options:any = {                             // create data model for the form
+
+      sponsorImg: [''],
+      sponsorName: ['', Validators.required],
+      sponsorLink: [''],
+      sponsorDescription: ['', Validators.required],
+      sponsorLevel: [''],
+      agree: [false, [
+        Validators.requiredTrue
+      ]]
+    };
+
+    this.selectedLevel = 1;
+    this.registerForm = this.formBuilder.group(options);
+  }   // add formbuilder service
 
 
   ngOnChanges( changes:SimpleChanges){
@@ -45,22 +60,15 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     this.sponsor.level = this.selectedLevel;
   };
 
+  onMouseOver():void{
+    document.getElementById("plusSignId").style.opacity = "1";
+  }
+
+  onMouseLeave():void{
+    document.getElementById("plusSignId").style.opacity = "0.2";
+  }
+
   ngOnInit() {
-
-
-    /* --  hovering on plus sign in image upload area ---  */
-
-      document.getElementById("imageInput").addEventListener("mouseenter", plusSignVisible);
-      function plusSignVisible() {
-        document.getElementById("plusSignId").style.opacity = "1";
-      }
-
-      document.getElementById("imageInput").addEventListener("mouseleave", plusSignInvisible);
-      function plusSignInvisible() {
-      document.getElementById("plusSignId").style.opacity = "0.2";
-    } 
-
-
     
     this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
@@ -68,33 +76,11 @@ export class EditSponsorComponent implements OnInit, OnChanges {
          alert('File uploaded successfully');
 
 
-
-    const options:any = {  // create data model for the form
-
-      sponsorImg: [''],
-      sponsorName: ['', Validators.required],
-      sponsorLink: [''],
-      sponsorDescription: ['', Validators.required],
-      sponsorLevel: [''],
-      agree: [false, [
-        Validators.requiredTrue
-      ]]
-
-    };
-
-    this.selectedLevel = this.sponsor.level;
-    this.registerForm = this.formBuilder.group(options);
-
-  } 
 }
 
+// NOTES AGNES
 
-
-
-
-// NOTES D'AGNES
-
-    /*    // EXTRACT DATA FROM FORM
+/*    // EXTRACT DATA FROM FORM
      this.registerForm.valueChanges.subscribe();
      }
  
@@ -102,13 +88,8 @@ export class EditSponsorComponent implements OnInit, OnChanges {
        this.fileToUpload = files.item(0);
      }
        
- 
-   // FINAL VALIDATE BUTTON
- 
-    */
 
-
-  // angular file-upload comp conf 
+  // angular file-upload comp conf :
  /*  public afuConfig = {
     multiple: false,
     formatsAllowed: ".jpg,.jpeg,.png",
@@ -126,4 +107,5 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     hideSelectBtn: true
   };
  */
-}
+
+  }
