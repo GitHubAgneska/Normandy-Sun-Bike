@@ -1,3 +1,10 @@
+.admin-nav-background{
+    width: 100%;
+    height: 90vh;
+    background: url(../../../assets/background_races.png);
+    background-size: cover;
+}
+
 .actualityParts {
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
@@ -47,27 +54,25 @@
     margin-top: 5vh;
     color: #fff;
     border: none;
-    background-color: #6f7c91;
+    background-color: #194B3E;
     font-size: 1.5rem;
     cursor: pointer;
 }
 
 .validateBtn:hover{
-    background-color: #505566;
+    background-color: #073A2F;
 }
 
 /*********************** Confirmation Message ***********************/
+.firstRow{
+    height: 20vh;
+}
+
 #confirmationMessage{
     opacity: 0;
     transition: opacity 1s;
-    margin: 2vh;
     width: 100%;
     font-size: 1.5rem;
     text-align: center;
-}
-
-@media (min-width: 1024px){
-    .mainContent{
-        margin-top: 5vh;
-    }    
+    align-self: center;
 }
