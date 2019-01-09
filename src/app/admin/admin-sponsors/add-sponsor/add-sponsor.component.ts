@@ -66,7 +66,11 @@ export class AddSponsorComponent implements OnInit {
 
     // EXTRACT DATA FROM FORM
     this.registerForm.valueChanges.subscribe(console.log )  
+    
   }
+
+
+
 
   // 
 /*   handleFileInput(files: FileList) {
@@ -94,8 +98,8 @@ export class AddSponsorComponent implements OnInit {
 
   //display img before upload
 
-  uploadData: any;
-  selectedFile: File;
+/*   uploadData: any;
+  selectedFile: File; */
   
 /* onFileChanged(event) {
   this.selectedFile = <File>event.target.files[0];
@@ -113,8 +117,8 @@ export class AddSponsorComponent implements OnInit {
 
 // FINAL VALIDATE BUTTON
 
-onSubmit() {
+/* onSubmit() {
   this.submitted = true;
-}
+} */
 
-}
+

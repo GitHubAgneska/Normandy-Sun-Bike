@@ -76,7 +76,7 @@ export class EditSponsorComponent implements OnInit, OnChanges {
          alert('File uploaded successfully');
 
 
-}
+};
 
 // NOTES AGNES
 
@@ -105,7 +105,4 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     hideProgressBar: true,
     hideResetBtn: false,
     hideSelectBtn: true
-  };
- */
-
-  }
+  };*/
