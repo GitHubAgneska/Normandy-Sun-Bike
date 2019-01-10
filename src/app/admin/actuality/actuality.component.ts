@@ -32,7 +32,7 @@ export class ActualityComponent implements OnInit {
         this.actuality = param;
         if (this.actuality[0].position == 1) {
           this.sectionSelected('tripPlan');
-        } else if (this.actuality[0].position == 3){
+        } else if (this.actuality[0].position == 2){
           this.sectionSelected('trip2019');
         } else if (this.actuality[0].position == 3) {
           this.sectionSelected('trip2020');
@@ -62,12 +62,23 @@ export class ActualityComponent implements OnInit {
     document.getElementById(p_id).removeChild(document.getElementById('checkmark'));
   }
 
+  public changeActualityPositionInDb(p_id:string) {
+    if (p_id == 'tripPlan' ) {
+      this.actuality[0].position = 1;
+    } else if ( p_id == 'trip2019' ) {
+      this.actuality[0].position = 2;
+    } else if ( p_id == 'trip2020' ) {
+      this.actuality[0].position = 3;
+    }
+  }
+
   private sectionSelected(p_id): void {
     let sectionBlock: HTMLElement = document.getElementById(this.prevSectionId);
 
     sectionBlock.classList.remove('selectedSection');
 
     const sectionId = p_id;
+    this.changeActualityPositionInDb(p_id);
     const messagePart: HTMLElement = document.getElementById('confirmationMessage');
 
     for (let i = 0; i < this.sections.length; i++) {
@@ -87,6 +98,10 @@ export class ActualityComponent implements OnInit {
     this.addCheckmark(sectionId);
 
     this.prevSectionId = sectionId;
+  }
+
+  public validatePositionChangeInDb() {
+    this.actualityService.updateActuality(this.actuality[0]).subscribe()
   }
 
 }
