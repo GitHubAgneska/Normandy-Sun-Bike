@@ -28,7 +28,7 @@ public class ActualityController {
         
     }
 	
-	@PutMapping("/blogs/{id}")
+	@PutMapping("/actuality/{id}")
     public Actuality update(@PathVariable int id, @RequestBody Actuality p_actuality){
 		
         Actuality actualityToUpdate = actualityRepo.findById((long) id).get();

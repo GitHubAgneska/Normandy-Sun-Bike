@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Actuality } from '../../classes/actuality';
+import { ActualityService } from '../../services/actuality.service';
 
 @Component({
   selector: 'app-actuality',
@@ -15,6 +17,32 @@ export class ActualityComponent implements OnInit {
   public sectionId: string;
   public prevSectionId: string = 'tripPlan';
   public message: String;
+
+  public actuality:Actuality[];
+  private actualityService:ActualityService;
+
+  constructor(actualityService:ActualityService) { 
+    this.actualityService = actualityService;
+  }
+
+  ngOnInit() {
+
+    this.actualityService.getActuality().subscribe(
+      (param)=>{ 
+        this.actuality = param;
+        if (this.actuality[0].position == 1) {
+          this.sectionSelected('tripPlan');
+        } else if (this.actuality[0].position == 3){
+          this.sectionSelected('trip2019');
+        } else if (this.actuality[0].position == 3) {
+          this.sectionSelected('trip2020');
+        }
+      }
+    )
+
+    this.confirmationMsg(this.sectionNb);
+    this.addCheckmark(this.prevSectionId);
+  }
 
   private confirmationMsg(p_sectionNb): void {
     this.message = 'La partie ' + this.sections[p_sectionNb].name + ' va être mise en avant !';
@@ -59,13 +87,6 @@ export class ActualityComponent implements OnInit {
     this.addCheckmark(sectionId);
 
     this.prevSectionId = sectionId;
-  }
-
-  constructor() { }
-
-  ngOnInit() {
-    this.confirmationMsg(this.sectionNb);
-    this.addCheckmark(this.prevSectionId);
   }
 
 }
