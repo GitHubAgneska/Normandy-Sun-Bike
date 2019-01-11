@@ -4,6 +4,7 @@ import {Http, Response} from '@angular/http';
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import { Sponsor } from '../classes/sponsorClass';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -45,14 +46,16 @@ export class AddSponsorService {
   //    return this.httpService.delete(this.baseUrl + '/' + id);
   //  }
 
+  private target:string;
   private httpService:Http;
+
   constructor(httpService:Http) { 
     this.httpService = httpService;
+    this.target = environment.domain + "sponsor/";
   }
 
   public getSponsor():Observable<Sponsor[]>{
 
-    let url:string = "article.json";
     return this.httpService.get("assets/sponsors.json").pipe(
       map(
           (param_my_response:Response) => {
@@ -63,6 +66,49 @@ export class AddSponsorService {
     );
   }
 
+  public getSponsorById( id:number  ):Observable<Sponsor>{
+
+    return this.httpService.get(this.target + id).pipe(
+      map(
+          (p_response:Response) => {
+          return p_response.json() as Sponsor;
+        }
+      )
+    );
+  }
+
+  public addSponsor( sponsor:Sponsor ):Observable<Sponsor>{
+
+    return this.httpService.post(this.target, sponsor ).pipe(
+      map(
+          (p_response:Response) => {
+          return p_response.json() as Sponsor;
+        }
+      )
+    );
+  }
+
+  public editSponsor( id:number, sponsor:Sponsor ):Observable<Sponsor>{
+    
+    return this.httpService.put(  this.target  + id , sponsor ).pipe(
+      map(
+        ( param_response:any ) => {
+          return param_response as Sponsor;
+        }
+      )
+    );
+  }
+
+  public deleteSponsor( id:number ):Observable<boolean>{
+    
+    return this.httpService.delete(  this.target  + id ).pipe(
+      map(
+        ( param_response:any ) => {
+          return param_response as boolean;
+        }
+      )
+    );
+  }
 
 
 }
