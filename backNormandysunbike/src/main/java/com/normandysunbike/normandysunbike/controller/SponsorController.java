@@ -1,5 +1,7 @@
 package com.normandysunbike.normandysunbike.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.normandysunbike.normandysunbike.entities.Sponsor;
@@ -36,14 +40,19 @@ public class SponsorController {
     }
 	
 	@PostMapping("/sponsors")
-    public Sponsor create(@RequestBody Sponsor p_sponsor){
+    public Sponsor create(@RequestBody Sponsor p_sponsor, @RequestParam("image") MultipartFile image){
+		
+		p_sponsor.setImg(this.uploadImg(image));
+		
         return SponsorRepo.save(p_sponsor);
     }
+	
 	
     @PutMapping("/sponsors/{id}")
     public Sponsor update(
     		@PathVariable("id") Long p_id, 
-    		@RequestBody Sponsor p_sponsor
+    		@RequestBody Sponsor p_sponsor,
+    		@RequestParam("image") MultipartFile image
     ) throws Exception 
     {
     	
@@ -55,7 +64,7 @@ public class SponsorController {
 	    	}
 	    	
 	    	if( p_sponsor.getImg() != null ) {
-	    		current.setImg(p_sponsor.getImg());
+	    		current.setImg(this.uploadImg(image));
 	    	}
 	    	
 	    	if( p_sponsor.getLink() != null ) {
@@ -85,5 +94,29 @@ public class SponsorController {
     	SponsorRepo.deleteById((long) id);
         return true;
     }
+    
+    
+    public String uploadImg( MultipartFile image ) {
+		
+		// Si le fichier est de type image
+		if (image.getContentType().startsWith("image/")) {
+		
+			String path = "/Users/Etienne/Documents/WCS/normandySunBike/src/assets" + image.getOriginalFilename();
+			String relativePath;
+			try {
+				image.transferTo(new File(path));
+				// Link vers dossier assets
+				relativePath = path.substring(path.indexOf("assets"), path.length());
+				
+			} catch (IllegalStateException | IOException e) {
+				e.printStackTrace();
+				return null;
+			}
+			return relativePath;
+			
+		} else {
+			return null;
+		}
+	}
 	
 }
