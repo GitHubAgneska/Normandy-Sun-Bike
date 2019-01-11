@@ -62,63 +62,13 @@ export class AddSponsorComponent implements OnInit {
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
          console.log('ImageUpload:uploaded:', item, status, response);
          alert('File uploaded successfully');
+        
+    }
 
 
     // EXTRACT DATA FROM FORM
     this.registerForm.valueChanges.subscribe(console.log )  
     
   }
-
-
-
-
-  // 
-/*   handleFileInput(files: FileList) {
-    this.fileToUpload = files.item(0);
-  } */
-
-
-
-
-// DISPLAY IMAGE TO UPLOAD
-
-/* onSelectFile(event) {
-  if (event.target.files && event.target.files[0]) {
-    let reader = new FileReader();
-
-    reader.readAsDataURL(event.target.files[0]); // read file as data url
-
-    reader.onload = (event) => { // called once readAsDataURL is completed
-      this.url = event.target.;
-    }
-    reader.readAsDataURL(event.target.files[0]);
-  }
-}  */
-
-
-  //display img before upload
-
-/*   uploadData: any;
-  selectedFile: File; */
-  
-/* onFileChanged(event) {
-  this.selectedFile = <File>event.target.files[0];
-  if (event.target.files && event.target.files[0])
-  {
-      var reader = new FileReader();
-      reader.onload = (event: ProgressEvent) => {
-          this.url = (<FileReader>event.target).result;
-      }
-      reader.readAsDataURL(event.target.files[0]);
-  }
-} */
-
-
-
-// FINAL VALIDATE BUTTON
-
-/* onSubmit() {
-  this.submitted = true;
-} */
-
+}
 

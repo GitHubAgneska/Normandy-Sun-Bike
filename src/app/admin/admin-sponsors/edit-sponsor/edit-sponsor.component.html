@@ -4,33 +4,12 @@
 <div class="edit-sponsors-container">
 
   <h4 class="sponsor-element-title text">Modifier ce sponsor</h4>
- 
-  <!------ CHANGE LOGO AREA (1st version with current + new image) -------> 
-  <!-- <div class="uploading-area-editSponsor row">  
-    <div class="logoActuel col-4"> 
-      <span>Logo actuel</span>
-      <input type="image" class="sponsorLogoActuel" src="{{sponsor.img}}" alt="sponsor logo" />  
-    </div>  
-    <div class="changeLogoBtns col-4">
-      <angular-file-uploader  #fileUploadEdit [config]="afuConfig" id="uploadingArea"></angular-file-uploader>
-      <input style="display:none" type="file" (change)="onFileChanged($event)">
-    </div>  -->
-    <!-- new logo area -->
-    <!-- <div class="newLogoEdit col-4">
-      <span>Nouveau logo</span>
-      <div class="filePlaceholder">
-        <div *ngFor="let file of fileUploads"> 
-         <input type="image" class="sponsorNewLogo" src="{{file.url}}" alt="new logo"  id="uploadingArea"/>
-       </div> 
-     </div>
-    </div>
-  </div> -->  
 
   <!------ NEW change logo area   ( only one upload image block )------->
   <div class="newLogoUploadArea">
     <input class="browseBtn" type="file" name="photo" id="imageInput" accept="image/*" (mouseover)="onMouseOver()" (mouseleave)="onMouseLeave()"/>
     <button class="plusSign" id="plusSignId" > +  </button>
-    <img class="logoActuelBackground" src="{{sponsor.img}}" />
+    <div class="logoActuelBackground"><img src="{{sponsor.img}}"/></div>
   </div>      
 
 
@@ -61,7 +40,7 @@
       </mat-form-field>
     </div>
 
-    <div class="validate&cancel-btn row">
+    <div class="validatecancel-btn row">
       <button class="btn btn-lg sponsors-input-fields col-5" id="cancel-btn" (click)="selectedSponsor == false">Annuler</button>
       <button class="btn btn-lg sponsors-input-fields col-5" id="validate-btn" (click)="onSubmit()" (click)="uploader.uploadAll()" >Valider</button> 
     </div>
