@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Sponsor } from '../../classes/sponsorClass';
 import { AddSponsorService } from '../../services/add-sponsor.service';
+import { SPONSORS } from './mock-sponsors';
+
 
 @Component({
   selector: 'app-admin-sponsors',

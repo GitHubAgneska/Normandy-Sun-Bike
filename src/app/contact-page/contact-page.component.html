@@ -3,18 +3,20 @@
 <div class="contactPage-container">
   <div class="contact-fields">
     <div class="contact-title big-title">
-      <h1>CONTACT</h1>
-    </div>
-    <div class="email-field">
-      <h5>Email</h5>
-      <input type="email" class="form-control" aria-label="email" aria-describedby="basic-addon1">
-    </div>
-    <div class="contact-input">
-      <h5>Message</h5>
-      <textarea name="" id="" rows="10"></textarea>
-    </div>
-    <div class="contact-validate-btn">
-     <button class="btn btn-lg message-input-fields">ENVOYER</button>
+      <form [formGroup]="addForm" (ngSubmit)="submit()">
+          <h1>CONTACT</h1>
+        </div>
+        <div class="email-field">
+          <h5>Email</h5>
+          <input  formControlName= "email" type="email" class="form-control" aria-label="email" aria-describedby="basic-addon1">
+        </div>
+        <div class="contact-input">
+          <h5>Message</h5>
+          <textarea formControlName="textMessage" id="" rows="10"></textarea>
+        </div>
+        <div class="contact-validate-btn">
+        <button class="btn btn-lg message-input-fields" type="button" (click)="submit(email.value, message.value)">ENVOYER</button>
+      </form>
     </div>
   </div>
 </div>
