@@ -10,7 +10,7 @@ import { AddSponsorService } from '../../services/add-sponsor.service';
 export class AdminSponsorsComponent implements OnInit {
 
 
-  sponsorVisible:boolean = false;
+  sponsorVisible:boolean = true;
   selectedSponsor:boolean = false;
   chosenSponsor:Sponsor;
 

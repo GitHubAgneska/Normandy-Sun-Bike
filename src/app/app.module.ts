@@ -8,7 +8,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
+<<<<<<< HEAD
 import { HttpModule } from '@angular/http';
+=======
+import { FileSelectDirective } from 'ng2-file-upload';
+>>>>>>> origin/adminSponsors2
 
 
 
@@ -67,7 +71,11 @@ import { ArticleComponent } from './blog/article/article.component';
     AddBlogArticleComponent,
     EditSponsorComponent,
     EditBlogArticlesComponent,
+<<<<<<< HEAD
     ArticleComponent
+=======
+    FileSelectDirective
+>>>>>>> origin/adminSponsors2
   ],
   imports: [
     BrowserModule,
