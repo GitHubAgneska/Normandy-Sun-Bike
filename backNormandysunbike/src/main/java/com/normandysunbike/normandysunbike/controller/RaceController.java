@@ -27,19 +27,6 @@ public class RaceController {
 	    return raceRepo.findAll();
 	}
 	
-	@GetMapping("/races/{id}")
-	public Race getById(@PathVariable("id") Long id) throws Exception{
-		try {
-			return raceRepo.findById(id).get();
-		} catch( Exception p_exception ) {
-			throw new ResponseStatusException( 
-					HttpStatus.NOT_FOUND, 
-			        "no race found for id: " + id
-		    		);
-		}
-		
-	}
-	
 	@PutMapping("/races/{id}")
     public Race update(@PathVariable("id") Long id, @RequestBody Race race) throws Exception{
         
