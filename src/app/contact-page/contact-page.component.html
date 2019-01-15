@@ -3,19 +3,38 @@
 <div class="contactPage-container">
   <div class="contact-fields">
     <div class="contact-title big-title">
-      <form [formGroup]="addForm" (ngSubmit)="submit()">
+      <form [formGroup]="addForm">
           <h1>CONTACT</h1>
-        </div>
+          <div class="soustitreContact">
+            <span class="subtitle-contact">Si vous voulez me laisser un message, me faire part de votre soutien ou me faire un don..</span>
+          </div>
         <div class="email-field">
           <h5>Email</h5>
-          <input  formControlName= "email" type="email" class="form-control" aria-label="email" aria-describedby="basic-addon1">
+          <input id="emailAddress"
+                 type="email"
+                 class="form-control"
+                 formControlName="emailAddress" required
+                 [ngClass]="{'is-invalid': submitted && f.emailAddress.errors}" />
+          <div *ngIf="f.emailAddress.errors" class="invalid-email">    
+            <div *ngIf="f.emailAddress.touched">Veuillez entrer une adresse email valide !</div>
+          </div> 
         </div>
         <div class="contact-input">
-          <h5>Message</h5>
-          <textarea formControlName="textMessage" id="" rows="10"></textarea>
+          <h5>Message</h5>      
+          <textarea id="emailMessage"
+                    type="emailMessage"
+                    class="form-control"  
+                    formControlName="emailMessage"       
+                    rows="4" 
+                    ></textarea>
+          <div *ngIf="f.emailMessage.errors" class="invalid-emailMessage">
+            <div *ngIf="f.emailMessage.dirty && (f.emailMessage.errors.minlength && f.emailMessage.touched) ">Votre message doit contenir au moins 10 caractères !</div>
+            <div *ngIf="f.emailMessage.touched && f.emailMessage.pristine">Veuillez entrer un message !</div>
+          </div>   
         </div>
         <div class="contact-validate-btn">
-        <button class="btn btn-lg message-input-fields" type="button" (click)="submit(email.value, message.value)">ENVOYER</button>
+          <button class="btn btn-lg message-input-fields" type="button" (click)="submit()">ENVOYER</button>
+        </div>
       </form>
     </div>
   </div>

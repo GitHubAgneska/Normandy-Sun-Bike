@@ -6,7 +6,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-import com.normandysunbike.normandysunbike.entities.User;
+import com.normandysunbike.normandysunbike.entities.EmailUser;
 
 @Service
 public class EmailService {
@@ -18,14 +18,16 @@ public class EmailService {
 		this.javaMailSender = javaMailSender;
 	}
 	
-	public void sendEmail(User user) throws MailException {
-		SimpleMailMessage mail = new SimpleMailMessage();
-		mail.setTo(user.getEmailAddress());
-	//  mail.setFrom("");
-		mail.setSubject("Our first awesome SUnbike email");
-		mail.setText("This is such a great first email that it's hard to describe");
+	public void sendEmail(EmailUser emailUser) throws MailException {
 		
-	
+		SimpleMailMessage mail = new SimpleMailMessage();
+		
+		mail.setTo("hily.genay@gmail.com");
+		mail.setSubject("Nouvel email depuis le site");
+	    mail.setFrom(emailUser.getEmailAddress());
+		mail.setText(emailUser.getMsg());
+		
+		
 		javaMailSender.send(mail);
 		
 	}

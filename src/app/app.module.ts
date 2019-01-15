@@ -10,6 +10,7 @@ import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { FileSelectDirective } from 'ng2-file-upload';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule} from '@angular/common/http';
 
 
 
@@ -41,6 +42,7 @@ import { EditSponsorComponent } from './admin/admin-sponsors/edit-sponsor/edit-s
 import { EditBlogArticlesComponent } from './admin/admin-blog-articles/edit-blog-articles/edit-blog-articles.component';
 import { ArticleComponent } from './blog/article/article.component';
 import { EmailService } from './services/email.service';
+
 
 
 @NgModule({
@@ -85,7 +87,8 @@ import { EmailService } from './services/email.service';
     MatCheckboxModule,
     MatChipsModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
 
   ],
   providers: [ EmailService],

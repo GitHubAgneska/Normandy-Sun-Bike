@@ -1,34 +1,35 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, Response } from '@angular/http';
+import {HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { map } from "rxjs/operators";
-import { EmailUser } from '../contact-page';
+import {map} from 'rxjs/operators';
+
+import { EmailUser } from '../classes/emailUser';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class EmailService {
 
-  private url = "http://localhost:8080/contact";
+  private url = "http://localhost:8080/Contact";
   private httpHeaders =  new HttpHeaders({'Content-Type':'application/json'});
 
   constructor(private httpService: HttpClient) { }
 
-  createContact(contact:Contact):Observable<Contact> {
-    return this.httpService.post<Contact>(this.url, contact,{headers:this.httpHeaders})
-
-  }
-/* 
-  public sendEmail(argparam:any) {
-    return this.httpService.post('http://localhost/4200/contact/', argparam)
-      .map(res => res.json())
-      .catch(this._errorHandler); 
+  createContact(emailUser:EmailUser):Observable<boolean> {
+    return this.httpService.post<EmailUser>(this.url, emailUser,{headers:this.httpHeaders}).pipe(
+      map(
+        ( response:boolean) => {
+          return response;
+        }
+      )
+    ); 
   }
 
   private _errorHandler(error: Response) {
     console.error(error);
     return Observable.throw(error || 'Server Error')
-  } */
+  } 
 
 
 }
