@@ -31,8 +31,17 @@ public class SponsorController {
     }
 	
 	@GetMapping("/sponsors/{id}")
-    public Sponsor show(@PathVariable int id){
-        return SponsorRepo.findById((long) id).get();
+    public Sponsor show(@PathVariable int p_id){
+		try {
+			return SponsorRepo.findById((long) p_id).get();
+    	}
+    	catch( Exception p_exception ) {
+    		throw new ResponseStatusException(
+	          HttpStatus.NOT_FOUND, 
+	          "no question found for id: " + p_id
+    		);
+    	}
+        
     }
 	
 	@PostMapping("/sponsors")
@@ -47,9 +56,8 @@ public class SponsorController {
     ) throws Exception 
     {
     	
-    	Sponsor current = SponsorRepo.findById(p_id).get();
-    	
     	try {
+    		Sponsor current = SponsorRepo.findById(p_id).get();
 	    	if( p_sponsor.getName() != null ) {
 	    		current.setName(p_sponsor.getName());
 	    	}
@@ -75,15 +83,24 @@ public class SponsorController {
     	catch( Exception p_exception ) {
     		throw new ResponseStatusException(
 	          HttpStatus.NOT_FOUND, 
-	          "no question found for id: " + p_id
+	          "no sponsor found for id: " + p_id
     		);
     	}
     }
     
     @DeleteMapping("sponsors/{id}")
-    public boolean delete(@PathVariable int id){
-    	SponsorRepo.deleteById((long) id);
-        return true;
+    public boolean delete(@PathVariable int p_id){
+    	
+    	try {
+    		SponsorRepo.deleteById((long) p_id);
+            return true;
+    	}
+    	catch( Exception p_exception ) {
+    		throw new ResponseStatusException(
+	          HttpStatus.NOT_FOUND, 
+	          "no sponsor found for id: " + p_id
+    		);
+    	}
     }
 	
 }
