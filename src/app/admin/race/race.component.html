@@ -20,10 +20,16 @@
           </div>
         </div>
       </div>
-      <div class="descriptionSide col-md-12 col-lg-12 col-xl-8">
-        <form id="raceDescForm" action="#">
-          <textarea class="raceDescription text" maxlength="700" rows="18" form="raceDescForm" required>{{textArea}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eleifend mi in nulla pharetra convallis. Vestibulum at nunc dignissim, lacinia orci non, luctus lorem. Mauris eleifend et lorem sed ultrices. Ut at auctor neque. Quisque sit amet velit blandit, volutpat risus sit amet, fringilla sem. Nam egestas augue id mi hendrerit, in cursus felis consectetur. Donec ac quam maximus, congue nunc vel, porta odio. Aliquam efficitur mauris eu luctus tristique. Vivamus nibh mi, pharetra quis porta vitae, commodo vitae ex. Nullam ut dolor et odio suscipit finibus. Etiam faucibus consequat consequat. Donec mollis dignissim risus eget finibus.</textarea>
-          <button class="validateBtn" routerLink="/admin/navigation" type="submit">Valider</button>
+      <div class="descriptionSide col-xl-8">
+        <form id="raceDescForm">
+          <textarea class="raceDescription text"
+                    maxlength="800" 
+                    rows="18" 
+                    *ngIf="race != null" 
+                    [(ngModel)]="race.content" 
+                    name="content" 
+                    required>{{race.content}}</textarea>
+          <button class="validateBtn" type="button" (click)="update(race)">Valider</button>
         </form>
       </div>
     </div>

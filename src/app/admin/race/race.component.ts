@@ -1,14 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import { RacePresentationService } from '../../services/race-presentation.service';
+import { Race } from '../../race';
 
 @Component({
   selector: 'app-race',
   templateUrl: './race.component.html',
   styleUrls: ['./race.component.css']
 })
+
 export class RaceComponent implements OnInit {
 
-  public raceDescription: any = {r2019: 'Description du Sun Trip Tour 2019.', r2020: 'Description du Sun Trip 2020.'};
-  public textArea: String;
+  private racePresentationService: RacePresentationService;
+  public races: Race[];
+  public race: Race;
+  public raceSelector: number = 0;
+  public confirmAlert: String;
+
+  constructor(p_racePresentationService: RacePresentationService) {
+    this.racePresentationService = p_racePresentationService;
+    this.race = null;
+  }
+
+  ngOnInit(): void {
+    this.racePresentationService.getAll().subscribe(
+      (result: Race[]) => {
+        this.races = result;
+        this.race = this.races[this.raceSelector];
+      }
+    );
+  }
 
   private selectedRace(p_id): void {
     const race2019 = document.getElementById('trip2019');
@@ -17,18 +37,26 @@ export class RaceComponent implements OnInit {
     if (p_id === 'trip2019') {
       race2019.classList.add('selected');
       race2020.classList.remove('selected');
-      this.textArea = this.raceDescription.r2019;
+      this.race = this.races[0];
     } else {
       race2019.classList.remove('selected');
       race2020.classList.add('selected');
-      this.textArea = this.raceDescription.r2020;
+      this.race = this.races[1];
     }
   }
 
-  constructor() { }
+  public update(p_race: Race): void {
 
-  ngOnInit() {
-    this.textArea = this.raceDescription.r2019;
+    this.racePresentationService.editRace(p_race.id, p_race).subscribe(
+      // get response from server and edit the created question
+      (data: Race) => {
+        this.ngOnInit();
+      }
+    );
+    this.raceSelector = p_race.id - 1;
+    this.confirmAlert = 'La présentation du ' + p_race.name + ' vient d\'être mise à jour.';
+    alert(this.confirmAlert);
+
   }
 
 }
