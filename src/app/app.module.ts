@@ -40,6 +40,7 @@ import { AddBlogArticleComponent } from './admin/admin-blog-articles/add-blog-ar
 import { EditSponsorComponent } from './admin/admin-sponsors/edit-sponsor/edit-sponsor.component';
 import { EditBlogArticlesComponent } from './admin/admin-blog-articles/edit-blog-articles/edit-blog-articles.component';
 import { ArticleComponent } from './blog/article/article.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -72,6 +73,7 @@ import { ArticleComponent } from './blog/article/article.component';
     FileSelectDirective
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule.forRoot(),

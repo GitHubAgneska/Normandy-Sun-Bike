@@ -41,10 +41,10 @@
     </div>
 
     <div class="validatecancel-btn row">
-      <button class="btn btn-lg sponsors-input-fields col-5" id="cancel-btn" (click)="selectedSponsor == false">Annuler</button>
-      <button class="btn btn-lg sponsors-input-fields col-5" id="validate-btn" (click)="onSubmit()" (click)="uploader.uploadAll()" >Valider</button> 
+      <button class="btn btn-lg sponsors-input-fields col-5" id="cancel-btn" (click)="selectedSponsor == false" routerLink="/admin/sponsors">Annuler</button>
+      <button class="btn btn-lg sponsors-input-fields col-5" id="validate-btn" (click)="onSubmit()" (click)="uploader.uploadAll()" routerLink="/admin/sponsors">Valider</button> 
     </div>
-    <button class="suppressSponsor btn btn-lg sponsors-input-fields" id="suppress-btn" (click)="suppSponsor()">Supprimer ce sponsor</button>
+    <button class="suppressSponsor btn btn-lg sponsors-input-fields" id="suppress-btn" (click)="suppSponsor()" routerLink="/admin/sponsors">Supprimer ce sponsor</button>
   </form>
   
  

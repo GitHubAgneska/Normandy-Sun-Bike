@@ -5,6 +5,7 @@ import { SPONSORS } from '../mock-sponsors';
 import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { ViewChild } from '@angular/core';
 import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
+import { AddSponsorService } from 'src/app/services/add-sponsor.service';
 
 const URL = 'http://localhost:3600/api/upload';
 
@@ -31,8 +32,20 @@ export class EditSponsorComponent implements OnInit, OnChanges {
   /*   @ViewChild('fileUploadEdit')
     private fileUpload1:  AngularFileUploaderModule; */
 
+    public img;
 
-  constructor(private formBuilder: FormBuilder) { 
+    public updateSponsorToSend = new Sponsor;
+  
+    public newSponsorName:string;
+    public newSponsorLink:string;
+    public newSponsorDescription:string;
+    public newSponsorImgName:string;
+
+    public sponsors:Sponsor; 
+    public sponsorService:AddSponsorService;
+
+
+  constructor(private formBuilder: FormBuilder, sponsorService:AddSponsorService) { 
     const options:any = {                             // create data model for the form
 
       sponsorImg: [''],
@@ -45,6 +58,8 @@ export class EditSponsorComponent implements OnInit, OnChanges {
       ]]
     };
 
+    this.sponsorService = sponsorService;
+
     this.selectedLevel = 1;
     this.registerForm = this.formBuilder.group(options);
   }   // add formbuilder service
@@ -56,8 +71,33 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     }
   }
 
+  ngOnInit() {
+    
+    // this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+    // this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+    //      console.log('ImageUpload:uploaded:', item, status, response);
+    //      alert('File uploaded successfully');
+    //     }
+
+  }
+
   onSubmit() {
     this.sponsor.level = this.selectedLevel;
+
+    let uploadedImg = document.getElementById("img-input");
+    if (uploadedImg != null) {
+      let newImg = uploadedImg['files'][0];
+      this.newSponsorImgName = newImg.name;
+      this.updateSponsorToSend.img = "./assets/" + this.newSponsorImgName;
+      this.sponsorService.addImgInAssets(newImg).subscribe();
+    }
+    this.updateSponsorToSend.name = this.newSponsorName;
+    this.updateSponsorToSend.link = this.newSponsorLink;
+    this.updateSponsorToSend.level = this.selectedLevel;
+    if (this.updateSponsorToSend.level == 1){
+      this.updateSponsorToSend.description = this.newSponsorDescription
+    }
+    this.sponsorService.editSponsor( this.sponsor.id ,this.updateSponsorToSend).subscribe();
   };
 
   onMouseOver():void{
@@ -68,41 +108,8 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     document.getElementById("plusSignId").style.opacity = "0.2";
   }
 
-  ngOnInit() {
-    
-    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
-    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-         console.log('ImageUpload:uploaded:', item, status, response);
-         alert('File uploaded successfully');
-
-
+  suppSponsor() {
+    this.sponsorService.deleteSponsor( this.sponsor.id ).subscribe();
+  }
 };
-
-// NOTES AGNES
-
-/*    // EXTRACT DATA FROM FORM
-     this.registerForm.valueChanges.subscribe();
-     }
  
-     handleFileInput(files: FileList) {
-       this.fileToUpload = files.item(0);
-     }
-       
-
-  // angular file-upload comp conf :
- /*  public afuConfig = {
-    multiple: false,
-    formatsAllowed: ".jpg,.jpeg,.png",
-    maxSize: "1",
-    uploadAPI: {
-      url: "https://example-file-upload-api",
-      headers: {
-        "Content-Type": "text/plain;charset=UTF-8", */
-        /* "Authorization" : `Bearer ${token}` */
-/*       }
-    },
-    theme: "dragNDrop",
-    hideProgressBar: true,
-    hideResetBtn: false,
-    hideSelectBtn: true
-  };*/

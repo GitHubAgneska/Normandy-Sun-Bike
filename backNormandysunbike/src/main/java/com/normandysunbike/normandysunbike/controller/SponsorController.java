@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,10 +40,29 @@ public class SponsorController {
         return SponsorRepo.findById((long) id).get();
     }
 	
-	@PostMapping("/sponsors")
-    public Sponsor create(@RequestBody Sponsor p_sponsor, @RequestParam("image") MultipartFile image){
+
+	@PatchMapping("/sponsorsimg")
+	public String createImgFileInAssets(
+		@RequestParam("file") MultipartFile image
+	) throws Exception {
 		
-		p_sponsor.setImg(this.uploadImg(image));
+		String path = "/Users/Etienne/Documents/WCS/normandySunBike/src/assets/" + image.getOriginalFilename();
+			
+			try {
+				
+				image.transferTo(new File(path));
+				return "Ok";
+				
+			} catch (Exception e) {
+				throw new ResponseStatusException(
+	          	HttpStatus.NOT_FOUND, 
+	          	e.getMessage()
+    			);
+			}
+	}
+	
+	@PostMapping("/sponsors")
+    public Sponsor create(@RequestBody Sponsor p_sponsor){
 		
         return SponsorRepo.save(p_sponsor);
     }
@@ -51,7 +71,7 @@ public class SponsorController {
     @PutMapping("/sponsors/{id}")
     public Sponsor update(
     		@PathVariable("id") Long p_id, 
-    		@RequestBody Sponsor p_sponsor,
+    		@RequestParam Sponsor p_sponsor,
     		@RequestParam("image") MultipartFile image
     ) throws Exception 
     {
@@ -64,7 +84,7 @@ public class SponsorController {
 	    	}
 	    	
 	    	if( p_sponsor.getImg() != null ) {
-	    		current.setImg(this.uploadImg(image));
+	    		current.setImg(p_sponsor.getImg());
 	    	}
 	    	
 	    	if( p_sponsor.getLink() != null ) {
@@ -94,29 +114,5 @@ public class SponsorController {
     	SponsorRepo.deleteById((long) id);
         return true;
     }
-    
-    
-    public String uploadImg( MultipartFile image ) {
-		
-		// Si le fichier est de type image
-		if (image.getContentType().startsWith("image/")) {
-		
-			String path = "/Users/Etienne/Documents/WCS/normandySunBike/src/assets" + image.getOriginalFilename();
-			String relativePath;
-			try {
-				image.transferTo(new File(path));
-				// Link vers dossier assets
-				relativePath = path.substring(path.indexOf("assets"), path.length());
-				
-			} catch (IllegalStateException | IOException e) {
-				e.printStackTrace();
-				return null;
-			}
-			return relativePath;
-			
-		} else {
-			return null;
-		}
-	}
 	
 }

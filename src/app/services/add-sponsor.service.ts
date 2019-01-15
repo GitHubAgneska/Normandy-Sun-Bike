@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Http, Response} from '@angular/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Http, Response, RequestOptionsArgs} from '@angular/http';
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import { Sponsor } from '../classes/sponsorClass';
@@ -13,23 +13,40 @@ export class AddSponsorService {
 
   private target:string;
   private httpService:Http;
+  private httpServiceClient:HttpClient;
 
-  constructor(httpService:Http) { 
+  constructor(httpService:Http, client:HttpClient) { 
     this.httpService = httpService;
-    this.target = environment.domain + "sponsor/";
+    this.target = environment.domain + "sponsors/";
+    this.httpServiceClient = client;
   }
 
   public getSponsor():Observable<Sponsor[]>{
 
-    return this.httpService.get("assets/sponsors.json").pipe(
+    return this.httpService.get(this.target).pipe(
       map(
           (param_my_response:Response) => {
-          let obj:Sponsor[] = param_my_response.json();
-          return obj;
+          let sponsors:Sponsor[] = param_my_response.json();
+          return this.sortSponsorByLevel(sponsors);
         }
       )
     );
   }
+
+  public sortSponsorByLevel(sponsors:Sponsor[]):Sponsor[] {
+
+		for(let i=0; i < sponsors.length; i++){  
+			let current:Sponsor;
+			for(let j = 1; j < (sponsors.length - i); j++){  
+				if( sponsors[j-1].level > sponsors[j].level ){
+					current = sponsors[j-1];  
+					sponsors[j-1] = sponsors[j];  
+					sponsors[j] = current;  
+				}  		 
+			}  
+		}  
+		 return sponsors;
+	}
 
   public getSponsorById( id:number  ):Observable<Sponsor>{
 
@@ -42,24 +59,16 @@ export class AddSponsorService {
     );
   }
 
-  public addSponsorWithImg(sponsor: FormData, img){
-    return this.httpService.post(this.target, sponsor, img);
-  }
-
   public addSponsor( sponsor:Sponsor ):Observable<Sponsor>{
 
     return this.httpService.post(this.target, sponsor ).pipe(
       map(
           (p_response:Response) => {
           return p_response.json() as Sponsor;
+          
         }
       )
     );
-  }
-
-
-  public editSponsorWithImg(id:number, sponsor: FormData, img) {
-    return this.httpService.put(this.target + id, sponsor, img);
   }
 
   public editSponsor( id:number, sponsor:Sponsor ):Observable<Sponsor>{
@@ -68,6 +77,30 @@ export class AddSponsorService {
       map(
         ( param_response:any ) => {
           return param_response as Sponsor;
+        }
+      )
+    );
+  }
+
+  public addImgInAssets( img:File ){
+
+    const headers:HttpHeaders = new HttpHeaders();
+    headers.append('Content-type', 'multipart/form-data');
+
+    const data:FormData = new FormData();
+    data.append('file', img, img.name);
+
+    const args:any = {
+      headers: headers
+    };
+
+    debugger;
+
+    return this.httpServiceClient.patch(environment.domain + "sponsorsimg/", data, args ).pipe(
+      map(
+          (p_response:Response) => {
+          return p_response.json() as string;
+          
         }
       )
     );
