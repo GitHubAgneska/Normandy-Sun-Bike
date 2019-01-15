@@ -25,9 +25,11 @@
       <div class="descriptionSide col-xl-8">
         <form id="raceDescForm">
           <textarea class="raceDescription text"
-                    maxlength="700" 
+                    maxlength="800" 
                     rows="18" 
                     *ngIf="race != null" 
+                    [(ngModel)]="race.content" 
+                    name="content" 
                     required>{{race.content}}</textarea>
           <button class="validateBtn" type="button" (click)="update(race)">Valider</button>
         </form>

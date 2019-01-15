@@ -13,6 +13,8 @@ export class RaceComponent implements OnInit {
   private racePresentationService: RacePresentationService;
   public races: Race[];
   public race: Race;
+  public raceSelector: number = 0;
+  public confirmAlert: String;
 
   constructor(p_racePresentationService: RacePresentationService) {
     this.racePresentationService = p_racePresentationService;
@@ -23,7 +25,7 @@ export class RaceComponent implements OnInit {
     this.racePresentationService.getAll().subscribe(
       (result: Race[]) => {
         this.races = result;
-        this.race = this.races[0];
+        this.race = this.races[this.raceSelector];
       }
     );
   }
@@ -51,6 +53,10 @@ export class RaceComponent implements OnInit {
         this.ngOnInit();
       }
     );
+    this.raceSelector = p_race.id - 1;
+    this.confirmAlert = 'La présentation du ' + p_race.name + ' vient d\'être mise à jour.';
+    alert(this.confirmAlert);
+
   }
 
 }
