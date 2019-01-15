@@ -21,13 +21,11 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
-    
+    width: 40%;    
 }
 
 .filePlaceholder input[type=file] {   /*  => "browse + no_file selected" portion */
     opacity:0;
-    
 }
 
 

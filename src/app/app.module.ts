@@ -13,6 +13,10 @@ import { FileSelectDirective } from 'ng2-file-upload';
 import { HttpClientModule } from '@angular/common/http';
 
 
+
+
+
+
 import { AppComponent } from './app.component';
 import { RacesPresentationComponent } from './races-presentation/races-presentation.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -41,6 +45,8 @@ import { EditSponsorComponent } from './admin/admin-sponsors/edit-sponsor/edit-s
 import { EditBlogArticlesComponent } from './admin/admin-blog-articles/edit-blog-articles/edit-blog-articles.component';
 import { ArticleComponent } from './blog/article/article.component';
 import { RacePresentationService } from './services/race-presentation.service';
+import { EmailService } from './services/email.service';
+
 
 
 @NgModule({
@@ -88,8 +94,11 @@ import { RacePresentationService } from './services/race-presentation.service';
     HttpModule
 
   ],
-  providers: [
+
+  providers: [ 
+    EmailService,
     RacePresentationService
+  
   ],
   bootstrap: [AppComponent]
 })

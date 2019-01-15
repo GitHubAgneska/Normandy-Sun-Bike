@@ -16,7 +16,7 @@ export class AdminSponsorsComponent implements OnInit {
   selectedSponsor:boolean = false;
   chosenSponsor:Sponsor;
 
-  /* public sponsors:Sponsor[]; */
+  
   private sponsorService:AddSponsorService;
 
   constructor(sponsorService:AddSponsorService){
