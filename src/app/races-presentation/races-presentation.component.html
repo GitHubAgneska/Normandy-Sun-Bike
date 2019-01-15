@@ -3,8 +3,8 @@
   <div id="race-description-container" [ngStyle]="{'background-image': 'url('+raceImg+')'}">
     <div id="race-description">
       <h2 class="title" id="race-title">{{raceTitle}}</h2>
-      <p class="text">{{raceText}}</p>
-      <a id="race-link" class="link" href={{raceLink}} target="_blank">- - En savoir plus - -</a>
+      <p class="text" *ngIf="race != null">{{race.content}}</p>
+      <a id="race-link" class="link" href={{race.link}} target="_blank" *ngIf="race != null">- - En savoir plus - -</a>
     </div>
   </div>
 <!-- BLOG -->
