@@ -108,7 +108,7 @@ public class SponsorController {
     	}
     }
     
-    @DeleteMapping("blogs/{id}")
+    @DeleteMapping("sponsors/{id}")
     public boolean delete(@PathVariable int id){
     	SponsorRepo.deleteById((long) id);
         return true;

@@ -40,7 +40,7 @@
     </div>
     <div class="validate&cancel-btn row">
       <button class="btn btn-lg sponsors-input-fields col-5" id="cancel-btn" click="sponsorVisible == false" routerLink="/admin/sponsors">Annuler</button>
-      <button class="btn btn-lg sponsors-input-fields col-5" id="validate-btn" click="onSubmit()" routerLink="/admin/sponsors">Valider</button> 
+      <button class="btn btn-lg sponsors-input-fields col-5" id="validate-btn" (click)="validateButton()" routerLink="/admin/sponsors">Valider</button> 
     </div>
   </form> 
 </div>

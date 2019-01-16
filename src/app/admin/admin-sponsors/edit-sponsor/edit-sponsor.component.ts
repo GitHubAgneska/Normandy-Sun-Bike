@@ -80,7 +80,7 @@ export class EditSponsorComponent implements OnInit, OnChanges {
   
   }
 
-  onSubmit() {
+  validateButton() {
     this.sponsor.level = this.selectedLevel;
 
     let uploadedImg = document.getElementById("img-input");
@@ -113,6 +113,7 @@ export class EditSponsorComponent implements OnInit, OnChanges {
 
   suppSponsor() {
     this.sponsorService.deleteSponsor( this.sponsor.id ).subscribe();
+    window.location.reload();
   }
 };
  

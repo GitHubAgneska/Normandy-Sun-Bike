@@ -88,7 +88,7 @@ export class AddSponsorComponent implements OnInit {
     let name = file.value;
   }
 
-  onSubmit() {
+  validateButton() {
     let uploadedImg = document.getElementById("img-input");
     let newImg = uploadedImg['files'][0];
     this.newSponsorImgName = newImg.name;

@@ -72,7 +72,7 @@ export class AddSponsorService {
   }
 
   public editSponsor( id:number, sponsor:Sponsor ):Observable<Sponsor>{
-    console.log("id dans le service : " + sponsor.id);
+    console.log(sponsor.name);
     return this.httpService.put(  this.target  + id , sponsor ).pipe(
       map(
         ( param_response:any ) => {
@@ -107,7 +107,7 @@ export class AddSponsorService {
   }
 
   public deleteSponsor( id:number ):Observable<boolean>{
-    
+    console.log(id)
     return this.httpService.delete(  this.target  + id ).pipe(
       map(
         ( param_response:any ) => {
