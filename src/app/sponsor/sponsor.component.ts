@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Sponsor } from '../classes/sponsorClass';
+import { AddSponsorService } from '../services/add-sponsor.service';
 
 @Component({
   selector: 'app-sponsor',
@@ -7,37 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SponsorComponent implements OnInit {
 
-  public Sponsor1Name ="name 1st sponsor"
-  public Sponsor1Text ="Quid enim tam absurdum quam delectari multis inanimis rebus, animante virtute praedito, eo qui vel amare vel, ut ita dicam, redamare possit, non admodum delectari? Nihil est enim remuneratione benevolentiae, nihil vicissitudine studiorum officiorumque iucundius."
-  public Sponsor1Img ="name 1st sponsor"
+  public sponsors:Sponsor[];
+  private sponsorService:AddSponsorService;
 
-  public Sponsor2Name ="name 2nd sponsor"
-  public Sponsor2Img ="name 1st sponsor"
+  public sponsor_list:Sponsor[];
 
-  public Sponsor3Name ="name 3d sponsor"
-  public Sponsor3Img ="name 1st sponsor"
-
-
-  public sponsor_list:any[];
-
-  public allSponsors = [
-    { "name" : "wild code school",
-      "img":"../../assets/logo_WCS.png"
-    },
-    { "name" : "wild code school2",
-      "img":"../../assets/logo_WCS.png"
-    },
-    { "name" : "wild code school",
-      "img":"../../assets/logo_WCS.png"
-    },
-  ]
-
-  constructor(){
-    this.sponsor_list = this.allSponsors ;
+  constructor(sponsorService:AddSponsorService){
+    this.sponsorService = sponsorService;
   }
-
+  
 
   ngOnInit() {
+    // Infos Sponsors
+    this.sponsorService.getSponsor().subscribe(
+      (param)=>{ 
+        this.sponsors = param;
+        this.sponsor_list = this.listWhithoutMainSponsors(this.sponsors); 
+      }
+    )
+  }
+
+  listWhithoutMainSponsors(array:Sponsor[]) {
+    let resultArray: Sponsor[] = [];
+    if (array.length > 3) {
+      for (let i=3; i < array.length; i++){
+        resultArray.push(array[i]);
+      }
+    }
+    return resultArray;
   }
 
   ngOnDestroy(){

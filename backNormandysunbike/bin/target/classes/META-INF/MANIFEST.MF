@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: wilder
+Build-Jdk: 10.0.2
+Implementation-Title: normandysunbike
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.normandysunbike
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/normandysunbike
+Created-By: Maven Integration for Eclipse
+

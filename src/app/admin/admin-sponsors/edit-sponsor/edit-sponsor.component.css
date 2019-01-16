@@ -14,7 +14,76 @@
 
 /*----- change logo area  ------*/
 
-.uploading-area-editSponsor{
+
+.browseBtn{    /*  => "no_file selected" portion */
+    font-size:1.5rem !important;
+    padding:10rem 0 12rem 0;
+    background-color: rgba (255, 255, 255, 0.3);
+    border-radius:3px;
+    cursor: pointer;
+    width: 50px;
+}
+
+.plusSign{
+    z-index:0;
+    background-color: rgba(255, 255, 255, 0);
+    border:none;
+    font-size:12rem;
+    color:grey;
+    position:relative;
+}   
+
+
+
+/*----- change browse button ------*/
+
+
+.newLogoUploadArea .logoActuelBackground{
+    opacity:0.6;
+    z-index:-10;
+    border:1px solid grey;
+    overflow:hidden;
+    position:absolute;
+    transform:translate(-70%, 0);
+}
+
+.newLogoUploadArea{
+    margin-bottom:5rem;
+}
+
+
+.newLogoUploadArea input[type=file] {   /*  => "browse + no_file selected" portion */
+      opacity:0;
+}
+
+
+.newLogoUploadArea .logoActuelBackground:hover{
+    opacity:0.2;
+}
+
+.newLogoUploadArea .browseBtn{
+    z-index:10;
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+.nomSponsor, .lienSponsor{
+    color: rgba(0,0,0,0.60);
+}
+
+.edit-sponsors-container .nomSponsor, .lienSponsor{
+    text-align:left;
+}
+
+.validerSponsorBtn btn{
+    width:50% !important;
+
+}
+/* .uploading-area-editSponsor{
     padding:1% 0 1% 0;
 }
 
@@ -22,7 +91,9 @@
     width:100%;
     display:flex;
     flex-direction: column !important; 
-}
+} */
+
+
 
 /* @media only screen and (min-width : 640px){
     .sponsorLogoActuel, .sponsorNewLogo{
@@ -69,11 +140,9 @@
 }
 
 
-
 .sponsors-input-container .sponsors-input-fields{
     width:100%;
-    margin:2rem;
-   
+    margin:2rem;   
 }
 
 
@@ -81,7 +150,6 @@
 
 mat-form-field.mat-form-field{
     font-size: 1.3rem;
-    
 }
 
 
@@ -90,8 +158,7 @@ mat-form-field.mat-form-field{
 }
 
 
-
-#validate-btn, #cancel-btn{
+#validate-btn, #cancel-btn, #suppress-btn{
     margin-bottom:2%;
     color: #fff;
     border: none;
@@ -101,23 +168,34 @@ mat-form-field.mat-form-field{
     margin :0 auto;
 }
 
+#suppress-btn{
+    margin:2rem 0 2rem 0 !important;
+    background-color:rgba(255, 0, 0, 0.667);
+}
 
 #validate-btn{
     background-color: #6f7c91;
 }
 
 #cancel-btn{
-    background-color:red;
+    background-color: #8596b1;
 }
 
 #cancel-btn:hover{
+    background-color:#505566;
+}
+
+ #suppress-btn:hover{
     background-color: rgb(193, 6, 6);
 }
+
 #validate-btn:hover{
     background-color:#505566;
 }
 
-/*----- upload buttons (angular-file-uploader component)-----*/
+
+
+/*----- upload buttons (mat-form-field angular-file-uploader component)-----*/
 
 /*--select & reset buttons ---*/
 ::ng-deep .ng-star-inserted label.btn, ::ng-deep .ng-star-inserted button.btn{

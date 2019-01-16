@@ -1,9 +1,11 @@
 
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Sponsor } from '../sponsorClass';
+import { Sponsor } from '../../../classes/sponsorClass';
 import { SPONSORS } from '../mock-sponsors';
+import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
 
+const URL = 'http://localhost:3600/api/upload';
 
 @Component({
   selector: 'app-add-sponsor',
@@ -13,107 +15,59 @@ import { SPONSORS } from '../mock-sponsors';
 
 export class AddSponsorComponent implements OnInit {
 
-  fileToUpload:File = null;
-  url = '';
-  submitted = false;
-  registerForm : FormGroup;
+  public fileToUpload: File = null;
+  public url = '';
+  public submitted = false;
+  public registerForm: FormGroup;
 
-  selectedLevel:number = 0;
+  public selectedLevel:number = 0;
 
   sponsors = SPONSORS;
   sponsorVisible:boolean = true;
 
-    // angular file-upload comp conf 
-    afuConfig2 = {
-      multiple: false,
-      formatsAllowed: ".jpg,.jpeg,.png",
-      maxSize: "1",
-      uploadAPI:  {
-        url:"https://example-file-upload-api",
-        headers: {
-          "Content-Type" : "text/plain;charset=UTF-8",
-      /* "Authorization" : `Bearer ${token}` */
-        }
-      },
-      /* theme: "dragNDrop", */
-      hideProgressBar: true,
-      hideResetBtn: false,
-      hideSelectBtn: false
-};
+  public uploadData: any;
+  public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
 
+  
 
-  constructor(private formBuilder: FormBuilder) { }  // add formbuilder service
+  constructor(private formBuilder: FormBuilder) { 
+    const options:any = {                             // create data model for the form
 
-  ngOnInit() {
-    this.registerForm = this.formBuilder.group( {  // create data model for this form
-
-      sponsorImg:[''],
-      sponsorName:[ '', Validators.required],
-      sponsorLink:[''],
-      sponsorDescription: [ '', Validators.required],
-      sponsorLevel:[''],
+      sponsorImg: [''],
+      sponsorName: ['', Validators.required],
+      sponsorLink: [''],
+      sponsorDescription: ['', Validators.required],
+      sponsorLevel: [''],
       agree: [false, [
         Validators.requiredTrue
       ]]
+    };
 
-    });
+    this.selectedLevel = 1;
+    this.registerForm = this.formBuilder.group(options);
+  }  // add formbuilder service
 
-/*  get sponsorName() {                              // getters & setters 
-      return this.sponsorName.get('sponsorName');
-    }  */
+
+  onMouseOver():void{
+    document.getElementById("plusSignId").style.opacity = "1";
+    document.getElementById("plusSignId").style.textShadow = "rgba(255, 255, 255, 0.6)";
+  }
+
+  onMouseLeave():void{
+    document.getElementById("plusSignId").style.opacity = "0.2";
+  }
+
+  ngOnInit() {
+
+    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+         console.log('ImageUpload:uploaded:', item, status, response);
+         alert('File uploaded successfully');
 
 
     // EXTRACT DATA FROM FORM
-    this.registerForm.valueChanges.subscribe(console.log )  
+    this.registerForm.valueChanges.subscribe(console.log )
+  };
+
   }
-
-  // 
-  handleFileInput(files: FileList) {
-    this.fileToUpload = files.item(0);
-  }
-
-
-
-
-// DISPLAY IMAGE TO UPLOAD
-
-/* onSelectFile(event) {
-  if (event.target.files && event.target.files[0]) {
-    let reader = new FileReader();
-
-    reader.readAsDataURL(event.target.files[0]); // read file as data url
-
-    reader.onload = (event) => { // called once readAsDataURL is completed
-      this.url = event.target.;
-    }
-    reader.readAsDataURL(event.target.files[0]);
-  }
-}  */
-
-
-  //display img before upload
-
-  uploadData: any;
-  selectedFile: File;
-  
-/* onFileChanged(event) {
-  this.selectedFile = <File>event.target.files[0];
-  if (event.target.files && event.target.files[0])
-  {
-      var reader = new FileReader();
-      reader.onload = (event: ProgressEvent) => {
-          this.url = (<FileReader>event.target).result;
-      }
-      reader.readAsDataURL(event.target.files[0]);
-  }
-} */
-
-
-
-// FINAL VALIDATE BUTTON
-
-onSubmit() {
-  this.submitted = true;
-}
-
 }

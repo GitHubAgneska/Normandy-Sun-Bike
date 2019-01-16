@@ -9,6 +9,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { HttpModule } from '@angular/http';
+import { FileSelectDirective } from 'ng2-file-upload';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
 
 
 
@@ -39,6 +44,9 @@ import { AddBlogArticleComponent } from './admin/admin-blog-articles/add-blog-ar
 import { EditSponsorComponent } from './admin/admin-sponsors/edit-sponsor/edit-sponsor.component';
 import { EditBlogArticlesComponent } from './admin/admin-blog-articles/edit-blog-articles/edit-blog-articles.component';
 import { ArticleComponent } from './blog/article/article.component';
+import { RacePresentationService } from './services/race-presentation.service';
+import { EmailService } from './services/email.service';
+
 
 
 @NgModule({
@@ -47,7 +55,6 @@ import { ArticleComponent } from './blog/article/article.component';
     RacesPresentationComponent,
     BlogPageComponent,
     BlogArticleElementComponent,
-    RacesPresentationComponent,
     ProjectComponent,
     LogInComponent,
     NavPageComponent,
@@ -67,7 +74,8 @@ import { ArticleComponent } from './blog/article/article.component';
     AddBlogArticleComponent,
     EditSponsorComponent,
     EditBlogArticlesComponent,
-    ArticleComponent
+    ArticleComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
@@ -82,10 +90,16 @@ import { ArticleComponent } from './blog/article/article.component';
     MatCheckboxModule,
     MatChipsModule,
     FormsModule,
+    HttpClientModule,
     HttpModule
 
   ],
-  providers: [],
+
+  providers: [ 
+    EmailService,
+    RacePresentationService
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

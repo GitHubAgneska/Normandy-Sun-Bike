@@ -39,3 +39,12 @@
     }
 }
 
+button{
+    transition: 0.3s;
+}
+
+button:focus{
+    outline: none;
+    transform: scale(0.99);
+}
+

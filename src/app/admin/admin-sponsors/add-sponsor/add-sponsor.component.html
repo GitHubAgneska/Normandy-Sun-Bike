@@ -5,22 +5,13 @@
   
   <h4 class="sponsor-element-title text">Ajouter un sponsor</h4>
 
-  <div class="uploading-area-addSponsor row">
-   <!----new logo area ----> 
-    <div class="newLogoAdd col-5">
-      <span>Nouveau logo</span>
-      <div class="filePlaceholder">
-        <div *ngFor="let file of fileUploads"> 
-          <input type="image" class="sponsorNewLogoAdd"  src="{{file.url}}" alt="new logo"/>
-        </div>
-      </div>
+  <div class="uploading-area-addSponsor">
+    <div class="filePlaceholder">
+      <input class="browseBtn" type="file" name="photo" id="imageInput" accept="image/*" (mouseover)="onMouseOver()" (mouseleave)="onMouseLeave()"/>
+      <button class="plusSign" id="plusSignId" > +  </button>
     </div>
-    <div class="addSponsorLogobtns col-5">   
-      <angular-file-uploader #fileUploadAdd [config]="afuConfig2" id="uploadingArea" class="col-6"></angular-file-uploader>
-      <input style="display: none" type="file" (change)="onFileChanged($event)" >
-    </div>   
+  </div>
 
-  </div>  
 
   <!------ form fields for  sponsor adding ------->
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">

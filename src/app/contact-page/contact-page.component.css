@@ -17,12 +17,29 @@
     }
 }
 
+.soustitreContact{
+    line-height:2rem !important;
+}
+
+.subtitle-contact{
+    font-size:1.5rem ;
+}
 
 .contact-fields{
     width:60%;
     display: block;
     align-items: center;
 }
+.contact-input{
+    font-size:2rem !important;
+}
+
+
+.invalid-email, .invalid-emailMessage{
+    color: red;
+    font-size: 1rem;
+}
+
 
 @media only screen and (max-width: 640px){
     .contact-fields{

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Article } from 'src/app/article';
-import { ArticleService } from 'src/app/article.service';
+import { Article } from '../../classes/article';
+import { ArticleService } from '../../services/article.service';
 
 @Component({
   selector: 'app-blog-page',
@@ -29,7 +29,7 @@ export class BlogPageComponent implements OnInit {
         this.articles = param; 
       }
     )
-
+    
     const pageBlog = document.getElementById("blog-background");
     if (this.raceTitle == "Blog") {
       pageBlog.style.paddingTop = "18vh";

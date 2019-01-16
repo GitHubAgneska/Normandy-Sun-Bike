@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Sponsor } from '../sponsorClass';
-import { SPONSORS } from '../mock-sponsors';
-import { AngularFileUploaderModule } from 'angular-file-uploader';
-import { ViewChild } from '@angular/core';
+import { Sponsor } from '../../../classes/sponsorClass';
+import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
+
+const URL = 'http://localhost:3600/api/upload';
 
 @Component({
   selector: 'app-edit-sponsor',
@@ -23,29 +23,28 @@ export class EditSponsorComponent implements OnInit, OnChanges {
   public uploadData: any;
   public selectedFile: File;
 
+  public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
+
   /*   @ViewChild('fileUploadEdit')
     private fileUpload1:  AngularFileUploaderModule; */
 
-  // angular file-upload comp conf 
-  public afuConfig = {
-    multiple: false,
-    formatsAllowed: ".jpg,.jpeg,.png",
-    maxSize: "1",
-    uploadAPI: {
-      url: "https://example-file-upload-api",
-      headers: {
-        "Content-Type": "text/plain;charset=UTF-8",
-        /* "Authorization" : `Bearer ${token}` */
-      }
-    },
-    /* theme: "dragNDrop", */
-    hideProgressBar: true,
-    hideResetBtn: false,
-    hideSelectBtn: false
-  };
 
+  constructor(private formBuilder: FormBuilder) { 
+    const options:any = {                             // create data model for the form
 
-  constructor(private formBuilder: FormBuilder) { }   // add formbuilder service
+      sponsorImg: [''],
+      sponsorName: ['', Validators.required],
+      sponsorLink: [''],
+      sponsorDescription: ['', Validators.required],
+      sponsorLevel: [''],
+      agree: [false, [
+        Validators.requiredTrue
+      ]]
+    };
+
+    this.selectedLevel = 1;
+    this.registerForm = this.formBuilder.group(options);
+  }   // add formbuilder service
 
 
   ngOnChanges( changes:SimpleChanges){
@@ -58,42 +57,23 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     this.sponsor.level = this.selectedLevel;
   };
 
+  onMouseOver():void{
+    document.getElementById("plusSignId").style.opacity = "1";
+  }
+
+  onMouseLeave():void{
+    document.getElementById("plusSignId").style.opacity = "0.2";
+  }
+
   ngOnInit() {
 
-    const options:any = {  // create data model for this form
+    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+         console.log('ImageUpload:uploaded:', item, status, response);
+         alert('File uploaded successfully');
 
-      sponsorImg: ['{{selectedSponsor.img}}'],
-      sponsorName: ['', Validators.required],
-      sponsorLink: [''],
-      sponsorDescription: ['', Validators.required],
-      sponsorLevel: [''],
-      agree: [false, [
-        Validators.requiredTrue
-      ]]
 
-    };
-
-    this.selectedLevel = this.sponsor.level;
-    this.registerForm = this.formBuilder.group(options);
+};
 
   }
 }
-
-
-
-
-// NOTES D'AGNES
-
-    /*    // EXTRACT DATA FROM FORM
-     this.registerForm.valueChanges.subscribe();
-     }
- 
-     handleFileInput(files: FileList) {
-       this.fileToUpload = files.item(0);
-     }
-       
- 
-   // FINAL VALIDATE BUTTON
- 
-    */
-

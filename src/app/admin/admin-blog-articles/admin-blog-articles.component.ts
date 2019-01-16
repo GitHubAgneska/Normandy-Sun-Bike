@@ -22,21 +22,17 @@ chosenBlogArticle:BlogArticle;
     // create new blog-article field - (directive *ngIf)
     public displayNewblogArticleFields(){
       this.blogArticleVisible = true;
+      this.selectedBlogArticle =false;
     }
-
 
 
     // edit selected blog-article fields - (directive *ngIf)   
   public onSelect(blogArticle:BlogArticle):void{
     this.selectedBlogArticle = true;
-    console.log(`selectedBlogArticle = ${JSON.stringify(this.selectedBlogArticle)}`);
+    this.blogArticleVisible = false;
+   /*  console.log(`selectedBlogArticle = ${JSON.stringify(this.selectedBlogArticle)}`); */
     this.chosenBlogArticle = blogArticle;
-    if (this.blogArticleVisible == true){
-      this.selectedBlogArticle = false;
-      }
-    if (this.selectedBlogArticle = true){
-      this.blogArticleVisible = false;   
     }
 
-  }
 }
+
