@@ -93,6 +93,7 @@ export class AddSponsorComponent implements OnInit {
     let newImg = uploadedImg['files'][0];
     this.newSponsorImgName = newImg.name;
 
+    this.newSponsorToSend.id = 1;
     this.newSponsorToSend.img = "./assets/" + this.newSponsorImgName;
     this.newSponsorToSend.name = this.newSponsorName;
     this.newSponsorToSend.link = this.newSponsorLink;

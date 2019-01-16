@@ -71,8 +71,7 @@ public class SponsorController {
     @PutMapping("/sponsors/{id}")
     public Sponsor update(
     		@PathVariable("id") Long p_id, 
-    		@RequestParam Sponsor p_sponsor,
-    		@RequestParam("image") MultipartFile image
+    		@RequestBody Sponsor p_sponsor
     ) throws Exception 
     {
     	

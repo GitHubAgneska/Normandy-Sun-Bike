@@ -18,6 +18,7 @@ const URL = 'http://localhost:3600/api/upload';
 export class EditSponsorComponent implements OnInit, OnChanges {
 
   @Input() public sponsor: Sponsor;
+
   public selectedLevel: number = 1;
   public fileToUpload: File = null;
   public url = '';
@@ -33,8 +34,6 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     private fileUpload1:  AngularFileUploaderModule; */
 
     public img;
-
-    public updateSponsorToSend = new Sponsor;
   
     public newSponsorName:string;
     public newSponsorLink:string;
@@ -78,7 +77,7 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     //      console.log('ImageUpload:uploaded:', item, status, response);
     //      alert('File uploaded successfully');
     //     }
-
+  
   }
 
   onSubmit() {
@@ -88,16 +87,20 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     if (uploadedImg != null) {
       let newImg = uploadedImg['files'][0];
       this.newSponsorImgName = newImg.name;
-      this.updateSponsorToSend.img = "./assets/" + this.newSponsorImgName;
+      this.sponsor.img = "./assets/" + this.newSponsorImgName;
       this.sponsorService.addImgInAssets(newImg).subscribe();
     }
-    this.updateSponsorToSend.name = this.newSponsorName;
-    this.updateSponsorToSend.link = this.newSponsorLink;
-    this.updateSponsorToSend.level = this.selectedLevel;
-    if (this.updateSponsorToSend.level == 1){
-      this.updateSponsorToSend.description = this.newSponsorDescription
+    if (this.newSponsorName != null || this.newSponsorName != undefined) {
+      this.sponsor.name = this.newSponsorName;
     }
-    this.sponsorService.editSponsor( this.sponsor.id ,this.updateSponsorToSend).subscribe();
+    if (this.newSponsorLink != null || this.newSponsorLink != undefined) {
+      this.sponsor.link = this.newSponsorLink;
+    }
+    this.sponsor.level = this.selectedLevel;
+    if (this.sponsor.level == 1){
+      this.sponsor.description = this.newSponsorDescription
+    }
+    this.sponsorService.editSponsor( this.sponsor.id ,this.sponsor).subscribe();
   };
 
   onMouseOver():void{

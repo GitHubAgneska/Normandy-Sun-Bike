@@ -72,7 +72,7 @@ export class AddSponsorService {
   }
 
   public editSponsor( id:number, sponsor:Sponsor ):Observable<Sponsor>{
-    
+    console.log("id dans le service : " + sponsor.id);
     return this.httpService.put(  this.target  + id , sponsor ).pipe(
       map(
         ( param_response:any ) => {
