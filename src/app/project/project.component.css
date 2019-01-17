@@ -89,6 +89,8 @@ p, a{
 .projet-point-container{
     height: 100vh;
     position: relative;
+    background: url(../../assets/background_projet.png);
+    background-size: cover;
 }
 
 /* QUI */
