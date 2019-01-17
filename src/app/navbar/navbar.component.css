@@ -1,7 +1,7 @@
 #navbarContainer{
     /* transition: height 0.5s; */
     position: fixed;
-    z-index: 1000;
+    z-index: 2000;
     margin: 0;
     width: 100%;
     background:#fff;
