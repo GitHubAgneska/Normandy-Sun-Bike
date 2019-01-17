@@ -18,6 +18,8 @@ export class RacesPresentationComponent implements OnInit {
 
 
 
+
+
   private raceText2019:string = `Après 3 éditions sur les routes du monde, le petit frère (Sun Trip Tour)
   revient pour une 2eme édition qui se déroulera pendant 15 jours sur 1400 kilomètres
   environ en région Auvergne –Rhône Alpes et un peu en Italie plus accessible avec moins de
@@ -32,6 +34,9 @@ export class RacesPresentationComponent implements OnInit {
   private racePresentationService: RacePresentationService;
   public races: Race[];
   public race: Race;
+
+
+
 
   constructor(p_rService: RacePresentationService, route: ActivatedRoute) {
 
