@@ -3,13 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-<<<<<<< HEAD
   production: true,
   domain: 'http://localhost:8081/'
-=======
-  production: false,
-  domain: 'http://localhost:8080/'
->>>>>>> backSponsorService
 };
 
 /*
