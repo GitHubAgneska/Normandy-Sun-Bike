@@ -12,8 +12,9 @@ export class RacesPresentationComponent implements OnInit {
   public raceTitle: string;
   private raceText: string;
   private raceLink: string;
-  private raceImg: string;
   private raceColor: string;
+  public raceImg: string;
+
 
   private raceText2019:string = `Après 3 éditions sur les routes du monde, le petit frère (Sun Trip Tour)
   revient pour une 2eme édition qui se déroulera pendant 15 jours sur 1400 kilomètres
@@ -62,6 +63,7 @@ export class RacesPresentationComponent implements OnInit {
       // this.background.style.backgroundColor = "#D3BB58"
     }
    }
+ 
 
 
   
