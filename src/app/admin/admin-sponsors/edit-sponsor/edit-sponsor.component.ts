@@ -2,6 +2,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Sponsor } from '../../../classes/sponsorClass';
 import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
+import { AddSponsorService } from 'src/app/services/add-sponsor.service';
 
 const URL = 'http://localhost:3600/api/upload';
 
@@ -14,6 +15,7 @@ const URL = 'http://localhost:3600/api/upload';
 export class EditSponsorComponent implements OnInit, OnChanges {
 
   @Input() public sponsor: Sponsor;
+
   public selectedLevel: number = 1;
   public fileToUpload: File = null;
   public url = '';
@@ -28,8 +30,18 @@ export class EditSponsorComponent implements OnInit, OnChanges {
   /*   @ViewChild('fileUploadEdit')
     private fileUpload1:  AngularFileUploaderModule; */
 
+    public img;
+  
+    public newSponsorName:string;
+    public newSponsorLink:string;
+    public newSponsorDescription:string;
+    public newSponsorImgName:string;
 
-  constructor(private formBuilder: FormBuilder) { 
+    public sponsors:Sponsor; 
+    public sponsorService:AddSponsorService;
+
+
+  constructor(private formBuilder: FormBuilder, sponsorService:AddSponsorService) { 
     const options:any = {                             // create data model for the form
 
       sponsorImg: [''],
@@ -42,6 +54,8 @@ export class EditSponsorComponent implements OnInit, OnChanges {
       ]]
     };
 
+    this.sponsorService = sponsorService;
+
     this.selectedLevel = 1;
     this.registerForm = this.formBuilder.group(options);
   }   // add formbuilder service
@@ -53,8 +67,37 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     }
   }
 
-  onSubmit() {
+  ngOnInit() {
+    
+    // this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+    // this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+    //      console.log('ImageUpload:uploaded:', item, status, response);
+    //      alert('File uploaded successfully');
+    //     }
+  
+  }
+
+  validateButton() {
     this.sponsor.level = this.selectedLevel;
+
+    let uploadedImg = document.getElementById("img-input");
+    if (uploadedImg != null) {
+      let newImg = uploadedImg['files'][0];
+      this.newSponsorImgName = newImg.name;
+      this.sponsor.img = "./assets/" + this.newSponsorImgName;
+      this.sponsorService.addImgInAssets(newImg).subscribe();
+    }
+    if (this.newSponsorName != null || this.newSponsorName != undefined) {
+      this.sponsor.name = this.newSponsorName;
+    }
+    if (this.newSponsorLink != null || this.newSponsorLink != undefined) {
+      this.sponsor.link = this.newSponsorLink;
+    }
+    this.sponsor.level = this.selectedLevel;
+    if (this.sponsor.level == 1){
+      this.sponsor.description = this.newSponsorDescription
+    }
+    this.sponsorService.editSponsor( this.sponsor.id ,this.sponsor).subscribe();
   };
 
   onMouseOver():void{
@@ -65,15 +108,9 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     document.getElementById("plusSignId").style.opacity = "0.2";
   }
 
-  ngOnInit() {
-
-    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
-    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-         console.log('ImageUpload:uploaded:', item, status, response);
-         alert('File uploaded successfully');
-
-
-};
-
+  suppSponsor() {
+    this.sponsorService.deleteSponsor( this.sponsor.id ).subscribe();
+    window.location.reload();
   }
-}
+};
+ 
