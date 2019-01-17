@@ -24,6 +24,7 @@ export class RacesPresentationComponent implements OnInit {
   public raceTitle: string;
   private raceImg: string;
   private raceColor: string;
+  private raceLink: string;
 
   private img2019: string = '../../assets/2019-landing.jpg';
   private img2020: string = '../../assets/2020-landing.jpg';
@@ -39,10 +40,12 @@ export class RacesPresentationComponent implements OnInit {
         if (this.raceTitle === 'The Sun Trip Tour 2019') {
           this.race = this.races[0];
           this.raceColor = '#478952';
+          this.raceLink = 'https://www.thesuntrip.com/sun-trip-tour-2019/';
           // this.background.style.backgroundColor = '#D3BB58'
         } else if (this.raceTitle === 'The Sun Trip 2020' ) {
           this.race = this.races[1];
           this.raceColor = '#D3BB58';
+          this.raceLink = 'https://www.thesuntrip.com/suntrip2020/';
           // this.background.style.backgroundColor = '#D3BB58'
         }
 
