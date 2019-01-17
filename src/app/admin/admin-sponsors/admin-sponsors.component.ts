@@ -11,12 +11,11 @@ import { SPONSORS } from './mock-sponsors';
 export class AdminSponsorsComponent implements OnInit {
 
 
-  sponsors = SPONSORS;
   sponsorVisible:boolean = true;
   selectedSponsor:boolean = false;
   chosenSponsor:Sponsor;
 
-  
+  public sponsors:Sponsor[];
   private sponsorService:AddSponsorService;
 
   constructor(sponsorService:AddSponsorService){
