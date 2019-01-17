@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {TweenMax, Power4} from 'gsap/TweenMax';
 import { ActivatedRoute } from '@angular/router';
+import { RacePresentationService } from '../services/race-presentation.service';
+import { Race } from '../race';
 
 @Component({
   selector: 'app-races-presentation',
@@ -16,6 +17,7 @@ export class RacesPresentationComponent implements OnInit {
   public raceImg: string;
 
 
+
   private raceText2019:string = `Après 3 éditions sur les routes du monde, le petit frère (Sun Trip Tour)
   revient pour une 2eme édition qui se déroulera pendant 15 jours sur 1400 kilomètres
   environ en région Auvergne –Rhône Alpes et un peu en Italie plus accessible avec moins de
@@ -27,26 +29,16 @@ export class RacesPresentationComponent implements OnInit {
   
   private linkRace2019: string = "https://www.thesuntrip.com/sun-trip-tour-2019/";
   private img2019: string = "../../assets/2019-landing.jpg";
+  private racePresentationService: RacePresentationService;
+  public races: Race[];
+  public race: Race;
 
-  private raceText2020:string = `A l’image d’un « Vendée Globe Terrestre », la plus grande aventure terrestre
-  du monde, les règles sont simples: Un point de départ, un point d’arrivée et la grande liberté
-  entre les deux, le Sun Trip c’est avant tout une aventure sans assistance, où chacun prend
-  ses responsabilités. En 2013, c’était direction le Kazakhstan. En 2015, une boucle au départ
-  de Milan direction Antalya et la Turquie. En 2018, Lyon-Canton (Chine) pour plus de 13000
-  kilomètres effectué pour le premier en 45 Jours et pour le dernier en 106 jours…. Chacun a
-  pu aller à son rythme plaçant le curseur où il souhaitait entre performance sportive et
-  chemins de traverse et découvertes…En 2020, êtes-vous prêts à suivre mes pérégrinations
-  que vous pourrez suivre via les réseaux sociaux et ce site ?`;
-  
-  private linkRace2020: string = "https://www.thesuntrip.com/2020-edition/";
-  private img2020: string = "../../assets/2020-landing.jpg";
-  
-  private raceBackgroundImg:string = "https://www.thesuntrip.com/2020-edition/";
+  constructor(p_rService: RacePresentationService, route: ActivatedRoute) {
 
-
-  constructor(route: ActivatedRoute) {
-    
+    this.racePresentationService = p_rService;
     this.raceTitle = route.snapshot.data.title;
+    this.race = null;
+  }
 
     if (this.raceTitle == "The Sun Trip Tour 2019") {
       this.raceText = this.raceText2019 ; 
@@ -66,17 +58,36 @@ export class RacesPresentationComponent implements OnInit {
  
 
 
-  
+  private img2019: string = '../../assets/2019-landing.jpg';
+  private img2020: string = '../../assets/2020-landing.jpg';
 
+  ngOnInit(): void {
 
-  ngOnInit() {
+    const background = document.getElementById('race-description');
 
-    let background = document.getElementById("race-description");
+    this.racePresentationService.getAll().subscribe(
+      (result: Race[]) => {
+        this.races = result;
 
-    background.style.background = this.raceColor;
+        if (this.raceTitle === 'The Sun Trip Tour 2019') {
+          this.race = this.races[0];
+          this.raceColor = '#478952';
+          // this.background.style.backgroundColor = '#D3BB58'
+        } else if (this.raceTitle === 'The Sun Trip 2020' ) {
+          this.race = this.races[1];
+          this.raceColor = '#D3BB58';
+          // this.background.style.backgroundColor = '#D3BB58'
+        }
 
-  }    
-    ngOnDestroy(){
-      window.scrollTo(0,0);
+        background.style.background = this.raceColor;
+      }
+    );
+
+    if (this.raceTitle === 'The Sun Trip Tour 2019') {
+      this.raceImg = this.img2019;
+    } else if (this.raceTitle === 'The Sun Trip 2020' ) {
+      this.raceImg = this.img2020;
     }
+
   }
+}
