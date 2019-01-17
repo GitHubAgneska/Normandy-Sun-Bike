@@ -30,7 +30,7 @@ export class RaceComponent implements OnInit {
     );
   }
 
-  private selectedRace(p_id): void {
+  public selectedRace(p_id): void {
     const race2019 = document.getElementById('trip2019');
     const race2020 = document.getElementById('trip2020');
 

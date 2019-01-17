@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  domain: 'http://' + document.location.host + ':8081/'
 };

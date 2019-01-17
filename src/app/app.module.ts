@@ -9,7 +9,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { HttpModule } from '@angular/http';
-import { FileSelectDirective } from 'ng2-file-upload';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -20,8 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { RacesPresentationComponent } from './races-presentation/races-presentation.component';
 import { AppRoutingModule } from './app-routing.module';
-import { BlogPageComponent } from './blog/blog-page/blog-page.component';
-import { BlogArticleElementComponent } from './blog/blog-article-element/blog-article-element.component';
 import { ProjectComponent } from './project/project.component';
 import { SponsorComponent } from './sponsor/sponsor.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
@@ -39,11 +36,7 @@ import { ActualityComponent } from './admin/actuality/actuality.component';
 import { RaceComponent } from './admin/race/race.component';
 import { AddSponsorComponent } from './admin/admin-sponsors/add-sponsor/add-sponsor.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AdminBlogArticlesComponent } from './admin/admin-blog-articles/admin-blog-articles.component';
-import { AddBlogArticleComponent } from './admin/admin-blog-articles/add-blog-article/add-blog-article.component';
 import { EditSponsorComponent } from './admin/admin-sponsors/edit-sponsor/edit-sponsor.component';
-import { EditBlogArticlesComponent } from './admin/admin-blog-articles/edit-blog-articles/edit-blog-articles.component';
-import { ArticleComponent } from './blog/article/article.component';
 import { RacePresentationService } from './services/race-presentation.service';
 import { EmailService } from './services/email.service';
 
@@ -53,8 +46,6 @@ import { EmailService } from './services/email.service';
   declarations: [
     AppComponent,
     RacesPresentationComponent,
-    BlogPageComponent,
-    BlogArticleElementComponent,
     ProjectComponent,
     LogInComponent,
     NavPageComponent,
@@ -70,12 +61,7 @@ import { EmailService } from './services/email.service';
     ActualityComponent,
     RaceComponent,
     AddSponsorComponent,
-    AdminBlogArticlesComponent,
-    AddBlogArticleComponent,
-    EditSponsorComponent,
-    EditBlogArticlesComponent,
-    ArticleComponent,
-    FileSelectDirective
+    EditSponsorComponent
   ],
   imports: [
     BrowserModule,

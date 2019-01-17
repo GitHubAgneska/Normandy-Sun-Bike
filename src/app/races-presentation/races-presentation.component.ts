@@ -10,6 +10,25 @@ import { Race } from '../race';
 })
 export class RacesPresentationComponent implements OnInit {
 
+  public raceTitle: string;
+  private raceText: string;
+  private raceLink: string;
+  private raceColor: string;
+  public raceImg: string;
+
+
+
+  private raceText2019:string = `Après 3 éditions sur les routes du monde, le petit frère (Sun Trip Tour)
+  revient pour une 2eme édition qui se déroulera pendant 15 jours sur 1400 kilomètres
+  environ en région Auvergne –Rhône Alpes et un peu en Italie plus accessible avec moins de
+  contraintes techniques. Un parcours montagneux (Col de L’Iseran et Col de l’Agnel à plus de
+  2700 mètres et mythique Col du Mont Cenis) mais que tous peuvent faire. Tous les
+  participants se retrouvent tous les deux jours en moyenne pour des temps d’échange et de
+  rencontre. Mais aussi un test en conditions réelles pour éprouver le pilote et la machine
+  pour la gestion de l’énergie, des freins…..`;
+  
+  private linkRace2019: string = "https://www.thesuntrip.com/sun-trip-tour-2019/";
+  private img2019: string = "../../assets/2019-landing.jpg";
   private racePresentationService: RacePresentationService;
   public races: Race[];
   public race: Race;
@@ -21,9 +40,23 @@ export class RacesPresentationComponent implements OnInit {
     this.race = null;
   }
 
-  public raceTitle: string;
-  private raceImg: string;
-  private raceColor: string;
+    if (this.raceTitle == "The Sun Trip Tour 2019") {
+      this.raceText = this.raceText2019 ; 
+      this.raceLink = this.linkRace2019;   
+      this.raceImg = this.img2019
+      this.raceColor = "#478952";
+      // this.background.style.backgroundColor = "#D3BB58"
+    }
+    else if (this.raceTitle == "The Sun Trip 2020" ){
+      this.raceText = this.raceText2020;
+      this.raceLink = this.linkRace2020;   
+      this.raceImg = this.img2020;
+      this.raceColor = "#D3BB58";
+      // this.background.style.backgroundColor = "#D3BB58"
+    }
+   }
+ 
+
 
   private img2019: string = '../../assets/2019-landing.jpg';
   private img2020: string = '../../assets/2020-landing.jpg';

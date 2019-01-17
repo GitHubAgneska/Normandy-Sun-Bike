@@ -19,7 +19,7 @@ export class ActualityComponent implements OnInit {
   public message: String;
 
   public actuality:Actuality[];
-  private actualityService:ActualityService;
+  public actualityService:ActualityService;
 
   constructor(actualityService:ActualityService) { 
     this.actualityService = actualityService;
@@ -72,7 +72,7 @@ export class ActualityComponent implements OnInit {
     }
   }
 
-  private sectionSelected(p_id): void {
+  public sectionSelected(p_id): void {
     let sectionBlock: HTMLElement = document.getElementById(this.prevSectionId);
 
     sectionBlock.classList.remove('selectedSection');
