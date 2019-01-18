@@ -14,25 +14,26 @@ export class SponsorComponent implements OnInit {
 
   public sponsor_list:Sponsor[];
 
-  constructor(sponsorService:AddSponsorService){
+  constructor(sponsorService:AddSponsorService) {
     this.sponsorService = sponsorService;
+    this.sponsors = null;
   }
-  
 
   ngOnInit() {
     // Infos Sponsors
     this.sponsorService.getSponsor().subscribe(
-      (param)=>{ 
+      (param) => {
         this.sponsors = param;
-        this.sponsor_list = this.listWhithoutMainSponsors(this.sponsors); 
+        this.sponsor_list = this.listWhithoutMainSponsors(this.sponsors);
+        console.log(this.sponsors);
       }
-    )
+    );
   }
 
-  listWhithoutMainSponsors(array:Sponsor[]) {
-    let resultArray: Sponsor[] = [];
+  listWhithoutMainSponsors(array: Sponsor[]) {
+    const resultArray: Sponsor[] = [];
     if (array.length > 3) {
-      for (let i=3; i < array.length; i++){
+      for (let i = 3; i < array.length; i++) {
         resultArray.push(array[i]);
       }
     }
