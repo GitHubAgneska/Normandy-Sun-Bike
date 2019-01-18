@@ -16,9 +16,9 @@ export class ProjectComponent implements OnInit {
 
   }
 
-  scrolling(element){
-
-    let target = element.offsetTop;
+  pageProjetTopTop() {
+    let topPage = document.getElementById('projet-container');
+    let target = topPage.offsetTop;
     let from = window.scrollY;
     let tmp = { y: from };
     
@@ -32,7 +32,8 @@ export class ProjectComponent implements OnInit {
           }
         }
       );
-    }
+  }
+
 
     ngOnDestroy(){
       window.scrollTo(0,0);
