@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(route: ActivatedRoute) {
     this.title = route.snapshot.data.title;
-  }
+   }
 
   ngOnInit() {
   }

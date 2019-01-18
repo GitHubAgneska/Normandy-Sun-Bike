@@ -1,0 +1,39 @@
+#modal-background-container {
+    width: 100%;
+    height: 100%;
+    margin-top: -11vh;
+    position: fixed;
+    z-index: 2000;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+}
+#modal-background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+#modal-background-square {
+    width: 90%;
+    height: 70vh;
+    background: #194B3E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.backBtn{
+    margin: 2vh;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 2px #fff;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 1em, 3em, 1em 3em;
+}
+
+.backBtn:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}

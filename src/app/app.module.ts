@@ -39,6 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditSponsorComponent } from './admin/admin-sponsors/edit-sponsor/edit-sponsor.component';
 import { RacePresentationService } from './services/race-presentation.service';
 import { EmailService } from './services/email.service';
+import { ModalAdminComponent } from './modal-admin/modal-admin.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { EmailService } from './services/email.service';
     ActualityComponent,
     RaceComponent,
     AddSponsorComponent,
-    EditSponsorComponent
+    EditSponsorComponent,
+    ModalAdminComponent
   ],
   imports: [
     HttpClientModule,

@@ -1,17 +1,13 @@
 
 <app-header></app-header>
   <div class="sponsorAdmin-main-container container-fluid">
-    <div class="row ">
+    <div class="row">
  <!------   STATIC BLOCK LEFT : SPONSORS LIST  ------->      
-      <div  class="sponsorList col-lg-2 col-md-4 col-sm-3 col-xs-12">
+      <div  class="sponsorList">
 
     <!------  Top Block : "ajouter sponsor"  ------->
-        <div class="sponsor-element-container pb-3" >
-          <div class="sponsor-element-infos">
-            <h4 class="sponsor-element-title subsubtitle">Ajouter un sponsor</h4>
-            <div class="sponsor-element-button text">
-              <button type="button" class="btn btn-lg" id="addSponsorBtn" (click)="displayNewSponsorFields()"> + </button></div>
-          </div>
+        <div class="sponsor-element-container" >
+              <button type="button" id="addSponsorBtn" (click)="displayNewSponsorFields()">+ Ajouter un sponsor</button>
         </div>
 
       <!------   Sponsors List  --------->
@@ -33,13 +29,13 @@
 
 <!------  INPUT FIELDS - CREATE NEW SPONSOR  ------->
 
-      <div *ngIf="sponsorVisible" class="sponsors-input-container col-lg-8 col-md-8 col-ms-9 col-xs-12">    
+      <div *ngIf="sponsorVisible" class="sponsors-input-container">    
         <app-add-sponsor></app-add-sponsor>
       </div>
 
 <!------  INPUT FIELDS - EDIT SELECTED SPONSOR  ------->
 
-      <div *ngIf="selectedSponsor" class="sponsors-input-container col-lg-8 col-md-7 col-ms-9 col-xs-12">
+      <div *ngIf="selectedSponsor" class="sponsors-input-container">
         <app-edit-sponsor [sponsor]="chosenSponsor"></app-edit-sponsor>
       </div>
 

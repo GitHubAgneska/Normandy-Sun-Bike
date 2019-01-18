@@ -37,6 +37,18 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     public newSponsorDescription:string;
     public newSponsorImgName:string;
 
+
+    // Modifier img
+    public inputStatus:boolean = true;
+    public ImgNameForInput:string;
+
+     // Modal
+    public modal:boolean = false;
+    public modalElementName:string = "Le sponsort";
+    public modalActionOnElement:string;
+    public modalMessage:string;
+    public modalRaceName:string; 
+
     public sponsors:Sponsor; 
     public sponsorService:AddSponsorService;
 
@@ -68,13 +80,29 @@ export class EditSponsorComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    
-    // this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
-    // this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-    //      console.log('ImageUpload:uploaded:', item, status, response);
-    //      alert('File uploaded successfully');
-    //     }
   
+  }
+
+
+  detectInputStatus() {
+    let squareInput = document.getElementById("square-input-file");
+    let uploadedImg = document.getElementById("img-input");
+    let newImg = uploadedImg['files'][0];
+    this.ImgNameForInput = "L'image actuelle sera remplacé par '" + newImg.name + "'.";
+
+    squareInput.style.background = "#194B3E";
+    this.inputStatus = false;
+  }
+
+  public modalMsg(action) {
+    if (action == "suppr") {
+      this.modalMessage = this.newSponsorName + " n'est plus sur le site."
+      this.modalActionOnElement = "supprimé";
+    } else if (action == "change") {
+      this.modalMessage =  "Les changements sur " + this.sponsor.name + " sont maintenant visible sur le site." ;
+      this.modalActionOnElement = "modifé";
+    }
+    this.modal = true;
   }
 
   validateButton() {
@@ -98,6 +126,8 @@ export class EditSponsorComponent implements OnInit, OnChanges {
       this.sponsor.description = this.newSponsorDescription
     }
     this.sponsorService.editSponsor( this.sponsor.id ,this.sponsor).subscribe();
+
+    this.modalMsg("change");
   };
 
   onMouseOver():void{
@@ -110,7 +140,8 @@ export class EditSponsorComponent implements OnInit, OnChanges {
 
   suppSponsor() {
     this.sponsorService.deleteSponsor( this.sponsor.id ).subscribe();
-    window.location.reload();
+
+    this.modalMsg("suppr");
   }
 };
  
