@@ -117,16 +117,16 @@ public class SponsorController {
     }
     
     @DeleteMapping("sponsors/{id}")
-    public boolean delete(@PathVariable int p_id){
+    public boolean delete(@PathVariable int id){
     	
     	try {
-    		SponsorRepo.deleteById((long) p_id);
+    		SponsorRepo.deleteById((long) id);
             return true;
     	}
     	catch( Exception p_exception ) {
     		throw new ResponseStatusException(
 	          HttpStatus.NOT_FOUND, 
-	          "no sponsor found for id: " + p_id
+	          "no sponsor found for id: " + id
     		);
     	}
     }
