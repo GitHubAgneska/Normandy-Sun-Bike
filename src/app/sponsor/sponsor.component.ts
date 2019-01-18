@@ -25,7 +25,6 @@ export class SponsorComponent implements OnInit {
       (param) => {
         this.sponsors = param;
         this.sponsor_list = this.listWhithoutMainSponsors(this.sponsors);
-        console.log(this.sponsors);
       }
     );
   }
@@ -41,6 +40,6 @@ export class SponsorComponent implements OnInit {
   }
 
   ngOnDestroy(){
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Sponsor } from '../../../classes/sponsorClass';
-import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
+import {  FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { AddSponsorService } from 'src/app/services/add-sponsor.service';
 
 const URL = 'http://localhost:3600/api/upload';
@@ -30,12 +30,12 @@ export class EditSponsorComponent implements OnInit, OnChanges {
   /*   @ViewChild('fileUploadEdit')
     private fileUpload1:  AngularFileUploaderModule; */
 
-    public img;
-  
-    public newSponsorName:string;
-    public newSponsorLink:string;
-    public newSponsorDescription:string;
-    public newSponsorImgName:string;
+    // public img;
+
+    public newSponsorName: string;
+    public newSponsorLink: string;
+    public newSponsorDescription: string;
+    public newSponsorImgName: string;
 
 
     // Modifier img
@@ -53,8 +53,8 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     public sponsorService:AddSponsorService;
 
 
-  constructor(private formBuilder: FormBuilder, sponsorService:AddSponsorService) { 
-    const options:any = {                             // create data model for the form
+  constructor(private formBuilder: FormBuilder, sponsorService:AddSponsorService) {
+    const options: any = {                             // create data model for the form
 
       sponsorImg: [''],
       sponsorName: ['', Validators.required],
@@ -73,8 +73,8 @@ export class EditSponsorComponent implements OnInit, OnChanges {
   }   // add formbuilder service
 
 
-  ngOnChanges( changes:SimpleChanges){
-    if( changes.sponsor != undefined ){
+  ngOnChanges( changes:SimpleChanges) {
+    if ( changes.sponsor !== undefined ) {
       this.selectedLevel = this.sponsor.level;
     }
   }
@@ -108,34 +108,34 @@ export class EditSponsorComponent implements OnInit, OnChanges {
   validateButton() {
     this.sponsor.level = this.selectedLevel;
 
-    let uploadedImg = document.getElementById("img-input");
+    const uploadedImg = document.getElementById('img-input');
     if (uploadedImg != null) {
-      let newImg = uploadedImg['files'][0];
+      const newImg = uploadedImg['files'][0];
       this.newSponsorImgName = newImg.name;
-      this.sponsor.img = "./assets/" + this.newSponsorImgName;
+      this.sponsor.img = './assets/' + this.newSponsorImgName;
       this.sponsorService.addImgInAssets(newImg).subscribe();
     }
-    if (this.newSponsorName != null || this.newSponsorName != undefined) {
+    if (this.newSponsorName !== null || this.newSponsorName !== undefined) {
       this.sponsor.name = this.newSponsorName;
     }
-    if (this.newSponsorLink != null || this.newSponsorLink != undefined) {
+    if (this.newSponsorLink !== null || this.newSponsorLink !== undefined) {
       this.sponsor.link = this.newSponsorLink;
     }
     this.sponsor.level = this.selectedLevel;
-    if (this.sponsor.level == 1){
-      this.sponsor.description = this.newSponsorDescription
+    if (this.sponsor.level === 1) {
+      this.sponsor.description = this.newSponsorDescription;
     }
     this.sponsorService.editSponsor( this.sponsor.id ,this.sponsor).subscribe();
 
     this.modalMsg("change");
   };
 
-  onMouseOver():void{
-    document.getElementById("plusSignId").style.opacity = "1";
+  onMouseOver(): void {
+    document.getElementById('plusSignId').style.opacity = '1';
   }
 
-  onMouseLeave():void{
-    document.getElementById("plusSignId").style.opacity = "0.2";
+  onMouseLeave(): void {
+    document.getElementById('plusSignId').style.opacity = '0.2';
   }
 
   suppSponsor() {
@@ -143,5 +143,4 @@ export class EditSponsorComponent implements OnInit, OnChanges {
 
     this.modalMsg("suppr");
   }
-};
- 
+}
