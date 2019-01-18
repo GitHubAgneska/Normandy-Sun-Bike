@@ -475,3 +475,36 @@ p, a{
         margin-top:10vh;
     }
 }
+
+#projet-to-top-button-container {
+    position: fixed;
+    margin-top: 80vh;
+    margin-left: 90%;
+    z-index: 1900;
+}
+#projet-to-top-button-container:hover > #projet-to-top-button-text {
+    display: block;
+}
+#projet-to-top-button-text{
+    position: absolute;
+    width: 12em;
+    margin-left: -10em;
+    margin-top: 1.7em;
+    display: none;
+}
+#projet-to-top-button {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+#projet-to-top-button:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+#projet-to-top-button-arrow {
+    transform: rotate(90deg) scale(0.65);
+}
