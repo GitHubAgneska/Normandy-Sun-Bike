@@ -22,9 +22,9 @@ public class EmailService {
 		
 		SimpleMailMessage mail = new SimpleMailMessage();
 		
-		mail.setTo("hily.genay@gmail.com");
+		mail.setTo(emailUser.getEmailAddress()); //emailUser
 		mail.setSubject("Nouvel email depuis le site");
-	    mail.setFrom(emailUser.getEmailAddress());
+	    mail.setFrom("normandysunbike@gmail.com");
 		mail.setText(emailUser.getMsg());
 		
 		

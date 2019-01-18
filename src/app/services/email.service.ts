@@ -22,7 +22,9 @@ export class EmailService {
     return this.httpService.post<EmailUser>(this.url, emailUser,{headers:this.httpHeaders}).pipe(
       map(
         ( response:boolean) => {
+          console.log("coucou la france");
           return response;
+          
         }
       )
     ); 
