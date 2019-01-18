@@ -1,23 +1,96 @@
-p{
-    color:#555555;
+p, a{
+    color:#B4DDFC;
 }
 
 .title, .subtitle{
-    color:#86C494;
+    color:#fff;
     line-height: 1;
+}
+
+.circle {
+    position: absolute;
+}
+.circle1{
+    margin-left: 65vh;
+    margin-top: 30vh;
+}
+#path-projet1 {
+    height: 97vh;
+    margin-left: 43vh;
+    margin-top: 36vh;
+}
+.circle2{
+    margin-left: 35vh;
+    margin-top: 137vh;
+}
+#path-projet2 {
+    height: 122vh;
+    margin-left: 30vh;
+    margin-top: 148vh;
+}
+.circle3{
+    margin-left: 119vh;
+    margin-top: 273vh;
+}
+#path-projet3 {
+    height: 89vh;
+    margin-left: 47vh;
+    margin-top: 283vh;
+}
+.circle4{
+    margin-left: 40vh;
+    margin-top: 373vh;
+}
+#path-projet4 {
+    height: 140vh;
+    margin-left: 28vh;
+    margin-top: 381vh;
+}
+.circle5{
+    margin-left: 150vh;
+    margin-top: 525vh;
+}
+#path-projet5 {
+    height: 88vh;
+    margin-left: 30vh;
+    margin-top: 535vh;
+}
+.circle6{
+    margin-left: 26vh;
+    margin-top: 625vh;
+}
+.path-projet {
+    position: absolute;
+}
+.path-projet > img{
+    height: 100%;
+}
+@media screen and (max-width: 960px){
+    #path-projet-container{
+        opacity: 0.3;
+        margin-left: -10em;
+        z-index: 1;
+    }
 }
 
 @media screen and (max-width: 640px) {
     #projet-container{
-        overflow-x: hidden;   
+        overflow-x: hidden;
     }
     .subsubtitle{
         font-size: 1.2em;
     }
 }
 
+#projet-container{
+    background: #2D73A9; 
+}
+
 .projet-point-container{
     height: 100vh;
+    position: relative;
+    background: url(../../assets/background_projet.png);
+    background-size: cover;
 }
 
 /* QUI */
@@ -25,12 +98,16 @@ p{
     padding-left: 8%;
     height: 100vh;
     padding-top: 14vh;
+    z-index: 1000;
 }
 #projet-qui-img-1{
     width: 17em;
     height: 12em;
     background:#CACACA;
     margin-top: -0.8em;
+    background:url("/assets/famille.jpg");
+    background-position: center;
+    background-size: cover;
 }
 #projet-qui-img-2{
     width: 9em;
@@ -38,10 +115,10 @@ p{
     background:#CACACA;
     margin-top: -10em;
     margin-left: 13em;
-    border: 2px solid #fff;
+    border: 1px solid #2D73A9;
     background:url("/assets/benoit.png");
-    background-size: 150%;
-    background-position: right;
+    background-size: 140%;
+    background-position: center;
 }
 #projet-qui-text-1{
     width:8.5em;
@@ -112,7 +189,7 @@ p{
     background-size: 100%;
     margin-top: -4em;
     margin-right: 22em;
-    border: solid 1px #CACACA;
+    border: solid 1px #2D73A9;
 }
 
 #projet-quoi-subtitle{
@@ -165,11 +242,11 @@ p{
 #projet-comment-img-1{
     width: 27em;
     height: 13em;
-    background:url("/assets/bike1.png");
+    background:url("/assets/velo3D.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-    margin-top: -0.8em;
+    margin-top: 0.8em;
 }
 #projet-comment-img-2{
     width: 12em;
@@ -178,16 +255,19 @@ p{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-    border: solid 1px #CACACA;
+    border: solid 1px #2D73A9;
     margin-top: -1em;
     margin-left: 1em;
 }
 #projet-comment-text-1{
-    width: 28em;
+    width: 26em;
     margin-top: -8em;
     margin-left: 15em;
 }
 @media screen and (max-width: 640px) {
+    #projet-comment-title{
+        font-size: 1.8em;
+    }
     #projet-comment-img-1{
         width: 94%;
         height: 42vw;
@@ -204,9 +284,15 @@ p{
     }
 }
 
+.projet-img {
+    overflow: hidden;
+}
+.projet-img > img {
+    width: 100%;
+}
 
-/* NEXT */
-#projet-real1-container{
+/* site */
+#projet-site-container{
     height: 100vh;
     margin-top: 20vh;
     padding-top: 14vh;
@@ -214,11 +300,130 @@ p{
     display: flex;
     flex-direction: column;
 }
-#projet-comment-title{
+#projet-site-title{
+    text-align: end;
     align-self: flex-end;
+}
+#projet-site-text{
+    width: 30em;
+    margin-top: 1em;
+    align-self: flex-end;
+}
+#projet-site-img-1{
+    width: 8em;
+    border: solid 1px #2D73A9;
+    padding: 1.5em 0 1.5em 0;
+    align-self: flex-end;
+    margin-right: 32em;
+    margin-top: -3em;
+    z-index: 300;
+    background: #fff;
+}
+#projet-site-img-2{
+    width: 20em;
+    align-self: flex-end;
+    margin-right: 13em;
+    margin-top: -7em;
+}
+
+@media screen and (max-width: 640px) {
+    #projet-site-text{
+        margin: 0 auto;
+        width: 90%;
+        z-index: 500;
+    }
+    #projet-site-img-2{
+        width: 90%;
+        margin: 0 auto;
+        margin-top: -6em;
+    }
+}
+
+/* Realisation */
+#projet-real-container{
+    height: 100vh;
+    margin-top: 20vh;
+    padding-top: 14vh;
+    padding-right: 8%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 8%;
+}
+#projet-real-title{
+    z-index: 400;
+}
+#projet-real-img-1 {
+    width: 17em;
+    height: 12em;
+    background: #555555;
+    z-index: 300;
+    margin-top: 1em;
+    
+}
+#projet-real-text-1{
+    width: 25em;
+    margin-top: -11em;
+    margin-left: 19em;
+    margin-bottom: 2em;
+}
+#projet-real-img-2 {
+    width: 20em;
+    margin-left: 5em;
+}
+#projet-real-text-2{
+    width: 25em;
+    margin-top: -12em;
+    margin-left: 27em;
+}
+@media screen and (max-width: 640px) {
+    #projet-real-title{
+        z-index: 400;
+        font-size: 1.8em;
+    }
+    #projet-real-img-1, #projet-real-text-1, #projet-real-img-2, #projet-real-text-2 {
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 1em;
+    }
+    #projet-real-img-1, #projet-real-img-2 {
+        padding-bottom: 40vh;
+    }
 }
 
 
+/* Ouverture */
+#projet-open-container{
+    height: 100vh;
+    margin-top: 40vh;
+    padding-top: 14vh;
+    padding-right: 8%;
+    display: flex;
+    flex-direction: column;
+}
+#projet-open-title{
+    margin-top: 12vh;
+    align-self: flex-end;
+}
+#projet-open-text{
+    align-self: flex-end;
+    margin-top: 0.5em;
+    width: 40em;
+}
+@media screen and (max-width: 640px) {
+    #projet-open-title{
+        margin: 0;
+        margin-top: 35vh;
+        margin-left: 5%;
+    }
+    #projet-open-text{
+        margin: 0 auto;
+        width: 90%;
+    }
+    #projet-open-container{
+        height: 130vh;
+    }
+
+}
 
 
 @media screen and (min-width: 640px) and (max-width: 960px){
@@ -247,7 +452,6 @@ p{
     #projet-container{
         width: 100%;
         margin:0;
-        background: #F6F6F6;
     }
     #projet-qui-container {
         width: 100%;

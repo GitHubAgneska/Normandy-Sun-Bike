@@ -15,8 +15,10 @@ public class User {
 	private String email;
 	private String password;
 	private String apikey;
+	private String role;
 	
 	
+
 	public User() {}
 
 
@@ -57,6 +59,15 @@ public class User {
 
 	public void setApikey(String apikey) {
 		this.apikey = apikey;
+	}
+	
+	public String getRole() {
+		return role;
+	}
+
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 	
 	

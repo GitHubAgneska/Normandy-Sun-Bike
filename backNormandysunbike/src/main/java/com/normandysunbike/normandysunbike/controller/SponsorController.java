@@ -1,5 +1,7 @@
 package com.normandysunbike.normandysunbike.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +11,12 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.normandysunbike.normandysunbike.entities.Sponsor;
@@ -44,10 +49,33 @@ public class SponsorController {
         
     }
 	
+
+	@PatchMapping("/sponsorsimg")
+	public String createImgFileInAssets(
+		@RequestParam("file") MultipartFile image
+	) throws Exception {
+		
+		String path = "/home/wilder/WCS/Projets/Projet 3/laloupe-0918-jsjee-normandy-sun-bike/src/assets/" + image.getOriginalFilename();
+			
+			try {
+				
+				image.transferTo(new File(path));
+				return "Ok";
+				
+			} catch (Exception e) {
+				throw new ResponseStatusException(
+	          	HttpStatus.NOT_FOUND, 
+	          	e.getMessage()
+    			);
+			}
+	}
+	
 	@PostMapping("/sponsors")
     public Sponsor create(@RequestBody Sponsor p_sponsor){
+		
         return SponsorRepo.save(p_sponsor);
     }
+	
 	
     @PutMapping("/sponsors/{id}")
     public Sponsor update(
@@ -89,16 +117,16 @@ public class SponsorController {
     }
     
     @DeleteMapping("sponsors/{id}")
-    public boolean delete(@PathVariable int p_id){
+    public boolean delete(@PathVariable int id){
     	
     	try {
-    		SponsorRepo.deleteById((long) p_id);
+    		SponsorRepo.deleteById((long) id);
             return true;
     	}
     	catch( Exception p_exception ) {
     		throw new ResponseStatusException(
 	          HttpStatus.NOT_FOUND, 
-	          "no sponsor found for id: " + p_id
+	          "no sponsor found for id: " + id
     		);
     	}
     }

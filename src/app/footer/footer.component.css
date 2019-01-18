@@ -1,14 +1,74 @@
 .footer-container{
-    background-color: grey;
-    opacity:0.5;
     transition: 1s;
     padding-bottom: 5vh;
-
+    background: url(../../assets/background_races.png);
+    background-size: cover;
 }
-.legal-container p{
-    color:#fff;   
+.legal-container p{ 
+    color: #5F5F5F;
 }
 .logo-footer{
     margin-top: 5vh;
     margin-bottom: 5vh;
+}
+.logo-container{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 10vh;
+    margin-bottom: 5vh;
+}
+#footer-icone-container{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 8vh;
+}
+.footer-icone{
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.footer-icone:hover{
+    cursor: pointer;
+}
+#footer-plan-container{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer-plan-point{
+    width: 23%;
+    border-top: solid rgb(15, 9, 9) 3px;
+    padding-top: 0.5em;
+    margin-bottom: 10vh;
+}
+.footer-plan-point > p{
+    color: #5F5F5F;
+    margin: 0;
+    margin-top: 0.3em;
+    text-align: left;
+    transition: 0.2s;
+    font-weight: 400;
+}
+.footer-plan-point > p:hover {
+    cursor: pointer;
+    color: #000;
+}
+.footer-plan-point > p:focus {
+    outline: none;
+}
+.copyright{
+    text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+    .footer-plan-point{
+        width: 45%;
+    }
+    .copyright{
+        width: 80%;
+        margin: auto;
+    }
 }

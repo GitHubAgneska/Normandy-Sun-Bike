@@ -1,6 +1,7 @@
 #sponsor-background{
-    background: url("/assets/fond-landing-blog.png");
-    background-size: cover;
+    background: url("/assets/background_sponsors.png");
+    background-size: 105%;
+    background-position: center;
     padding: 20vh 0 9vh 0;
 }
 

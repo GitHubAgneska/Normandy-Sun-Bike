@@ -41,7 +41,6 @@ import { RacePresentationService } from './services/race-presentation.service';
 import { EmailService } from './services/email.service';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +63,7 @@ import { EmailService } from './services/email.service';
     EditSponsorComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule.forRoot(),
