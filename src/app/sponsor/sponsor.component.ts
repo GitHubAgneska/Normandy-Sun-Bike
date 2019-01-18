@@ -41,6 +41,6 @@ export class SponsorComponent implements OnInit {
   }
 
   ngOnDestroy(){
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }
 }
