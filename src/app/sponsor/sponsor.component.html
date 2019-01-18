@@ -2,29 +2,30 @@
   <div id="sponsor-page">
     <h3 class="title">Merci à mes sponsors</h3>
     <div class="lign-horizon lign-all-sponsor"></div>
-    <div id="sponsor-first-second">
+    <div id="sponsor-first-second" *ngIf="sponsors != null">
 
-      <div id="sponsor-first" *ngIf="sponsors[0] != null">
-        <div id="sponsor-first-logo" class="sponsor-logo-img"><img [src]=sponsors[0].img/></div>
-        <div id="sponsor-first-text">
-          <h2 class="subsubtitle sponsor-title">{{sponsors[0].name}}</h2>
-          <p class="text sponsor-txt">{{sponsors[0].description}}</p>
-        </div>
-      </div>
-
-      <div id="sponsor-second-container">
-        <div class="sponsor-second" *ngIf="sponsors[1] != null">
-          <div class="sponsor-second-logo sponsor-logo-img"><img [src]=sponsors[1].img/></div>
-          <div class="sponsor-second-text">
-            <h2 class="subsubtitle sponsor-title">{{sponsors[1].name}}</h2>
+        <div id="sponsor-first" *ngIf="sponsors[0] != null">
+          <div id="sponsor-first-logo" class="sponsor-logo-img"><img [src]=sponsors[0].img/></div>
+          <div id="sponsor-first-text">
+            <h2 class="subsubtitle sponsor-title">{{sponsors[0].name}}</h2>
+            <p class="text sponsor-txt">{{sponsors[0].description}}</p>
           </div>
         </div>
-        <div class="sponsor-second" *ngIf="sponsors[2] != null">
-            <div class="sponsor-second-logo sponsor-logo-img"><img [src]=sponsors[2].img/></div>
+      
+        <div id="sponsor-second-container">
+          <div class="sponsor-second" *ngIf="sponsors[1] != null">
+            <div class="sponsor-second-logo sponsor-logo-img"><img [src]=sponsors[1].img/></div>
             <div class="sponsor-second-text">
-              <h2 class="subsubtitle sponsor-title">{{sponsors[2].name}}</h2>
+              <h2 class="subsubtitle sponsor-title">{{sponsors[1].name}}</h2>
             </div>
           </div>
+          <div class="sponsor-second" *ngIf="sponsors[2] != null">
+              <div class="sponsor-second-logo sponsor-logo-img"><img [src]=sponsors[2].img/></div>
+              <div class="sponsor-second-text">
+                <h2 class="subsubtitle sponsor-title">{{sponsors[2].name}}</h2>
+              </div>
+            </div>
+        
       </div>
     </div>
       <h3 class="title sponsor-title-2">et à tous mes soutiens</h3>

@@ -1,7 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Sponsor } from '../../classes/sponsorClass';
 import { AddSponsorService } from '../../services/add-sponsor.service';
-import { SPONSORS } from './mock-sponsors';
 
 @Component({
   selector: 'app-admin-sponsors',
@@ -11,39 +10,38 @@ import { SPONSORS } from './mock-sponsors';
 export class AdminSponsorsComponent implements OnInit {
 
 
-  sponsorVisible:boolean = true;
-  selectedSponsor:boolean = false;
-  chosenSponsor:Sponsor;
+  sponsorVisible: boolean = true;
+  selectedSponsor: boolean = false;
+  chosenSponsor: Sponsor;
 
-  public sponsors:Sponsor[];
-  private sponsorService:AddSponsorService;
+  public sponsors: Sponsor[];
+  private sponsorService: AddSponsorService;
 
-  constructor(sponsorService:AddSponsorService){
+  constructor(sponsorService: AddSponsorService) {
     this.sponsorService = sponsorService;
   }
-  
+
 
   ngOnInit() {
     // Infos Sponsors
     this.sponsorService.getSponsor().subscribe(
-      (param)=>{ 
+      (param) => {
         this.sponsors = param;
       }
-    )
+    );
   }
 
   // create new sponsor field - (directive *ngIf)
-  public displayNewSponsorFields(){
+  public displayNewSponsorFields() {
     this.sponsorVisible = true;
     this.selectedSponsor = false;
   }
 
-  // edit selected sponsor fields - (directive *ngIf)   
-  public onSelect(sponsor:Sponsor):void{
+  // edit selected sponsor fields - (directive *ngIf)
+  public onSelect(sponsor: Sponsor): void {
     this.selectedSponsor = true;
     this.sponsorVisible = false;
-    /* console.log(`selectedSponsor = ${JSON.stringify(this.selectedSponsor)}`); */
     this.chosenSponsor = sponsor;
   }
-  
+
 }
