@@ -26,7 +26,7 @@ export class AddSponsorService {
     return this.httpService.get(this.target).pipe(
       map(
           (param_my_response:Response) => {
-          let sponsors:Sponsor[] = param_my_response.json();
+          const sponsors: Sponsor[] = param_my_response.json();
           return this.sortSponsorByLevel(sponsors);
         }
       )
@@ -35,18 +35,18 @@ export class AddSponsorService {
 
   public sortSponsorByLevel(sponsors:Sponsor[]):Sponsor[] {
 
-		for(let i=0; i < sponsors.length; i++){  
-			let current:Sponsor;
-			for(let j = 1; j < (sponsors.length - i); j++){  
-				if( sponsors[j-1].level > sponsors[j].level ){
-					current = sponsors[j-1];  
-					sponsors[j-1] = sponsors[j];  
-					sponsors[j] = current;  
-				}  		 
-			}  
-		}  
-		 return sponsors;
-	}
+  for (let i=0; i < sponsors.length; i++) {
+    let current:Sponsor;
+    for(let j = 1; j < (sponsors.length - i); j++) {
+      if ( sponsors[j-1].level > sponsors[j].level ) {
+        current = sponsors[j-1];
+        sponsors[j-1] = sponsors[j];
+        sponsors[j] = current;
+      }
+    }
+  }
+return sponsors;
+}
 
   public getSponsorById( id:number  ):Observable<Sponsor>{
 
@@ -65,7 +65,6 @@ export class AddSponsorService {
       map(
           (p_response:Response) => {
           return p_response.json() as Sponsor;
-          
         }
       )
     );
@@ -94,13 +93,10 @@ export class AddSponsorService {
       headers: headers
     };
 
-    debugger;
-
     return this.httpServiceClient.patch(environment.domain + "sponsorsimg/", data, args ).pipe(
       map(
           (p_response:Response) => {
           return p_response.json() as string;
-          
         }
       )
     );
