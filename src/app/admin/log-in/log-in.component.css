@@ -1,3 +1,5 @@
+
+
 .formContainer{
     width: 100%;
     margin: 3vh auto;
@@ -40,4 +42,9 @@
 
 :focus::placeholder { 
     opacity: 0;
+}
+
+.invalid-username, .invalid-password{
+    color: red;
+    font-size: 1rem;
 }

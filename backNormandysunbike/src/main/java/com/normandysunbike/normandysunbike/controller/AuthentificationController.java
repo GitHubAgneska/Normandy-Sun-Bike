@@ -21,7 +21,7 @@ public class AuthentificationController {
 	
 	
 	
-	@PostMapping("/auth")
+	@PostMapping("/admin")
 	public User create(@RequestBody User p_user) throws Exception {
 		User current = repo.findByEmailAndPassword (
 				p_user.getEmail(),
