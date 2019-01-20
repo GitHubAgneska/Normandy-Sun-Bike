@@ -22,10 +22,10 @@ public class EmailService {
 		
 		SimpleMailMessage mail = new SimpleMailMessage();
 		
-		mail.setTo(emailUser.getEmailAddress()); //emailUser
+		mail.setTo("normandysunbike@gmail.com");                   // (emailUser.getEmailAddress()); 
 		mail.setSubject("Nouvel email depuis le site");
 	    mail.setFrom("normandysunbike@gmail.com");
-		mail.setText(emailUser.getMsg());
+		mail.setText(emailUser.getMsg() +  "\n" + "Envoyé par : " + emailUser.getEmailAddress());
 		
 		
 		javaMailSender.send(mail);
