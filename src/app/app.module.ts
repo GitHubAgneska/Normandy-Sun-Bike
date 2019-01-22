@@ -40,6 +40,8 @@ import { EditSponsorComponent } from './admin/admin-sponsors/edit-sponsor/edit-s
 import { RacePresentationService } from './services/race-presentation.service';
 import { EmailService } from './services/email.service';
 import { ModalAdminComponent } from './modal-admin/modal-admin.component';
+import { LoginService } from './services/login.service';
+import { CGUComponent } from './cgu/cgu.component';
 
 
 @NgModule({
@@ -62,7 +64,8 @@ import { ModalAdminComponent } from './modal-admin/modal-admin.component';
     RaceComponent,
     AddSponsorComponent,
     EditSponsorComponent,
-    ModalAdminComponent
+    ModalAdminComponent,
+    CGUComponent,
   ],
   imports: [
     HttpClientModule,
@@ -85,7 +88,8 @@ import { ModalAdminComponent } from './modal-admin/modal-admin.component';
 
   providers: [ 
     EmailService,
-    RacePresentationService
+    RacePresentationService,
+    LoginService
   
   ],
   bootstrap: [AppComponent]
