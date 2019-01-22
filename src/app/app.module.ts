@@ -40,6 +40,7 @@ import { EditSponsorComponent } from './admin/admin-sponsors/edit-sponsor/edit-s
 import { RacePresentationService } from './services/race-presentation.service';
 import { EmailService } from './services/email.service';
 import { LoginService } from './services/login.service';
+import { CGUComponent } from './cgu/cgu.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { LoginService } from './services/login.service';
     RaceComponent,
     AddSponsorComponent,
     EditSponsorComponent,
+    CGUComponent,
   ],
   imports: [
     HttpClientModule,
