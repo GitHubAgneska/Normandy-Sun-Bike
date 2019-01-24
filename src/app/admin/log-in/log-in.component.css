@@ -1,5 +1,3 @@
-
-
 .formContainer{
     width: 100%;
     margin: 3vh auto;
@@ -13,19 +11,9 @@
     margin: 3vh auto;
 }
 
-.optionBox{
-    margin: 3vh auto;
-    font-size: 0.5rem;
-}
-
 .textField{
     width: 100%;
     padding: 0;
-}
-
-.optionBox a{
-    float: right;
-    font-weight: 400;
 }
 
 .formContainer button{

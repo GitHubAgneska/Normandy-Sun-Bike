@@ -1,38 +1,36 @@
 <div class="container-fluid loginPageContainer">
   <div class="row">
     <h1 id="logInTitle" class="title mt-5 col-lg-12">Bienvenue Benoît !</h1>
-    <form [formGroup]="loginForm " class="formContainer">
+    <form class="formContainer" *ngIf="current.connected === false">
         <div class="loginName inputBox col-lg-5 col-md-6 col-sm-10 col-11">
-            <label class="text" for="username">Nom d'utilisateur :</label>
+            <label class="text" for="username">Email :</label>
             <input id="username"
                    type="email"
                    class="form-control"
-                   placeholder="Entrez votre nom d'utilisateur" 
-                   formControlName="username" required/>
-            <div *ngIf="f.username.errors" class="invalid-username">    
+                   placeholder="Entrez votre email" 
+                   name="username" 
+                   required
+                   [(ngModel)]="current.email"/>
+            <!-- <div *ngIf="f.username.errors" class="invalid-username">    
               <div *ngIf="f.username.touched">Veuillez entrer un nom d'utilisateur valide !</div>
-            </div> 
+            </div>  -->
         </div>
         
         <div class="passwordField inputBox col-lg-5 col-md-6 col-sm-10 col-11">
             <label class="text" for="psw">Mot de passe :</label>
             <input id="password"
-                   type="text"
+                   type="password"
                    class="textField" 
                    placeholder="Entrez votre mot de passe"
-                   formControlName="password" required/>
-            <div *ngIf="f.password.errors" class="invalid-password">    
+                   name="password" 
+                   required
+                   [(ngModel)]="current.password"/>
+            <!-- <div *ngIf="f.password.errors" class="invalid-password">    
               <div *ngIf="f.password.touched">Veuillez entrer un mot de passe valide !</div>
-            </div> 
-        </div>
-
-        <div class="optionBox col-lg-5 col-md-6 col-sm-10 col-11">
-          <input  class="text" type="checkbox" checked="checked" name="remember">
-          <label class="text">Se souvenir de moi</label>
-          <a class="link" href="#"[routerLink]="">Mot de passe oublié ?</a>
+            </div>  -->
         </div>
         
-        <button class="text col-lg-2 col-md-3 col-sm-4 col-4" type="submit" click="submit()"  routerLink="/admin/navigation">S'identifier</button>
+        <button class="text col-lg-2 col-md-3 col-sm-4 col-4" type="button" (click)="login()">S'identifier</button>
 
     </form>
   </div>
