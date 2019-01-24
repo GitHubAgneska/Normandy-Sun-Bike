@@ -14,7 +14,7 @@ import com.normandysunbike.normandysunbike.utils.Util;
 
 @CrossOrigin(origins ="*")
 @RestController
-public class AuthentificationController {
+public class LoginController {
 	
 	@Autowired
 	private UserRepository repo;
