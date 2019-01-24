@@ -29,7 +29,5 @@ export class DisplayReturnToTopBtnDirective implements OnDestroy, AfterViewInit 
     this.scrollFunction();
   }
 
-
-  }
-
 }
+
