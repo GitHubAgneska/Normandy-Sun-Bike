@@ -1,8 +1,8 @@
+/home/wilder/WCS/Projets/Projet3/laloupe-0918-jsjee-normandy-sun-bike/backNormandysunbike/src/main/java/com/normandysunbike/normandysunbike/controller/AuthentificationController.java
 /home/wilder/WCS/Projets/Projet3/laloupe-0918-jsjee-normandy-sun-bike/backNormandysunbike/src/main/java/com/normandysunbike/normandysunbike/controller/UserController.java
 /home/wilder/WCS/Projets/Projet3/laloupe-0918-jsjee-normandy-sun-bike/backNormandysunbike/src/main/java/com/normandysunbike/normandysunbike/entities/Actuality.java
 /home/wilder/WCS/Projets/Projet3/laloupe-0918-jsjee-normandy-sun-bike/backNormandysunbike/src/main/java/com/normandysunbike/normandysunbike/repository/SponsorRepository.java
 /home/wilder/WCS/Projets/Projet3/laloupe-0918-jsjee-normandy-sun-bike/backNormandysunbike/src/main/java/com/normandysunbike/normandysunbike/entities/Race.java
-/home/wilder/WCS/Projets/Projet3/laloupe-0918-jsjee-normandy-sun-bike/backNormandysunbike/src/main/java/com/normandysunbike/normandysunbike/controller/LoginController.java
 /home/wilder/WCS/Projets/Projet3/laloupe-0918-jsjee-normandy-sun-bike/backNormandysunbike/src/main/java/com/normandysunbike/normandysunbike/entities/Sponsor.java
 /home/wilder/WCS/Projets/Projet3/laloupe-0918-jsjee-normandy-sun-bike/backNormandysunbike/src/main/java/com/normandysunbike/normandysunbike/service/EmailService.java
 /home/wilder/WCS/Projets/Projet3/laloupe-0918-jsjee-normandy-sun-bike/backNormandysunbike/src/main/java/com/normandysunbike/normandysunbike/entities/User.java
