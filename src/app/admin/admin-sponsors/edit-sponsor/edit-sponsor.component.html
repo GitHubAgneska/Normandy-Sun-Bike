@@ -1,28 +1,35 @@
 
 <!------  INPUT FIELDS - EDIT SELECTED SPONSOR  ------->
-
+<div id=modal-add-sponsor>
+    <app-modal-admin *ngIf="modal" [elementName]="modalElementName" [actionOnElement]="modalActionOnElement" [message]="modalMessage"></app-modal-admin>
+</div>
 <div class="edit-sponsors-container">
-
-  <h4 class="sponsor-element-title text">Modifier ce sponsor</h4>
+  
+  <h2 class="sponsor-element-title subsubtitle">Modifier {{sponsor.name}}</h2>
 
   <!------ NEW change logo area   ( only one upload image block )------->
-  <div class="newLogoUploadArea">
-    <input class="browseBtn" type="file" name="photo" id="imageInput" accept="image/*" (mouseover)="onMouseOver()" (mouseleave)="onMouseLeave()"/>
-    <button class="plusSign" id="plusSignId" > +  </button>
-    <div class="logoActuelBackground"><img src="{{sponsor.img}}"/></div>
-  </div>      
+  <div class="uploading-area-addSponsor">
+      <div class="change-image-img subsubtitle" *ngIf="inputStatus">
+          <div><img [src]=sponsor.img/></div>
+      </div>
+      <div class="img-name-input subsubtitle" *ngIf="inputStatus == false"><div>{{ImgNameForInput}}</div></div>
+  
+      <form class="filePlaceholder" id="square-input-file">
+        <input class="browseBtn" type="file" name="photo" id="imageInput" accept="image/*" id="img-input" (change)="detectInputStatus()"/>
+      </form>
+    </div>    
 
 
   <!------ form fields for sponsor editing ------->
   <form *ngIf="registerForm != null" [formGroup]="registerForm" (ngSubmit)="validateButton()">
       <!-- Value : {{ registerForm.value | json }} // display input infos --> 
     <div class="form-group">
-      <span class="nomSponsor">Nom du sponsor : </span>
+      <span class="nomSponsor">Changer le nom du sponsor : </span>
       <mat-form-field appearance="outline">
          <input matInput placeholder="{{sponsor.name}}" formControlName="sponsorName" aria-label="sponsor-name" [(ngModel)]="newSponsorName">
       </mat-form-field>
 
-      <span class="lienSponsor">Lien du sponsor : </span>
+      <span class="lienSponsor">Changer le lien du sponsor : </span>
       <mat-form-field appearance="outline">
         <input matInput placeholder="{{sponsor.link}}" formControlName="sponsorLink" aria-label="sponsor-link" [(ngModel)]="newSponsorLink">
       </mat-form-field>
@@ -36,7 +43,7 @@
       </mat-form-field>
        
       <mat-form-field *ngIf="selectedLevel == 1" appearance="fill" placeholder="select level">
-          <textarea rows="7" maxlength=""  matInput placeholder="{{sponsor.description}}" formControlName="sponsorDescription" aria-label="sponsor-description"></textarea>
+          <textarea rows="7" maxlength=""  matInput placeholder="{{sponsor.description}}" formControlName="sponsorDescription" aria-label="sponsor-description" [(ngModel)]="newSponsorDescription"></textarea>
       </mat-form-field>
     </div>
 

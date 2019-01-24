@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Sponsor } from '../../../classes/sponsorClass';
-import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
+import {  FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { AddSponsorService } from 'src/app/services/add-sponsor.service';
 
 const URL = 'http://localhost:3600/api/upload';
@@ -30,19 +30,31 @@ export class EditSponsorComponent implements OnInit, OnChanges {
   /*   @ViewChild('fileUploadEdit')
     private fileUpload1:  AngularFileUploaderModule; */
 
-    public img;
-  
-    public newSponsorName:string;
-    public newSponsorLink:string;
-    public newSponsorDescription:string;
-    public newSponsorImgName:string;
+    // public img;
+
+    public newSponsorName: string;
+    public newSponsorLink: string;
+    public newSponsorDescription: string;
+    public newSponsorImgName: string;
+
+
+    // Modifier img
+    public inputStatus:boolean = true;
+    public ImgNameForInput:string;
+
+     // Modal
+    public modal:boolean = false;
+    public modalElementName:string = "Le sponsor";
+    public modalActionOnElement:string;
+    public modalMessage:string;
+    public modalRaceName:string; 
 
     public sponsors:Sponsor; 
     public sponsorService:AddSponsorService;
 
 
-  constructor(private formBuilder: FormBuilder, sponsorService:AddSponsorService) { 
-    const options:any = {                             // create data model for the form
+  constructor(private formBuilder: FormBuilder, sponsorService:AddSponsorService) {
+    const options: any = {                             // create data model for the form
 
       sponsorImg: [''],
       sponsorName: ['', Validators.required],
@@ -61,56 +73,78 @@ export class EditSponsorComponent implements OnInit, OnChanges {
   }   // add formbuilder service
 
 
-  ngOnChanges( changes:SimpleChanges){
-    if( changes.sponsor != undefined ){
+  ngOnChanges( changes:SimpleChanges) {
+    if ( changes.sponsor !== undefined ) {
       this.selectedLevel = this.sponsor.level;
     }
   }
 
   ngOnInit() {
-    
-    // this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
-    // this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-    //      console.log('ImageUpload:uploaded:', item, status, response);
-    //      alert('File uploaded successfully');
-    //     }
   
+  }
+
+
+  detectInputStatus() {
+    let squareInput = document.getElementById("square-input-file");
+    let uploadedImg = document.getElementById("img-input");
+    let newImg = uploadedImg['files'][0];
+    this.ImgNameForInput = "L'image actuelle sera remplacé par '" + newImg.name + "'.";
+
+    squareInput.style.background = "#194B3E";
+    this.inputStatus = false;
+  }
+
+  public modalMsg(action) {
+    if (action == "suppr") {
+      this.modalMessage = this.newSponsorName + " n'est plus sur le site."
+      this.modalActionOnElement = "supprimé";
+    } else if (action == "change") {
+      this.modalMessage =  "Les changements sur " + this.sponsor.name + " sont maintenant visible sur le site." ;
+      this.modalActionOnElement = "modifé";
+    }
+    this.modal = true;
   }
 
   validateButton() {
     this.sponsor.level = this.selectedLevel;
 
-    let uploadedImg = document.getElementById("img-input");
-    if (uploadedImg != null) {
-      let newImg = uploadedImg['files'][0];
+    const uploadedImg = document.getElementById('img-input');
+    let newImg;
+    if (uploadedImg != null && uploadedImg != undefined) {
+      newImg = uploadedImg['files'][0];
+    }
+    if (newImg != null && newImg != undefined) {
       this.newSponsorImgName = newImg.name;
-      this.sponsor.img = "./assets/" + this.newSponsorImgName;
+      this.sponsor.img = './assets/' + this.newSponsorImgName;
       this.sponsorService.addImgInAssets(newImg).subscribe();
     }
-    if (this.newSponsorName != null || this.newSponsorName != undefined) {
+    if (this.newSponsorName !== null && this.newSponsorName !== undefined) {
       this.sponsor.name = this.newSponsorName;
     }
-    if (this.newSponsorLink != null || this.newSponsorLink != undefined) {
+    if (this.newSponsorLink !== null && this.newSponsorLink !== undefined) {
       this.sponsor.link = this.newSponsorLink;
     }
     this.sponsor.level = this.selectedLevel;
-    if (this.sponsor.level == 1){
-      this.sponsor.description = this.newSponsorDescription
+    if (this.sponsor.level == 1) {
+      this.sponsor.description = this.newSponsorDescription;
+      console.log(this.sponsor.description)
     }
     this.sponsorService.editSponsor( this.sponsor.id ,this.sponsor).subscribe();
+
+    this.modalMsg("change");
   };
 
-  onMouseOver():void{
-    document.getElementById("plusSignId").style.opacity = "1";
+  onMouseOver(): void {
+    document.getElementById('plusSignId').style.opacity = '1';
   }
 
-  onMouseLeave():void{
-    document.getElementById("plusSignId").style.opacity = "0.2";
+  onMouseLeave(): void {
+    document.getElementById('plusSignId').style.opacity = '0.2';
   }
 
   suppSponsor() {
     this.sponsorService.deleteSponsor( this.sponsor.id ).subscribe();
-    window.location.reload();
+
+    this.modalMsg("suppr");
   }
-};
- 
+}

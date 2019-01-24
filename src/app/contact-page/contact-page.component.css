@@ -1,10 +1,10 @@
 
 .contactPage-container{
-    padding-top:12vh;
+    padding-top:20vh;
+    padding-bottom:12vh;
     color:#fff;
     background: url('../../assets/fond-landing-text-intro.png');
     background-size: cover;
-    height:100vh;
     display: flex;
     justify-content: center;
     align-items: center;

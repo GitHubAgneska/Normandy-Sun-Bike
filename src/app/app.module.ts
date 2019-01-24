@@ -39,6 +39,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditSponsorComponent } from './admin/admin-sponsors/edit-sponsor/edit-sponsor.component';
 import { RacePresentationService } from './services/race-presentation.service';
 import { EmailService } from './services/email.service';
+import { ModalAdminComponent } from './modal-admin/modal-admin.component';
+import { LoginService } from './services/login.service';
+import { CGUComponent } from './cgu/cgu.component';
 
 
 @NgModule({
@@ -60,7 +63,9 @@ import { EmailService } from './services/email.service';
     ActualityComponent,
     RaceComponent,
     AddSponsorComponent,
-    EditSponsorComponent
+    EditSponsorComponent,
+    ModalAdminComponent,
+    CGUComponent,
   ],
   imports: [
     HttpClientModule,
@@ -83,7 +88,8 @@ import { EmailService } from './services/email.service';
 
   providers: [ 
     EmailService,
-    RacePresentationService
+    RacePresentationService,
+    LoginService
   
   ],
   bootstrap: [AppComponent]

@@ -2,7 +2,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Sponsor } from '../../../classes/sponsorClass';
-import { SPONSORS } from '../mock-sponsors';
 import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
 import { AddSponsorService } from 'src/app/services/add-sponsor.service';
 
@@ -24,6 +23,17 @@ export class AddSponsorComponent implements OnInit {
   public newSponsorLink:string;
   public newSponsorDescription:string;
   public newSponsorImgName:string;
+
+  // +
+  public inputStatus:boolean = true;
+  public ImgNameForInput:string;
+
+  // Modal
+  public modal:boolean = false;
+  public modalElementName:string = "Le sponsort";
+  public modalActionOnElement:string = "ajouté";
+  public modalMessage:string;
+  public modalRaceName:string; 
 
   public fileToUpload: File = null;
   // public url = '';
@@ -74,12 +84,16 @@ export class AddSponsorComponent implements OnInit {
   }
 
   onMouseOver():void{
+    if (this.inputStatus == true) { 
     document.getElementById("plusSignId").style.opacity = "1";
     document.getElementById("plusSignId").style.textShadow = "rgba(255, 255, 255, 0.6)";
+    }
   }
 
   onMouseLeave():void{
+    if (this.inputStatus == true) { 
     document.getElementById("plusSignId").style.opacity = "0.2";
+    }
   }
 
   ngOnChange(){
@@ -87,6 +101,21 @@ export class AddSponsorComponent implements OnInit {
 
   updateFile(file: HTMLInputElement) {
     let name = file.value;
+  }
+
+  detectInputStatus() {
+    let squareInput = document.getElementById("square-input-file");
+    let uploadedImg = document.getElementById("img-input");
+    let newImg = uploadedImg['files'][0];
+    this.ImgNameForInput = "L'image '" + newImg.name + "' a été ajouté.";
+
+    squareInput.style.background = "#194B3E";
+    this.inputStatus = false;
+  }
+
+  public modalMsg() {
+    this.modalMessage = this.newSponsorName + " est maintenant visible sur le site."
+    this.modal = true;
   }
 
   validateButton() {
@@ -105,6 +134,8 @@ export class AddSponsorComponent implements OnInit {
 
     this.sponsorService.addImgInAssets(newImg).subscribe();
     this.sponsorService.addSponsor(this.newSponsorToSend).subscribe();
+
+    this.modalMsg();
 
   }
   

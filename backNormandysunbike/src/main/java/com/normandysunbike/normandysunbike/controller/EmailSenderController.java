@@ -20,6 +20,7 @@ public class EmailSenderController {
 	@PostMapping("/Contact")
 	public boolean sendEmailTo( @RequestBody EmailUser p_user ) {
 		
+		
 		try {
 			service.sendEmail(p_user);
 			return true;

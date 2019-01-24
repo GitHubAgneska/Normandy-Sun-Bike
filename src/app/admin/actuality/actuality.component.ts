@@ -21,6 +21,13 @@ export class ActualityComponent implements OnInit {
   public actuality:Actuality[];
   public actualityService:ActualityService;
 
+  // Modal
+  public modal:boolean = false;
+  public modalElementName:string = "L'actualité";
+  public modalActionOnElement:string = "modifié";
+  public modalMessage:string;
+  public modalRaceName:string; 
+
   constructor(actualityService:ActualityService) { 
     this.actualityService = actualityService;
   }
@@ -65,10 +72,13 @@ export class ActualityComponent implements OnInit {
   public changeActualityPositionInDb(p_id:string) {
     if (p_id == 'tripPlan' ) {
       this.actuality[0].position = 1;
+      this.modalRaceName = "Projet";
     } else if ( p_id == 'trip2019' ) {
       this.actuality[0].position = 2;
+      this.modalRaceName = "Sun trip Tour 2019";
     } else if ( p_id == 'trip2020' ) {
       this.actuality[0].position = 3;
+      this.modalRaceName = "Sun trip 2020";
     }
   }
 
@@ -100,8 +110,15 @@ export class ActualityComponent implements OnInit {
     this.prevSectionId = sectionId;
   }
 
+  public modalMsg() {
+    this.modalMessage = "La section " + this.modalRaceName + " est mise en avant sur la page d'accueil du site."
+    this.modal = true;
+  }
+
   public validatePositionChangeInDb() {
+    
     this.actualityService.updateActuality(this.actuality[0]).subscribe()
+    this.modalMsg();
   }
 
 }

@@ -1,14 +1,20 @@
 
 <!------  INPUT FIELDS - CREATE NEW SPONSOR  ------->
-
+<div id=modal-add-sponsor>
+  <app-modal-admin *ngIf="modal" [elementName]="modalElementName" [actionOnElement]="modalActionOnElement" [message]="modalMessage"></app-modal-admin>
+</div>
 <div class="add-sponsors-container">
   
-  <h4 class="sponsor-element-title text">Ajouter un sponsor</h4>
+    <h2 class="sponsor-element-title subsubtitle">Ajouter un sponsor</h2>
 
   <div class="uploading-area-addSponsor">
-    <form class="filePlaceholder">
-      <input class="browseBtn" type="file" name="photo" id="imageInput" accept="image/*" (mouseover)="onMouseOver()" (mouseleave)="onMouseLeave()" id="img-input"/>
-      <button class="plusSign" id="plusSignId" > +  </button>
+    <div class="plusSign" id="plusSignId" *ngIf="inputStatus">
+        <div>+</div>
+    </div>
+    <div class="img-name-input subsubtitle" *ngIf="inputStatus == false"><div>{{ImgNameForInput}}</div></div>
+
+    <form class="filePlaceholder" id="square-input-file">
+      <input class="browseBtn" type="file" name="photo" id="imageInput" accept="image/*" (mouseover)="onMouseOver()" (mouseleave)="onMouseLeave()" id="img-input" (change)="detectInputStatus()"/>
     </form>
   </div>
 

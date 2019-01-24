@@ -62,5 +62,9 @@ export class RacesPresentationComponent implements OnInit {
     }
 
   }
+
+  ngOnDestroy(){
+    window.scrollTo(0,0);
+  }
 }
 

@@ -1,7 +1,7 @@
 
 
 .sponsorAdmin-main-container{
-    margin-top:8vh;
+    padding-top: 2vh;
 }
 
 /* ------- BLOCKS SPONSORS : LOGO + INFO ------*/
@@ -29,11 +29,27 @@
 
 
 .sponsor-element-container{
-/*     width: 100%; */  
-
+    width: 100%;  
     display: column;
-    margin-bottom: 3vw;
-    border-bottom: grey solid 1px;
+    padding-bottom: 5vh;
+}
+#addSponsorBtn{
+    width: 100%;
+    border: none;
+    background: #194B3E;
+    color: #fff;
+    padding-top:1vw; 
+    padding-bottom: 1vw;
+    transition: 0.3s;
+}
+#addSponsorBtn:hover{
+    background: #17352D;
+}
+#addSponsorBtn:hover{
+    cursor: pointer;
+}
+#addSponsorBtn:focus{
+    outline: none;
 }
 .sponsor-element-container:hover{
     cursor: pointer;
@@ -41,8 +57,11 @@
 
 
 .sponsorList{
-    width:auto;   
+    width:20%;   
     text-align: center;
+    padding-right: 3%;
+    border-right:1px solid  #6f7c91;
+    padding-top: 5vh;
 }
 .logo-container {
     width: 60%;
@@ -73,7 +92,7 @@
 
 .sponsors.selected{
     opacity:1;
-    border:1px solid  #6f7c91;
+    border:2px solid  #194B3E;
 }
 
 
@@ -99,14 +118,14 @@
     .sponsor-element-container{
         width: 80%;   
         display: column;
-        margin:0 auto 3vw auto;
+        margin:0 auto 0 auto;
         transition: 1s; 
     }
 
     
     .sponsorList{
         padding-right:0;
-        height:82vh;
+        height:88vh;
         overflow-y:scroll;   
     }
 
@@ -118,6 +137,7 @@
 .sponsors-input-container{
     height: 82vh;
     overflow: scroll;
+    width: 80%;
 }
 
 /*------ MOBILE ----*/
@@ -149,7 +169,6 @@
     }
     .sponsorList{
         align-content: center;
-        height:auto;
     }
 
     .sponsorList img{
@@ -164,6 +183,6 @@
 
  .sponsors-input-container{
     margin:0 auto;
-
+    overflow-x: hidden;
 }
 
