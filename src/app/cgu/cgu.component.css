@@ -1,0 +1,42 @@
+.cguPage-container{
+    padding-top:12vh;
+    color:#fff;
+    background: url('../../assets/fond-landing-text-intro.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cguText-container{
+    width:60%;
+    display: block;
+    align-items: center;
+    font-family:'Arvo', serif;
+    padding:12vh 0 12vh 0;
+
+}
+
+.cguTitre{
+    padding-bottom: 1rem;
+}
+
+.cguArticleTitle{
+    font-size:2rem ;
+}
+
+.cguArticleText{
+    text-align:justify;
+    margin-bottom:3rem;
+    font-size:1.2rem;
+}
+
+.cguLink{
+    text-decoration:underline;
+    color:white;
+    font-weight: bold;
+
+}
+.cguLink:hover{
+    color:black;
+}

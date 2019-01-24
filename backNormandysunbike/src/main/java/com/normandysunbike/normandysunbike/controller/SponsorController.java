@@ -55,7 +55,9 @@ public class SponsorController {
 		@RequestParam("file") MultipartFile image
 	) throws Exception {
 		
-		String path = "/home/wilder/WCS/Projets/Projet 3/laloupe-0918-jsjee-normandy-sun-bike/src/assets/" + image.getOriginalFilename();
+		String path = "/Users/Etienne/Documents/WCS/normandySunBike/src/assets/" + image.getOriginalFilename();
+		// /home/wilder/WCS/Projets/Projet 3/laloupe-0918-jsjee-normandy-sun-bike/src/assets/ -> Gaetan
+		// /Users/Etienne/Documents/WCS/normandySunBike/src/assets/ -> Etienne
 			
 			try {
 				

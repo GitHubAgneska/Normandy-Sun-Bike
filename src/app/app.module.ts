@@ -36,6 +36,8 @@ import { RacePresentationService } from './services/race-presentation.service';
 import { EmailService } from './services/email.service';
 import { ModalAdminComponent } from './modal-admin/modal-admin.component';
 import { DisplayReturnToTopBtnDirective } from './display-return-to-top-btn.directive';
+import { LoginService } from './services/login.service';
+import { CGUComponent } from './cgu/cgu.component';
 
 
 @NgModule({
@@ -59,7 +61,8 @@ import { DisplayReturnToTopBtnDirective } from './display-return-to-top-btn.dire
     AddSponsorComponent,
     EditSponsorComponent,
     ModalAdminComponent,
-    DisplayReturnToTopBtnDirective
+    DisplayReturnToTopBtnDirective,
+    CGUComponent,
   ],
   imports: [
     HttpClientModule,
@@ -80,10 +83,11 @@ import { DisplayReturnToTopBtnDirective } from './display-return-to-top-btn.dire
 
   ],
 
-  providers: [ 
+  providers: [
     EmailService,
-    RacePresentationService
-  
+    RacePresentationService,
+    LoginService
+
   ],
   bootstrap: [AppComponent]
 })

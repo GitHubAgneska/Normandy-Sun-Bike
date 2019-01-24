@@ -44,7 +44,7 @@ export class EditSponsorComponent implements OnInit, OnChanges {
 
      // Modal
     public modal:boolean = false;
-    public modalElementName:string = "Le sponsort";
+    public modalElementName:string = "Le sponsor";
     public modalActionOnElement:string;
     public modalMessage:string;
     public modalRaceName:string; 
@@ -109,21 +109,25 @@ export class EditSponsorComponent implements OnInit, OnChanges {
     this.sponsor.level = this.selectedLevel;
 
     const uploadedImg = document.getElementById('img-input');
-    if (uploadedImg != null) {
-      const newImg = uploadedImg['files'][0];
+    let newImg;
+    if (uploadedImg != null && uploadedImg != undefined) {
+      newImg = uploadedImg['files'][0];
+    }
+    if (newImg != null && newImg != undefined) {
       this.newSponsorImgName = newImg.name;
       this.sponsor.img = './assets/' + this.newSponsorImgName;
       this.sponsorService.addImgInAssets(newImg).subscribe();
     }
-    if (this.newSponsorName !== null || this.newSponsorName !== undefined) {
+    if (this.newSponsorName !== null && this.newSponsorName !== undefined) {
       this.sponsor.name = this.newSponsorName;
     }
-    if (this.newSponsorLink !== null || this.newSponsorLink !== undefined) {
+    if (this.newSponsorLink !== null && this.newSponsorLink !== undefined) {
       this.sponsor.link = this.newSponsorLink;
     }
     this.sponsor.level = this.selectedLevel;
-    if (this.sponsor.level === 1) {
+    if (this.sponsor.level == 1) {
       this.sponsor.description = this.newSponsorDescription;
+      console.log(this.sponsor.description)
     }
     this.sponsorService.editSponsor( this.sponsor.id ,this.sponsor).subscribe();
 

@@ -72,3 +72,13 @@
         margin: auto;
     }
 }
+
+.copyright > a {
+    text-decoration:none;
+    color: #5F5F5F
+}
+
+.copyright > a:hover{
+    cursor: pointer;
+    color: #000;
+}

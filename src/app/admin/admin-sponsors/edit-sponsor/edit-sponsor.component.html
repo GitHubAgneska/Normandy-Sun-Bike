@@ -43,7 +43,7 @@
       </mat-form-field>
        
       <mat-form-field *ngIf="selectedLevel == 1" appearance="fill" placeholder="select level">
-          <textarea rows="7" maxlength=""  matInput placeholder="{{sponsor.description}}" formControlName="sponsorDescription" aria-label="sponsor-description"></textarea>
+          <textarea rows="7" maxlength=""  matInput placeholder="{{sponsor.description}}" formControlName="sponsorDescription" aria-label="sponsor-description" [(ngModel)]="newSponsorDescription"></textarea>
       </mat-form-field>
     </div>
 
