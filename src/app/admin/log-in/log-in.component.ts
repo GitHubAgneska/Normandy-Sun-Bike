@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { first } from 'rxjs/operators';
-import { AdminUser } from 'src/app/classes/adminUser';
 
 import { LoginService } from 'src/app/services/login.service';
-import { environment } from 'src/environments/environment';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/classes/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -14,49 +12,28 @@ import { environment } from 'src/environments/environment';
 })
 
 export class LogInComponent implements OnInit {
-  model: any = {};
-  loginForm:FormGroup;
-  loading = false;
-  submitted = false;
-  okUrl:string = environment.domain ="/admin";
-  adminUser:AdminUser;
 
-  constructor(private loginService:LoginService,private route: ActivatedRoute, private FormBuilder:FormBuilder, private router:Router ) {}
+  public current: User;
 
+  constructor(private service: LoginService, private uService: UserService, private router: Router) {
+    this.current = null;
+  }
+
+  public login(): void {
+    this.service.login(this.current.email, this.current.password).subscribe(
+      (p_user: User) => {
+        this.current = p_user;
+        this.router.navigateByUrl('admin/navigation');
+      },
+      () => {
+        alert('Erreur lors de la connexion !');
+      }
+    );
+  }
 
   ngOnInit() {
-    sessionStorage.setItem('token', '');
-
-    this.loginForm = this.FormBuilder.group({
-        username : ['',[Validators.required, Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')]],
-        password: ['', Validators.required]
-    });
-     //reset login status
-      this.loginService.logout();
+    this.current = this.uService.current;
   }
 
-  get f() { return this.loginForm.controls}; 
-
-  submit() {
-    this.submitted = true;
-    if (this.loginForm.invalid) {
-      alert("pb");
-      return;
-    }
-    this.loading = true;
-    this.loginService.login(this.f.username.value, this.f.password.value)
-          .pipe(first())
-          .subscribe(
-            data => {
-              this.router.navigate([this.okUrl]); 
-            },
-             error =>{
-               alert("Veuillez entrer vos identifiants à nouveau")
-               this.loading = false;
-              });
-
-    
-    
-  }
 
 }

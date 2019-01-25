@@ -16,8 +16,7 @@ public class User {
 	private String password;
 	private String apikey;
 	private String role;
-	
-	
+	private String token;
 
 	public User() {}
 
@@ -25,12 +24,6 @@ public class User {
 	public Long getId() {
 		return id;
 	}
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 
 	public String getEmail() {
 		return email;
@@ -60,7 +53,8 @@ public class User {
 	public void setApikey(String apikey) {
 		this.apikey = apikey;
 	}
-	
+
+
 	public String getRole() {
 		return role;
 	}
@@ -69,6 +63,15 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
+
+
+	public String getToken() {
+		return token;
+	}
+
+
+	public void setToken(String token) {
+		this.token = token;
+	}
 	
 }

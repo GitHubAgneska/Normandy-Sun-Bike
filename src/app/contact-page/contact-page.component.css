@@ -1,5 +1,5 @@
-
 .contactPage-container{
+    height: 100vh;
     padding-top:20vh;
     padding-bottom:12vh;
     color:#fff;
@@ -9,7 +9,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 @media only screen and (max-width: 640px){
     .contactPage-container{

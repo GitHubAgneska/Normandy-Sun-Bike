@@ -57,6 +57,15 @@
     align-items: center;
 }
 
+#sponsor-img-container{
+    overflow: hidden;
+    width: 1em;
+}
+
+#sponsor-img-container > img {
+    width: 100%;
+}
+
 .img-name-input{
     position: absolute;
     width: 100%;

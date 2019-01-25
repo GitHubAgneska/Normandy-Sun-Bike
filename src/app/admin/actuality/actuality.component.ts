@@ -9,9 +9,9 @@ import { ActualityService } from '../../services/actuality.service';
 })
 export class ActualityComponent implements OnInit {
 
-  public sections: any[] = [{ id: 'tripPlan', name: '\"planification\"' },
-                            { id: 'trip2019', name: '\"Sun Trip Tour 2019\"' },
-                            { id: 'trip2020', name: '\"Sun Trip 2020\"' }];
+  public sections: any[] = [{ id: 'tripPlan', name: '\'planification\'' },
+                            { id: 'trip2019', name: '\'Sun Trip Tour 2019\'' },
+                            { id: 'trip2020', name: '\'Sun Trip 2020\'' }];
 
   public sectionNb: number = 0;
   public sectionId: string;
@@ -22,26 +22,26 @@ export class ActualityComponent implements OnInit {
   public actualityService:ActualityService;
 
   // Modal
-  public modal:boolean = false;
-  public modalElementName:string = "L'actualité";
-  public modalActionOnElement:string = "modifié";
-  public modalMessage:string;
-  public modalRaceName:string; 
+  public modal: boolean = false;
+  public modalElementName: string = 'L\'actualité';
+  public modalActionOnElement: string = 'modifié';
+  public modalMessage: string;
+  public modalRaceName: string;
 
-  constructor(actualityService:ActualityService) { 
+  constructor(actualityService:ActualityService) {
     this.actualityService = actualityService;
   }
 
   ngOnInit() {
 
     this.actualityService.getActuality().subscribe(
-      (param)=>{ 
+      (param) => {
         this.actuality = param;
-        if (this.actuality[0].position == 1) {
+        if (this.actuality[0].position === 1) {
           this.sectionSelected('tripPlan');
-        } else if (this.actuality[0].position == 2){
+        } else if (this.actuality[0].position === 2) {
           this.sectionSelected('trip2019');
-        } else if (this.actuality[0].position == 3) {
+        } else if (this.actuality[0].position === 3) {
           this.sectionSelected('trip2020');
         }
       }
@@ -69,16 +69,16 @@ export class ActualityComponent implements OnInit {
     document.getElementById(p_id).removeChild(document.getElementById('checkmark'));
   }
 
-  public changeActualityPositionInDb(p_id:string) {
-    if (p_id == 'tripPlan' ) {
+  public changeActualityPositionInDb(p_id: string) {
+    if (p_id === 'tripPlan' ) {
       this.actuality[0].position = 1;
-      this.modalRaceName = "Projet";
-    } else if ( p_id == 'trip2019' ) {
+      this.modalRaceName = 'Projet';
+    } else if ( p_id === 'trip2019' ) {
       this.actuality[0].position = 2;
-      this.modalRaceName = "Sun trip Tour 2019";
-    } else if ( p_id == 'trip2020' ) {
+      this.modalRaceName = 'Sun trip Tour 2019';
+    } else if ( p_id === 'trip2020' ) {
       this.actuality[0].position = 3;
-      this.modalRaceName = "Sun trip 2020";
+      this.modalRaceName = 'Sun trip 2020';
     }
   }
 
@@ -111,12 +111,12 @@ export class ActualityComponent implements OnInit {
   }
 
   public modalMsg() {
-    this.modalMessage = "La section " + this.modalRaceName + " est mise en avant sur la page d'accueil du site."
+    this.modalMessage = 'La section ' + this.modalRaceName + ' est mise en avant sur la page d\'accueil du site.';
     this.modal = true;
   }
 
   public validatePositionChangeInDb() {
-    
+
     this.actualityService.updateActuality(this.actuality[0]).subscribe()
     this.modalMsg();
   }

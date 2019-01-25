@@ -10,7 +10,9 @@
   <!------ NEW change logo area   ( only one upload image block )------->
   <div class="uploading-area-addSponsor">
       <div class="change-image-img subsubtitle" *ngIf="inputStatus">
-          <div><img [src]=sponsor.img/></div>
+          <div id="sponsor-img-container">
+            <img [src]=sponsor.img/>
+          </div>
       </div>
       <div class="img-name-input subsubtitle" *ngIf="inputStatus == false"><div>{{ImgNameForInput}}</div></div>
   
