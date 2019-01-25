@@ -1,47 +1,38 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs'
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { UserService } from './user.service';
+import { Observable } from 'rxjs';
+import { User } from '../classes/user';
 import { environment } from '../../environments/environment';
-import { AdminUser } from '../classes/adminUser';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private httpService:HttpClient;
-  private url = environment.domain + "admin/";
+  public service: HttpClient;
+  private uService: UserService;
 
-  
-  constructor(httpService:HttpClient) { 
-    this.httpService = httpService;
-
+  constructor(p_service: HttpClient, p_uService: UserService) {
+    this.service = p_service;
+    this.uService = p_uService;
   }
 
-  /* login(adminUser:AdminUser):Observable<boolean> {
-    return this.httpService.post<AdminUser>(this.url, adminUser).pipe(
-      map( */
+  public login(p_email: string, p_password: string): Observable<User> {
+    const url: string = environment.domain + 'admin';
+    const user: User = { email: p_email, password: p_password };
 
-  login(username:string, password:string):Observable<boolean>{
-      return this.httpService.post<AdminUser>(this.url, {username:username, password:password
-      }).pipe(
-        map(     
-    ( response:boolean ) => {
-      return response;
+    return this.service.post(url, user, {observe: 'response'}).pipe(
+      map(
+        (p_response: HttpResponse<any>) => {
+          this.uService.current = p_response.body as User;
+          this.uService.refreshToken(p_response);
+          this.uService.current.connected = true;
+
+          return this.uService.current;
         }
       )
     );
   }
-
-  private _errorHandler(error:Response) {
-    console.error(error);
-    return Observable.throw(error || 'Server Error')
-  }
-
-  logout() {
-    localStorage.removeItem('currentUser');
-  }
-
 }
-

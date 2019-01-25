@@ -11,11 +11,6 @@ import { MatChipsModule } from '@angular/material/chips';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
-
-
-
-
-
 import { AppComponent } from './app.component';
 import { RacesPresentationComponent } from './races-presentation/races-presentation.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -40,6 +35,7 @@ import { EditSponsorComponent } from './admin/admin-sponsors/edit-sponsor/edit-s
 import { RacePresentationService } from './services/race-presentation.service';
 import { EmailService } from './services/email.service';
 import { ModalAdminComponent } from './modal-admin/modal-admin.component';
+import { DisplayReturnToTopBtnDirective } from './display-return-to-top-btn.directive';
 import { LoginService } from './services/login.service';
 import { CGUComponent } from './cgu/cgu.component';
 
@@ -65,6 +61,7 @@ import { CGUComponent } from './cgu/cgu.component';
     AddSponsorComponent,
     EditSponsorComponent,
     ModalAdminComponent,
+    DisplayReturnToTopBtnDirective,
     CGUComponent,
   ],
   imports: [
@@ -86,11 +83,11 @@ import { CGUComponent } from './cgu/cgu.component';
 
   ],
 
-  providers: [ 
+  providers: [
     EmailService,
     RacePresentationService,
     LoginService
-  
+
   ],
   bootstrap: [AppComponent]
 })
