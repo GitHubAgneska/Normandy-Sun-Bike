@@ -9,7 +9,7 @@
 
 
 ![alt text](./src/assets/landingScreen.png)
-![alt text](./src/assets/userNotice_screen2.png)
+![alt text](./src/assets/userNotice_screen2.png) ![alt text](./src/assets/userNotice_screen3.png) 
 
 
 
