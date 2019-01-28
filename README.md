@@ -1,4 +1,4 @@
-## NORMANDY SUN BIKE  V.1.0, january 2019    http://normandysunbike.fr
+## NORMANDY SUN BIKE  V.1.0, january 2019  -----   http://normandysunbike.fr
 
 ### Created by H. Agnès GENAY, Gaëtan HARDY, Etienne RABIN
 
@@ -9,7 +9,7 @@
 
 
 ![alt text](./src/assets/landingScreen.png)
-![alt text](./src/assets/userNotice_screen.png)
+![alt text](./src/assets/userNotice_screen2.png)
 
 
 
