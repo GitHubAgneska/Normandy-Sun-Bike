@@ -9,7 +9,8 @@
 
 
 ![alt text](./src/assets/landingScreen.png)
-![alt text](./src/assets/userNotice_screen2.png) ![alt text](./src/assets/userNotice_screen3.png) 
+![alt text](./src/assets/userNotice_screen2.png){:height="36px" width="36px"} 
+ ![alt text](./src/assets/userNotice_screen3.png) 
 
 
 
