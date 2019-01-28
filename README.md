@@ -9,6 +9,8 @@
 
 
 ![alt text](./src/assets/landingScreen.png)
+![alt text](./src/assets/UserNotice_p8.pdf)
+
 
 
 
